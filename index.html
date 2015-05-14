@@ -2,9 +2,11 @@
 <html>
   <head>
     <link rel="stylesheet" href="/css/index.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-    
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/js/index.js"></script>
   </head>
   
   <body>
@@ -13,173 +15,176 @@
         <p class="name">Jake Gaylor</p>
         <p class="title">Fullstack Engineer</p>
       </div>
+
       <div class="right">
         <a href="#">Blog</a>
       </div>
+
+      <img src="/images/me_2013.jpg" alt="" id="little-me">
       
     </header>
-
-    <section class="hero">
-      <img src="/images/me_2013.jpg" alt="" class="me">
-      <h1>Jake Gaylor</h1>
-      <h2>Fullstack Engineer</h2>
-      <ul class="contact-icons">
-        <li>
-          <a href="https://twitter.com/jhgaylor" title="jhgaylor@twitter">
-            <i class="fa fa-twitter fa-lg"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://Facebook.com/jhgaylor" title="jhgaylor@facebook">
-            <i class="fa fa-facebook fa-lg"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/jhgaylor" title="jhgaylor@github">
-            <i class="fa fa-github fa-lg"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://LinkedIn.com/in/jhgaylor" title="jhgaylor@LinkedIn">
-            <i class="fa fa-linkedin fa-lg"></i>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:jhgaylor@gmail.com" title="jhgaylor@gmail.com">
-            <i class="fa fa-envelope-o fa-lg"></i>
-          </a>
-        </li>
-      </ul>
-    </section> <!-- end hero -->
-
-    <section class="background">
-      <p>
-        I am a full stack engineer with a lot of experience building things. I have multiple years’ experience working with Node.js and Python. I began working with MongoDB and Redis when working with social media data at my startup and I've worked with both on several projects over the last few years.
-      </p>
-
-      <p>
-        Most of my experience is in developing web applications, but I have worked with a variety of platforms and technologies to build software and have deployed software to the web, Mac OS X, and Linux. My experience using many different programming languages has exposed me to new paradigms, which helps me pick the best tool for each job.
-      </p>
-
-      <p>As a founder, I've launched two products. Both were SaaS applications involving large sets of (social) data and I built the technical stack. I have experience evaluating general objectives and then building the infrastructure and applications to meet the goal. </p>
-
-      <p>
-        Lately I have been doing a great deal work in Meteor and building a data collection system in node. Due to how often I need to collect social media data and the number of different APIs (sometimes multiple per provider!) I built a service that offers APIs for collectors to register their functionality, clients to register their data needs, and clients to gather their collected data. This allows me to use (Twitter/Facebook/Instagram) bots in multiple applications while only having to do the work of writing the logic and building/deploying infrastructure once. There was a software startup using my data collector to power their product. I have learned a lot by building applications that my peers are using; documentation, tests, and clear communication are critical for the success of their projects and mine.
-      </p>
-
-      <p>
-        Most recently, I built and launched a chat bot for League of Legends, in a week. The project is online at https://github.com/jhgaylor/StatBot/wiki/Day-0:-The-Beginning. Please feel free to check out the repository as an example of my work. 
-      </p>
-    </section> <!-- end background -->
-
-    <section class="stack">
-      
-    </section> <!-- end stack -->
-
-    <section class="interests">
-      
-    </section> <!-- end interests -->
-
-    <section class="portfolio">
-      <div class="project">
-        <div class="info">
-          <h3>Statbot</h3>
-          <p>A chat bot and web tools for League of Legends</p>
-        </div>
-        <div class="photo">
-          <img src="/images/statbot.png" alt="">
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="info">
-          <h3>Tracer</h3>
-          <p>A tool for investigators to collect social media data from any public
-account(s).</p>
-        </div>
-        <div class="photo">
-          <img src="/images/statbot.png" alt="">
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="info">
-          <h3>SocialDrizzle</h3>
-          <p>A startup venture for providing social engagement to the patrons of
-public events.</p>
-        </div>
-        <div class="photo">
-          <img src="/images/statbot.png" alt="">
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="info">
-          <h3>Django-blogger</h3>
-          <p>A reusable Django app for blogging intended for one or more contributors. The purpose
-of this project is to create a basic, but feature complete, blogging platform for Django v1.4.</p>
-        </div>
-        <div class="photo">
-          <img src="/images/statbot.png" alt="">
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="info">
-          <h3>TLDR.io api wrapper</h3>
-          <p>A client for the tldr.io api in python using requests.</p>
-        </div>
-        <div class="photo">
-          <img src="/images/statbot.png" alt="">
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="info">
-          <h3>Bonus.ly Api Wrapper</h3>
-          <p>asdf</p>
-        </div>
-        <div class="photo">
-          <img src="/images/statbot.png" alt="">
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="info">
-          <h3>Social Media Tracking and Analysis System (SMTAS)</h3>
-          <p>A system to collect, analyze, and visualize social media data for researchers to gain valuable insights into public opinion, views and fluidity.</p>
-        </div>
-        <div class="photo">
-          <img src="/images/statbot.png" alt="">
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="info">
-          <h3>Employee Management System</h3>
-          <p>A web application designed for a survey laboratory’s call center.</p>
-        </div>
-        <div class="photo">
-          <img src="/images/statbot.png" alt="">
-        </div>
-      </div>
-    </section>
-
-    <section class="get-in-touch">
-      <h1>Get in Touch</h1>
-      <p class="email">
-        <a href="mailto:jhgaylor@gmail.com">jhgaylor@gmail.com</a>
-      </p>
-      <p class="phone">662.694.0191</p>
-
-      <div class="button">
-        <a href="/resume.pdf" target="_blank">
+    
+    <div class="container-fluid">
+      <div class="row hero">
+        <img src="/images/me_2013.jpg" alt="" class="me">
+        <h1>Jake Gaylor</h1>
+        <h2>Fullstack Engineer</h2>
+        <ul class="contact-icons">
+          <li>
+            <a href="https://twitter.com/jhgaylor" title="jhgaylor@twitter">
+              <i class="fa fa-twitter fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://Facebook.com/jhgaylor" title="jhgaylor@facebook">
+              <i class="fa fa-facebook fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/jhgaylor" title="jhgaylor@github">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://LinkedIn.com/in/jhgaylor" title="jhgaylor@LinkedIn">
+              <i class="fa fa-linkedin fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:jhgaylor@gmail.com" title="jhgaylor@gmail.com">
+              <i class="fa fa-envelope-o fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+        <h4>662.694.0191</h4>
+        <a href="/resume.pdf" target="_blank" class="btn btn-primary btn-xs">
           Download Resume
         </a>
-      </div>
-    </section>
+      </div> <!-- end hero -->
+    </div>
 
-    <section class="skills">
+    <div class="container">
+      <div class="row background">
+        <p>
+          I am a full stack engineer with a lot of experience building things. I have multiple years’ experience working with Node.js and Python. I began working with MongoDB and Redis when working with social media data at my startup and I've worked with both on several projects over the last few years.
+        </p>
+
+        <p>
+          Most of my experience is in developing web applications, but I have worked with a variety of platforms and technologies to build software and have deployed software to the web, Mac OS X, and Linux. My experience using many different programming languages has exposed me to new paradigms, which helps me pick the best tool for each job.
+        </p>
+
+        <p>As a founder, I've launched two products. Both were SaaS applications involving large sets of (social) data and I built the technical stack. I have experience evaluating general objectives and then building the infrastructure and applications to meet the goal. </p>
+
+        <p>
+          Lately I have been doing a great deal work in Meteor and building a data collection system in node. Due to how often I need to collect social media data and the number of different APIs (sometimes multiple per provider!) I built a service that offers APIs for collectors to register their functionality, clients to register their data needs, and clients to gather their collected data. This allows me to use (Twitter/Facebook/Instagram) bots in multiple applications while only having to do the work of writing the logic and building/deploying infrastructure once. There was a software startup using my data collector to power their product. I have learned a lot by building applications that my peers are using; documentation, tests, and clear communication are critical for the success of their projects and mine.
+        </p>
+
+        <p>
+          Most recently, I built and launched a chat bot for League of Legends, in a week. The project is online at https://github.com/jhgaylor/StatBot/wiki/Day-0:-The-Beginning. Please feel free to check out the repository as an example of my work. 
+        </p>
+      </div> <!-- end background -->
+    </div>
+
+    <div class="container-fluid">
+      <div class="row stack">
+      
+      </div> <!-- end stack -->
+
+      <div class="row interests">
+        
+      </div> <!-- end interests -->
+
+      <div class="row portfolio">
+        <div class="project statbot col-sm-12">
+          <div class="row">
+            <div class="info col-sm-6">
+              <h3>Statbot</h3>
+              <p>A chat bot and web tools for League of Legends</p>
+            </div>
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="project tracer">
+          <div class="info">
+            <h3>Tracer</h3>
+            <p>A tool for investigators to collect social media data from any public
+  account(s).</p>
+          </div>
+          <div class="photo">
+            <img src="/images/statbot.png" alt="">
+          </div>
+        </div>
+
+        <div class="project drizzle">
+          <div class="info">
+            <h3>SocialDrizzle</h3>
+            <p>A startup venture for providing social engagement to the patrons of
+  public events.</p>
+          </div>
+          <div class="photo">
+            <img src="/images/statbot.png" alt="">
+          </div>
+        </div>
+
+        <div class="project blogger">
+          <div class="info ">
+            <h3>Django-blogger</h3>
+            <p>A reusable Django app for blogging intended for one or more contributors. The purpose
+  of this project is to create a basic, but feature complete, blogging platform for Django v1.4.</p>
+          </div>
+          <div class="photo">
+            <img src="/images/statbot.png" alt="">
+          </div>
+        </div>
+
+        <div class="project tldr">
+          <div class="info ">
+            <h3>TLDR.io api wrapper</h3>
+            <p>A client for the tldr.io api in python using requests.</p>
+          </div>
+          <div class="photo">
+            <img src="/images/statbot.png" alt="">
+          </div>
+        </div>
+
+        <div class="project bonusly">
+          <div class="info ">
+            <h3>Bonus.ly Api Wrapper</h3>
+            <p>asdf</p>
+          </div>
+          <div class="photo">
+            <img src="/images/statbot.png" alt="">
+          </div>
+        </div>
+
+        <div class="project smtas">
+          <div class="info">
+            <h3>Social Media Tracking and Analysis System (SMTAS)</h3>
+            <p>A system to collect, analyze, and visualize social media data for researchers to gain valuable insights into public opinion, views and fluidity.</p>
+          </div>
+          <div class="photo">
+            <img src="/images/statbot.png" alt="">
+          </div>
+        </div>
+
+        <div class="project timemaster">
+          <div class="info">
+            <h3>Employee Management System</h3>
+            <p>A web application designed for a survey laboratory’s call center.</p>
+          </div>
+          <div class="photo">
+            <img src="/images/statbot.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div class="skills">
       <ul class="skills">
         <li>Meteor</li>
         <li>Node.js</li>
@@ -215,6 +220,6 @@ of this project is to create a basic, but feature complete, blogging platform fo
         <li>Micro Services (SOA)</li>
         <li>codeship</li>
       </ul>
-    </section>
+    </div>
   </body>
 </html>

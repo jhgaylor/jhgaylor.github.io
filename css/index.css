@@ -1,13 +1,14 @@
 html, body {
   width: 100%;
   height: 100%;
-  margin-top: 62px;
+  margin-top: 68px;
 
 }
 header {
+  z-index: 1000;
   position: fixed;
   top: 0;
-  height: 62px;
+  height: 68px;
   width: 100%;
   background-color: gray;
 }
@@ -17,6 +18,25 @@ header div {
   margin: 0;
   padding: 0;
   display: inline-block;
+}
+
+header img#little-me {
+  opacity: 0;
+  height: 50px;
+  border:2px solid white;
+  border-radius: 90px;
+  position: absolute;
+  top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+  transition: all 500ms ease;
+
+}
+header img#little-me.visible {
+  opacity: 1;
 }
 
 header p {
@@ -50,36 +70,77 @@ header ul li{
   display: inline-block;
 }
 
-section.hero {
+.hero {
   background-color: #262324;
   color: #dedede;
   text-align: center;
   padding: 35px;
 }
 
-section.hero h1{
+.hero h1{
   margin-bottom: 5px;
 }
 
-section.hero h2{
+.hero h2{
   margin-top: 0;
 }
 
-section.hero a{
+.hero a{
   color: #dedede;
 }
 
-section.hero ul.contact-icons {
+.hero ul.contact-icons {
   margin: 0;
   padding: 0;
 }
 
-section.hero ul.contact-icons li{
+.hero ul.contact-icons li{
   display: inline-block;
 }
 
+.get-in-touch {
+  text-align: center;
+}
+
 img.me {
-  height: 150px;
+  height: 250px;
   border:2px solid white;
-  border-radius: 90px;
+  border-radius: 180px;
+}
+
+.portfolio .project .photo img {
+  max-height: 300px;
+}
+
+
+.portfolio .project.statbot {
+  background-color: red;
+}
+
+.portfolio .project.tracer {
+  background-color: blue;
+}
+
+.portfolio .project.drizzle {
+  background-color: green;
+}
+
+.portfolio .project.blogger {
+  background-color: magenta;
+}
+
+.portfolio .project.tldr {
+  background-color: cyan;
+}
+
+.portfolio .project.bonusly {
+  background-color: orange;
+}
+
+.portfolio .project.smtas {
+  background-color: lime;
+}
+
+.portfolio .project.timemaster {
+  background-color: purple;
 }
