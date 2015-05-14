@@ -31,6 +31,11 @@
         <h2>Fullstack Engineer</h2>
         <ul class="contact-icons">
           <li>
+            <a href="https://github.com/jhgaylor" title="jhgaylor@github">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          <li>
             <a href="https://twitter.com/jhgaylor" title="jhgaylor@twitter">
               <i class="fa fa-twitter fa-lg"></i>
             </a>
@@ -38,11 +43,6 @@
           <li>
             <a href="https://Facebook.com/jhgaylor" title="jhgaylor@facebook">
               <i class="fa fa-facebook fa-lg"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jhgaylor" title="jhgaylor@github">
-              <i class="fa fa-github fa-lg"></i>
             </a>
           </li>
           <li>
@@ -63,28 +63,56 @@
       </div> <!-- end hero -->
     </div>
 
-    <div class="container">
-      <div class="row background">
-        <p>
+    <div class="container background">
+      <div class="row ">
+        <div class="col-sm-6">
+          <h3>Hacker</h3>
+          <p>
+            Most of my experience is in developing web applications, but I have worked with a variety of platforms and technologies to build software and have deployed software to the web, Mac OS X, and Linux. My experience using many different programming languages has exposed me to new paradigms, which helps me pick the best tool for each job.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <h3>Startup Founder</h3>
+          <p>
+            I've launched two products. Both were SaaS applications involving large sets of social media data and I built the technical stack from copy to servers. I have experience evaluating general objectives and then building the infrastructure and applications to meet the goals.
+          </p>
+        </div>        
+      </div> 
+
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Backend</h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Frontend</h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Devops</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Recent Past</h3>
+          <p>
+            Lately I have been doing a great deal work in Meteor and building a data collection system in node. Due to how often I need to collect social media data and the number of different APIs (sometimes multiple per provider!) I built a service that offers APIs for collectors to register their functionality, clients to register their data needs, and clients to gather their collected data. This allows me to use (Twitter/Facebook/Instagram) bots in multiple applications while only having to do the work of writing the logic and building/deploying infrastructure once. There was a software startup using my data collector to power their product. I have learned a lot by building applications that my peers are using; documentation, tests, and clear communication are critical for the success of their projects and mine.
+          </p>
+
+          <p>
+            Most recently, I built and launched a chat bot for League of Legends, in a week. The project is online at https://github.com/jhgaylor/StatBot/wiki/Day-0:-The-Beginning. Please feel free to check out the repository as an example of my work. 
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <h3>Future</h3>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+    </div> <!-- end background -->
+<p>
           I am a full stack engineer with a lot of experience building things. I have multiple years’ experience working with Node.js and Python. I began working with MongoDB and Redis when working with social media data at my startup and I've worked with both on several projects over the last few years.
         </p>
-
-        <p>
-          Most of my experience is in developing web applications, but I have worked with a variety of platforms and technologies to build software and have deployed software to the web, Mac OS X, and Linux. My experience using many different programming languages has exposed me to new paradigms, which helps me pick the best tool for each job.
-        </p>
-
-        <p>As a founder, I've launched two products. Both were SaaS applications involving large sets of (social) data and I built the technical stack. I have experience evaluating general objectives and then building the infrastructure and applications to meet the goal. </p>
-
-        <p>
-          Lately I have been doing a great deal work in Meteor and building a data collection system in node. Due to how often I need to collect social media data and the number of different APIs (sometimes multiple per provider!) I built a service that offers APIs for collectors to register their functionality, clients to register their data needs, and clients to gather their collected data. This allows me to use (Twitter/Facebook/Instagram) bots in multiple applications while only having to do the work of writing the logic and building/deploying infrastructure once. There was a software startup using my data collector to power their product. I have learned a lot by building applications that my peers are using; documentation, tests, and clear communication are critical for the success of their projects and mine.
-        </p>
-
-        <p>
-          Most recently, I built and launched a chat bot for League of Legends, in a week. The project is online at https://github.com/jhgaylor/StatBot/wiki/Day-0:-The-Beginning. Please feel free to check out the repository as an example of my work. 
-        </p>
-      </div> <!-- end background -->
-    </div>
-
     <div class="container-fluid">
       <div class="row stack">
       
@@ -98,8 +126,27 @@
         <div class="project statbot col-sm-12">
           <div class="row">
             <div class="info col-sm-6">
-              <h3>Statbot</h3>
-              <p>A chat bot and web tools for League of Legends</p>
+              <h3>
+                Statbot
+                <a href="http://statbot.co">[Link]</a>
+              </h3>
+
+              <strong>Highlights</strong>
+              <ul>
+                <li>XMPP client using Hubot to communicate.</li>
+                <li>Express.js HTTP API Server</li>
+                <li>Redis for cacheing. Led to the creation of a new npm package, <a href="https://github.com/jhgaylor/big-cheese">Big Cheese</a>.</li>
+                <li>Deployment was automated using <a href="https://www.tutum.co/">Tutum.co</a></li>
+                <li>Ramped up from 1 to 7 regions in hours.</li>
+                <li>Contributed a patch upstream to <a href="https://github.com/claudiowilson/LeagueJS">LeagueJS</a>.</li>
+                <li>14k+ Redditors visited the project on day one.</li>
+                <li>The entire project, from launch to finish, took just 7 days.</li>
+              </ul>
+
+              <strong>About</strong>
+              <p>
+                A chat bot for League of Legends. LoL players, especially those not in the top tier of competitive play, often need more information about the game... quickly! It is quite common for players to "alt-tab" to sites like lolking, lolnexus, lolcounter, probuilds, or many others. Once on the site gamers have to type, click, and wait on load times, all while under extreme time pressure. To make matters worse, they often need information from one (or multiple!) source(s) during champion select, another source at the load screen, and yet another during the game. All of these things add to the players' stress level, and some times, they don't get done in time. Thus these constraints have in game ramifications. Statbot makes it easy to get all the information you need instantly in game.
+              </p>
             </div>
             <div class="photo col-sm-6">
               <img src="/images/statbot.png" alt="">
@@ -184,7 +231,27 @@
       
     </div>
 
+    <div class="reading-list">
+      <h4>Reading</h4>
+      <ul class="to-read-list">
+        <li>Hackers and Painters</li>
+        
+      </ul>
+
+      <h4>Read</h4>
+      <ul class="reading-list">
+        <li>Two Scoops of Django</li>
+        <li>Javascript: The Good Parts</li>
+        <li>JavaScript Allongé</li>
+        <li>Discover Meteor</li>
+        <li>XMPP: The definitive guide</li>
+        <li>Founders at Work</li>
+        <li>Node.js the Right Way</li>
+      </ul>
+    </div>
+
     <div class="skills">
+      <h4>Skills</h4>
       <ul class="skills">
         <li>Meteor</li>
         <li>Node.js</li>

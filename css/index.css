@@ -83,6 +83,11 @@ header ul li{
 
 .hero h2{
   margin-top: 0;
+  font-size:22px;
+}
+
+.hero i {
+  margin: 0 3px;
 }
 
 .hero a{
@@ -98,9 +103,10 @@ header ul li{
   display: inline-block;
 }
 
-.get-in-touch {
+.background h3 {
   text-align: center;
 }
+
 
 img.me {
   height: 250px;
