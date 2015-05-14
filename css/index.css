@@ -1,7 +1,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  margin-top: 68px;
+  margin-top: 51px;
 
 }
 header {
@@ -20,9 +20,9 @@ header div {
   display: inline-block;
 }
 
-header img#little-me {
+img#little-me {
   opacity: 0;
-  height: 50px;
+  height: 40px;
   border:2px solid white;
   border-radius: 90px;
   position: absolute;
@@ -35,7 +35,7 @@ header img#little-me {
   transition: all 500ms ease;
 
 }
-header img#little-me.visible {
+img#little-me.visible {
   opacity: 1;
 }
 
@@ -114,11 +114,16 @@ img.me {
   border-radius: 180px;
 }
 
-.portfolio .project .photo img {
-  max-height: 300px;
+.portfolio .project .photo {
+  text-align: center;
+  
 }
 
+.portfolio .project .photo img {
+  max-width: 100%;
+}
 
+/*
 .portfolio .project.statbot {
   background-color: red;
 }
@@ -150,3 +155,4 @@ img.me {
 .portfolio .project.timemaster {
   background-color: purple;
 }
+*/
