@@ -318,13 +318,29 @@
             </div>
             <div class="info col-sm-6">
               <h3>
-                Bonus.ly Api Wrapper
+                Bonus.ly Api Wrapper <a href="https://github.com/jhgaylor/bonusly-node">[Link]</a>
               </h3>
               <p>
-                A client for the bonus.ly http api in node using request.
+                <strong>Description</strong>
+                <ul>
+                  <li>Node.js Package for accessing Bonus.ly's HTTP Api.</li>
+                  <li>Intuitive API that attempts to feel like the http api using javascriptisms.</li>
+                  <li>Usable as a static class - convenient if you already have an api key in memory.</li>
+                  <li>Instantiate the class to have a client that will track the api key for the mostly recently authenticated user.</li>
+                </ul>
               </p>
+              <p>
+                <strong>About</strong>
+                Node bindings for the bonus.ly http api using the request package. The idea was to treat the HTTP api as a set of calls that could be described using a few common parameters. I was trying to get as close as I could to "generating" code. (I should learn a lisp!) Adding new endpoints becomes as simple as writing a POJO. This wouldn't work if the HTTP API didn't have internal consistency. 
+              </p>
+              <p>
+                By describing the required parameters, we can give feedback to the developer without waiting for a round trip. This comes at the expense of having to update the client library any time the http api changes. Depending on how "frozen" the api is, this may or may not be a good trade off. I built this to easily allow that feature to be removed.
+              </p>
+              <span class="label label-primary">Node.js</span>
+              <span class="label label-primary">Request</span>
+              <span class="label label-primary">Promises</span>
+              <span class="label label-primary">HTTP</span>
             </div>
-            
           </div>
         </div>
       </div>
