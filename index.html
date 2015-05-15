@@ -31,8 +31,8 @@
       <img src="/images/me_2013.jpg" alt="" id="little-me">
     </nav>
     
-    <div class="container-fluid">
-      <div class="row hero">
+    <div class="container-fluid hero">
+      <div class="row ">
         <img src="/images/me_2013.jpg" alt="" class="me">
         <h1>Jake Gaylor</h1>
         <h2>Fullstack Engineer</h2>
@@ -64,7 +64,7 @@
           </li>
         </ul>
         <h4>662.694.0191</h4>
-        <a href="/resume.pdf" target="_blank" class="btn btn-primary btn-xs">
+        <a href="/JakeGaylor_resume.pdf" target="_blank" class="btn btn-primary btn-xs">
           Download Resume
         </a>
       </div> <!-- end hero -->
@@ -72,29 +72,39 @@
 
     <div class="container background">
       <div class="row ">
-        <div class="col-sm-6">
-          <h3>Hacker</h3>
+        <div class="col-sm-12">
+          <h3>Hacker and Entreprenuer</h3>
           <p>
-            Most of my experience is in developing web applications, but I have worked with a variety of platforms and technologies to build software and have deployed software to the web, Mac OS X, and Linux. My experience using many different programming languages has exposed me to new paradigms, which helps me pick the best tool for each job.
+            I have a ton of experience developing web applications, but I have worked with a variety of platforms and technologies to build software and have deployed software to the web, Mac OS X, and Linux. My understanding of many different programming languages and frameworks has exposed me to new paradigms, which helps me pick the best tool for each job. I do any work I can openly on Github and am a big fan of open source. I love talking shop, so reach out if you want to chat.
           </p>
-        </div>
-        <div class="col-sm-6">
-          <h3>Startup Founder</h3>
           <p>
-            I've launched two products. Both were SaaS applications involving large sets of social media data and I built the technical stack from copy to servers. I have experience evaluating general objectives and then building the infrastructure and applications to meet the goals.
+            I started a company in 2013 and I launched two products. Both were SaaS applications involving collecting and curating large sets of social media data and I built the technical stack from servers to CSS. I learned to do a lot of non technical things things as well while starting NestedData, including writing copy, managing finances, hiring, firing, negotiating contracts, marketing, on boarding, and most of all how to talk to customers.
           </p>
-        </div>        
+        </div>       
       </div> 
 
       <div class="row">
-        <div class="col-sm-4">
-          <h3>Backend</h3>
+        <div class="col-sm-6">
+          <h3>Developer</h3>
+          <p>
+            I have 5 years experience hacking professionally. I've worked on internal productivity tools, social media applications for social scientists, open source blogging software, an xmpp chatbot to provide a CLI to the vast League of Legends data on the web, a bunch of microservices (Ask me about my social media router and I'll talk your ear off!), and a ton of other projects.
+          </p>
+          <p>
+            Given a set of objectives, I can evaluate them to then build the infrastructure and applications to meet the goals. I'm a hacker at my core, so I thrive in an environment where I am able to help determine the objectives, though the entreprenuer in me really wants to talk to the users in order to challenge my assumptions.
+          </p>
+
         </div>
-        <div class="col-sm-4">
-          <h3>Frontend</h3>
-        </div>
-        <div class="col-sm-4">
-          <h3>Devops</h3>
+        <div class="col-sm-6">
+          <h3>Ops</h3>
+          <p>
+            <strong>Automated, repeatable deploys</strong> -
+            I've used both Ansible and Chef to model infrastructure as code in order to be able to test my infrastructure before releasing new version. A solid ansible codebase saved my team's bacon when our cloud node's physical host died. We were up again in minutes and only one person had to be distracted by what could have been a catastrophe. 
+          </p>
+
+          <p>
+            <strong>CI/CD</strong> - 
+            Using Code Review, Docker, Jenkins, and a solid test suite, I built a CI/CD pipeline for the SocialDrizzle web app and it's supporting services. Our team was able to make changes to the application and see them in production as soon as they passed muster, without having to waste time doing repetitive, error prone tasks.
+          </p>
         </div>
       </div>
 
@@ -102,7 +112,7 @@
         <div class="col-sm-6">
           <h3>Recent Past</h3>
           <p>
-            Lately I have been doing a great deal work in Meteor and building a data collection system in node. Due to how often I need to collect social media data and the number of different APIs (sometimes multiple per provider!) I built a service that offers APIs for collectors to register their functionality, clients to register their data needs, and clients to gather their collected data. This allows me to use (Twitter/Facebook/Instagram) bots in multiple applications while only having to do the work of writing the logic and building/deploying infrastructure once. There was a software startup using my data collector to power their product. I have learned a lot by building applications that my peers are using; documentation, tests, and clear communication are critical for the success of their projects and mine.
+            Lately I have been doing a great deal work in Meteor and I recently built a social media data collection system in node that allows me to use (Twitter/Facebook/Instagram) bots in multiple applications while only having to do the work of writing the logic and building/deploying infrastructure once.
           </p>
 
           <p>
@@ -112,256 +122,261 @@
         <div class="col-sm-6">
           <h3>Future</h3>
           <p>
-            I am a full stack engineer with a lot of experience building things. I have multiple years’ experience working with Node.js and Python. I began working with MongoDB and Redis when working with social media data at my startup and I've worked with both on several projects over the last few years.
+            I'm looking for work as a Fullstack or Backend engineer. A good gig would have me hacking on Node/Go/Ruby and might include building a mobile or web frontend and/or being responsible for the deployment pipeline. I tend to enjoy working on projects that employ microservices and a web component.
+          </p>
+
+          <p>
+            I'm still looking for my next side project, but I'm leaning towards doing some open source work in the Meteor community. If there is a project you think I should help out, drop me a line!
           </p>
         </div>
       </div>
     </div> <!-- end background -->
 
-    <div class="container">
-      <div class="row stack">
+    <div class="container stack">
+      <div class="row">
       
       </div> <!-- end stack -->
-
-      <div class="row interests">
+    </div>
+    <div class="container interests">
+      <div class="row">
         
       </div> <!-- end interests -->
-    
-      <div class="portfolio">
-        <h1 class="text-center">Projects</h1>
-        <div class="row ">
-          <div class="project statbot col-sm-12">
-            <div class="row">
-              <div class="info col-sm-6">
-                <h3>
-                  Statbot
-                  <a href="http://statbot.co">[Link]</a>
-                </h3>
+    </div>
+    <div class="container portfolio">
+      <h1 class="text-center">Projects</h1>
+      <div class="row">
+        <div class="project statbot col-sm-12">
+          <div class="row">
+            <div class="info col-sm-6">
+              <h3>
+                Statbot
+                <a href="http://statbot.co">[Link]</a>
+              </h3>
 
-                <strong>Highlights</strong>
-                <ul>
-                  <li>XMPP client using Hubot to communicate.</li>
-                  <li>Express.js HTTP API Server</li>
-                  <li>Redis for cacheing. Led to the creation of a new npm package, <a href="https://github.com/jhgaylor/big-cheese">Big Cheese</a>.</li>
-                  <li>Deployment was automated using <a href="https://www.tutum.co/">Tutum.co</a></li>
-                  <li>Ramped up from 1 to 7 regions in hours.</li>
-                  <li>Contributed a patch upstream to <a href="https://github.com/claudiowilson/LeagueJS">LeagueJS</a>.</li>
-                  <li>14k+ Redditors visited the project on day one.</li>
-                  <li>The entire project, from launch to finish, took just 7 days.</li>
-                </ul>
+              <strong>Highlights</strong>
+              <ul>
+                <li>XMPP client using Hubot to communicate.</li>
+                <li>Express.js HTTP API Server</li>
+                <li>Redis for cacheing. Led to the creation of a new npm package, <a href="https://github.com/jhgaylor/big-cheese">Big Cheese</a>.</li>
+                <li>Deployment was automated using <a href="https://www.tutum.co/">Tutum.co</a></li>
+                <li>Ramped up from 1 to 7 regions in hours.</li>
+                <li>Contributed a patch upstream to <a href="https://github.com/claudiowilson/LeagueJS">LeagueJS</a>.</li>
+                <li>14k+ Redditors visited the project on day one.</li>
+                <li>The entire project, from launch to finish, took just 7 days.</li>
+              </ul>
 
-                <strong>About</strong>
-                <p>
-                  A chat bot for League of Legends. LoL players, especially those not in the top tier of competitive play, often need more information about the game... quickly! It is quite common for players to "alt-tab" to sites like lolking, lolnexus, lolcounter, probuilds, or many others. Once on the site gamers have to type, click, and wait on load times, all while under extreme time pressure. To make matters worse, they often need information from one (or multiple!) source(s) during champion select, another source at the load screen, and yet another during the game. All of these things add to the players' stress level, and some times, they don't get done in time. Thus these constraints have in game ramifications. Statbot makes it easy to get all the information you need instantly in game.
-                </p>
-                <span class="label label-primary">Node.js</span>
-                <span class="label label-primary">Coffeescript</span>
-                <span class="label label-primary">HTTP</span>
-                <span class="label label-primary">Redis</span>
-                <span class="label label-primary">XMPP</span>
-                <span class="label label-primary">Express.js</span>
-              </div>
-              <div class="photo col-sm-6">
-                <img src="/images/statbot.png" alt="">
-              </div>
+              <strong>About</strong>
+              <p>
+                A chat bot for League of Legends. LoL players, especially those not in the top tier of competitive play, often need more information about the game... quickly! It is quite common for players to "alt-tab" to sites like lolking, lolnexus, lolcounter, probuilds, or many others. Once on the site gamers have to type, click, and wait on load times, all while under extreme time pressure. To make matters worse, they often need information from one (or multiple!) source(s) during champion select, another source at the load screen, and yet another during the game. All of these things add to the players' stress level, and some times, they don't get done in time. Thus these constraints have in game ramifications. Statbot makes it easy to get all the information you need instantly in game.
+              </p>
+              <span class="label label-primary">Node.js</span>
+              <span class="label label-primary">Coffeescript</span>
+              <span class="label label-primary">HTTP</span>
+              <span class="label label-primary">Redis</span>
+              <span class="label label-primary">XMPP</span>
+              <span class="label label-primary">Express.js</span>
             </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="project tracer col-sm-12">
-            <div class="row">
-              <div class="photo col-sm-6">
-                <img src="/images/statbot.png" alt="">
-              </div>
-              <div class="info col-sm-6">
-                <h3>
-                  Tracer
-                </h3>
-                <p>
-                  A tool for investigators to collect social media data from any public account(s).
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="project drizzle col-sm-12">
-            <div class="row">
-              <div class="info col-sm-6">
-                <h3>
-                  SocialDrizzle
-                </h3>
-                <p>
-                  A startup venture for providing social engagement to the patrons of public events.
-                </p>
-              </div>
-              <div class="photo col-sm-6">
-                <img src="/images/statbot.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="project blogger col-sm-12">
-            <div class="row">
-              <div class="photo col-sm-6">
-                <img src="/images/statbot.png" alt="">
-              </div>
-              <div class="info col-sm-6">
-                <h3>
-                  Django-blogger
-                </h3>
-                <p>
-                  A reusable Django app for blogging intended for one or more contributors. The purpose of this project is to create a basic, but feature complete, blogging platform for Django v1.4.
-                </p>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="project tldr col-sm-12">
-            <div class="row">
-              <div class="info col-sm-6">
-                <h3>
-                  TLDR.io api wrapper
-                </h3>
-                <p>
-                  A client for the tldr.io api in python using requests.
-                </p>
-              </div>
-              <div class="photo col-sm-6">
-                <img src="/images/statbot.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="project bonusly col-sm-12">
-            <div class="row">
-              <div class="photo col-sm-6">
-                <img src="/images/statbot.png" alt="">
-              </div>
-              <div class="info col-sm-6">
-                <h3>
-                  Bonus.ly Api Wrapper
-                </h3>
-                <p>
-                  A client for the bonus.ly http api in node using request.
-                </p>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="project smtas col-sm-12">
-            <div class="row">
-              <div class="info col-sm-6">
-                <h3>
-                  Social Media Tracking and Analysis System (SMTAS)
-                </h3>
-                <p>
-                  A system to collect, analyze, and visualize social media data for researchers to gain valuable insights into public opinion, views and fluidity.
-                </p>
-              </div>
-              <div class="photo col-sm-6">
-                <img src="/images/statbot.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="project timemaster col-sm-12">
-            <div class="row">
-              <div class="photo col-sm-6">
-                <img src="/images/statbot.png" alt="">
-              </div>
-              <div class="info col-sm-6">
-                <h3>
-                  Employee Management System
-                </h3>
-                <p>
-                  A web application designed for a survey laboratory’s call center.
-                </p>
-              </div>
-              
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
             </div>
           </div>
         </div>
       </div>
-
-    <div class="row">
-      <div class="col-sm-6 reading-list">
-        <h4>Reading</h4>
-        <ul class="to-read-list">
-          <li>Hackers and Painters</li>
-        </ul>
-
-        <h4>Read</h4>
-        <ul class="reading-list">
-          <li>Two Scoops of Django</li>
-          <li>Javascript: The Good Parts</li>
-          <li>JavaScript Allongé</li>
-          <li>Discover Meteor</li>
-          <li>XMPP: The definitive guide</li>
-          <li>Founders at Work</li>
-          <li>Node.js the Right Way</li>
-        </ul>
+      <hr>
+      <div class="row">
+        <div class="project tracer col-sm-12">
+          <div class="row">
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
+            </div>
+            <div class="info col-sm-6">
+              <h3>
+                Tracer
+              </h3>
+              <p>
+                A tool for investigators to collect social media data from any public account(s).
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6 skills">
-        <h4>Skills</h4>
-        <ul class="skills">
-          <li>Meteor</li>
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>Coffeescript</li>
-          <li>Python</li>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>LESS</li>
-          <li>SAAS</li>
-          <li>Django</li>
-          <li>Flask</li>
-          <li>jQuery</li>
-          <li>underscore.js</li>
-          <li>HighCharts</li>
-          <li>Twitter Bootstrap</li>
-          <li>MongoDB</li>
-          <li>postgreSQL</li>
-          <li>Redis</li>
-          <li>Docker</li>
-          <li>Jenkins</li>
-          <li>Ansible</li>
-          <li>Chef</li>
-          <li>Vagrant</li>
-          <li>DigitalOcean</li>
-          <li>git</li>
-          <li>github</li>
-          <li>grunt</li>
-          <li>linux</li>
-          <li>HTTP</li>
-          <li>Websockets</li>
-          <li>XMPP</li>
-          <li>Micro Services (SOA)</li>
-          <li>codeship</li>
-        </ul>
+      <hr>
+      <div class="row">
+        <div class="project drizzle col-sm-12">
+          <div class="row">
+            <div class="info col-sm-6">
+              <h3>
+                SocialDrizzle
+              </h3>
+              <p>
+                A startup venture for providing social engagement to the patrons of public events.
+              </p>
+            </div>
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="project blogger col-sm-12">
+          <div class="row">
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
+            </div>
+            <div class="info col-sm-6">
+              <h3>
+                Django-blogger
+              </h3>
+              <p>
+                A reusable Django app for blogging intended for one or more contributors. The purpose of this project is to create a basic, but feature complete, blogging platform for Django v1.4.
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="project tldr col-sm-12">
+          <div class="row">
+            <div class="info col-sm-6">
+              <h3>
+                TLDR.io api wrapper
+              </h3>
+              <p>
+                A client for the tldr.io api in python using requests.
+              </p>
+            </div>
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="project bonusly col-sm-12">
+          <div class="row">
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
+            </div>
+            <div class="info col-sm-6">
+              <h3>
+                Bonus.ly Api Wrapper
+              </h3>
+              <p>
+                A client for the bonus.ly http api in node using request.
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="project smtas col-sm-12">
+          <div class="row">
+            <div class="info col-sm-6">
+              <h3>
+                Social Media Tracking and Analysis System (SMTAS)
+              </h3>
+              <p>
+                A system to collect, analyze, and visualize social media data for researchers to gain valuable insights into public opinion, views and fluidity.
+              </p>
+            </div>
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="project timemaster col-sm-12">
+          <div class="row">
+            <div class="photo col-sm-6">
+              <img src="/images/statbot.png" alt="">
+            </div>
+            <div class="info col-sm-6">
+              <h3>
+                Employee Management System
+              </h3>
+              <p>
+                A web application designed for a survey laboratory’s call center.
+              </p>
+            </div>
+            
+          </div>
+        </div>
       </div>
     </div>
+    <div class="container lists">
+      <div class="row">
+        <div class="col-sm-6 reading-list">
+          <h4>Reading</h4>
+          <ul class="to-read-list">
+            <li>Hackers and Painters</li>
+          </ul>
 
-    
-
-    <div class="">
-      
+          <h4>Read</h4>
+          <ul class="reading-list">
+            <li>Two Scoops of Django</li>
+            <li>Javascript: The Good Parts</li>
+            <li>JavaScript Allongé</li>
+            <li>Discover Meteor</li>
+            <li>XMPP: The definitive guide</li>
+            <li>Founders at Work</li>
+            <li>Node.js the Right Way</li>
+          </ul>
+        </div>
+        <div class="col-sm-6 skills">
+          <h4>Skills</h4>
+          <ul class="skills">
+            <li>Bower</li>
+            <li>Meteor</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>Coffeescript</li>
+            <li>Python</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>LESS</li>
+            <li>SAAS</li>
+            <li>Django</li>
+            <li>Flask</li>
+            <li>jQuery</li>
+            <li>underscore.js</li>
+            <li>HighCharts</li>
+            <li>Twitter Bootstrap</li>
+            <li>MongoDB</li>
+            <li>postgreSQL</li>
+            <li>Redis</li>
+            <li>Docker</li>
+            <li>Jenkins</li>
+            <li>Ansible</li>
+            <li>Chef</li>
+            <li>Vagrant</li>
+            <li>DigitalOcean</li>
+            <li>git</li>
+            <li>github</li>
+            <li>grunt</li>
+            <li>linux</li>
+            <li>HTTP</li>
+            <li>Websockets</li>
+            <li>XMPP</li>
+            <li>Micro Services (SOA)</li>
+            <li>codeship</li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+    <div class="container-fluid footer">
+      <div class="row">
+        <h1>footer</h1>
+      </div>
     </div>
-  </div>
   
   </body>
 </html>
