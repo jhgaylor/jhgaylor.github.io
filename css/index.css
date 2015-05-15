@@ -107,7 +107,19 @@ header ul li{
   text-align: center;
 }
 
-
+div.lists {
+  margin-top: 30px;
+  background-color: #262324;
+  color:white;
+  text-align: center;
+  font-size: 16pt;
+}
+div.lists ul {
+  padding: 0;
+}
+div.lists li {
+  display:inline-block;
+}
 img.me {
   height: 250px;
   border:2px solid white;
@@ -121,6 +133,17 @@ img.me {
 
 .portfolio .project .photo img {
   max-width: 100%;
+}
+
+#get_in_touch_button{
+  /*padding:10px;
+  margin:20px;*/
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+#get_in_touch_button a{
+  color: white;
 }
 
 /*
