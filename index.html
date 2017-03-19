@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/js/index.js"></script>
   </head>
-  
+
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -81,19 +81,19 @@
             My passion for programming was sparked in 2001 doing CRUD on a LAMP. I have a ton of experience developing web applications and I have worked with a variety of platforms and technologies to build software and have deployed software to the web, Mac OS X, and Linux. My understanding of many different programming languages and frameworks has exposed me to new paradigms, which helps me pick the best tool for each job. I do any work I can openly on Github and am a big fan of open source. I love talking shop, so reach out if you want to chat.
           </p>
           <p>
-            I started a company in 2013 and I launched two products. Both were SaaS applications involving collecting and curating large sets of social media data and I built the technical stack from servers to CSS. I learned to do a lot of non technical things as well while starting NestedData, including writing copy, managing finances, hiring, firing, negotiating contracts, marketing, on boarding, and most of all how to talk to customers.
+            I started a company in 2013 which launched two products. Both were SaaS applications involving collecting and curating large sets of social media data and I built the technical stack from servers to CSS. I learned to do a lot of non technical things as well while starting NestedData, including writing copy, managing finances, hiring, firing, negotiating contracts, marketing, on boarding, and most of all how to talk to customers.
           </p>
-        </div>       
-      </div> 
+        </div>
+      </div>
 
       <div class="row">
         <div class="col-sm-6">
           <h3>Developer</h3>
           <p>
-            I have 5 years experience hacking professionally. I've worked on internal productivity tools, social media applications for social scientists, open source blogging software, an xmpp chatbot to provide a CLI to the vast League of Legends data on the web, a bunch of microservices (Ask me about my social media router and I'll talk your ear off!), and a ton of other projects.
+            I have 6 years experience hacking professionally. I've worked on CI/CD pipelines, internal productivity tools, social media applications for social scientists, open source blogging software, an xmpp chatbot to provide a CLI to the vast League of Legends data on the web, and architected multiple distributed systems (Ask me about my social media router and I'll talk your ear off!)
           </p>
           <p>
-            Given a set of objectives, I can evaluate them to then build the infrastructure and applications to meet the goals. I'm a hacker at my core, so I thrive in an environment where I am able to help determine the objectives, though the entrepreneur in me really wants to talk to the users in order to challenge my assumptions.
+            Given a set of objectives, I can evaluate them to then build the infrastructure and applications to meet them. I'm a hacker at my core, so I thrive in an environment where I am able to help determine the technical direction, though the entrepreneur in me really wants to talk to the users in order to challenge my assumptions.
           </p>
 
         </div>
@@ -101,11 +101,11 @@
           <h3>Ops</h3>
           <p>
             <strong>Automated, repeatable deploys</strong> -
-            I've used both Ansible and Chef to model infrastructure as code in order to be able to test my it before releasing new versions. A solid ansible codebase saved my team's bacon when our cloud node's physical host died. We were up again in minutes and only one person had to be distracted by what could have been a catastrophe. 
+            I use tools like Chef, Packer, and Terraform to model infrastructure as code in order to be able to test it before releasing changes to production environments. A solid configuration management codebase saved my team's bacon more than once. Having infrastructure in code means we can be back up in minutes and only one person has to be distracted by what could other be a catastrophe.
           </p>
 
           <p>
-            <strong>CI/CD</strong> - 
+            <strong>CI/CD</strong> -
             Using Code Review, Docker, Jenkins, and a solid test suite, I built a CI/CD pipeline for the SocialDrizzle web app and it's supporting services. Our team was able to make changes to the application and see them in production as soon as they passed muster, without having to waste time doing repetitive, error prone tasks.
           </p>
         </div>
@@ -117,7 +117,7 @@
           <p>
             Lately I have been doing a good deal work with Kubernetes. It is an unopinionated PaaS on top of which tooling can be built to provide a great amount of business value with less technical investment than ever before. I have also been working with CoreOS and concourse-ci to enable rapid creation of CI/CD pipelines that scale.
           </p>
-            
+
           <p>
             Before that I spent a lot of time working with Meteor and I recently built a social media data collection system in node that allows me to use (Twitter/Facebook/Instagram) bots in multiple applications while only having to do the work of writing the logic and building/deploying infrastructure once.
           </p>
@@ -128,11 +128,15 @@
         <div class="col-sm-6">
           <h3>Future</h3>
           <p>
-            I'm looking for work as a Full stack or Backend engineer. A good gig would have me hacking on Node/Go/Ruby and might include building a mobile or web frontend and/or being responsible for the deployment pipeline. I tend to enjoy working on projects that employ microservices and a web component.
+            I'm looking for work as an operations engineer. My ideal role would be one where I can provide tools and services to developers to reduce the friction of creating and maintaining production ready software. An average day might include meeting with a dev team to discover pain points (cross team collaboration), working on a client library to interface with the experimental metrics2.0 backend (coding/helping devs interface with ops), reviewing a merge request to the terraform/cloud formation repository, and possibly tracking down the root cause of a production outage.
           </p>
 
           <p>
-            I'm still looking for my next side project, but I'm leaning towards doing some open source work in the Meteor community. If there is a project you think I should help out, drop me a line!
+            I’d like to be in a position where I can have a say in how we choose to do things but also put my head down and knock out the actual implementation.
+          </p>
+
+          <p>
+            I'm still looking for my next side project, but I'm leaning towards doing some open source work in the Kubernetes community. If there is a project you think I should help out, drop me a line!
           </p>
         </div>
       </div>
@@ -140,12 +144,12 @@
 
     <div class="container stack">
       <div class="row">
-      
+
       </div> <!-- end stack -->
     </div>
     <div class="container interests">
       <div class="row">
-        
+
       </div> <!-- end interests -->
     </div>
     <div class="container portfolio">
@@ -304,7 +308,7 @@
               <span class="label label-primary">RSS</span>
               <span class="label label-primary">REST Api</span>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -362,7 +366,7 @@
               </p>
               <p>
                 <strong>About</strong>
-                Node bindings for the bonus.ly http api using the request package. The idea was to treat the HTTP api as a set of calls that could be described using a few common parameters. I was trying to get as close as I could to "generating" code. (I should learn a lisp!) Adding new endpoints becomes as simple as writing a POJO. This wouldn't work if the HTTP API didn't have internal consistency. 
+                Node bindings for the bonus.ly http api using the request package. The idea was to treat the HTTP api as a set of calls that could be described using a few common parameters. I was trying to get as close as I could to "generating" code. (I should learn a lisp!) Adding new endpoints becomes as simple as writing a POJO. This wouldn't work if the HTTP API didn't have internal consistency.
               </p>
               <p>
                 By describing the required parameters, we can give feedback to the developer without waiting for a round trip. This comes at the expense of having to update the client library any time the http api changes. Depending on how "frozen" the api is, this may or may not be a good trade off. I built this to easily allow that feature to be removed.
@@ -453,7 +457,7 @@
               <span class="label label-primary">Chef</span>
               <span class="label label-primary">Codeship</span>
             </div>
-            
+
           </div>
         </div>
       </div>
