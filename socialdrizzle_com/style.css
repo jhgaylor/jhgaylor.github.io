@@ -1,0 +1,127 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Source+Code+Pro:200,300,400,500,600,700,900|Noticia+Text:400,700|Source+Serif+Pro:400,700,600|Rajdhani:700);
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  /*overflow-x: hidden;*/
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.container-fluid {
+  background: url(img/stadium_crowd_template_overlay_SMALL.jpg) no-repeat #f2f2f2;
+  background-size: cover;
+  background-position: -200px 0;
+  overflow-x: hidden;
+  overflow-y:scroll;
+  padding-bottom: 50px;
+}
+
+.logo-wrap {
+  text-align: center;
+}
+
+.logo {
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.75);
+  display: inline-block;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+.subtitle-message {
+  margin: 350px auto 0;
+  padding: 25px;
+  max-width: 80%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  color: #f2f2f2;
+  font-size: 2em;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.66);
+}
+
+.video {
+  margin: 50px auto 0;
+  padding: 0 10%;
+  text-align: center;
+}
+
+.video iframe {
+  max-width: 100%;
+  border: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+.tri-content {
+  padding: 20px 0 40px;
+  color: #496C89;
+  background: #f2f2f2;
+}
+
+.tri-content h2 {
+  margin-top: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.tri-content h4 {
+  font-weight: 300;
+}
+
+footer {
+  padding: 25px;
+  background: #454545;
+  text-align: center;
+}
+
+footer h3 {
+  color: #252525;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+footer p, footer a {
+  margin-bottom: 5px;
+  color: #f2f2f2;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+footer a {
+  color: #CC5500;
+  text-decoration: underline;
+}
+footer a:hover {
+  color: #CC5500;
+  text-decoration: none;
+
+}
+
+@media (min-width: 480px) {
+  .container-fluid {
+    background-position: 0 0;
+  }
+
+  .video {
+    padding: 0 15%;
+    /*max-width: 400px;*/
+  }
+}
+
+@media (min-width: 1200px) {
+  .subtitle-message {
+    margin: 500px auto 0;
+  }
+
+  .vide/*o {
+    margin: 300px 0 0;
+  }*/
+}
