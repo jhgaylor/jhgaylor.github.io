@@ -28,6 +28,51 @@
         .corner-ribbon:hover {
             background: #c10606;
         }
+
+        /* Add new styles for company cards */
+        .company-card {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 64, 175, 0.98);
+            color: white;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+
+        .company-card:hover .testimonial {
+            opacity: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
     </style>
     <script>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
@@ -151,36 +196,60 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
                         <img src="images/logo.pw.png" alt="Company 1 Logo" class="h-40 w-auto mb-4 object-contain">
-                        <h3 class="text-xl font-semibold text-gray-900">Protectwise</h3>
+                        <h3 class="text-lg font-semibold text-gray-900">Protectwise</h3>
                         <p class="text-gray-600 mt-2 text-xs">Acquired by Verizon</p>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Jake was instrumental in building our cloud-native security platform. His technical leadership helped shape our architecture and team practices."</p>
+                            <span class="testimonial-author">- Devops Engineer, Protectwise</span>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
-                        <img src="images/logo.cardfree.png" alt="Company 2 Logo" class="h-40 w-auto mb-4 object-contain">
-                        <h3 class="text-xl font-semibold text-gray-900">Cardfree</h3>
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
+                        <img src="images/logo.fsw.png" alt="Company 2 Logo" class="h-40 w-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">Food Service Warehouse</h3>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"We were deploying c# on vSphere when Jake joined on our first Nodejs backend team. He had been using Docker, we identified Kubernetes as our next step, and Jake hit the ground running. Our node services had the fastest release cycle in the company."</p>
+                            <span class="testimonial-author">- Architect, Food Service Warehouse</span>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
                         <img src="images/logo.cloaked.png" alt="Company 3 Logo" class="h-40 w-auto mb-4 object-contain">
-                        <h3 class="text-xl font-semibold text-gray-900">Cloaked</h3>
+                        <h3 class="text-lg font-semibold text-gray-900">Cloaked</h3>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Jake worked with our team to deploy a system that let us go from releasing every few weeks to releasing multiple times a day."</p>
+                            <span class="testimonial-author">- Director Platform Engineering, Cloaked</span>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
                         <img src="images/logo.grx.png" alt="Company 4 Logo" class="h-40 w-auto mb-4 object-contain">
-                        <h3 class="text-xl font-semibold text-gray-900">CyberGRX</h3>
+                        <h3 class="text-lg font-semibold text-gray-900">CyberGRX</h3>
                         <p class="text-gray-600 mt-2 text-xs">Now ProcessUnity</p>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"I watched Jake redo a build and deploy process over the span of 3 days, whip up a presentation, and get every engineer in the org up to speed using it to deploy new services, a moment I'll never forget because our productivity EXPLODED afterwards."</p>
+                            <span class="testimonial-author">- Software Engineer, CyberGRX</span>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
                         <img src="images/logo.ih.png" alt="Company 5 Logo" class="h-40 w-auto mb-4 object-contain">
                         <h3 class="text-xl font-semibold text-gray-900">Inception Health</h3>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"I also wanted to second (third? Fourth?) Jake's skills here. I don't have anything unique to add as everyone else has already covered it, but this man will help you achieve what you need."</p>
+                            <span class="testimonial-author">- Senior Platform Engineer, Inception Health</span>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
                       <img src="images/logo.magic.png" alt="Company 5 Logo" class="h-40 w-auto mb-4 object-contain">
                       <h3 class="text-xl font-semibold text-gray-900">Magic</h3>
+                      <div class="testimonial">
+                            <p class="testimonial-text">"Jake worked in the pit with [the operations team] and everyday came in with killer energy. Everyone else told us how to work around problems. Jake built us better tools."</p>
+                            <span class="testimonial-author">- Magician, Magic</span>
+                        </div>
                   </div>
                 </div>
             </div>
