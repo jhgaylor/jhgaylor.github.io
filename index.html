@@ -817,6 +817,46 @@
         </div>
     </footer>
 
+    <!-- Add PostHog event tracking -->
+    <script>
+        // Track all link clicks
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('a');
+            if (!target) return;
+
+            // Get relevant data about the link
+            const href = target.href;
+            const text = target.innerText.trim();
+            const section = findParentSection(target);
+
+            // Track the event in PostHog
+            posthog.capture('link_clicked', {
+                href: href,
+                text: text,
+                section: section,
+                type: getLinkType(href)
+            });
+        });
+
+        // Helper function to find the parent section name
+        function findParentSection(element) {
+            const section = element.closest('section');
+            if (!section) return 'header';  // If no section found, assume it's in header
+            
+            const sectionTitle = section.querySelector('h2');
+            return sectionTitle ? sectionTitle.innerText.trim() : 'unknown';
+        }
+
+        // Helper function to determine link type
+        function getLinkType(href) {
+            if (href.startsWith('mailto:')) return 'email';
+            if (href.startsWith('sms:')) return 'sms';
+            if (href.endsWith('.pdf')) return 'download';
+            if (href.startsWith('http') || href.startsWith('https')) return 'external';
+            return 'internal';
+        }
+    </script>
+
     <!-- Add this script before the closing body tag -->
     <script>
         const roles = [
