@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - Jake Gaylor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .corner-ribbon {
+            width: 250px;
+            background: #029613;
+            position: fixed;
+            top: 50px;
+            right: -50px;
+            text-align: center;
+            line-height: 40px;
+            letter-spacing: 1px;
+            color: #f0f9ff;
+            font-weight: bold;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            z-index: 50;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .corner-ribbon:hover {
+            background: #c10606;
+        }
+
+        /* Blog specific styles */
+        .blog-content {
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: #1e40af;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .blog-content ul {
+            list-style-type: disc;
+        }
+
+        .blog-content ol {
+            list-style-type: decimal;
+        }
+
+        .blog-content code {
+            background-color: #f3f4f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+
+        .blog-content pre {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content a {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        .blog-content a:hover {
+            color: #1d4ed8;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid #2563eb;
+            padding-left: 1rem;
+            margin-left: 0;
+            margin-right: 0;
+            font-style: italic;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <a href="mailto:jhgaylor@gmail.com" class="corner-ribbon">
+        Available to Hire
+    </a>
+
+    <!-- Blog Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <nav class="mb-8">
+                <a href="/" class="text-white hover:text-blue-200 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Home
+                </a>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                Hello World.
+            </h1>
+            <div class="flex items-center text-blue-100">
+                <i class="far fa-calendar-alt mr-2"></i>
+                <time datetime="2025-03-30">March 30, 2025</time>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <main class="container mx-auto px-6 py-12">
+        <article class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-12 blog-content">
+            <!-- Blog content goes here -->
+            <p>
+                As a long time programmer, I have written hello world countless times. And I still do it. I am doing it now. "Hello World" allows me to focus on the specific goal of getting text on the screen but along the way I end up with the groundwork laid for the next step of giving input to the computer. This blog post is that in a lot of ways.
+            </p>
+
+            <h2>Why am I writing at all?</h2>
+            <p>
+                I have been building software for getting on 20 years now and for the last 10 or so I have been doing a variation on the same theme. Some organizations take to it faster and we get further along the path than others but the path is predictable, at least within my little world of saas startups.
+            </p>
+
+            <p>
+              I am writing to start to encapsulate how I think about building and delivering products. These are things that I often spend time explaining to every new team I work with.What goes into building a great product? What is the difference in a product and a piece of software? Why is reducing toil worth the cost? 
+            </p>
+
+            <h2>Okay, but why?</h2>
+            <p>
+              I am writing because I want to work with people who want to build great products. I want to find those people who care about bringing value to customers and treat that as their craft. I hope that my writing inspires you to reject "playing at company", to build just enough software to get the job done (and no less!), and to be driven by needs of real (not imaginary) users.
+            </p>
+
+            <h2>So what should I expect here?</h2>
+            <p>
+              I will focus on topics that will help engineers and product managers build great products. The words will be mine and not Claude's. We get enough of his work in my codebases.
+            </p>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-600 mb-4 md:mb-0">
+                    © 2024 Jake Gaylor. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="mailto:jhgaylor@gmail.com" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/jhgaylor" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/jhgaylor" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
