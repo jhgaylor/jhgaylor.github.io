@@ -1,6 +1,6 @@
 ---
 layout: layouts/blog.html
-tags: ["post"]
+tags: ["posts"]
 title: "Hello World"
 permalink: /blog/posts/hello-world/
 date: 2025-03-29
