@@ -8,7 +8,7 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy({ "_assets/*.txt": "." });
 
-    eleventyConfig.addPassthroughCopy({ "_assets/CNAME": "." });
+    eleventyConfig.addPassthroughCopy({ "_assets/CNAME": "./CNAME" });
 
     return {
         dir: {
