@@ -3,7 +3,7 @@ layout: layouts/blog.html
 tags: ["posts"]
 title: "Hello World"
 permalink: /blog/posts/hello-world/
-date: 2025-03-29
+date: 2025-03-28
 ---
 
 As a long time programmer, I have written hello world countless times. And I still do it. I am doing it now. "Hello World" allows me to focus on the specific goal of getting text on the screen but along the way I end up with the groundwork laid for the next steps of building whatever it is I have in mind. This blog post is that in a lot of ways.

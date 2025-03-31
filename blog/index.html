@@ -15,7 +15,7 @@ permalink: /blog/
 
   <div class="max-w-3xl mx-auto">
     <ul class="space-y-6">
-      {%- for post in collections.posts | reverse -%}
+      {%- for post in collections.posts reversed -%}
         <li class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
           <a href="{{ post.url }}" class="block p-6">
             <h2 class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-300">
