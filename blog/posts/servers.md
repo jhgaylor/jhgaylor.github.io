@@ -4,6 +4,7 @@ tags: ["posts", "interview-series"]
 title: "Interview series: When should I use serverless? It isn't about cost."
 permalink: /blog/posts/servers-vs-serverless/
 date: 2025-03-29
+eleventyExcludeFromCollections: true
 ---
 
 In this series we are going to focus on questions that I regularly hear from interviewers. In most panel interviews we are trying to cover a lot of ground quickly and so these questions don't get the attention they deserve.
