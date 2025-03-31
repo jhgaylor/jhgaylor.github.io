@@ -33,6 +33,8 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy({ "_assets/CNAME": "./CNAME" });
 
+    withRSS(eleventyConfig);
+
     return {
         dir: {
             input: ".",
