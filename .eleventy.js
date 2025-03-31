@@ -4,7 +4,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "_assets/images": "images" });
     eleventyConfig.addPassthroughCopy({ "_assets/js": "js" });
 
-    eleventyConfig.addPassthroughCopy("**/*.pdf");
+    eleventyConfig.addPassthroughCopy({ "_assets/*.pdf": "." });
 
     return {
         dir: {
