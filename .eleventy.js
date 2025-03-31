@@ -6,6 +6,10 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy({ "_assets/*.pdf": "." });
 
+    eleventyConfig.addPassthroughCopy({ "_assets/*.txt": "." });
+
+    eleventyConfig.addPassthroughCopy({ "_assets/CNAME": "." });
+
     return {
         dir: {
             input: ".",
