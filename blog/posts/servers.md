@@ -32,8 +32,14 @@ The closer your traffic is to being evenly distributed across the day and the mo
 
 Things start to get a little more interesting to my engineering brain here. Serverless systems are actually fairly different to traditional ones.
 
-[Serverless implies an event bus.] 
+For request/response traffic such as http things are fairly similar and the biggest difference is that serverless processes shutdown often. Sometimes their lifespan is only a single request. This paves over a lot of sins but it also means that we're having to pay setup costs regularly. If your application has a particularly expensive startup cost, it might not be well suited to serverless.
+
+Serverless platforms are often built to respond to events. One variety here is an http request, but things get a little more nuanced when we look at processes that live for reasons other than serving http traffic. With software running on traditional servers, we have to manage subscriptions to an event publishers and monitor our consumers. With serverless we can connect a function as a sync for an event and the event management is handled by the platform. This can be connected with an event publishing database to create state machines.
+
+[clear pro case for servers]
 
 ## Developer Experience
+
+
 
 ## Total Cost of Ownership
