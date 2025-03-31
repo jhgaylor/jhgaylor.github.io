@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Gaylor - Engineer and Leader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .corner-ribbon {
+            width: 250px;
+            background: #029613;
+            position: fixed;
+            top: 50px;
+            right: -50px;
+            text-align: center;
+            line-height: 40px;
+            letter-spacing: 1px;
+            color: #f0f9ff;
+            font-weight: bold;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            z-index: 50;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .corner-ribbon:hover {
+            background: #c10606;
+        }
+
+        /* Add new styles for company cards */
+        .company-card {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .company-card::after {
+            content: '\f10d';  /* Font Awesome quote icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.25rem;
+            color: #1e40af;
+            opacity: 0.3;
+            background: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .company-card:hover::after {
+            opacity: 0;
+        }
+
+        .testimonial {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 64, 175, 0.98);
+            color: white;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+
+        .company-card:hover .testimonial {
+            opacity: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+    </style>
+    <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_2eJY8Qs3B3H34qrYmBTK1d8GqN2xVsblmaTthTQujAB', {
+          api_host: 'https://us.i.posthog.com',
+          person_profiles: 'always',
+          disable_session_recording: true,
+      })
+  </script>
+</head>
+<body class="bg-gray-50">
+    <a href="mailto:jhgaylor@gmail.com" class="corner-ribbon">
+        Available to Hire
+    </a>
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-2/3">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    Your Next<br>
+                    <span id="rotating-role" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
+                        Technical Cofounder
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl">
+                    15+ years of experience helping companies build better tech organizations, launch new products, and grow with confidence.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="sms:+17204533994" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-message mr-2"></i>
+                        Text Me
+                    </a>
+                    <a href="mailto:jhgaylor@gmail.com" class="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Email Me
+                    </a>
+                    <a href="/JakeGaylor_resume.pdf" download class="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 transition-colors">
+                        <i class="fas fa-file-download mr-2"></i>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/3">
+                <img src="/images/me_2025_2.png" alt="Jake Gaylor" class="rounded-full w-64 h-64 object-cover border-4 border-white shadow-lg mx-auto">
+            </div>
+        </div>
+    </header>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 bg-white text-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">How I Accelerate Success</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-100">
+                    <i class="fas fa-rocket text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Ship Fast, Learn Fast</h3>
+                    <p class="text-gray-600 mb-4">Focus on delivering the first quantum of value quickly, then iterate based on real user feedback.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>MVP in days, not months</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>Data-driven iterations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>Continuous user feedback loops</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-100">
+                    <i class="fas fa-bolt text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Supercharge Your Teams</h3>
+                    <p class="text-gray-600 mb-4">Deliver faster with proven tools and practices that scale across your organization.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>Best-in-class development workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>Automated testing and deployment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>Cost-effective scaling solutions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-100">
+                    <i class="fas fa-bullseye text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Find Product Market Fit</h3>
+                    <p class="text-gray-600 mb-4">Transform engineering teams into product teams that own the full lifecycle from idea to customer value.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>Data-driven feature development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>Customer usage insights</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                            <span>Value-driven prioritization</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Experience Section -->
+    <section class="py-20 bg-gradient-to-b from-blue-900 to-blue-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-center text-white">Companies I've Helped Grow</h2>
+                <p class="text-xl mb-12 text-center text-blue-100">
+                    I've had the privilege of working with innovative companies to help scale their technology and teams.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
+                        <img src="images/logo.pw.png" alt="Company 1 Logo" class="h-40 w-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">Protectwise</h3>
+                        <p class="text-gray-600 mt-2 text-xs">Acquired by Verizon</p>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Jake was instrumental in building our cloud-native security platform. His technical leadership helped shape our architecture and team practices."</p>
+                            <span class="testimonial-author">- Devops Engineer, Protectwise</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
+                        <img src="images/logo.fsw.png" alt="Company 2 Logo" class="h-40 w-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">Food Service Warehouse</h3>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"We were deploying c# on vSphere when Jake joined on our first Nodejs backend team. He had been using Docker, we identified Kubernetes as our next step, and Jake hit the ground running. Our node services had the fastest release cycle in the company."</p>
+                            <span class="testimonial-author">- Architect, Food Service Warehouse</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
+                        <img src="images/logo.cloaked.png" alt="Company 3 Logo" class="h-40 w-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">Cloaked</h3>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Jake worked with our team to deploy a system that let us go from releasing every few weeks to releasing multiple times a day."</p>
+                            <span class="testimonial-author">- Director Platform Engineering, Cloaked</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
+                        <img src="images/logo.grx.png" alt="Company 4 Logo" class="h-40 w-auto mb-4 object-contain">
+                        <h3 class="text-lg font-semibold text-gray-900">CyberGRX</h3>
+                        <p class="text-gray-600 mt-2 text-xs">Now ProcessUnity</p>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"I watched Jake redo a build and deploy process over the span of 3 days, whip up a presentation, and get every engineer in the org up to speed using it to deploy new services, a moment I'll never forget because our productivity EXPLODED afterwards."</p>
+                            <span class="testimonial-author">- Software Engineer, CyberGRX</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
+                        <img src="images/logo.ih.png" alt="Company 5 Logo" class="h-40 w-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-gray-900">Inception Health</h3>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"I also wanted to second (third? Fourth?) Jake's skills here. I don't have anything unique to add as everyone else has already covered it, but this man will help you achieve what you need."</p>
+                            <span class="testimonial-author">- Senior Platform Engineer, Inception Health</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
+                      <img src="images/logo.magic.png" alt="Company 5 Logo" class="h-40 w-auto mb-4 object-contain">
+                      <h3 class="text-xl font-semibold text-gray-900">Magic</h3>
+                      <div class="testimonial">
+                            <p class="testimonial-text">"Jake worked in the pit with [the operations team] and everyday came in with killer energy. Everyone else told us how to work around problems. Jake built us better tools."</p>
+                            <span class="testimonial-author">- Magician, Magic</span>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update Zero to One section -->
+    <section id="zero-to-one" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-center">From Zero to Production</h2>
+                <p class="text-xl mb-12 text-center text-gray-600">
+                    Start with the smallest valuable feature set, then evolve based on real user feedback and data.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white/10 p-8 rounded-lg backdrop-blur">
+                        <h3 class="text-xl font-semibold mb-4">Development Philosophy</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                                <span>Focus on core user value first</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                                <span>Ship early, gather feedback</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                                <span>Iterate based on usage data</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                                <span>Scale what works</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/10 p-8 rounded-lg backdrop-blur">
+                        <h3 class="text-xl font-semibold mb-4">Technical Foundation</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                                <span>Production-ready infrastructure</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                                <span>Automated testing and deployment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                                <span>Built-in monitoring and analytics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                                <span>Scalable architecture patterns</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-white/10 p-8 rounded-lg backdrop-blur">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Development Approach</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <i class="fas fa-rocket text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="font-semibold mb-2">Quick Starts</h4>
+                            <p class="text-sm">From idea to first user value in days</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-chart-line text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="font-semibold mb-2">Data-Driven</h4>
+                            <p class="text-sm">Every feature backed by usage metrics</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-arrows-rotate text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="font-semibold mb-2">Rapid Iteration</h4>
+                            <p class="text-sm">Continuous improvement based on feedback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this section before Technical Expertise -->
+    <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-center">Supercharge Feature Delivery</h2>
+                <p class="text-xl mb-12 text-center">
+                    Stop waiting weeks for features to ship. Eliminate manual tasks. Give your teams the tools and automation they need to go to production with confidence.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white/10 p-8 rounded-lg backdrop-blur">
+                        <h3 class="text-xl font-semibold mb-4">Common Pain Points</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-300"></i>
+                                <span>Slow, manual deployment processes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-300"></i>
+                                <span>Inconsistent environments causing issues</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-300"></i>
+                                <span>Limited visibility into system health</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-300"></i>
+                                <span>Security patches falling behind</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/10 p-8 rounded-lg backdrop-blur">
+                        <h3 class="text-xl font-semibold mb-4">The Solution</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-300"></i>
+                                <span>Automated pipelines for instant feedback</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-300"></i>
+                                <span>Infrastructure as code for consistency</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-300"></i>
+                                <span>Real-time monitoring and alerts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3 text-green-300"></i>
+                                <span>Automated security updates</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-bolt text-3xl text-blue-300"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-4 text-center">Quick Feedback</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>Automated test runs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>Code quality checks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>Security scanning</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-rocket text-3xl text-blue-300"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-4 text-center">Continuous Delivery</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>One-click deployments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>Automated rollbacks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>Environment promotion</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-eye text-3xl text-blue-300"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-4 text-center">Full Visibility</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>Performance metrics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>Error tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-arrow-right text-blue-300 mt-1 mr-2"></i>
+                                <span>User analytics</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Impact on Your Team</h3>
+                    <div class="grid md:grid-cols-4 gap-6 text-center">
+                        <div>
+                            <i class="fas fa-fighter-jet text-3xl mb-4"></i>
+                            <p class="text-sm">Faster Deployments</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-robot text-3xl mb-4"></i>
+                            <p class="text-sm">Less Manual Work</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock text-3xl mb-4"></i>
+                            <p class="text-sm">24/7 System Monitoring</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-shield-alt text-3xl mb-4"></i>
+                            <p class="text-sm">Confidence in Delivery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-100">
+      <div class="container mx-auto px-6">
+          <div class="max-w-4xl mx-auto">
+              <h2 class="text-4xl font-bold mb-8 text-center">Build Product Minded Teams</h2>
+              <p class="text-xl mb-12 text-center text-gray-600">
+                  Transform your engineering teams into data driven teams that understand customer needs and deliver measurable business value.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-8 mb-12">
+                  <div class="bg-white p-8 rounded-lg shadow-md">
+                      <h3 class="text-xl font-semibold mb-4">Common Challenges</h3>
+                      <ul class="space-y-4">
+                          <li class="flex items-start">
+                              <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-500"></i>
+                              <span>Features built without clear success metrics</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-500"></i>
+                              <span>Limited understanding of customer behavior</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-500"></i>
+                              <span>Disconnect between technical and business goals</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-exclamation-circle mt-1 mr-3 text-red-500"></i>
+                              <span>No feedback loop from production to planning</span>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <div class="bg-white p-8 rounded-lg shadow-md">
+                      <h3 class="text-xl font-semibold mb-4">The Transformation</h3>
+                      <ul class="space-y-4">
+                          <li class="flex items-start">
+                              <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                              <span>Data-driven feature development and iteration</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                              <span>Real user behavior insights inform decisions</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                              <span>Clear metrics tied to business outcomes</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i>
+                              <span>Continuous learning from production data</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-8 mb-12">
+                  <div class="bg-white p-8 rounded-lg shadow-md">
+                      <div class="text-blue-600 mb-6">
+                          <i class="fas fa-chart-line text-3xl"></i>
+                      </div>
+                      <h4 class="text-lg font-semibold mb-4">Analytics That Matter</h4>
+                      <ul class="space-y-3 text-gray-600">
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>Feature usage tracking</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>User journey mapping</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>Performance impact</span>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <div class="bg-white p-8 rounded-lg shadow-md">
+                      <div class="text-blue-600 mb-6">
+                          <i class="fas fa-flask text-3xl"></i>
+                      </div>
+                      <h4 class="text-lg font-semibold mb-4">Experimentation</h4>
+                      <ul class="space-y-3 text-gray-600">
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>A/B testing framework</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>Feature flags</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>Controlled rollouts</span>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <div class="bg-white p-8 rounded-lg shadow-md">
+                      <div class="text-blue-600 mb-6">
+                          <i class="fas fa-comments text-3xl"></i>
+                      </div>
+                      <h4 class="text-lg font-semibold mb-4">Customer Feedback</h4>
+                      <ul class="space-y-3 text-gray-600">
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>In-app surveys</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>Usage analytics</span>
+                          </li>
+                          <li class="flex items-start">
+                              <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
+                              <span>Support insights</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
+              <div class="bg-blue-800 text-white p-8 rounded-lg shadow-md">
+                  <h3 class="text-xl font-semibold mb-6 text-center">Results in Teams That</h3>
+                  <div class="grid md:grid-cols-4 gap-6 text-center">
+                      <div>
+                          <i class="fas fa-bullseye text-3xl mb-4"></i>
+                          <p class="text-sm">Focus on Customer Value</p>
+                      </div>
+                      <div>
+                          <i class="fas fa-chart-bar text-3xl mb-4"></i>
+                          <p class="text-sm">Make Data-Driven Decisions</p>
+                      </div>
+                      <div>
+                          <i class="fas fa-lightbulb text-3xl mb-4"></i>
+                          <p class="text-sm">Innovate Continuously</p>
+                      </div>
+                      <div>
+                          <i class="fas fa-rocket text-3xl mb-4"></i>
+                          <p class="text-sm">Ship with Confidence</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-b from-blue-900 to-blue-800">
+    <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center text-white">Modern Cloud-Native Stack</h2>
+            <p class="text-xl mb-12 text-center text-blue-100">
+                Leveraging industry-leading tools and practices for rapid, reliable delivery
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur border border-white/20">
+                    <i class="fas fa-cloud text-3xl text-blue-200 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Platform</h3>
+                    <ul class="space-y-2 text-blue-100">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>AWS cloud infrastructure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Kubernetes orchestration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Cloudflare edge networking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Terraform infrastructure as code</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur border border-white/20">
+                    <i class="fas fa-code-branch text-3xl text-blue-200 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Delivery</h3>
+                    <ul class="space-y-2 text-blue-100">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>GitOps workflow</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Continuous Integration pipelines</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Automated Continuous Deployment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Infrastructure automation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/10 p-8 rounded-lg backdrop-blur border border-white/20">
+                    <i class="fas fa-chart-line text-3xl text-blue-200 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Observability</h3>
+                    <ul class="space-y-2 text-blue-100">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Product usage analytics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>System Telemetry</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>A/B testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
+                            <span>Error tracking & Crash Reporting</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Finding Your Best Fit section -->
+<section class="py-20 bg-white text-gray-900">
+  <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+          <h2 class="text-4xl font-bold mb-6 text-center">Are We a Good Fit?</h2>
+          <p class="text-xl mb-16 text-center text-gray-600">
+              I specialize in modern web technologies and cloud infrastructure. Let's make sure we are a good match.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-12">
+              <!-- Great Fits -->
+              <div class="bg-gray-50 rounded-xl p-8 shadow-lg border border-gray-200">
+                  <h3 class="text-2xl font-semibold mb-6 flex items-center text-gray-900">
+                      <i class="fas fa-check-circle mr-3 text-green-600"></i>
+                      Great Fits
+                  </h3>
+                  <ul class="space-y-4">
+                      <li class="flex items-start">
+                          <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">SaaS Applications</span>
+                              <p class="text-sm text-gray-600 mt-1">Web applications, APIs, and cloud-native services</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">Infrastructure as Code</span>
+                              <p class="text-sm text-gray-600 mt-1">AWS, Kubernetes, Terraform, and modern cloud platforms</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">Developer Experience</span>
+                              <p class="text-sm text-gray-600 mt-1">CI/CD pipelines, development workflows, and team productivity</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">Software Delivery</span>
+                              <p class="text-sm text-gray-600 mt-1">Deployment automation, monitoring, and operational excellence</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">Technical Leadership</span>
+                              <p class="text-sm text-gray-600 mt-1">Architecture decisions, team guidance, and technology strategy</p>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Not Great Fits -->
+              <div class="bg-gray-50 rounded-xl p-8 shadow-lg border border-gray-200">
+                  <h3 class="text-2xl font-semibold mb-6 flex items-center text-gray-900">
+                      <i class="fas fa-times-circle mr-3 text-red-600"></i>
+                      Not Great Fits
+                  </h3>
+                  <ul class="space-y-4">
+                      <li class="flex items-start">
+                          <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">Design Work</span>
+                              <p class="text-sm text-gray-600 mt-1">While I can do a little design work, you dont want me creating your user interfaces.</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">Security Penetration Testing</span>
+                              <p class="text-sm text-gray-600 mt-1">While I implement secure practices, I'm not a dedicated security auditor</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">IoT & Firmware Development</span>
+                              <p class="text-sm text-gray-600 mt-1">I don't work with embedded systems or hardware-level programming</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">Complex Algorithms</span>
+                              <p class="text-sm text-gray-600 mt-1">Deep computer science problems or algorithmic optimization</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
+                          <div>
+                              <span class="font-semibold">Machine Learning</span>
+                              <p class="text-sm text-gray-600 mt-1">While I can integrate ML services, I don't develop ML models</p>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Jake Gaylor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add PostHog event tracking -->
+    <script>
+        // Track all link clicks
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('a');
+            if (!target) return;
+
+            // Get relevant data about the link
+            const href = target.href;
+            const text = target.innerText.trim();
+            const section = findParentSection(target);
+
+            // Track the event in PostHog
+            posthog.capture('link_clicked', {
+                href: href,
+                text: text,
+                section: section,
+                type: getLinkType(href)
+            });
+        });
+
+        // Helper function to find the parent section name
+        function findParentSection(element) {
+            const section = element.closest('section');
+            if (!section) return 'header';  // If no section found, assume it's in header
+            
+            const sectionTitle = section.querySelector('h2');
+            return sectionTitle ? sectionTitle.innerText.trim() : 'unknown';
+        }
+
+        // Helper function to determine link type
+        function getLinkType(href) {
+            if (href.startsWith('mailto:')) return 'email';
+            if (href.startsWith('sms:')) return 'sms';
+            if (href.endsWith('.pdf')) return 'download';
+            if (href.startsWith('http') || href.startsWith('https')) return 'external';
+            return 'internal';
+        }
+    </script>
+
+    <!-- Add this script before the closing body tag -->
+    <script>
+        const roles = [
+            'Technical Cofounder',
+            'Engineering Leader',
+            'Staff Engineer',
+            'Infrastructure Expert',
+            'Delivery Accelerator',
+            'Team Multiplier',
+            'System Architect',
+            'Technical Advisor',
+            'Thought Leader'
+        ];
+        let currentIndex = 0;
+        const roleElement = document.getElementById('rotating-role');
+
+        function updateRole() {
+            roleElement.style.opacity = '0';
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % roles.length;
+                roleElement.textContent = roles[currentIndex];
+                roleElement.style.opacity = '1';
+            }, 500);
+        }
+
+        roleElement.style.transition = 'opacity 0.5s ease-in-out';
+        setInterval(updateRole, 3000);
+
+        // Add this new code for handling recommended approach toggles
+        document.querySelectorAll('.recommended-approach-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.fa-chevron-down');
+                
+                // Toggle content visibility
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                
+                // Update button text
+                const buttonText = button.querySelector('span');
+                buttonText.textContent = content.classList.contains('hidden') 
+                    ? 'See Recommended Approach' 
+                    : 'Hide Recommended Approach';
+            });
+        });
+    </script>
+</body>
+</html> 

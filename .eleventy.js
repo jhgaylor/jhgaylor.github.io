@@ -1,0 +1,14 @@
+export default function(eleventyConfig) {
+    // Copy assets to their respective directories
+    eleventyConfig.addPassthroughCopy({ "_assets/css": "css" });
+    eleventyConfig.addPassthroughCopy({ "_assets/images": "images" });
+    eleventyConfig.addPassthroughCopy({ "_assets/js": "js" });
+
+    return {
+        dir: {
+            input: ".",
+            output: "_site",
+            includes: "_includes"
+        }
+    };
+};

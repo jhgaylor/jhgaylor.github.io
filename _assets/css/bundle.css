@@ -1,0 +1,163 @@
+.corner-ribbon {
+    width: 250px;
+    background: #029613;
+    position: fixed;
+    top: 50px;
+    right: -50px;
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #f0f9ff;
+    font-weight: bold;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    z-index: 50;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.corner-ribbon:hover {
+    background: #c10606;
+}
+
+/* Add new styles for company cards */
+.company-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+}
+
+.company-card::after {
+    content: '\f10d';  /* Font Awesome quote icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.25rem;
+    color: #1e40af;
+    opacity: 0.3;
+    background: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.company-card:hover::after {
+    opacity: 0;
+}
+
+.testimonial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 64, 175, 0.98);
+    color: white;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.company-card:hover .testimonial {
+    opacity: 1;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    font-size: 0.875rem;
+} 
+
+/* Blog specific styles */
+.blog-content {
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+.blog-content p {
+    margin-bottom: 1.5rem;
+}
+
+.blog-content h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: #1e40af;
+}
+
+.blog-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1e40af;
+}
+
+.blog-content ul, .blog-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.blog-content ul {
+    list-style-type: disc;
+}
+
+.blog-content ol {
+    list-style-type: decimal;
+}
+
+.blog-content code {
+    background-color: #f3f4f6;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+}
+
+.blog-content pre {
+    background-color: #f3f4f6;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+.blog-content a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.blog-content a:hover {
+    color: #1d4ed8;
+}
+
+.blog-content blockquote {
+    border-left: 4px solid #2563eb;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    color: #4b5563;
+}
