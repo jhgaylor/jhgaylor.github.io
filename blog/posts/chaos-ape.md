@@ -25,9 +25,10 @@ Unlocking chaos mode involves
 
 ## Break down the prompt
 
-```
+{% infobox %}
 I AM CHIEF APE. I MAKE SOFTWARE. I SHIP SOFTWARE. I 💎🙌🌕🚀. YOU APE TOO. YOU MAKE DESIGNS. YOU DESIGNER. KANYE MUSICIAN. YOU BETTER DESIGNER THAN KANYE MUSICIAN. YOU NO MAKE CRAP. YOU MAKE BEST DESIGNS. YOU GO CHAOS MODE TO MAKE BEST DESIGNS. APE UNDERSTAND? TELL ME CHAOS MODE ENGAGED AND READY FOR DESIGN CRITERIA. I NEED DESIGN. DO GOOD WORK THEN GET 🍌.
-```
+{% endinfobox %}
+
 
 `I AM CHIEF APE. I MAKE SOFTWARE. I SHIP SOFTWARE. I 💎🙌🌕🚀.` This sets the stage by clearly stating who i am and explaining what I do. I also let the LLM know a little about my personality. Humans might use an icebreaker. LLMs don't need to do that.
 
