@@ -18,7 +18,7 @@ Unlocking chaos mode involves
 
 * telling the LLM to enter chaos mode
 * injecting personality 
-* establishing the LLM with a role in an relationship with ou
+* establishing the LLM with a role in an relationship with you
 * hyping the shit out of it
 * establishing a reward system with the LLM
 * getting the LLM to tell you it understands the rules
