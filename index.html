@@ -724,3 +724,51 @@ layout: layouts/main.html
 </div>
 </div>
 </section>
+
+<script>
+    const roles = [
+        'Technical Cofounder',
+        'Engineering Leader',
+        'Staff Engineer',
+        'Infrastructure Expert',
+        'Delivery Accelerator',
+        'Team Multiplier',
+        'System Architect',
+        'Technical Advisor',
+        'Thought Leader'
+    ];
+    let currentIndex = 0;
+    const roleElement = document.getElementById('rotating-role');
+
+    function updateRole() {
+        roleElement.style.opacity = '0';
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % roles.length;
+            roleElement.textContent = roles[currentIndex];
+            roleElement.style.opacity = '1';
+        }, 500);
+    }
+
+    roleElement.style.transition = 'opacity 0.5s ease-in-out';
+    setInterval(updateRole, 3000);
+
+    // Add this new code for handling recommended approach toggles
+    document.querySelectorAll('.recommended-approach-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+            
+            // Toggle content visibility
+            content.classList.toggle('hidden');
+            
+            // Rotate icon
+            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            
+            // Update button text
+            const buttonText = button.querySelector('span');
+            buttonText.textContent = content.classList.contains('hidden') 
+                ? 'See Recommended Approach' 
+                : 'Hide Recommended Approach';
+        });
+    });
+</script>
