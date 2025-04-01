@@ -14,7 +14,7 @@ As a long time programmer, I have written hello world countless times. And I sti
 I have been building software for getting on 20 years now and for the last 10 or so I have been doing a variation on the same theme. Some organizations take to it faster and we get further along the path than others but the path is predictable, at least within my little world of saas startups.
 
 
-I am writing to start to encapsulate how I think about building and delivering products. These are things that I often spend time explaining to every new team I work with.What goes into building a great product? What is the difference in a product and a piece of software? Why is reducing toil worth the cost? 
+I am writing to start to encapsulate how I think about building and delivering products. These are things that I often spend time explaining to every new team I work with. What goes into building a great product? What is the difference in a product and a piece of software? Why is reducing toil worth the cost? 
 
 ## Okay, but why?
 

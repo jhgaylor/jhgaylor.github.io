@@ -161,3 +161,29 @@
     font-style: italic;
     color: #4b5563;
 }
+
+.blog-content .info-box {
+    background-color: #fdf4ff;
+    border: 2px solid #c026d3;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(192, 38, 211, 0.2);
+    position: relative;
+}
+
+.blog-content .info-box::before {
+    content: "ℹ️";
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    background: white;
+    border: 2px solid #c026d3;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
