@@ -3,7 +3,7 @@ layout: layouts/blog.html
 tags: ["posts", "interview-series"]
 title: "Interview series: When should I use serverless? It isn't about cost."
 permalink: /blog/posts/servers-vs-serverless/
-date: 2025-03-29
+date: 2025-03-31
 ---
 
 {% infobox %}
