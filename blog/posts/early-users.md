@@ -10,7 +10,7 @@ date: 2025-04-01
 This post is for all of us engineers trying to start product businesses. If you're doing a project for fun this might offend your sensibilities. If you're a VC backed business person with a McKinsey study this might not be the place for you 😂.
 {% endinfobox %}
 
-From the perspective of a fledgling business creating a new product, nothing matters more than users. Not even the product. You absolutely must get your idea in front of people who would use it before you can start dialing in the product. I won't rehash that here. Instead, I want to focus on where to find those users and what to do if you can't find them.
+From the perspective of a fledgling business creating a new product, nothing matters more than users. Not even the product. You absolutely must get your idea in front of people who would use it before you can start your journey to product market fit. I won't rehash that here. Instead, I want to focus on where to find those users and what to do if you can't find them.
 
 Make sure you aren't over complicating this. Solve a problem someone has and tell them about your solution. You may already know people who would buy a new product so go discover what it is they need.
 
