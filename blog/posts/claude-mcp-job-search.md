@@ -4,6 +4,7 @@ tags: ["posts", "shitposts", "prompts"]
 title: "Revolutionize Your Job Search: An AI-Powered Pipeline for Non-Coders"
 permalink: /blog/posts/claude-mcp-job-search/
 date: 2025-04-03
+eleventyExcludeFromCollections: true
 ---
 
 
