@@ -2,7 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "A lot more people are about to learn about micro vms"
-permalink: /blog/posts/chaos-ape-claude/
+permalink: /blog/posts/micro-vms/
 date: 2025-04-06
 ---
 
