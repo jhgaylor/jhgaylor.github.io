@@ -33,6 +33,8 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy({ "_assets/CNAME": "./CNAME" });
 
+    eleventyConfig.addPassthroughCopy({ "resume.json": "./resume.json" });
+
     eleventyConfig.addPairedShortcode("infobox", function(content) {
         return `<div class="info-box">${content}</div>`;
     });
