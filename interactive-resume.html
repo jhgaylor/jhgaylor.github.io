@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Gaylor - My Journey: 15 Years of Building</title>
+    <meta name="description" content="An interactive visual story of my journey from research software to Staff Engineer and beyond">
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- D3.js for advanced visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #0073aa;
+            --secondary-color: #6c7781;
+            --accent-color: #46b450;
+            --danger-color: #e74c3c;
+            --bg-color: #ffffff;
+            --text-color: #191e23;
+            --dimmed-bg: #f3f4f5;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section - The Beginning */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 80%, transparent 50%, rgba(70, 180, 80, 0.1) 50.5%, transparent 51%),
+                        radial-gradient(circle at 80% 20%, transparent 50%, rgba(0, 115, 170, 0.1) 50.5%, transparent 51%),
+                        radial-gradient(circle at 40% 40%, transparent 50%, rgba(108, 119, 129, 0.1) 50.5%, transparent 51%);
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: #8b949e;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+
+        .scroll-indicator i {
+            font-size: 2em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Journey Timeline */
+        .journey-section {
+            padding: 100px 0;
+            background: var(--dimmed-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Visual Timeline */
+        .visual-timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-path {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary-color) 0%, var(--primary-color) 50%, var(--accent-color) 100%);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--accent-color);
+            width: 0;
+            transition: width 0.3s;
+        }
+
+        .journey-stops {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .journey-stop {
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .journey-stop:hover {
+            transform: translateY(-5px);
+        }
+
+        .stop-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .journey-stop:hover .stop-icon {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+        }
+
+        .stop-icon i {
+            font-size: 2em;
+            color: var(--primary-color);
+        }
+
+        .stop-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stop-title {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+        }
+
+        /* Story Cards */
+        .story-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .story-grid {
+            display: grid;
+            gap: 60px;
+        }
+
+        .story-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .story-card:nth-child(even) {
+            transform: translateX(50px);
+        }
+
+        .story-card:nth-child(even) .story-visual {
+            order: 2;
+        }
+
+        .story-card:nth-child(even) .story-content {
+            order: 1;
+        }
+
+        .story-visual {
+            position: relative;
+        }
+
+        .visual-container {
+            background: var(--dimmed-bg);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-content h3 {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .story-period {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .story-description {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .achievements li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Metrics and Visualizations */
+        .metric-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            color: var(--secondary-color);
+        }
+
+        /* Skills Evolution */
+        .skills-evolution {
+            padding: 80px 0;
+            background: var(--dimmed-bg);
+        }
+
+        .evolution-chart {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            margin-top: 40px;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .impact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .impact-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        /* Current Focus */
+        .current-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+
+        /* Projects Timeline */
+        .projects-timeline {
+            padding: 80px 0;
+            background: var(--dimmed-bg);
+        }
+
+        .project-timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-node {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+            width: 250px;
+            cursor: pointer;
+            transition: all 0.3s;
+            opacity: 0;
+        }
+
+        .project-node:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-node h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .tech-badge {
+            background: var(--dimmed-bg);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+        }
+
+        /* Word Cloud */
+        .tech-cloud {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .word {
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            opacity: 0;
+        }
+
+        .word:hover {
+            transform: scale(1.2);
+            color: var(--accent-color) !important;
+        }
+
+
+        /* Fun Easter Egg */
+        .easter-egg {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+
+        .easter-egg:hover {
+            transform: scale(1.1) rotate(180deg);
+            background: var(--primary-color);
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-color);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Achievement Counter */
+        .achievement-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .achievement-item {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .achievement-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .achievement-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Network Visualization */
+        .network-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        #networkGraph {
+            width: 100%;
+            height: 600px;
+            background: var(--dimmed-bg);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .focus-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .focus-card {
+            background: var(--dimmed-bg);
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .focus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--dimmed-bg);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .cta-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .journey-stops { flex-direction: column; gap: 40px; }
+            .story-card { grid-template-columns: 1fr; }
+            .story-card:nth-child(even) .story-visual { order: 1; }
+            .story-card:nth-child(even) .story-content { order: 2; }
+        }
+
+        /* Loading */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader-text {
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+            10%, 90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-text">Loading my story...</div>
+    </div>
+
+    <!-- Hero: The Beginning -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Jake Gaylor</h1>
+            <p class="subtitle">Let me tell you the story of how a LAMP developer became a force multiplier for engineering teams</p>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>My 15-Year Journey</h2>
+                <p>From university research to building AI-powered platforms</p>
+            </div>
+            
+            <div class="visual-timeline">
+                <div class="timeline-path">
+                    <div class="timeline-progress"></div>
+                </div>
+                
+                <div class="journey-stops">
+                    <div class="journey-stop" data-year="2010">
+                        <div class="stop-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stop-year">2010</div>
+                        <div class="stop-title">The Beginning</div>
+                    </div>
+                    
+                    <div class="journey-stop" data-year="2013">
+                        <div class="stop-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="stop-year">2013</div>
+                        <div class="stop-title">First Startup</div>
+                    </div>
+                    
+                    <div class="journey-stop" data-year="2015">
+                        <div class="stop-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="stop-year">2015</div>
+                        <div class="stop-title">Cloud Pioneer</div>
+                    </div>
+                    
+                    <div class="journey-stop" data-year="2018">
+                        <div class="stop-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="stop-year">2018</div>
+                        <div class="stop-title">Platform Expert</div>
+                    </div>
+                    
+                    <div class="journey-stop" data-year="2020">
+                        <div class="stop-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stop-year">2020</div>
+                        <div class="stop-title">Healthcare Tech</div>
+                    </div>
+                    
+                    <div class="journey-stop" data-year="2022">
+                        <div class="stop-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="stop-year">2022-Now</div>
+                        <div class="stop-title">AI Revolution</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Cards -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <!-- Story 1: The Beginning -->
+                <div class="story-card">
+                    <div class="story-visual">
+                        <div class="visual-container">
+                            <canvas id="hurricaneChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h3>2010-2014: Research & Discovery</h3>
+                        <p class="story-period">Mississippi State University</p>
+                        <p class="story-description">
+                            Started my journey doing CRUD on a LAMP stack, but quickly found myself building software that tracked "human sensors" during natural disasters. We monitored social media during Hurricane Sandy, turning tweets into actionable data for researchers.
+                        </p>
+                        <ul class="achievements">
+                            <li>Won research grants for custom software development</li>
+                            <li>Built real-time social media analysis systems</li>
+                            <li>Discovered my passion for distributed systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Story 2: Early Kubernetes -->
+                <div class="story-card">
+                    <div class="story-visual">
+                        <div class="visual-container">
+                            <canvas id="kubernetesChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h3>2015-2016: Kubernetes Pioneer</h3>
+                        <p class="story-period">Food Service Warehouse</p>
+                        <p class="story-description">
+                            When Kubernetes was still pre-1.0, I was already building production clusters. We transformed a traditional C# shop into a modern Node.js powerhouse with the fastest release cycles in the company.
+                        </p>
+                        <ul class="achievements">
+                            <li>Built Kubernetes clusters when K8s was pre-1.0</li>
+                            <li>Introduced containerization to accelerate deployments</li>
+                            <li>Enabled fastest release cycles in company history</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Story 3: Scale Master -->
+                <div class="story-card">
+                    <div class="story-visual">
+                        <div class="visual-container">
+                            <canvas id="scaleChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h3>2016-2018: Operating at Scale</h3>
+                        <p class="story-period">Protectwise/Verizon</p>
+                        <p class="story-description">
+                            Managed infrastructure at unprecedented scale - petabytes of data, thousands of Cassandra nodes, and over $10M/year in AWS spend. This is where I learned what true scale means.
+                        </p>
+                        <ul class="achievements">
+                            <li>Operated 100+ node Cassandra clusters</li>
+                            <li>Managed $10M+/year AWS infrastructure</li>
+                            <li>Handled petabyte-scale data ingestion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Story 4: The Multiplier -->
+                <div class="story-card">
+                    <div class="story-visual">
+                        <div class="visual-container">
+                            <canvas id="productivityChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h3>2018-2020: Force Multiplier</h3>
+                        <p class="story-period">CyberGRX</p>
+                        <p class="story-description">
+                            "I watched Jake redo a build and deploy process over 3 days... our productivity EXPLODED afterwards." This became my signature - transforming how entire engineering organizations work.
+                        </p>
+                        <ul class="achievements">
+                            <li>Redesigned CI/CD increasing team velocity dramatically</li>
+                            <li>Grew into Staff Engineer role through impact</li>
+                            <li>Became known for unblocking entire organizations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Story 5: AI Pioneer -->
+                <div class="story-card">
+                    <div class="story-visual">
+                        <div class="visual-container">
+                            <canvas id="aiChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h3>2022-Present: AI Revolution</h3>
+                        <p class="story-period">Cloaked Inc</p>
+                        <p class="story-description">
+                            Established the company's AI program from scratch, building autonomous agents that became central to our product strategy and fundraising. Accelerated deployments by 30x while connecting all teams through data.
+                        </p>
+                        <ul class="achievements">
+                            <li>Built autonomous AI agents with LangChain</li>
+                            <li>30x faster deployments with GitOps CI/CD</li>
+                            <li>Connected entire company through analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Evolution -->
+    <section class="skills-evolution">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills Evolution Over Time</h2>
+                <p>Watch how my expertise grew and adapted to industry needs</p>
+            </div>
+            
+            <div class="evolution-chart">
+                <canvas id="evolutionChart" height="400"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">My Impact by the Numbers</h2>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">🚀</div>
+                    <div class="metric-value">30x</div>
+                    <div class="metric-label">Faster Deployments</div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">💰</div>
+                    <div class="metric-value">$10M+</div>
+                    <div class="metric-label">Infrastructure Managed</div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">👥</div>
+                    <div class="metric-value">250K</div>
+                    <div class="metric-label">MAU Platforms Built</div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">📊</div>
+                    <div class="metric-value">PB+</div>
+                    <div class="metric-label">Data Processed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Timeline -->
+    <section class="projects-timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Evolution</h2>
+                <p>Major projects and their tech stacks over time</p>
+            </div>
+            
+            <div class="project-timeline-container" style="height: 600px; position: relative;">
+                <svg id="projectTimeline" width="100%" height="100%"></svg>
+            </div>
+            
+            <div class="tech-cloud">
+                <h3 style="color: var(--primary-color); margin-bottom: 30px;">Technology Universe</h3>
+                <div id="techWordCloud"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Counters -->
+    <section class="achievement-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Career Achievements</h2>
+                <p style="color: rgba(255,255,255,0.8);">Numbers that tell a story</p>
+            </div>
+            
+            <div class="achievement-grid">
+                <div class="achievement-item">
+                    <div class="achievement-number" data-target="15">0</div>
+                    <div class="achievement-label">Years of Experience</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number" data-target="50">0</div>
+                    <div class="achievement-label">Technologies Mastered</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number" data-target="8">0</div>
+                    <div class="achievement-label">Companies Transformed</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number" data-target="100">0</div>
+                    <div class="achievement-label">Team Members Mentored</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number" data-target="30">0</div>
+                    <div class="achievement-label">Open Source Projects</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number" data-target="1000000">0</div>
+                    <div class="achievement-label">Lines of Code Written</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Network Visualization -->
+    <section class="network-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills & Experience Network</h2>
+                <p>How everything connects in my career journey</p>
+            </div>
+            
+            <div id="networkGraph"></div>
+        </div>
+    </section>
+
+    <!-- Current Focus -->
+    <section class="current-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What I'm Building Now</h2>
+                <p>Focused on the intersection of AI and infrastructure</p>
+            </div>
+            
+            <div class="focus-areas">
+                <div class="focus-card">
+                    <h3>AI-Powered Platforms</h3>
+                    <p>Building autonomous agents and LLM-driven applications that solve real business problems</p>
+                    <ul style="margin-top: 20px; padding-left: 20px;">
+                        <li>LangChain & RAG implementations</li>
+                        <li>Model Context Protocol (MCP) servers</li>
+                        <li>Conversational AI interfaces</li>
+                    </ul>
+                </div>
+                
+                <div class="focus-card">
+                    <h3>Modern Infrastructure</h3>
+                    <p>Creating cloud-native platforms that scale effortlessly and deploy continuously</p>
+                    <ul style="margin-top: 20px; padding-left: 20px;">
+                        <li>Kubernetes & AWS EKS</li>
+                        <li>GitOps with ArgoCD</li>
+                        <li>Edge computing solutions</li>
+                    </ul>
+                </div>
+                
+                <div class="focus-card">
+                    <h3>Developer Experience</h3>
+                    <p>Building tools and systems that make entire teams more productive</p>
+                    <ul style="margin-top: 20px; padding-left: 20px;">
+                        <li>CI/CD automation</li>
+                        <li>Platform engineering</li>
+                        <li>Analytics & observability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Let's Build Something Amazing Together</h2>
+                <p>I'm always excited to tackle new challenges and help teams reach their full potential</p>
+                
+                <div class="cta-buttons">
+                    <a href="mailto:jhgaylor@gmail.com" class="cta-button cta-primary">
+                        <i class="fas fa-envelope"></i>
+                        Get in Touch
+                    </a>
+                    <a href="/resume.html" class="cta-button cta-secondary">
+                        <i class="fas fa-file-alt"></i>
+                        View Full Resume
+                    </a>
+                    <a href="https://github.com/jhgaylor" class="cta-button cta-secondary">
+                        <i class="fab fa-github"></i>
+                        See My Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Easter Egg Button -->
+    <div class="easter-egg" id="easterEgg">
+        <i class="fas fa-code"></i>
+    </div>
+
+    <script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hide loader when ready
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                gsap.to('.loader', {
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        document.querySelector('.loader').style.display = 'none';
+                    }
+                });
+
+                // Start animations
+                initializeAnimations();
+                initializeCharts();
+                initializeAdvancedVisualizations();
+                setupInteractions();
+                setupEasterEgg();
+            }, 1000);
+        });
+
+        function initializeAnimations() {
+            // Hero animations
+            gsap.timeline()
+                .to('.hero h1', { opacity: 1, y: 0, duration: 1 })
+                .to('.hero .subtitle', { opacity: 1, y: 0, duration: 1 }, '-=0.5')
+                .to('.scroll-indicator', { opacity: 1, duration: 1 }, '-=0.5');
+
+            // Journey stops animation
+            gsap.utils.toArray('.journey-stop').forEach((stop, index) => {
+                gsap.to(stop, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    delay: index * 0.2,
+                    scrollTrigger: {
+                        trigger: '.journey-section',
+                        start: 'top 60%'
+                    }
+                });
+            });
+
+            // Story cards animation
+            gsap.utils.toArray('.story-card').forEach((card, index) => {
+                gsap.to(card, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 80%'
+                    }
+                });
+            });
+
+            // Impact cards animation
+            gsap.utils.toArray('.impact-card').forEach((card, index) => {
+                gsap.to(card, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    delay: index * 0.1,
+                    scrollTrigger: {
+                        trigger: '.impact-section',
+                        start: 'top 60%'
+                    }
+                });
+            });
+
+            // Focus cards animation
+            gsap.utils.toArray('.focus-card').forEach((card, index) => {
+                gsap.to(card, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    delay: index * 0.2,
+                    scrollTrigger: {
+                        trigger: '.current-section',
+                        start: 'top 60%'
+                    }
+                });
+            });
+        }
+
+        function initializeCharts() {
+            // Hurricane tracking visualization
+            const hurricaneCtx = document.getElementById('hurricaneChart').getContext('2d');
+            new Chart(hurricaneCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
+                    datasets: [{
+                        label: 'Social Media Mentions',
+                        data: [1200, 5400, 12000, 8500, 3200],
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Hurricane Sandy Social Media Tracking'
+                        }
+                    }
+                }
+            });
+
+            // Kubernetes adoption
+            const k8sCtx = document.getElementById('kubernetesChart').getContext('2d');
+            new Chart(k8sCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Before K8s', 'After K8s'],
+                    datasets: [{
+                        label: 'Deployment Time (hours)',
+                        data: [8, 0.5],
+                        backgroundColor: ['#e74c3c', '#46b450']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Deployment Speed Transformation'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Scale visualization
+            const scaleCtx = document.getElementById('scaleChart').getContext('2d');
+            new Chart(scaleCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Cassandra Nodes', 'S3 Storage (PB)', 'Monthly Cost ($M)'],
+                    datasets: [{
+                        data: [100, 5, 0.83],
+                        backgroundColor: ['#0073aa', '#46b450', '#e74c3c']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Infrastructure at Scale'
+                        }
+                    }
+                }
+            });
+
+            // Productivity gains
+            const productivityCtx = document.getElementById('productivityChart').getContext('2d');
+            new Chart(productivityCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                    datasets: [{
+                        label: 'Team Velocity',
+                        data: [20, 35, 65, 95],
+                        borderColor: '#46b450',
+                        backgroundColor: 'rgba(70, 180, 80, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Team Productivity After CI/CD Implementation'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            // AI adoption
+            const aiCtx = document.getElementById('aiChart').getContext('2d');
+            new Chart(aiCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Automation', 'User Experience', 'Data Processing', 'Cost Savings', 'Innovation'],
+                    datasets: [{
+                        label: 'AI Impact',
+                        data: [95, 88, 92, 85, 98],
+                        backgroundColor: 'rgba(0, 115, 170, 0.2)',
+                        borderColor: '#0073aa',
+                        pointBackgroundColor: '#0073aa'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'AI Program Impact Areas'
+                        }
+                    },
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            // Skills evolution over time
+            const evolutionCtx = document.getElementById('evolutionChart').getContext('2d');
+            new Chart(evolutionCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2010', '2013', '2015', '2018', '2020', '2022', '2024'],
+                    datasets: [
+                        {
+                            label: 'Web Development',
+                            data: [80, 90, 85, 80, 75, 70, 65],
+                            borderColor: '#e74c3c',
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Cloud Infrastructure',
+                            data: [10, 30, 60, 80, 90, 95, 98],
+                            borderColor: '#0073aa',
+                            tension: 0.4
+                        },
+                        {
+                            label: 'DevOps/Platform',
+                            data: [5, 20, 50, 75, 85, 90, 95],
+                            borderColor: '#46b450',
+                            tension: 0.4
+                        },
+                        {
+                            label: 'AI/ML',
+                            data: [0, 5, 10, 20, 40, 80, 95],
+                            borderColor: '#f39c12',
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Leadership',
+                            data: [10, 30, 45, 65, 80, 90, 95],
+                            borderColor: '#9b59b6',
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Skill Evolution Over 15 Years'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Expertise Level'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initializeAdvancedVisualizations() {
+            // Project Timeline
+            createProjectTimeline();
+            
+            // Technology Word Cloud
+            createTechWordCloud();
+            
+            // Skills Network
+            createSkillsNetwork();
+            
+            // Achievement Counters
+            animateAchievements();
+        }
+
+        function createProjectTimeline() {
+            const projects = [
+                { name: 'SMTAS', year: 2012, x: 100, y: 100, tech: ['Python', 'Django', 'PostgreSQL'] },
+                { name: 'SocialDrizzle', year: 2013, x: 250, y: 200, tech: ['Node.js', 'MongoDB', 'Docker'] },
+                { name: 'K8s Platform', year: 2015, x: 400, y: 150, tech: ['Kubernetes', 'Go', 'CoreOS'] },
+                { name: 'Data Pipeline', year: 2017, x: 550, y: 250, tech: ['Kafka', 'Cassandra', 'AWS'] },
+                { name: 'CI/CD System', year: 2019, x: 700, y: 180, tech: ['GitOps', 'ArgoCD', 'Terraform'] },
+                { name: 'AI Agents', year: 2023, x: 850, y: 120, tech: ['LangChain', 'Python', 'RAG'] },
+                { name: 'MCP Servers', year: 2024, x: 950, y: 220, tech: ['TypeScript', 'Docker', 'MCP'] }
+            ];
+            
+            const svg = d3.select('#projectTimeline');
+            const width = 1100;
+            const height = 400;
+            
+            // Draw connections
+            const line = d3.line()
+                .x(d => d.x)
+                .y(d => d.y)
+                .curve(d3.curveBasis);
+            
+            svg.append('path')
+                .datum(projects)
+                .attr('d', line)
+                .attr('fill', 'none')
+                .attr('stroke', '#46b450')
+                .attr('stroke-width', 3)
+                .attr('opacity', 0.3);
+            
+            // Create project nodes
+            projects.forEach((project, index) => {
+                const node = document.createElement('div');
+                node.className = 'project-node';
+                node.style.left = `${project.x - 125}px`;
+                node.style.top = `${project.y - 50}px`;
+                
+                node.innerHTML = `
+                    <h4>${project.name}</h4>
+                    <p style="color: #6c7781; font-size: 0.9em; margin: 5px 0;">${project.year}</p>
+                    <div class="project-tech-stack">
+                        ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+                    </div>
+                `;
+                
+                document.querySelector('.project-timeline-container').appendChild(node);
+                
+                // Animate appearance
+                gsap.to(node, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    delay: index * 0.1,
+                    scrollTrigger: {
+                        trigger: '.projects-timeline',
+                        start: 'top 60%'
+                    }
+                });
+            });
+        }
+
+        function createTechWordCloud() {
+            const technologies = [
+                { text: 'Python', size: 40, color: '#3776ab' },
+                { text: 'TypeScript', size: 38, color: '#3178c6' },
+                { text: 'Kubernetes', size: 36, color: '#326ce5' },
+                { text: 'AWS', size: 35, color: '#ff9900' },
+                { text: 'Docker', size: 34, color: '#2496ed' },
+                { text: 'React', size: 32, color: '#61dafb' },
+                { text: 'Node.js', size: 30, color: '#339933' },
+                { text: 'Go', size: 28, color: '#00add8' },
+                { text: 'Terraform', size: 26, color: '#7b42bc' },
+                { text: 'GraphQL', size: 24, color: '#e10098' },
+                { text: 'Redis', size: 22, color: '#dc382d' },
+                { text: 'PostgreSQL', size: 22, color: '#336791' },
+                { text: 'MongoDB', size: 20, color: '#47a248' },
+                { text: 'LangChain', size: 25, color: '#1c3c3c' },
+                { text: 'GitOps', size: 23, color: '#fc6d26' },
+                { text: 'ArgoCD', size: 21, color: '#ef7b4d' },
+                { text: 'Prometheus', size: 19, color: '#e6522c' },
+                { text: 'Grafana', size: 18, color: '#f46800' },
+                { text: 'Jenkins', size: 17, color: '#d24939' },
+                { text: 'Rust', size: 16, color: '#dea584' }
+            ];
+            
+            const container = document.getElementById('techWordCloud');
+            
+            technologies.forEach((tech, index) => {
+                const span = document.createElement('span');
+                span.className = 'word';
+                span.style.fontSize = `${tech.size}px`;
+                span.style.color = tech.color;
+                span.style.fontWeight = tech.size > 25 ? 'bold' : 'normal';
+                span.textContent = tech.text;
+                
+                container.appendChild(span);
+                
+                // Animate appearance
+                gsap.to(span, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.5,
+                    delay: index * 0.05,
+                    scrollTrigger: {
+                        trigger: '.tech-cloud',
+                        start: 'top 80%'
+                    }
+                });
+            });
+        }
+
+        function createSkillsNetwork() {
+            const width = document.getElementById('networkGraph').clientWidth;
+            const height = 600;
+            
+            const nodes = [
+                { id: 'Me', group: 0, size: 30 },
+                // Skills
+                { id: 'AI/ML', group: 1, size: 25 },
+                { id: 'Cloud', group: 1, size: 25 },
+                { id: 'DevOps', group: 1, size: 25 },
+                { id: 'Leadership', group: 1, size: 20 },
+                // Technologies
+                { id: 'Python', group: 2, size: 15 },
+                { id: 'TypeScript', group: 2, size: 15 },
+                { id: 'Kubernetes', group: 2, size: 15 },
+                { id: 'AWS', group: 2, size: 15 },
+                { id: 'LangChain', group: 2, size: 12 },
+                // Companies
+                { id: 'Cloaked', group: 3, size: 18 },
+                { id: 'Inception', group: 3, size: 16 },
+                { id: 'CyberGRX', group: 3, size: 16 },
+                { id: 'Protectwise', group: 3, size: 14 }
+            ];
+            
+            const links = [
+                // Me to Skills
+                { source: 'Me', target: 'AI/ML' },
+                { source: 'Me', target: 'Cloud' },
+                { source: 'Me', target: 'DevOps' },
+                { source: 'Me', target: 'Leadership' },
+                // Skills to Tech
+                { source: 'AI/ML', target: 'Python' },
+                { source: 'AI/ML', target: 'LangChain' },
+                { source: 'Cloud', target: 'AWS' },
+                { source: 'Cloud', target: 'Kubernetes' },
+                { source: 'DevOps', target: 'Kubernetes' },
+                { source: 'DevOps', target: 'TypeScript' },
+                // Companies to Skills
+                { source: 'Cloaked', target: 'AI/ML' },
+                { source: 'Cloaked', target: 'Cloud' },
+                { source: 'Inception', target: 'Cloud' },
+                { source: 'CyberGRX', target: 'DevOps' },
+                { source: 'Protectwise', target: 'Cloud' }
+            ];
+            
+            const svg = d3.select('#networkGraph')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            const simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(width / 2, height / 2));
+            
+            // Draw links
+            const link = svg.append('g')
+                .selectAll('line')
+                .data(links)
+                .enter().append('line')
+                .attr('stroke', '#999')
+                .attr('stroke-opacity', 0.6)
+                .attr('stroke-width', 2);
+            
+            // Draw nodes
+            const node = svg.append('g')
+                .selectAll('circle')
+                .data(nodes)
+                .enter().append('circle')
+                .attr('r', d => d.size)
+                .attr('fill', d => {
+                    const colors = ['#46b450', '#0073aa', '#e74c3c', '#f39c12'];
+                    return colors[d.group];
+                })
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended));
+            
+            // Add labels
+            const label = svg.append('g')
+                .selectAll('text')
+                .data(nodes)
+                .enter().append('text')
+                .text(d => d.id)
+                .attr('font-size', 12)
+                .attr('text-anchor', 'middle')
+                .attr('dy', 4);
+            
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                
+                node
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+                
+                label
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y);
+            });
+            
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+            
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+            
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        }
+
+        function animateAchievements() {
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.achievement-number');
+                        
+                        counters.forEach(counter => {
+                            const target = parseInt(counter.getAttribute('data-target'));
+                            const increment = target / 100;
+                            let current = 0;
+                            
+                            const updateCounter = () => {
+                                current += increment;
+                                if (current < target) {
+                                    counter.textContent = Math.floor(current).toLocaleString();
+                                    requestAnimationFrame(updateCounter);
+                                } else {
+                                    counter.textContent = target.toLocaleString();
+                                }
+                            };
+                            
+                            updateCounter();
+                        });
+                        
+                        // Animate items
+                        gsap.to('.achievement-item', {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            stagger: 0.1
+                        });
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            observer.observe(document.querySelector('.achievement-section'));
+        }
+
+        function setupInteractions() {
+            // Timeline progress on scroll
+            const timelinePath = document.querySelector('.timeline-path');
+            const timelineProgress = document.querySelector('.timeline-progress');
+            
+            ScrollTrigger.create({
+                trigger: '.journey-section',
+                start: 'top center',
+                end: 'bottom center',
+                onUpdate: (self) => {
+                    const progress = self.progress * 100;
+                    timelineProgress.style.width = `${progress}%`;
+                }
+            });
+
+            // Journey stop interactions
+            document.querySelectorAll('.journey-stop').forEach(stop => {
+                stop.addEventListener('click', function() {
+                    const year = this.getAttribute('data-year');
+                    // Scroll to corresponding story
+                    const storyIndex = ['2010', '2013', '2015', '2018', '2020', '2022'].indexOf(year);
+                    if (storyIndex !== -1) {
+                        const targetStory = document.querySelectorAll('.story-card')[storyIndex];
+                        if (targetStory) {
+                            targetStory.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        function setupEasterEgg() {
+            const easterEgg = document.getElementById('easterEgg');
+            let clickCount = 0;
+            
+            easterEgg.addEventListener('click', () => {
+                clickCount++;
+                
+                if (clickCount === 3) {
+                    launchConfetti();
+                    clickCount = 0;
+                    
+                    // Show a fun message
+                    const message = document.createElement('div');
+                    message.style.cssText = `
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background: var(--primary-color);
+                        color: white;
+                        padding: 20px 40px;
+                        border-radius: 10px;
+                        font-size: 1.5em;
+                        z-index: 10000;
+                        animation: fadeInOut 3s ease;
+                    `;
+                    message.textContent = '🚀 You found the easter egg! Keep building awesome things!';
+                    document.body.appendChild(message);
+                    
+                    setTimeout(() => message.remove(), 3000);
+                }
+            });
+        }
+
+        function launchConfetti() {
+            const colors = ['#46b450', '#0073aa', '#e74c3c', '#f39c12', '#9b59b6'];
+            const confettiCount = 100;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = -10 + 'px';
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                document.body.appendChild(confetti);
+                
+                gsap.to(confetti, {
+                    y: window.innerHeight + 100,
+                    x: Math.random() * 200 - 100,
+                    rotation: Math.random() * 720,
+                    duration: 2 + Math.random() * 2,
+                    ease: 'power2.out',
+                    onComplete: () => confetti.remove()
+                });
+            }
+        }
+    </script>
+</body>
+</html>
