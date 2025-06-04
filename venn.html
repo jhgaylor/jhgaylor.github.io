@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jake Gaylor - Skills Visualization</title>
+    <meta name="description" content="Interactive visualization showing Jake Gaylor at the intersection of Platform Engineering, Product Development, and AI Engineering" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --color-background-light: #ffffff;
+        --color-dimmed-light: #f3f4f5;
+        --color-primary-light: #191e23;
+        --color-secondary-light: #6c7781;
+        --color-accent-light: #0073aa;
+        --color-background-dark: #191e23;
+        --color-dimmed-dark: #23282d;
+        --color-primary-dark: #fbfbfc;
+        --color-secondary-dark: #ccd0d4;
+        --color-accent-dark: #00a0d2;
+        --color-background: var(--color-background-light);
+        --color-dimmed: var(--color-dimmed-light);
+        --color-primary: var(--color-primary-light);
+        --color-secondary: var(--color-secondary-light);
+        --color-accent: var(--color-accent-light);
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-background: var(--color-background-dark);
+          --color-dimmed: var(--color-dimmed-dark);
+          --color-primary: var(--color-primary-dark);
+          --color-secondary: var(--color-secondary-dark);
+          --color-accent: var(--color-accent-dark);
+        }
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        font-size: 18px;
+      }
+      
+      body {
+        background: var(--color-background);
+        color: var(--color-primary);
+        font: 1em/1.5 Lato, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      .venn-container {
+        max-width: 400px;
+        height: 380px;
+      }
+    </style>
+    <script type="module">
+      // D3.js Venn Diagram with word cloud on hover
+      const drawVennDiagram = () => {
+        const container = d3.select('#venn-diagram')
+        if (container.empty()) return
+        
+        const width = 400
+        const height = 380
+        const radius = 125
+        
+        // Create SVG with D3
+        const svg = container
+          .append('svg')
+          .attr('width', width)
+          .attr('height', height)
+          .attr('viewBox', `0 0 ${width} ${height}`)
+        
+        // Add defs for filters
+        const defs = svg.append('defs')
+        
+        // Create text readability filter
+        const filter = defs.append('filter')
+          .attr('id', 'readable-text')
+          .attr('x', '-50%')
+          .attr('y', '-50%')
+          .attr('width', '200%')
+          .attr('height', '200%')
+        
+        // Add white stroke for readability
+        filter.append('feMorphology')
+          .attr('in', 'SourceAlpha')
+          .attr('result', 'dilated')
+          .attr('operator', 'dilate')
+          .attr('radius', 2)
+        
+        filter.append('feFlood')
+          .attr('flood-color', '#ffffff')
+          .attr('flood-opacity', 0.95)
+          .attr('result', 'whiteFlood')
+        
+        filter.append('feComposite')
+          .attr('in', 'whiteFlood')
+          .attr('in2', 'dilated')
+          .attr('operator', 'in')
+          .attr('result', 'whiteBorder')
+        
+        const feMerge = filter.append('feMerge')
+        feMerge.append('feMergeNode')
+          .attr('in', 'whiteBorder')
+        feMerge.append('feMergeNode')
+          .attr('in', 'SourceGraphic')
+        
+        // Circle positions and data with keywords
+        const circlesData = [
+          { 
+            id: 'platform', 
+            cx: width / 2 - radius * 0.4, 
+            cy: height / 2 - radius * 0.5, 
+            label: 'Platform\nEngineering', 
+            color: '#0073aa',
+            keywords: ['AWS', 'Kubernetes', 'Terraform', 'GitOps', 'ArgoCD', 'CI/CD', 'Infrastructure', 'DevOps', 'EKS', 'Observability']
+          },
+          { 
+            id: 'product', 
+            cx: width / 2 + radius * 0.4, 
+            cy: height / 2 - radius * 0.5, 
+            label: 'Product\nDevelopment', 
+            color: '#46b450',
+            keywords: ['MVPs', '0→1', 'Analytics', 'Strategy', 'Features', 'Metrics', 'Leadership', 'Vision', 'GTM', 'PMF']
+          },
+          { 
+            id: 'ai', 
+            cx: width / 2, 
+            cy: height / 2 + radius * 0.4, 
+            label: 'AI\nEngineering', 
+            color: '#d54e21',
+            keywords: ['LLM Agents', 'RAG', 'LangChain', 'Semantic Search', 'MCP', 'Conversational AI', 'Embeddings', 'Vectors', 'GPT', 'ML']
+          }
+        ]
+        
+        // Get colors from CSS variables
+        const styles = getComputedStyle(document.documentElement)
+        const primaryColor = styles.getPropertyValue('--color-primary').trim()
+        
+        // Create circle groups for hover effects
+        const circleGroups = svg.selectAll('g.circle-group')
+          .data(circlesData)
+          .join('g')
+          .attr('class', 'circle-group')
+          .style('cursor', 'pointer')
+        
+        // Create circles
+        const circles = circleGroups.append('circle')
+          .attr('cx', d => d.cx)
+          .attr('cy', d => d.cy)
+          .attr('r', radius)
+          .attr('fill', d => d.color)
+          .attr('fill-opacity', 0.1)
+          .attr('stroke', d => d.color)
+          .attr('stroke-width', 1)
+          .attr('stroke-opacity', 0.2)
+          .style('transition', 'all 0.3s ease')
+        
+        // Add main labels (positioned away from center)
+        const labels = circleGroups.append('text')
+          .attr('class', 'circle-label')
+          .attr('x', d => {
+            // Move labels away from Jake
+            if (d.id === 'platform') return d.cx - 35  // Move left
+            if (d.id === 'product') return d.cx + 35   // Move right
+            return d.cx  // AI stays centered
+          })
+          .attr('y', d => {
+            // Move labels away from Jake
+            if (d.id === 'platform') return d.cy - 30  // Move up
+            if (d.id === 'product') return d.cy - 30   // Move up
+            if (d.id === 'ai') return d.cy + 35        // Move down
+            return d.cy
+          })
+          .attr('text-anchor', 'middle')
+          .attr('dominant-baseline', 'middle')
+          .attr('fill', d => d.color)
+          .attr('font-size', 20)
+          .attr('font-weight', 'bold')
+          .style('transition', 'all 0.3s ease')
+          .style('pointer-events', 'none')
+        
+        // Add multi-line text
+        labels.each(function(d) {
+          const text = d3.select(this)
+          const lines = d.label.split('\n')
+          const xPos = text.attr('x')
+          const yPos = text.attr('y')
+          
+          lines.forEach((line, i) => {
+            text.append('tspan')
+              .attr('x', xPos)
+              .attr('dy', i === 0 ? '-0.6em' : '1.2em')
+              .text(line)
+          })
+        })
+        
+        // Container for word cloud keywords
+        const keywordGroups = circleGroups.append('g')
+          .attr('class', 'keywords')
+          .style('opacity', 0)
+          .style('pointer-events', 'none')
+        
+        // Add hover effects
+        circleGroups
+          .on('mouseenter', function(event, d) {
+            const group = d3.select(this)
+            
+            group.select('circle')
+              .attr('fill-opacity', 0.25)
+              .attr('stroke-width', 2)
+              .attr('stroke-opacity', 0.5)
+            
+            // Hide main label
+            group.select('.circle-label')
+              .style('opacity', 0)
+            
+            // Show keywords as word cloud
+            const keywords = group.select('.keywords')
+            keywords.selectAll('text').remove() // Clear any existing
+            
+            // Create a more organic cloud layout
+            const positions = []
+            const usedPositions = []
+            
+            d.keywords.forEach((keyword, i) => {
+              const fontSize = i < 3 ? 16 : (i < 6 ? 14 : 12)
+              let placed = false
+              let attempts = 0
+              let x, y
+              
+              // Try to place each word without overlap
+              while (!placed && attempts < 50) {
+                if (i === 0) {
+                  // Place first word at center
+                  x = d.cx
+                  y = d.cy - 20
+                } else if (i < 4) {
+                  // Place next 3 words around center with more space
+                  const angle = (i - 1) * 2 * Math.PI / 3
+                  const dist = 55
+                  x = d.cx + Math.cos(angle) * dist
+                  y = d.cy + Math.sin(angle) * dist
+                } else {
+                  // Place remaining words in outer ring with more space
+                  const angle = (i - 4) * 2 * Math.PI / 6
+                  const dist = 85
+                  x = d.cx + Math.cos(angle) * dist
+                  y = d.cy + Math.sin(angle) * dist
+                }
+                
+                // Check if position is too close to existing words
+                placed = true
+                for (let pos of usedPositions) {
+                  const dx = x - pos.x
+                  const dy = y - pos.y
+                  const minDist = (keyword.length + pos.length) * 4 + 20
+                  if (Math.sqrt(dx * dx + dy * dy) < minDist) {
+                    placed = false
+                    // Adjust position slightly
+                    const angle = Math.random() * 2 * Math.PI
+                    x += Math.cos(angle) * 15
+                    y += Math.sin(angle) * 15
+                    break
+                  }
+                }
+                attempts++
+              }
+              
+              usedPositions.push({ x, y, length: keyword.length })
+              
+              keywords.append('text')
+                .attr('x', d.cx)
+                .attr('y', d.cy)
+                .attr('text-anchor', 'middle')
+                .attr('dominant-baseline', 'middle')
+                .attr('fill', '#ffffff')
+                .attr('font-size', 0)
+                .attr('font-weight', i < 3 ? 'bold' : 'normal')
+                .style('opacity', 0)
+                .text(keyword)
+                .transition()
+                .duration(300)
+                .delay(i * 30)
+                .attr('x', x)
+                .attr('y', y)
+                .attr('font-size', fontSize)
+                .style('opacity', 0.9)
+            })
+            
+            keywords.transition()
+              .duration(200)
+              .style('opacity', 1)
+            
+            // Dim other circles
+            circleGroups.filter(other => other !== d)
+              .style('opacity', 0.3)
+            
+            // Hide center text
+            centerText.style('opacity', 0)
+          })
+          .on('mouseleave', function(event, d) {
+            const group = d3.select(this)
+            
+            circles
+              .attr('fill-opacity', 0.1)
+              .attr('stroke-width', 1)
+              .attr('stroke-opacity', 0.2)
+            
+            // Show main label again
+            group.select('.circle-label')
+              .style('opacity', 1)
+            
+            // Hide keywords
+            group.select('.keywords')
+              .style('opacity', 0)
+              .selectAll('text')
+              .transition()
+              .duration(200)
+              .attr('font-size', 0)
+              .remove()
+            
+            circleGroups.style('opacity', 1)
+            
+            // Show center text again
+            centerText.style('opacity', 1)
+          })
+        
+        // Add center label
+        const centerText = svg.append('text')
+          .attr('x', width / 2)
+          .attr('y', height / 2)
+          .attr('text-anchor', 'middle')
+          .attr('dominant-baseline', 'middle')
+          .attr('fill', primaryColor)
+          .attr('font-size', 36)
+          .attr('font-weight', 'bold')
+          .style('transition', 'all 0.3s ease')
+          .text('Jake')
+        
+        // Add subtle animation on load
+        circles
+          .attr('r', 0)
+          .transition()
+          .duration(800)
+          .delay((d, i) => i * 200)
+          .attr('r', radius)
+          .ease(d3.easeBounceOut)
+        
+        centerText
+          .style('opacity', 0)
+          .transition()
+          .duration(600)
+          .delay(600)
+          .style('opacity', 1)
+      }
+
+      // Draw on load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', drawVennDiagram)
+      } else {
+        drawVennDiagram()
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Jake Gaylor</h1>
+    <div id="venn-diagram" class="venn-container"></div>
+  </body>
+</html>
