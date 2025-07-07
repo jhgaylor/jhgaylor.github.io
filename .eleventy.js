@@ -28,6 +28,8 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "_assets/js": "js" });
 
     eleventyConfig.addPassthroughCopy({ "_assets/*.pdf": "." });
+    eleventyConfig.addPassthroughCopy({ "_assets/*.mov": "." });
+    eleventyConfig.addPassthroughCopy({ "_assets/*.zip": "." });
 
     eleventyConfig.addPassthroughCopy({ "_assets/*.txt": "." });
 
