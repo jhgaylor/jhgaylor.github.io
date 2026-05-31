@@ -15,14 +15,18 @@ This is Jake Gaylor's personal portfolio site — a static site built with [Elev
 
 ---
 
-# Render the Site
+## Local development
 
-npx @11ty/eleventy --serve 
+### Run the site locally
 
-# Render an updated resume.html from resume.json
+Starts an Eleventy dev server with live reload:
 
-Update `resume.json` as needed.
+```
+npx @11ty/eleventy --serve
+```
 
-Run `npm run build-resume`
+### Rebuild the résumé
 
-Git commit all the changes to both files
+1. Update `resume.json` as needed.
+2. Run `npm run build-resume`
+3. Git commit all the changes to both files.
