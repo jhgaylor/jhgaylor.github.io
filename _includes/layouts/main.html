@@ -12,8 +12,27 @@
         posthog.init('phc_2eJY8Qs3B3H34qrYmBTK1d8GqN2xVsblmaTthTQujAB', {
             api_host: 'https://us.i.posthog.com',
             person_profiles: 'always',
+            // Channel / recipient tagging: append ?tag=recruiter|referral|cold (and optionally
+            // &r=acme-founder) to a shared link, and every event from that visit carries it.
+            // This is the highest-value signal at single-digit-N volume: which audience even
+            // opens it. Runs in the `loaded` callback so register() persists against the real
+            // library, not the early stub.
+            loaded: function (ph) {
+                try {
+                    var params = new URLSearchParams(window.location.search);
+                    var props = {};
+                    var tag = params.get('tag') || params.get('utm_source');
+                    if (tag) props.channel_tag = tag;
+                    var recipient = params.get('r') || params.get('to');
+                    if (recipient) props.recipient_tag = recipient;
+                    if (Object.keys(props).length) {
+                        ph.register(props);
+                        ph.capture('tagged_visit', props);
+                    }
+                } catch (e) {}
+            },
         })
-    </script>
+</script>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
     <a href="mailto:jhgaylor@gmail.com" class="corner-ribbon">
@@ -28,7 +47,7 @@
       <div class="container mx-auto px-6 py-8">
           <div class="flex flex-col md:flex-row justify-between items-center">
               <div class="text-gray-600 mb-4 md:mb-0">
-                  © 2024 Jake Gaylor. All rights reserved.
+                  © 2026 Jake Gaylor. All rights reserved.
               </div>
               <div class="flex space-x-6">
                   <a href="mailto:jhgaylor@gmail.com" class="text-gray-600 hover:text-blue-600 transition-colors">
