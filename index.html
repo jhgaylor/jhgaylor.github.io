@@ -2,876 +2,260 @@
 layout: layouts/main.html
 ---
 
-<header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-  <div class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
-      <div class="md:w-2/3">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4">
-              Your Next<br>
-              <span id="rotating-role" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
-                  Technical Cofounder
-              </span>
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-2xl">
-              15+ years of experience helping companies build better tech organizations, launch new products, and grow with confidence.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-              <a href="sms:+17204533994" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 transition-colors">
-                  <i class="fas fa-message mr-2"></i>
-                  Text Me
-              </a>
-              <a href="mailto:jhgaylor@gmail.com" class="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 transition-colors">
-                  <i class="fas fa-envelope mr-2"></i>
-                  Email Me
-              </a>
-              <a href="/resume/" class="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 transition-colors">
-                  <i class="fas fa-file-download mr-2"></i>
-                  View Resume
-              </a>
-          </div>
+<!-- ===================== HERO: the through-line ===================== -->
+<header class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 text-white">
+  <div class="container mx-auto px-6 py-20 md:py-28 flex flex-col md:flex-row items-center gap-12">
+    <div class="md:w-3/5">
+      <p class="text-blue-200 font-semibold tracking-widest uppercase text-sm mb-5">
+        Senior &middot; Staff &middot; Engineering Leadership
+      </p>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        I build at every layer and make good teams
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white"> ship like great ones.</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-2xl">
+        15+ years from SaaS to petabyte-scale infrastructure down to firmware, plus a $500K P&amp;L of my own.
+        I see how the whole system fits together, not just my own slice of it.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/resume/" data-cta="view-resume" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-md text-blue-800 bg-white hover:bg-blue-50 transition-colors shadow-lg">
+          <i class="fas fa-file-lines mr-2"></i>
+          View Resume
+        </a>
+        <a href="mailto:jhgaylor@gmail.com" data-cta="email" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-md text-blue-800 bg-blue-200 hover:bg-blue-100 transition-colors shadow-lg">
+          <i class="fas fa-envelope mr-2"></i>
+          Email Me
+        </a>
+        <a href="sms:+17204533994" data-cta="text" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-medium rounded-md text-white border border-white/40 hover:bg-white/10 transition-colors">
+          <i class="fas fa-message mr-2"></i>
+          Text Me
+        </a>
       </div>
-      <div class="md:w-1/3">
-          <img src="/images/me_2025_2.png" alt="Jake Gaylor" class="rounded-full w-64 h-64 object-cover border-4 border-white shadow-lg mx-auto">
-      </div>
+    </div>
+    <div class="md:w-2/5">
+      <img src="/images/me_2025_2.png" alt="Jake Gaylor" class="rounded-2xl w-72 h-72 md:w-80 md:h-80 object-cover border-4 border-white/20 shadow-2xl mx-auto">
+    </div>
   </div>
 </header>
 
-<!-- Expertise Section -->
-<section id="expertise" class="py-20 bg-white text-gray-800">
+<!-- ===================== RANGE STRIP: the evidence ===================== -->
+<section id="range" class="py-16 md:py-20 bg-white text-gray-900 border-b border-gray-100">
   <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-center">How I Accelerate Success</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-100">
-              <i class="fas fa-rocket text-3xl text-blue-600 mb-4"></i>
-              <h3 class="text-xl font-semibold mb-3">Ship Fast, Learn Fast</h3>
-              <p class="text-gray-600 mb-4">Focus on delivering the first quantum of value quickly, then iterate based on real user feedback.</p>
-              <ul class="space-y-2 text-gray-600">
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>MVP in days, not months</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>Data-driven iterations</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>Continuous user feedback loops</span>
-                  </li>
-              </ul>
-          </div>
-          <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-100">
-              <i class="fas fa-bolt text-3xl text-blue-600 mb-4"></i>
-              <h3 class="text-xl font-semibold mb-3">Supercharge Your Teams</h3>
-              <p class="text-gray-600 mb-4">Deliver faster with proven tools and practices that scale across your organization.</p>
-              <ul class="space-y-2 text-gray-600">
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>Best-in-class development workflows</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>Automated testing and deployment</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>Cost-effective scaling solutions</span>
-                  </li>
-              </ul>
-          </div>
-          <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-100">
-              <i class="fas fa-bullseye text-3xl text-blue-600 mb-4"></i>
-              <h3 class="text-xl font-semibold mb-3">Find Product Market Fit</h3>
-              <p class="text-gray-600 mb-4">Transform engineering teams into product teams that own the full lifecycle from idea to customer value.</p>
-              <ul class="space-y-2 text-gray-600">
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>Data-driven feature development</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>Customer usage insights</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
-                      <span>Value-driven prioritization</span>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </div>
-</section>
-
-<!-- Previous Experience Section -->
-<section class="py-20 bg-gradient-to-b from-blue-900 to-blue-800">
-  <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-          <h2 class="text-4xl font-bold mb-8 text-center text-white">Companies I've Helped Grow</h2>
-          <p class="text-xl mb-12 text-center text-blue-100">
-              I've had the privilege of working with innovative companies to help scale their technology and teams.
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
-                  <img src="images/logo.pw.png" alt="Company 1 Logo" class="h-40 w-auto mb-4 object-contain">
-                  <h3 class="text-lg font-semibold text-gray-900">Protectwise</h3>
-                  <p class="text-gray-600 mt-2 text-xs">Acquired by Verizon</p>
-                  <div class="testimonial">
-                      <p class="testimonial-text">"Jake was instrumental in building our cloud-native security platform. His technical leadership helped shape our architecture and team practices."</p>
-                      <span class="testimonial-author">- Devops Engineer, Protectwise</span>
-                  </div>
-              </div>
-
-              <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
-                  <img src="images/logo.fsw.png" alt="Company 2 Logo" class="h-40 w-auto mb-4 object-contain">
-                  <h3 class="text-lg font-semibold text-gray-900">Food Service Warehouse</h3>
-                  <div class="testimonial">
-                      <p class="testimonial-text">"We were deploying c# on vSphere when Jake joined on our first Nodejs backend team. He had been using Docker, we identified Kubernetes as our next step, and Jake hit the ground running. Our node services had the fastest release cycle in the company."</p>
-                      <span class="testimonial-author">- Architect, Food Service Warehouse</span>
-                  </div>
-              </div>
-
-              <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
-                  <img src="images/logo.cloaked.png" alt="Company 3 Logo" class="h-40 w-auto mb-4 object-contain">
-                  <h3 class="text-lg font-semibold text-gray-900">Cloaked</h3>
-                  <div class="testimonial">
-                      <p class="testimonial-text">"Jake is a force for good unlike any other. He migrated our infra to a cheaper and more scalable system, crafted a CI pipeline that accelerated deploys by 30x, and taught the whole company how to make data-driven decisions by building and showcasing an entire product analytics stack. And that was just his first 6 months."</p>
-                      <span class="testimonial-author">- Director Platform Engineering, Cloaked</span>
-                  </div>
-              </div>
-
-              <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
-                  <img src="images/logo.grx.png" alt="Company 4 Logo" class="h-40 w-auto mb-4 object-contain">
-                  <h3 class="text-lg font-semibold text-gray-900">CyberGRX</h3>
-                  <p class="text-gray-600 mt-2 text-xs">Now ProcessUnity</p>
-                  <div class="testimonial">
-                      <p class="testimonial-text">"I watched Jake redo a build and deploy process over the span of 3 days, whip up a presentation, and get every engineer in the org up to speed using it to deploy new services, a moment I'll never forget because our productivity EXPLODED afterwards."</p>
-                      <span class="testimonial-author">- Software Engineer, CyberGRX</span>
-                  </div>
-              </div>
-
-              <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
-                  <img src="images/logo.ih.png" alt="Company 5 Logo" class="h-40 w-auto mb-4 object-contain">
-                  <h3 class="text-xl font-semibold text-gray-900">Inception Health</h3>
-                  <div class="testimonial">
-                      <p class="testimonial-text">"I also wanted to second (third? Fourth?) Jake's skills here. I don't have anything unique to add as everyone else has already covered it, but this man will help you achieve what you need."</p>
-                      <span class="testimonial-author">- Senior Platform Engineer, Inception Health</span>
-                  </div>
-              </div>
-
-              <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center company-card">
-                <img src="images/logo.magic.png" alt="Company 5 Logo" class="h-40 w-auto mb-4 object-contain">
-                <h3 class="text-xl font-semibold text-gray-900">Magic</h3>
-                <div class="testimonial">
-                      <p class="testimonial-text">"Jake worked in the pit with [the operations team] and everyday came in with killer energy. Everyone else told us how to work around problems. Jake built us better tools."</p>
-                      <span class="testimonial-author">- Magician, Magic</span>
-                  </div>
-            </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<!-- Update Zero to One section -->
-<section id="zero-to-one" class="py-20 bg-white">
-  <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-          <h2 class="text-4xl font-bold mb-8 text-center">How I Actually Build Products</h2>
-          <p class="text-xl mb-12 text-center text-gray-600">
-              Forget lengthy roadmaps. Real products are built one small experiment at a time, with real users, not focus groups.
-          </p>
-
-          <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-12">
-              <h3 class="text-2xl font-semibold mb-6 text-center">The Reality of Building Something People Want</h3>
-              
-              <div class="space-y-8">
-                  <div class="flex items-start">
-                      <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">1</div>
-                      <div>
-                          <h4 class="font-semibold text-lg mb-2">Start Embarrassingly Small</h4>
-                          <p class="text-gray-600 mb-3">What's the tiniest thing that could possibly be useful? Build that. Not next week. Today.</p>
-                          <div class="bg-white p-4 rounded-md border border-gray-200">
-                              <p class="text-sm text-gray-700"><span class="font-semibold">Example:</span> Don't build a full analytics dashboard. Start with one number that actually matters to your users.</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="flex items-start">
-                      <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">2</div>
-                      <div>
-                          <h4 class="font-semibold text-lg mb-2">Get It In Front of Real Humans</h4>
-                          <p class="text-gray-600 mb-3">Not your team. Not your mom. Real users who will actually tell you it sucks.</p>
-                          <div class="bg-white p-4 rounded-md border border-gray-200">
-                              <p class="text-sm text-gray-700"><span class="font-semibold">Pro tip:</span> If you're not slightly embarrassed by v1, you waited too long to ship.</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="flex items-start">
-                      <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">3</div>
-                      <div>
-                          <h4 class="font-semibold text-lg mb-2">Instrument Everything</h4>
-                          <p class="text-gray-600 mb-3">Before you ship that tiny feature, add analytics. Know exactly how people use it (or don't).</p>
-                          <div class="bg-white p-4 rounded-md border border-gray-200">
-                              <p class="text-sm text-gray-700"><span class="font-semibold">Must have:</span> Usage tracking, error monitoring, and performance metrics from day one.</p>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="flex items-start">
-                      <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">4</div>
-                      <div>
-                          <h4 class="font-semibold text-lg mb-2">Let Data Drive the Next Step</h4>
-                          <p class="text-gray-600 mb-3">What users do matters more than what they say. Follow the usage patterns, not the feature requests.</p>
-                          <div class="bg-white p-4 rounded-md border border-gray-200">
-                              <p class="text-sm text-gray-700"><span class="font-semibold">Reality check:</span> 80% of features never get used. Build the 20% that matters.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-8">
-              <div class="bg-blue-50 p-8 rounded-lg border-2 border-blue-200">
-                  <h3 class="text-xl font-semibold mb-4 flex items-center">
-                      <i class="fas fa-cogs text-blue-600 mr-3"></i>
-                      Infrastructure That Enables Speed
-                  </h3>
-                  <p class="text-gray-700 mb-4">You can only iterate quickly when the basics are rock solid:</p>
-                  <ul class="space-y-2 text-gray-600">
-                      <li class="flex items-start">
-                          <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
-                          <span><strong>CI/CD from day one</strong> - Deploy in minutes, not hours</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
-                          <span><strong>Feature flags everywhere</strong> - Test with 1% before rolling to 100%</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
-                          <span><strong>Real-time monitoring</strong> - Know immediately when something breaks</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2"></i>
-                          <span><strong>Automated rollbacks</strong> - Undo mistakes in seconds</span>
-                      </li>
-                  </ul>
-              </div>
-
-              <div class="bg-green-50 p-8 rounded-lg border-2 border-green-200">
-                  <h3 class="text-xl font-semibold mb-4 flex items-center">
-                      <i class="fas fa-chart-line text-green-600 mr-3"></i>
-                      Metrics That Actually Matter
-                  </h3>
-                  <p class="text-gray-700 mb-4">Skip the vanity metrics. Focus on what drives decisions:</p>
-                  <ul class="space-y-2 text-gray-600">
-                      <li class="flex items-start">
-                          <i class="fas fa-arrow-right text-green-600 mt-1 mr-2"></i>
-                          <span><strong>Time to value</strong> - How fast do users see benefit?</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-arrow-right text-green-600 mt-1 mr-2"></i>
-                          <span><strong>Feature adoption</strong> - Are people actually using what we built?</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-arrow-right text-green-600 mt-1 mr-2"></i>
-                          <span><strong>User paths</strong> - Where do they get stuck?</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-arrow-right text-green-600 mt-1 mr-2"></i>
-                          <span><strong>Error rates</strong> - What's breaking their experience?</span>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-
-          <div class="mt-12 bg-gray-900 text-white p-8 rounded-lg">
-              <blockquote class="text-lg italic text-center">
-                  "The best product teams don't guess. They ship small, measure everything, and let users show them what to build next."
-              </blockquote>
-              <p class="text-center mt-4 text-gray-400">- My approach after 15+ years of building products</p>
-          </div>
-      </div>
-  </div>
-</section>
-
-<!-- Add this section before Technical Expertise -->
-<section class="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
-  <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-          <h2 class="text-4xl font-bold mb-8 text-center">Eliminate Toil, Ship Value</h2>
-          <p class="text-xl mb-12 text-center">
-              Every manual step is a chance to mess up. Every missing automation is time stolen from building what matters.
-          </p>
-
-          <div class="bg-white/10 p-8 rounded-lg backdrop-blur mb-12">
-              <h3 class="text-2xl font-semibold mb-6 text-center">The Hidden Cost of Manual Work</h3>
-              <div class="grid md:grid-cols-2 gap-8">
-                  <div>
-                      <h4 class="text-lg font-semibold mb-4 flex items-center">
-                          <i class="fas fa-hand-paper text-red-300 mr-3"></i>
-                          What Manual Processes Really Cost
-                      </h4>
-                      <ul class="space-y-3 text-sm">
-                          <li class="flex items-start">
-                              <i class="fas fa-times text-red-300 mt-1 mr-2"></i>
-                              <span><strong>30 minutes</strong> to manually run tests before each deploy</span>
-                          </li>
-                          <li class="flex items-start">
-                              <i class="fas fa-times text-red-300 mt-1 mr-2"></i>
-                              <span><strong>2 hours</strong> debugging because someone forgot a step</span>
-                          </li>
-                          <li class="flex items-start">
-                              <i class="fas fa-times text-red-300 mt-1 mr-2"></i>
-                              <span><strong>1 day</strong> rolling back a bad deploy without automation</span>
-                          </li>
-                          <li class="flex items-start">
-                              <i class="fas fa-times text-red-300 mt-1 mr-2"></i>
-                              <span><strong>Weekends</strong> spent applying security patches</span>
-                          </li>
-                      </ul>
-                  </div>
-                  <div>
-                      <h4 class="text-lg font-semibold mb-4 flex items-center">
-                          <i class="fas fa-robot text-green-300 mr-3"></i>
-                          What Automation Gives Back
-                      </h4>
-                      <ul class="space-y-3 text-sm">
-                          <li class="flex items-start">
-                              <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
-                              <span><strong>0 minutes</strong> - Tests run automatically on every push</span>
-                          </li>
-                          <li class="flex items-start">
-                              <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
-                              <span><strong>Consistency</strong> - Same process every time, no forgotten steps</span>
-                          </li>
-                          <li class="flex items-start">
-                              <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
-                              <span><strong>60 seconds</strong> to rollback with automated deployments</span>
-                          </li>
-                          <li class="flex items-start">
-                              <i class="fas fa-check text-green-300 mt-1 mr-2"></i>
-                              <span><strong>Sleep well</strong> - Patches apply automatically, safely</span>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-
-          <div class="mb-12">
-              <h3 class="text-2xl font-semibold mb-6 text-center">Automate Everything That Steals Focus</h3>
-              <div class="grid md:grid-cols-3 gap-6">
-                  <div class="bg-white/10 p-6 rounded-lg backdrop-blur border border-white/20">
-                      <h4 class="font-semibold mb-3 flex items-center">
-                          <i class="fas fa-code text-blue-300 mr-2"></i>
-                          Code Quality
-                      </h4>
-                      <ul class="space-y-2 text-sm">
-                          <li>• Auto-format on save</li>
-                          <li>• Linting in your editor</li>
-                          <li>• Type checking in CI</li>
-                          <li>• Code review automation</li>
-                      </ul>
-                  </div>
-                  <div class="bg-white/10 p-6 rounded-lg backdrop-blur border border-white/20">
-                      <h4 class="font-semibold mb-3 flex items-center">
-                          <i class="fas fa-vial text-green-300 mr-2"></i>
-                          Testing & Validation
-                      </h4>
-                      <ul class="space-y-2 text-sm">
-                          <li>• Tests run on every PR</li>
-                          <li>• Coverage reports</li>
-                          <li>• Performance benchmarks</li>
-                          <li>• Security scanning</li>
-                      </ul>
-                  </div>
-                  <div class="bg-white/10 p-6 rounded-lg backdrop-blur border border-white/20">
-                      <h4 class="font-semibold mb-3 flex items-center">
-                          <i class="fas fa-ship text-purple-300 mr-2"></i>
-                          Deployment & Operations
-                      </h4>
-                      <ul class="space-y-2 text-sm">
-                          <li>• Merge on green builds</li>
-                          <li>• Deploy on merge</li>
-                          <li>• Rollback on errors</li>
-                          <li>• Auto-scale on load</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-
-          <div class="bg-white/10 p-8 rounded-lg backdrop-blur mb-8">
-              <h3 class="text-xl font-semibold mb-4 text-center">The Compound Effect of Automation</h3>
-              <div class="space-y-4">
-                  <div class="flex items-center">
-                      <div class="bg-green-500 rounded-full w-3 h-3 mr-4"></div>
-                      <div>
-                          <strong>Week 1:</strong> Save 2 hours by automating deployments
-                      </div>
-                  </div>
-                  <div class="flex items-center">
-                      <div class="bg-green-500 rounded-full w-3 h-3 mr-4"></div>
-                      <div>
-                          <strong>Month 1:</strong> Ship 3x more features with the same team
-                      </div>
-                  </div>
-                  <div class="flex items-center">
-                      <div class="bg-green-500 rounded-full w-3 h-3 mr-4"></div>
-                      <div>
-                          <strong>Quarter 1:</strong> Engineers focus on innovation, not operations
-                      </div>
-                  </div>
-                  <div class="flex items-center">
-                      <div class="bg-green-500 rounded-full w-3 h-3 mr-4"></div>
-                      <div>
-                          <strong>Year 1:</strong> Culture shift - automation first, always
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="bg-blue-800 p-8 rounded-lg">
-              <blockquote class="text-lg italic text-center mb-4">
-                  "If you do it twice, automate it. If it can fail, monitor it. If it takes focus away from creating value, eliminate it."
-              </blockquote>
-              <p class="text-center text-blue-200">This is how you build software that matters.</p>
-          </div>
-      </div>
-  </div>
-</section>
-
-<section class="py-20 bg-gray-100">
-<div class="container mx-auto px-6">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8 text-center">Align Teams Around What Actually Matters</h2>
-        <p class="text-xl mb-12 text-center text-gray-600">
-            The bar for "good enough" starts low and rises with product-market fit. Teams that measure the right things and hold themselves accountable will find it.
-        </p>
-
-        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
-            <h3 class="text-2xl font-semibold mb-6">The Path to Product-Market Fit</h3>
-            
-            <div class="space-y-8">
-                <div class="border-l-4 border-blue-600 pl-6">
-                    <h4 class="font-semibold text-lg mb-2">Start: Define Success Metrics Before You Build</h4>
-                    <p class="text-gray-600 mb-3">Every feature needs a number. Not a feeling, not a hope - a measurable outcome.</p>
-                    <div class="bg-gray-50 p-4 rounded-md">
-                        <p class="text-sm"><span class="font-semibold">Example:</span> "This feature succeeds if 20% of users who see it click through in week one."</p>
-                    </div>
-                </div>
-
-                <div class="border-l-4 border-green-600 pl-6">
-                    <h4 class="font-semibold text-lg mb-2">Measure: Track What Users Actually Do</h4>
-                    <p class="text-gray-600 mb-3">Feature usage tells you what's worth your time. User journeys show you where they struggle.</p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-chart-line text-green-600 mt-1 mr-2"></i>
-                            <span><strong>Usage metrics:</strong> Which features get used daily vs forgotten</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-map text-green-600 mt-1 mr-2"></i>
-                            <span><strong>Journey mapping:</strong> Where users come from and where they give up</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-tachometer-alt text-green-600 mt-1 mr-2"></i>
-                            <span><strong>Performance data:</strong> Because slow = abandoned</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="border-l-4 border-purple-600 pl-6">
-                    <h4 class="font-semibold text-lg mb-2">Experiment: Test Small Before Going Big</h4>
-                    <p class="text-gray-600 mb-3">A/B tests prove causation. Feature flags control risk. Data beats opinions.</p>
-                    <div class="bg-gray-50 p-4 rounded-md">
-                        <p class="text-sm"><span class="font-semibold">Reality:</span> That "obvious improvement" might make things worse. Test with 5% of users first.</p>
-                    </div>
-                </div>
-
-                <div class="border-l-4 border-orange-600 pl-6">
-                    <h4 class="font-semibold text-lg mb-2">Focus: Relentlessly Prioritize Your Critical Metrics</h4>
-                    <p class="text-gray-600 mb-3">Pick 2-3 metrics that define your business. Everything else is a distraction.</p>
-                    <div class="bg-gray-50 p-4 rounded-md">
-                        <p class="text-sm"><span class="font-semibold">The test:</span> If this metric goes up, will customers pay more or stay longer?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-blue-50 p-8 rounded-lg border-2 border-blue-200">
-                <h3 class="text-xl font-semibold mb-4 flex items-center">
-                    <i class="fas fa-users text-blue-600 mr-3"></i>
-                    Team Alignment Checklist
-                </h3>
-                <ul class="space-y-3 text-gray-700">
-                    <li class="flex items-start">
-                        <i class="fas fa-check-square text-blue-600 mt-1 mr-2"></i>
-                        <span>Everyone knows this sprint's key metric</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-square text-blue-600 mt-1 mr-2"></i>
-                        <span>Features ship with dashboards, not just code</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-square text-blue-600 mt-1 mr-2"></i>
-                        <span>Retrospectives review data, not feelings</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-square text-blue-600 mt-1 mr-2"></i>
-                        <span>Failed experiments are celebrated as learning</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="bg-green-50 p-8 rounded-lg border-2 border-green-200">
-                <h3 class="text-xl font-semibold mb-4 flex items-center">
-                    <i class="fas fa-chart-bar text-green-600 mr-3"></i>
-                    Metrics That Move Business
-                </h3>
-                <ul class="space-y-3 text-gray-700">
-                    <li class="flex items-start">
-                        <i class="fas fa-dollar-sign text-green-600 mt-1 mr-2"></i>
-                        <span><strong>Revenue per user:</strong> The ultimate scorecard</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-clock text-green-600 mt-1 mr-2"></i>
-                        <span><strong>Time to value:</strong> How fast users see benefit</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-redo text-green-600 mt-1 mr-2"></i>
-                        <span><strong>Retention rate:</strong> Do they come back?</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-heart text-green-600 mt-1 mr-2"></i>
-                        <span><strong>Feature adoption:</strong> What actually gets used</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="bg-gray-900 text-white p-8 rounded-lg">
-            <blockquote class="text-lg italic text-center mb-4">
-                "Build what users need, not what they ask for. Measure what they do, not what they say. Ship when the data says go, not when it feels done."
-            </blockquote>
-            <p class="text-center text-gray-400">The difference between teams that hope and teams that know.</p>
-        </div>
-    </div>
-</div>
-</section>
-
-<section class="py-20 bg-gradient-to-b from-blue-900 to-blue-800">
-<div class="container mx-auto px-6">
-  <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-8 text-center text-white">The Stack That Ships</h2>
-      <p class="text-xl mb-12 text-center text-blue-100">
-          Boring technology choices that let you focus on what makes your product unique. Everything automated, everything measured.
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Whatever you&rsquo;re short on, I&rsquo;ve shipped it</h2>
+      <p class="text-lg text-gray-600">
+        Most engineers go deep in one place. I&rsquo;ve gone deep in four, and that mix is exactly
+        what lets me drop into a team and start contributing right away, wherever the work is.
       </p>
+    </div>
 
-      <div class="grid md:grid-cols-3 gap-8 mb-12">
-          <div class="bg-white/10 p-8 rounded-lg backdrop-blur border border-white/20">
-              <i class="fas fa-server text-3xl text-blue-200 mb-4"></i>
-              <h3 class="text-xl font-semibold mb-3 text-white">Infrastructure That Scales</h3>
-              <ul class="space-y-2 text-blue-100">
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>AWS/GCP:</strong> Start cheap, scale infinite</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>Kubernetes:</strong> Deploy anywhere, same way</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>Terraform:</strong> Infrastructure as code, always</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>Cloudflare:</strong> Fast everywhere, automatically</span>
-                  </li>
-              </ul>
-          </div>
-
-          <div class="bg-white/10 p-8 rounded-lg backdrop-blur border border-white/20">
-              <i class="fas fa-rocket text-3xl text-blue-200 mb-4"></i>
-              <h3 class="text-xl font-semibold mb-3 text-white">Ship Every Commit</h3>
-              <ul class="space-y-2 text-blue-100">
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>GitHub Actions:</strong> Test on every push</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>ArgoCD:</strong> GitOps that actually works</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>Feature Flags:</strong> Test with 1% first</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>Rollbacks:</strong> Undo in 60 seconds</span>
-                  </li>
-              </ul>
-          </div>
-
-          <div class="bg-white/10 p-8 rounded-lg backdrop-blur border border-white/20">
-              <i class="fas fa-microscope text-3xl text-blue-200 mb-4"></i>
-              <h3 class="text-xl font-semibold mb-3 text-white">Know Everything</h3>
-              <ul class="space-y-2 text-blue-100">
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>PostHog/Mixpanel:</strong> User behavior tracked</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>Datadog/Grafana:</strong> System health visible</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>Sentry:</strong> Errors caught instantly</span>
-                  </li>
-                  <li class="flex items-start">
-                      <i class="fas fa-arrow-right text-green-300 mt-1 mr-2"></i>
-                      <span><strong>OpenTelemetry:</strong> Trace every request</span>
-                  </li>
-              </ul>
-          </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-md transition">
+        <i class="fas fa-microchip text-2xl text-blue-600 mb-3"></i>
+        <h3 class="font-semibold mb-2">Firmware &amp; IoT</h3>
+        <p class="text-sm text-gray-600">Designed custom air-quality sensor PCBs, wrote their firmware, reflashed an off-the-shelf smart power strip, and built the SaaS that drives it all to a target climate.</p>
       </div>
-
-      <div class="bg-white/10 p-8 rounded-lg backdrop-blur mb-12">
-          <h3 class="text-xl font-semibold mb-6 text-center text-white">The AI Engineering Toolkit</h3>
-          <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                  <h4 class="text-lg font-semibold mb-3 text-blue-200">Building with AI</h4>
-                  <ul class="space-y-2 text-blue-100 text-sm">
-                      <li class="flex items-start">
-                          <i class="fas fa-brain text-green-300 mt-1 mr-2"></i>
-                          <span><strong>OpenAI/Anthropic APIs:</strong> Ship AI features today</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-database text-green-300 mt-1 mr-2"></i>
-                          <span><strong>Vector DBs (Pinecone/Weaviate):</strong> RAG that scales</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-link text-green-300 mt-1 mr-2"></i>
-                          <span><strong>LangChain/LlamaIndex:</strong> Complex AI workflows</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-shield-alt text-green-300 mt-1 mr-2"></i>
-                          <span><strong>Guardrails:</strong> AI that behaves predictably</span>
-                      </li>
-                  </ul>
-              </div>
-              <div>
-                  <h4 class="text-lg font-semibold mb-3 text-blue-200">Measuring AI Impact</h4>
-                  <ul class="space-y-2 text-blue-100 text-sm">
-                      <li class="flex items-start">
-                          <i class="fas fa-chart-bar text-green-300 mt-1 mr-2"></i>
-                          <span><strong>Token usage tracking:</strong> Know your costs</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-stopwatch text-green-300 mt-1 mr-2"></i>
-                          <span><strong>Latency monitoring:</strong> Keep it snappy</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-thumbs-up text-green-300 mt-1 mr-2"></i>
-                          <span><strong>Quality metrics:</strong> Measure what works</span>
-                      </li>
-                      <li class="flex items-start">
-                          <i class="fas fa-users text-green-300 mt-1 mr-2"></i>
-                          <span><strong>User feedback loops:</strong> Improve constantly</span>
-                      </li>
-                  </ul>
-              </div>
-          </div>
+      <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-md transition">
+        <i class="fas fa-rocket text-2xl text-blue-600 mb-3"></i>
+        <h3 class="font-semibold mb-2">SaaS &amp; AI Products</h3>
+        <p class="text-sm text-gray-600">Founded my own SaaS and shipped LLM products from scratch. The autonomous AI agents I built are now core to a funded startup.</p>
       </div>
-
-      <div class="bg-blue-800 p-8 rounded-lg">
-          <blockquote class="text-lg italic text-center mb-4 text-white">
-              "The best stack is the one that gets out of your way. Automate the boring stuff so you can focus on what makes your product special."
-          </blockquote>
-          <p class="text-center text-blue-200">Pick boring technology. Ship interesting products.</p>
+      <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-md transition">
+        <i class="fas fa-server text-2xl text-blue-600 mb-3"></i>
+        <h3 class="font-semibold mb-2">SRE &amp; DevOps</h3>
+        <p class="text-sm text-gray-600">Ran SRE for a petabyte-scale platform across thousands of nodes on a $10M+/yr AWS footprint.</p>
       </div>
+      <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-md transition">
+        <i class="fas fa-utensils text-2xl text-blue-600 mb-3"></i>
+        <h3 class="font-semibold mb-2">Owned a Business</h3>
+        <p class="text-sm text-gray-600">Ran a full-service steakhouse outright: hired and led the team, owned the P&amp;L, and lived with the vendors, the costs, and the margin.</p>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 
-<!-- Finding Your Best Fit section -->
-<section class="py-20 bg-white text-gray-900">
-<div class="container mx-auto px-6">
-<div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-bold mb-6 text-center">Are We a Good Fit?</h2>
-    <p class="text-xl mb-16 text-center text-gray-600">
-        I thrive where rapid iteration meets real user feedback. Let's see if your challenges match my strengths.
+<!-- ===================== TESTIMONIALS: numbers first ===================== -->
+<section id="testimonials" class="py-16 md:py-24 bg-gradient-to-b from-blue-900 to-slate-900 text-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">What changed after I showed up</h2>
+      <p class="text-lg text-blue-100">Not adjectives. The real outcomes teams measured after I joined.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+      <div class="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur">
+        <div class="text-5xl font-bold text-blue-200 mb-1">30x</div>
+        <div class="text-sm uppercase tracking-wide text-blue-300 mb-5">faster deploys</div>
+        <p class="text-blue-50 italic mb-5 leading-relaxed">
+          &ldquo;Jake is a force for good unlike any other. He migrated our infra to a cheaper and more scalable system,
+          crafted a CI pipeline that accelerated deploys by 30x, and taught the whole company how to make data-driven
+          decisions by building an entire product analytics stack. And that was just his first 6 months.&rdquo;
+        </p>
+        <p class="text-sm font-semibold text-blue-200">Director of Platform Engineering, Cloaked</p>
+      </div>
+
+      <div class="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur">
+        <div class="text-5xl font-bold text-blue-200 mb-1">3 days</div>
+        <div class="text-sm uppercase tracking-wide text-blue-300 mb-5">to org-wide adoption</div>
+        <p class="text-blue-50 italic mb-5 leading-relaxed">
+          &ldquo;I watched Jake redo a build and deploy process over the span of 3 days, whip up a presentation, and get
+          every engineer in the org up to speed using it, a moment I&rsquo;ll never forget because our productivity
+          EXPLODED afterwards.&rdquo;
+        </p>
+        <p class="text-sm font-semibold text-blue-200">Software Engineer, CyberGRX</p>
+      </div>
+
+      <div class="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur">
+        <div class="text-5xl font-bold text-blue-200 mb-1">$10M+/yr</div>
+        <div class="text-sm uppercase tracking-wide text-blue-300 mb-5">production AWS, petabyte scale</div>
+        <p class="text-blue-50 italic mb-5 leading-relaxed">
+          &ldquo;Jake was instrumental in building our cloud-native security platform. His technical leadership helped
+          shape our architecture and team practices.&rdquo; Behind it: SRE for thousands of Cassandra nodes and petabytes
+          in S3, acquired by Verizon.
+        </p>
+        <p class="text-sm font-semibold text-blue-200">DevOps Engineer, Protectwise</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+        <p class="text-blue-50 italic mb-3 leading-relaxed">
+          &ldquo;I don&rsquo;t have anything unique to add. Everyone else has already covered it. But this man
+          will help you achieve what you need.&rdquo;
+        </p>
+        <p class="text-sm font-semibold text-blue-200">Senior Platform Engineer, Inception Health</p>
+      </div>
+      <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+        <p class="text-blue-50 italic mb-3 leading-relaxed">
+          &ldquo;Everyone else told us how to work around problems. Jake built us better tools.&rdquo;
+        </p>
+        <p class="text-sm font-semibold text-blue-200">Operator, Magic</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FIRST 90 DAYS: operating proof ===================== -->
+<section id="first-90-days" class="py-16 md:py-24 bg-white text-gray-900">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">My first 90 days on your team</h2>
+      <p class="text-lg text-gray-600">
+        Anyone can claim they can build. Here&rsquo;s what I actually do in the first three months,
+        with a receipt behind every move.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="relative bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="absolute -top-4 left-8 bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold shadow">1</div>
+        <h3 class="text-xl font-semibold mb-3 mt-2">Fix the slowest path to production</h3>
+        <p class="text-gray-600 mb-4">I find the most error-prone, slowest route to shipping and rebuild it so the whole team moves faster.</p>
+        <p class="text-sm text-blue-700 font-medium border-l-2 border-blue-300 pl-3">
+          Receipt: 30x faster deploys at Cloaked; whole engineering org onboarded to a new deploy process in 3 days at CyberGRX.
+        </p>
+      </div>
+
+      <div class="relative bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="absolute -top-4 left-8 bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold shadow">2</div>
+        <h3 class="text-xl font-semibold mb-3 mt-2">Make the team&rsquo;s progress visible</h3>
+        <p class="text-gray-600 mb-4">I get real metrics in place so decisions stop being guesses and everyone can see what&rsquo;s actually working.</p>
+        <p class="text-sm text-blue-700 font-medium border-l-2 border-blue-300 pl-3">
+          Receipt: built and showcased an entire product-analytics stack at Cloaked, teaching the company to make data-driven calls.
+        </p>
+      </div>
+
+      <div class="relative bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="absolute -top-4 left-8 bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold shadow">3</div>
+        <h3 class="text-xl font-semibold mb-3 mt-2">Ship the small first version, instrumented</h3>
+        <p class="text-gray-600 mb-4">I put an embarrassingly small v1 in front of real users with tracking from day one, then let how they use it decide what&rsquo;s next.</p>
+        <p class="text-sm text-blue-700 font-medium border-l-2 border-blue-300 pl-3">
+          Receipt: shipped autonomous AI agents that became a fundraising narrative at Cloaked; run public MCP servers today.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GO DEEPER ===================== -->
+<section class="py-12 bg-white border-t border-gray-100">
+  <div class="container mx-auto px-6 text-center">
+    <p class="text-sm uppercase tracking-widest text-gray-400 font-semibold mb-5">Want the detail?</p>
+    <nav class="flex flex-wrap justify-center gap-x-8 gap-y-3 font-medium text-blue-700">
+      <a href="/resume/" data-cta="deeper-resume" class="hover:text-blue-900 hover:underline">Full resume</a>
+      <a href="/projects/" data-cta="deeper-projects" class="hover:text-blue-900 hover:underline">Projects &amp; ventures</a>
+      <a href="/venn/" data-cta="deeper-venn" class="hover:text-blue-900 hover:underline">Skills map</a>
+      <a href="/blog" data-cta="deeper-blog" class="hover:text-blue-900 hover:underline">Blog</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="py-16 md:py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+  <div class="container mx-auto px-6 text-center max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-bold mb-5">Hiring for a senior, staff, or leadership role?</h2>
+    <p class="text-xl text-blue-100 mb-10">
+      If your team needs someone who can build at every layer and lift the whole team, let&rsquo;s talk.
     </p>
-
-    <div class="grid md:grid-cols-2 gap-12">
-        <!-- Great Fits -->
-        <div class="bg-gray-50 rounded-xl p-8 shadow-lg border border-gray-200">
-            <h3 class="text-2xl font-semibold mb-6 flex items-center text-gray-900">
-                <i class="fas fa-check-circle mr-3 text-green-600"></i>
-                Perfect Matches
-            </h3>
-            <ul class="space-y-4">
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">AI Product Engineering</span>
-                        <p class="text-sm text-gray-600 mt-1">Building products that leverage LLMs, RAG systems, and AI APIs - not training models</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Zero-to-One Products</span>
-                        <p class="text-sm text-gray-600 mt-1">Starting with tiny MVPs, instrumenting everything, iterating based on real usage</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Platform & Infrastructure</span>
-                        <p class="text-sm text-gray-600 mt-1">AWS, Kubernetes, Terraform - automating away all the toil</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Metrics-Driven Development</span>
-                        <p class="text-sm text-gray-600 mt-1">Teams that want to measure, experiment, and know - not guess</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Developer Productivity</span>
-                        <p class="text-sm text-gray-600 mt-1">Eliminating friction so teams ship 10x faster with confidence</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Technical Leadership</span>
-                        <p class="text-sm text-gray-600 mt-1">Building teams that own outcomes, not just outputs</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Not Great Fits -->
-        <div class="bg-gray-50 rounded-xl p-8 shadow-lg border border-gray-200">
-            <h3 class="text-2xl font-semibold mb-6 flex items-center text-gray-900">
-                <i class="fas fa-times-circle mr-3 text-red-600"></i>
-                Not My Strengths
-            </h3>
-            <ul class="space-y-4">
-                <li class="flex items-start">
-                    <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">UI/UX Design</span>
-                        <p class="text-sm text-gray-600 mt-1">I make things work great, not look great. You need a designer for that.</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Machine Learning Research</span>
-                        <p class="text-sm text-gray-600 mt-1">I integrate AI, not invent it. Model training isn't my thing.</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Legacy System Maintenance</span>
-                        <p class="text-sm text-gray-600 mt-1">I modernize and migrate, not maintain what's already old</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Hardware & Embedded Systems</span>
-                        <p class="text-sm text-gray-600 mt-1">If it doesn't run in the cloud, it's not my domain</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-times text-red-600 mt-1 mr-3"></i>
-                    <div>
-                        <span class="font-semibold">Waterfall Projects</span>
-                        <p class="text-sm text-gray-600 mt-1">6-month roadmaps? I ship in days and iterate</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/resume/" data-cta="view-resume-footer" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-md text-blue-800 bg-white hover:bg-blue-50 transition-colors shadow-lg">
+        <i class="fas fa-file-lines mr-2"></i>
+        View Resume
+      </a>
+      <a href="mailto:jhgaylor@gmail.com" data-cta="email-footer" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-md text-white border border-white/40 hover:bg-white/10 transition-colors">
+        <i class="fas fa-envelope mr-2"></i>
+        Email Me
+      </a>
+      <a href="sms:+17204533994" data-cta="text-footer" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-medium rounded-md text-white border border-white/40 hover:bg-white/10 transition-colors">
+        <i class="fas fa-message mr-2"></i>
+        Text Me
+      </a>
     </div>
-
-    <div class="mt-12 bg-blue-50 p-8 rounded-lg border-2 border-blue-200">
-        <h3 class="text-xl font-semibold mb-4 text-center">The Sweet Spot</h3>
-        <p class="text-center text-gray-700 mb-6">You'll get the most value from me if you're...</p>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-            <div>
-                <i class="fas fa-rocket text-3xl text-blue-600 mb-3"></i>
-                <p class="font-semibold">Moving Fast</p>
-                <p class="text-sm text-gray-600">Ready to ship small and iterate based on data</p>
-            </div>
-            <div>
-                <i class="fas fa-chart-line text-3xl text-blue-600 mb-3"></i>
-                <p class="font-semibold">Data-Driven</p>
-                <p class="text-sm text-gray-600">Willing to measure everything and act on it</p>
-            </div>
-            <div>
-                <i class="fas fa-robot text-3xl text-blue-600 mb-3"></i>
-                <p class="font-semibold">Automation-First</p>
-                <p class="text-sm text-gray-600">Eager to eliminate toil and focus on value</p>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+  </div>
 </section>
 
 <script>
-    const roles = [
-        'Technical Cofounder',
-        'Engineering Leader',
-        'Staff Engineer',
-        'Infrastructure Expert',
-        'Delivery Accelerator',
-        'Team Multiplier',
-        'System Architect',
-        'Technical Advisor',
-        'Thought Leader'
-    ];
-    let currentIndex = 0;
-    const roleElement = document.getElementById('rotating-role');
+  // ---- Signal layer: qualitative sprint intel via PostHog (already loaded in layout) ----
+  (function () {
+    if (typeof posthog === 'undefined') return;
 
-    function updateRole() {
-        roleElement.style.opacity = '0';
-        setTimeout(() => {
-            currentIndex = (currentIndex + 1) % roles.length;
-            roleElement.textContent = roles[currentIndex];
-            roleElement.style.opacity = '1';
-        }, 500);
-    }
-
-    roleElement.style.transition = 'opacity 0.5s ease-in-out';
-    setInterval(updateRole, 3000);
-
-    // Add this new code for handling recommended approach toggles
-    document.querySelectorAll('.recommended-approach-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('.fa-chevron-down');
-            
-            // Toggle content visibility
-            content.classList.toggle('hidden');
-            
-            // Rotate icon
-            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-            
-            // Update button text
-            const buttonText = button.querySelector('span');
-            buttonText.textContent = content.classList.contains('hidden') 
-                ? 'See Recommended Approach' 
-                : 'Hide Recommended Approach';
-        });
+    // CTA clicks: which action a viewer took, and from where.
+    document.querySelectorAll('[data-cta]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        posthog.capture('cta_click', { cta: el.getAttribute('data-cta') });
+      });
     });
+
+    // Scroll-depth milestones: did a 30-second reader actually get down the page?
+    var marks = [25, 50, 75, 100], fired = {};
+    window.addEventListener('scroll', function () {
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      var pct = (doc.scrollTop / scrollable) * 100;
+      marks.forEach(function (m) {
+        if (pct >= m && !fired[m]) {
+          fired[m] = true;
+          posthog.capture('scroll_depth', { percent: m });
+        }
+      });
+    }, { passive: true });
+
+    // Did they reach the proof? Fire once when the testimonials / first-90 blocks come into view.
+    ['testimonials', 'first-90-days'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el || !('IntersectionObserver' in window)) return;
+      var seen = false;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !seen) {
+            seen = true;
+            posthog.capture('section_reached', { section: id });
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.4 });
+      io.observe(el);
+    });
+  })();
 </script>

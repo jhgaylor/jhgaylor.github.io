@@ -2,386 +2,233 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Jake Gaylor - Skills Visualization</title>
-    <meta name="description" content="Interactive visualization showing Jake Gaylor at the intersection of Platform Engineering, Product Development, and AI Engineering" />
+    <title>Jake Gaylor - Where it all overlaps</title>
+    <meta name="description" content="Jake Gaylor works at the intersection of deep engineering, product instinct, and business ownership." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
       :root {
-        color-scheme: light dark;
-        --color-background-light: #ffffff;
-        --color-dimmed-light: #f3f4f5;
-        --color-primary-light: #191e23;
-        --color-secondary-light: #6c7781;
-        --color-accent-light: #0073aa;
-        --color-background-dark: #191e23;
-        --color-dimmed-dark: #23282d;
-        --color-primary-dark: #fbfbfc;
-        --color-secondary-dark: #ccd0d4;
-        --color-accent-dark: #00a0d2;
-        --color-background: var(--color-background-light);
-        --color-dimmed: var(--color-dimmed-light);
-        --color-primary: var(--color-primary-light);
-        --color-secondary: var(--color-secondary-light);
-        --color-accent: var(--color-accent-light);
+        --blue: #2563eb;
+        --emerald: #059669;
+        --amber: #d97706;
+        --ink: #0f172a;
+        --slate: #475569;
+        --line: #e2e8f0;
       }
-      
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --color-background: var(--color-background-dark);
-          --color-dimmed: var(--color-dimmed-dark);
-          --color-primary: var(--color-primary-dark);
-          --color-secondary: var(--color-secondary-dark);
-          --color-accent: var(--color-accent-dark);
-        }
-      }
-      
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      
-      html {
-        font-size: 18px;
-      }
-      
+      html { font-size: 18px; }
       body {
-        background: var(--color-background);
-        color: var(--color-primary);
-        font: 1em/1.5 Lato, sans-serif;
+        background: #ffffff;
+        color: var(--ink);
+        font: 1em/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .topbar { padding: 1.25rem 1.5rem; }
+      .topbar a { color: var(--slate); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+      .topbar a:hover { color: var(--blue); }
+      main {
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 2rem;
-      }
-      
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
         text-align: center;
+        padding: 1rem 1.5rem 4rem;
       }
-      
-      .venn-container {
-        max-width: 400px;
-        height: 380px;
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--blue);
+        margin-bottom: 0.75rem;
       }
+      h1 {
+        font-size: clamp(1.8rem, 4vw, 2.75rem);
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+        max-width: 18ch;
+      }
+      .lede {
+        font-size: 1.1rem;
+        color: var(--slate);
+        max-width: 48ch;
+        margin-bottom: 1.5rem;
+      }
+      .venn-container { width: 100%; max-width: 500px; }
+      .venn-container svg { width: 100%; height: auto; }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        width: 100%;
+        max-width: 960px;
+        margin: 2.5rem auto 0;
+      }
+      @media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+      .card {
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--accent);
+        border-radius: 0.75rem;
+        padding: 1.25rem 1.25rem 1.4rem;
+        text-align: left;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .card:hover { box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); transform: translateY(-2px); }
+      .card h3 { color: var(--accent); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem; }
+      .card p { color: var(--slate); font-size: 0.92rem; margin-bottom: 0.9rem; }
+      .evidence { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+      .evidence li {
+        position: relative;
+        padding-left: 1.05rem;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        color: var(--ink);
+      }
+      .evidence li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      footer {
+        text-align: center;
+        padding: 2.5rem 1.5rem 3rem;
+        color: var(--slate);
+        font-size: 0.9rem;
+      }
+      footer a { color: var(--blue); text-decoration: none; font-weight: 600; }
+      footer a:hover { text-decoration: underline; }
     </style>
+  </head>
+  <body>
+    <div class="topbar"><a href="/">&larr; Back to home</a></div>
+
+    <main>
+      <p class="eyebrow">The combination is the point</p>
+      <h1>Most engineers live in one circle. I work where three overlap.</h1>
+      <p class="lede">
+        I've gone deep in engineering, in product, and in running a business.
+        Sitting in the middle means I can weigh a call from every side at once.
+      </p>
+
+      <div id="venn-diagram" class="venn-container"></div>
+
+      <div class="cards">
+        <div class="card" data-circle="engineering" style="--accent: var(--blue)">
+          <h3>Deep Engineering</h3>
+          <p>Shipping at every layer, from circuit boards to cloud platforms.</p>
+          <ul class="evidence">
+            <li>Ran SRE for a petabyte-scale platform on $10M+/yr of AWS.</li>
+            <li>Cut a team's deploys 30x with a new CI/CD pipeline.</li>
+            <li>Designed custom PCBs and wrote their firmware.</li>
+          </ul>
+        </div>
+
+        <div class="card" data-circle="product" style="--accent: var(--emerald)">
+          <h3>Product Instinct</h3>
+          <p>Knowing what to build, shipping it small, learning from real users.</p>
+          <ul class="evidence">
+            <li>Shipped autonomous AI agents now core to a funded startup.</li>
+            <li>Built the product-analytics stack a whole company made decisions on.</li>
+            <li>Founded my own SaaS and run public MCP servers today.</li>
+          </ul>
+        </div>
+
+        <div class="card" data-circle="business" style="--accent: var(--amber)">
+          <h3>Business Ownership</h3>
+          <p>Carrying the P&amp;L, the team, and the customer, not just the code.</p>
+          <ul class="evidence">
+            <li>Owned a full-service steakhouse outright, with a team of 7.</li>
+            <li>Every line of the budget was mine: vendors, costs, payroll, margin.</li>
+            <li>Ran it like a product: rapid iteration and data-driven calls.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <a href="/resume/">Full resume</a> &nbsp;&middot;&nbsp;
+      <a href="/projects/">Projects &amp; ventures</a> &nbsp;&middot;&nbsp;
+      <a href="/">Home</a>
+    </footer>
+
     <script type="module">
-      // D3.js Venn Diagram with word cloud on hover
+      const COLORS = { engineering: '#2563eb', product: '#059669', business: '#d97706' }
+
       const drawVennDiagram = () => {
         const container = d3.select('#venn-diagram')
         if (container.empty()) return
-        
-        const width = 400
-        const height = 380
-        const radius = 125
-        
-        // Create SVG with D3
-        const svg = container
-          .append('svg')
-          .attr('width', width)
-          .attr('height', height)
-          .attr('viewBox', `0 0 ${width} ${height}`)
-        
-        // Add defs for filters
-        const defs = svg.append('defs')
-        
-        // Create text readability filter
-        const filter = defs.append('filter')
-          .attr('id', 'readable-text')
-          .attr('x', '-50%')
-          .attr('y', '-50%')
-          .attr('width', '200%')
-          .attr('height', '200%')
-        
-        // Add white stroke for readability
-        filter.append('feMorphology')
-          .attr('in', 'SourceAlpha')
-          .attr('result', 'dilated')
-          .attr('operator', 'dilate')
-          .attr('radius', 2)
-        
-        filter.append('feFlood')
-          .attr('flood-color', '#ffffff')
-          .attr('flood-opacity', 0.95)
-          .attr('result', 'whiteFlood')
-        
-        filter.append('feComposite')
-          .attr('in', 'whiteFlood')
-          .attr('in2', 'dilated')
-          .attr('operator', 'in')
-          .attr('result', 'whiteBorder')
-        
-        const feMerge = filter.append('feMerge')
-        feMerge.append('feMergeNode')
-          .attr('in', 'whiteBorder')
-        feMerge.append('feMergeNode')
-          .attr('in', 'SourceGraphic')
-        
-        // Circle positions and data with keywords
-        const circlesData = [
-          { 
-            id: 'platform', 
-            cx: width / 2 - radius * 0.4, 
-            cy: height / 2 - radius * 0.5, 
-            label: 'Platform\nEngineering', 
-            color: '#0073aa',
-            keywords: ['AWS', 'Kubernetes', 'Terraform', 'GitOps', 'ArgoCD', 'CI/CD', 'Infrastructure', 'DevOps', 'EKS', 'Observability']
-          },
-          { 
-            id: 'product', 
-            cx: width / 2 + radius * 0.4, 
-            cy: height / 2 - radius * 0.5, 
-            label: 'Product\nDevelopment', 
-            color: '#46b450',
-            keywords: ['MVPs', '0→1', 'Analytics', 'Strategy', 'Features', 'Metrics', 'Leadership', 'Vision', 'GTM', 'PMF']
-          },
-          { 
-            id: 'ai', 
-            cx: width / 2, 
-            cy: height / 2 + radius * 0.4, 
-            label: 'AI\nEngineering', 
-            color: '#d54e21',
-            keywords: ['LLM Agents', 'RAG', 'LangChain', 'Semantic Search', 'MCP', 'Conversational AI', 'Embeddings', 'Vectors', 'GPT', 'ML']
-          }
+
+        const width = 460, height = 430, radius = 145
+        const cx = width / 2, cy = height / 2 - 6
+
+        const svg = container.append('svg')
+          .attr('viewBox', '0 -26 460 468')
+          .attr('role', 'img')
+          .attr('aria-label', 'Venn diagram: Jake at the intersection of Deep Engineering, Product Instinct, and Business Ownership')
+
+        const data = [
+          { id: 'engineering', cx: cx - radius * 0.44, cy: cy - radius * 0.5, label: 'Deep\nEngineering', lx: -42, ly: -36 },
+          { id: 'product',     cx: cx + radius * 0.44, cy: cy - radius * 0.5, label: 'Product\nInstinct',  lx: 42,  ly: -36 },
+          { id: 'business',    cx: cx,                 cy: cy + radius * 0.48, label: 'Business\nOwnership', lx: 0,  ly: 44 }
         ]
-        
-        // Get colors from CSS variables
-        const styles = getComputedStyle(document.documentElement)
-        const primaryColor = styles.getPropertyValue('--color-primary').trim()
-        
-        // Create circle groups for hover effects
-        const circleGroups = svg.selectAll('g.circle-group')
-          .data(circlesData)
-          .join('g')
-          .attr('class', 'circle-group')
-          .style('cursor', 'pointer')
-        
-        // Create circles
-        const circles = circleGroups.append('circle')
-          .attr('cx', d => d.cx)
-          .attr('cy', d => d.cy)
-          .attr('r', radius)
-          .attr('fill', d => d.color)
-          .attr('fill-opacity', 0.1)
-          .attr('stroke', d => d.color)
-          .attr('stroke-width', 1)
-          .attr('stroke-opacity', 0.2)
-          .style('transition', 'all 0.3s ease')
-        
-        // Add main labels (positioned away from center)
-        const labels = circleGroups.append('text')
-          .attr('class', 'circle-label')
-          .attr('x', d => {
-            // Move labels away from Jake
-            if (d.id === 'platform') return d.cx - 35  // Move left
-            if (d.id === 'product') return d.cx + 35   // Move right
-            return d.cx  // AI stays centered
-          })
-          .attr('y', d => {
-            // Move labels away from Jake
-            if (d.id === 'platform') return d.cy - 30  // Move up
-            if (d.id === 'product') return d.cy - 30   // Move up
-            if (d.id === 'ai') return d.cy + 35        // Move down
-            return d.cy
-          })
-          .attr('text-anchor', 'middle')
-          .attr('dominant-baseline', 'middle')
-          .attr('fill', d => d.color)
-          .attr('font-size', 20)
-          .attr('font-weight', 'bold')
-          .style('transition', 'all 0.3s ease')
+
+        const groups = svg.selectAll('g.circle-group').data(data).join('g').attr('class', 'circle-group')
+
+        const circles = groups.append('circle')
+          .attr('data-circle', d => d.id)
+          .attr('cx', d => d.cx).attr('cy', d => d.cy).attr('r', radius)
+          .attr('fill', d => COLORS[d.id])
+          .attr('fill-opacity', 0.42)
+          .attr('stroke', d => COLORS[d.id])
+          .attr('stroke-width', 1.5)
+          .attr('stroke-opacity', 0.7)
+          .style('mix-blend-mode', 'multiply')
+          .style('transition', 'fill-opacity 0.25s ease')
+
+        const labels = groups.append('text')
+          .attr('x', d => d.cx + d.lx).attr('y', d => d.cy + d.ly)
+          .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
+          .attr('fill', d => COLORS[d.id]).attr('font-size', 18).attr('font-weight', 700)
+          .style('paint-order', 'stroke').attr('stroke', '#ffffff').attr('stroke-width', 3)
           .style('pointer-events', 'none')
-        
-        // Add multi-line text
         labels.each(function(d) {
-          const text = d3.select(this)
-          const lines = d.label.split('\n')
-          const xPos = text.attr('x')
-          const yPos = text.attr('y')
-          
-          lines.forEach((line, i) => {
-            text.append('tspan')
-              .attr('x', xPos)
-              .attr('dy', i === 0 ? '-0.6em' : '1.2em')
-              .text(line)
-          })
+          const t = d3.select(this), lines = d.label.split('\n'), x = t.attr('x')
+          lines.forEach((line, i) => t.append('tspan').attr('x', x).attr('dy', i === 0 ? '-0.6em' : '1.2em').text(line))
         })
-        
-        // Container for word cloud keywords
-        const keywordGroups = circleGroups.append('g')
-          .attr('class', 'keywords')
-          .style('opacity', 0)
-          .style('pointer-events', 'none')
-        
-        // Add hover effects
-        circleGroups
-          .on('mouseenter', function(event, d) {
-            const group = d3.select(this)
-            
-            group.select('circle')
-              .attr('fill-opacity', 0.25)
-              .attr('stroke-width', 2)
-              .attr('stroke-opacity', 0.5)
-            
-            // Hide main label
-            group.select('.circle-label')
-              .style('opacity', 0)
-            
-            // Show keywords as word cloud
-            const keywords = group.select('.keywords')
-            keywords.selectAll('text').remove() // Clear any existing
-            
-            // Create a more organic cloud layout
-            const positions = []
-            const usedPositions = []
-            
-            d.keywords.forEach((keyword, i) => {
-              const fontSize = i < 3 ? 16 : (i < 6 ? 14 : 12)
-              let placed = false
-              let attempts = 0
-              let x, y
-              
-              // Try to place each word without overlap
-              while (!placed && attempts < 50) {
-                if (i === 0) {
-                  // Place first word at center
-                  x = d.cx
-                  y = d.cy - 20
-                } else if (i < 4) {
-                  // Place next 3 words around center with more space
-                  const angle = (i - 1) * 2 * Math.PI / 3
-                  const dist = 55
-                  x = d.cx + Math.cos(angle) * dist
-                  y = d.cy + Math.sin(angle) * dist
-                } else {
-                  // Place remaining words in outer ring with more space
-                  const angle = (i - 4) * 2 * Math.PI / 6
-                  const dist = 85
-                  x = d.cx + Math.cos(angle) * dist
-                  y = d.cy + Math.sin(angle) * dist
-                }
-                
-                // Check if position is too close to existing words
-                placed = true
-                for (let pos of usedPositions) {
-                  const dx = x - pos.x
-                  const dy = y - pos.y
-                  const minDist = (keyword.length + pos.length) * 4 + 20
-                  if (Math.sqrt(dx * dx + dy * dy) < minDist) {
-                    placed = false
-                    // Adjust position slightly
-                    const angle = Math.random() * 2 * Math.PI
-                    x += Math.cos(angle) * 15
-                    y += Math.sin(angle) * 15
-                    break
-                  }
-                }
-                attempts++
-              }
-              
-              usedPositions.push({ x, y, length: keyword.length })
-              
-              keywords.append('text')
-                .attr('x', d.cx)
-                .attr('y', d.cy)
-                .attr('text-anchor', 'middle')
-                .attr('dominant-baseline', 'middle')
-                .attr('fill', '#ffffff')
-                .attr('font-size', 0)
-                .attr('font-weight', i < 3 ? 'bold' : 'normal')
-                .style('opacity', 0)
-                .text(keyword)
-                .transition()
-                .duration(300)
-                .delay(i * 30)
-                .attr('x', x)
-                .attr('y', y)
-                .attr('font-size', fontSize)
-                .style('opacity', 0.9)
-            })
-            
-            keywords.transition()
-              .duration(200)
-              .style('opacity', 1)
-            
-            // Dim other circles
-            circleGroups.filter(other => other !== d)
-              .style('opacity', 0.3)
-            
-            // Hide center text
-            centerText.style('opacity', 0)
+
+        const center = svg.append('text')
+          .attr('x', cx).attr('y', cy).attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
+          .attr('fill', '#0f172a').attr('font-size', 34).attr('font-weight', 800)
+          .style('paint-order', 'stroke').attr('stroke', '#ffffff').attr('stroke-width', 5)
+          .style('opacity', 0).text('Jake')
+
+        circles.attr('r', 0).transition().duration(750).delay((d, i) => i * 160)
+          .attr('r', radius).ease(d3.easeBackOut.overshoot(1.2))
+        center.transition().duration(500).delay(620).style('opacity', 1)
+
+        // Card <-> circle highlight linkage (works on hover; cards carry the text on their own)
+        document.querySelectorAll('.card').forEach(card => {
+          const id = card.getAttribute('data-circle')
+          const sel = () => d3.select(`circle[data-circle="${id}"]`)
+          card.addEventListener('mouseenter', () => {
+            circles.attr('fill-opacity', 0.2)
+            sel().attr('fill-opacity', 0.6)
           })
-          .on('mouseleave', function(event, d) {
-            const group = d3.select(this)
-            
-            circles
-              .attr('fill-opacity', 0.1)
-              .attr('stroke-width', 1)
-              .attr('stroke-opacity', 0.2)
-            
-            // Show main label again
-            group.select('.circle-label')
-              .style('opacity', 1)
-            
-            // Hide keywords
-            group.select('.keywords')
-              .style('opacity', 0)
-              .selectAll('text')
-              .transition()
-              .duration(200)
-              .attr('font-size', 0)
-              .remove()
-            
-            circleGroups.style('opacity', 1)
-            
-            // Show center text again
-            centerText.style('opacity', 1)
-          })
-        
-        // Add center label
-        const centerText = svg.append('text')
-          .attr('x', width / 2)
-          .attr('y', height / 2)
-          .attr('text-anchor', 'middle')
-          .attr('dominant-baseline', 'middle')
-          .attr('fill', primaryColor)
-          .attr('font-size', 36)
-          .attr('font-weight', 'bold')
-          .style('transition', 'all 0.3s ease')
-          .text('Jake')
-        
-        // Add subtle animation on load
-        circles
-          .attr('r', 0)
-          .transition()
-          .duration(800)
-          .delay((d, i) => i * 200)
-          .attr('r', radius)
-          .ease(d3.easeBounceOut)
-        
-        centerText
-          .style('opacity', 0)
-          .transition()
-          .duration(600)
-          .delay(600)
-          .style('opacity', 1)
+          card.addEventListener('mouseleave', () => circles.attr('fill-opacity', 0.42))
+        })
       }
 
-      // Draw on load
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', drawVennDiagram)
-      } else {
-        drawVennDiagram()
-      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', drawVennDiagram)
+      else drawVennDiagram()
     </script>
-  </head>
-  <body>
-    <h1>Jake Gaylor</h1>
-    <div id="venn-diagram" class="venn-container"></div>
   </body>
 </html>
