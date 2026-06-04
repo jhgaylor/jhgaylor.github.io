@@ -80,15 +80,23 @@
       .card:hover { box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); transform: translateY(-2px); }
       .card h3 { color: var(--accent); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem; }
       .card p { color: var(--slate); font-size: 0.92rem; margin-bottom: 0.9rem; }
-      .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-      .chip {
-        background: #f1f5f9;
-        color: #334155;
-        border-radius: 0.4rem;
-        padding: 0.2rem 0.55rem;
-        font-size: 0.8rem;
-        font-weight: 500;
-        white-space: nowrap;
+      .evidence { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+      .evidence li {
+        position: relative;
+        padding-left: 1.05rem;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        color: var(--ink);
+      }
+      .evidence li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--accent);
       }
       footer {
         text-align: center;
@@ -117,47 +125,31 @@
         <div class="card" data-circle="engineering" style="--accent: var(--blue)">
           <h3>Deep Engineering</h3>
           <p>Shipping at every layer, from circuit boards to cloud platforms.</p>
-          <div class="chips">
-            <span class="chip">Firmware</span>
-            <span class="chip">Kubernetes</span>
-            <span class="chip">AWS</span>
-            <span class="chip">Terraform</span>
-            <span class="chip">SRE</span>
-            <span class="chip">GitOps</span>
-            <span class="chip">Distributed Systems</span>
-            <span class="chip">CI/CD</span>
-            <span class="chip">Observability</span>
-          </div>
+          <ul class="evidence">
+            <li>Ran SRE for a petabyte-scale platform on $10M+/yr of AWS.</li>
+            <li>Cut a team's deploys 30x with a new CI/CD pipeline.</li>
+            <li>Designed custom PCBs and wrote their firmware.</li>
+          </ul>
         </div>
 
         <div class="card" data-circle="product" style="--accent: var(--emerald)">
           <h3>Product Instinct</h3>
           <p>Knowing what to build, shipping it small, learning from real users.</p>
-          <div class="chips">
-            <span class="chip">0&rarr;1</span>
-            <span class="chip">LLM Agents</span>
-            <span class="chip">MVPs</span>
-            <span class="chip">Analytics</span>
-            <span class="chip">User Feedback</span>
-            <span class="chip">AI Products</span>
-            <span class="chip">Go-to-Market</span>
-            <span class="chip">PMF</span>
-          </div>
+          <ul class="evidence">
+            <li>Shipped autonomous AI agents now core to a funded startup.</li>
+            <li>Built the product-analytics stack a whole company made decisions on.</li>
+            <li>Founded my own SaaS and run public MCP servers today.</li>
+          </ul>
         </div>
 
         <div class="card" data-circle="business" style="--accent: var(--amber)">
           <h3>Business Ownership</h3>
           <p>Carrying the P&amp;L, the team, and the customer, not just the code.</p>
-          <div class="chips">
-            <span class="chip">P&amp;L</span>
-            <span class="chip">Hiring</span>
-            <span class="chip">Team Leadership</span>
-            <span class="chip">Vendors</span>
-            <span class="chip">Fundraising</span>
-            <span class="chip">Operations</span>
-            <span class="chip">Cost Control</span>
-            <span class="chip">Customers</span>
-          </div>
+          <ul class="evidence">
+            <li>Owned a full-service steakhouse outright, with a team of 7.</li>
+            <li>Every line of the budget was mine: vendors, costs, payroll, margin.</li>
+            <li>Ran it like a product: rapid iteration and data-driven calls.</li>
+          </ul>
         </div>
       </div>
     </main>
