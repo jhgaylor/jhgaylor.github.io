@@ -53,12 +53,12 @@ layout: layouts/next.html
       <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-md transition">
         <i class="fas fa-rocket text-2xl text-blue-600 mb-3"></i>
         <h3 class="font-semibold mb-2">SaaS &amp; AI Products</h3>
-        <p class="text-sm text-gray-600">Deployed LangChain agents at Cloaked that validated an entire line of investment, and built the framework behind Block Party&rsquo;s internal coding bots. On the side: Ravi, a SaaS and mobile app that gives AI agents their own accounts and 2FA.</p>
+        <p class="text-sm text-gray-600">Deployed LangChain agents at Cloaked and built the framework behind Block Party&rsquo;s internal coding bots. On the side: Ravi, a SaaS and mobile app that gives AI agents their own accounts and 2FA.</p>
       </div>
       <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-md transition">
         <i class="fas fa-server text-2xl text-blue-600 mb-3"></i>
         <h3 class="font-semibold mb-2">SRE &amp; DevOps</h3>
-        <p class="text-sm text-gray-600">Ran SRE for Protectwise&rsquo;s petabyte-scale platform: thousands of Cassandra nodes, petabytes in S3, a $10M+/yr AWS footprint, acquired by Verizon. Built the internal delivery tooling Cloaked and CyberGRX shipped on.</p>
+        <p class="text-sm text-gray-600">Ran SRE for Protectwise&rsquo;s petabyte-scale platform: thousands of Cassandra nodes, petabytes in S3, a $10M+/yr AWS footprint, acquired by Verizon. Built the internal delivery tooling multiple teams shipped on.</p>
       </div>
       <div class="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-md transition">
         <i class="fas fa-microchip text-2xl text-blue-600 mb-3"></i>
@@ -146,32 +146,41 @@ layout: layouts/next.html
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="relative bg-gray-50 rounded-2xl p-8 border border-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-y-0 max-w-6xl mx-auto">
+      <div class="relative bg-gray-50 rounded-2xl border border-gray-100 md:grid md:[grid-template-rows:subgrid] md:row-span-2">
         <div class="absolute -top-4 left-8 bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold shadow">1</div>
-        <h3 class="text-xl font-semibold mb-3 mt-2">Make delivery easy</h3>
-        <p class="text-gray-600 mb-4">I find the slow, error-prone parts of shipping and rebuild them into tools the whole team actually uses, even as AI floods the pipeline with PRs.</p>
-        <p class="text-sm text-blue-700 font-medium border-l-2 border-blue-300 pl-3">
-          Receipt: 30x faster deploys at Cloaked; whole engineering org onboarded to a new deploy process in 3 days at CyberGRX.
-        </p>
+        <div class="p-8">
+          <h3 class="text-xl font-semibold mb-3 mt-2">Make delivery easy</h3>
+          <p class="text-gray-600">I find the slow, error-prone parts of shipping and rebuild them into tools the whole team actually uses, even as AI floods the pipeline with PRs.</p>
+        </div>
+        <div class="border-t-2 border-dashed border-gray-400 bg-gray-100 rounded-b-2xl px-8 py-5">
+          <span class="block text-right text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400 mb-2">Receipt</span>
+          <p class="text-sm text-gray-700 leading-relaxed">Every engineer in the org shipping a new deploy process in 3 days at CyberGRX, and the fastest release cycle in the company at Food Service Warehouse.</p>
+        </div>
       </div>
 
-      <div class="relative bg-gray-50 rounded-2xl p-8 border border-gray-100">
+      <div class="relative bg-gray-50 rounded-2xl border border-gray-100 md:grid md:[grid-template-rows:subgrid] md:row-span-2">
         <div class="absolute -top-4 left-8 bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold shadow">2</div>
-        <h3 class="text-xl font-semibold mb-3 mt-2">Bring visibility to the team&rsquo;s work</h3>
-        <p class="text-gray-600 mb-4">I get real metrics in place so decisions stop being guesses and everyone can see what&rsquo;s actually working.</p>
-        <p class="text-sm text-blue-700 font-medium border-l-2 border-blue-300 pl-3">
-          Receipt: built and showcased an entire product-analytics stack at Cloaked, teaching the company to make data-driven calls.
-        </p>
+        <div class="p-8">
+          <h3 class="text-xl font-semibold mb-3 mt-2">Bring visibility to the team&rsquo;s work</h3>
+          <p class="text-gray-600">I get real metrics in place so decisions stop being guesses and everyone can see what&rsquo;s actually working.</p>
+        </div>
+        <div class="border-t-2 border-dashed border-gray-400 bg-gray-100 rounded-b-2xl px-8 py-5">
+          <span class="block text-right text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400 mb-2">Receipt</span>
+          <p class="text-sm text-gray-700 leading-relaxed">Built and showcased an entire product-analytics stack at Cloaked, teaching the company to make data-driven calls.</p>
+        </div>
       </div>
 
-      <div class="relative bg-gray-50 rounded-2xl p-8 border border-gray-100">
+      <div class="relative bg-gray-50 rounded-2xl border border-gray-100 md:grid md:[grid-template-rows:subgrid] md:row-span-2">
         <div class="absolute -top-4 left-8 bg-blue-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-bold shadow">3</div>
-        <h3 class="text-xl font-semibold mb-3 mt-2">Ship the small first version, instrumented</h3>
-        <p class="text-gray-600 mb-4">I put an embarrassingly small v1 in front of real users with tracking from day one, then let how they use it decide what&rsquo;s next.</p>
-        <p class="text-sm text-blue-700 font-medium border-l-2 border-blue-300 pl-3">
-          Receipt: shipped a deliberately small AI-agent v1 at Cloaked that grew into a core fundraising narrative.
-        </p>
+        <div class="p-8">
+          <h3 class="text-xl font-semibold mb-3 mt-2">Ship the small first version, instrumented</h3>
+          <p class="text-gray-600">I put an embarrassingly small v1 in front of real users with tracking from day one, then let how they use it decide what&rsquo;s next.</p>
+        </div>
+        <div class="border-t-2 border-dashed border-gray-400 bg-gray-100 rounded-b-2xl px-8 py-5">
+          <span class="block text-right text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400 mb-2">Receipt</span>
+          <p class="text-sm text-gray-700 leading-relaxed">Small AI v1s I shipped and tuned from real usage have helped land an acquisition, validate a line of investment, and win funding for a brand-new idea.</p>
+        </div>
       </div>
     </div>
   </div>
