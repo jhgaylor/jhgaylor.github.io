@@ -41,33 +41,30 @@
   },
   "work": [
     {
-      "name": "Cloaked Inc",
-      "position": "Staff Product Engineer",
-      "url": "https://cloaked.app",
-      "startDate": "2023-08",
-      "summary": "Spearheaded executive-level innovation by developing autonomous AI agents and a cross-functional ideation portal—driving a highly sticky, AI-powered onboarding experience that boosted user adoption and retention and defined governance processes",
+      "name": "Block Party (acquired by DeleteMe)",
+      "position": "Staff Software Engineer",
+      "url": "https://www.blockpartyapp.com/",
+      "startDate": "2025-05",
+      "endDate": "2026-01",
+      "summary": "Built internal AI and developer tooling for the engineering org, including the framework behind the company's internal coding bots, until Block Party was acquired by DeleteMe in January 2026.",
       "highlights": [
-        "Developed autonomous AI agents using LangChain to automate user account management tasks such as auto change password, auto login, and auto change email",
-        "Leveraged these AI agents as a core fundraising narrative and created a highly sticky, AI-powered onboarding experience that significantly boosted user adoption and retention",
-        "Designed and launched a cross-functional ideation portal engaging design, customer success, engineering, product development, and executive teams with transparent status tracking",
-        "Partnered with design, product, engineering, marketing, customer success, and co-founders to validate, refine, and ship concepts into market-ready features",
-        "Defined and documented cross-functional roles, ceremonies, and governance processes to unify ideation and accelerate product delivery across the organization"
+        "Designed and built the framework behind the company's internal AI coding bots"
       ]
     },
     {
       "name": "Cloaked Inc",
-      "position": "Staff Platform Engineer",
+      "position": "Staff Platform Engineer → Staff Product Engineer",
       "url": "https://cloaked.app",
       "startDate": "2022-09",
-      "endDate": "2023-08",
-      "summary": "Oversaw strategic AWS EKS migration and architected enterprise deployment governance, compliance frameworks, and GitOps CI/CD pipelines to enhance security, scalability, and developer productivity",
+      "endDate": "2025-05",
+      "summary": "Started in platform engineering (AWS EKS migration, GitOps CI/CD, compliance), then moved into product, building autonomous AI agents and a cross-functional ideation portal that drove a sticky, AI-powered onboarding experience.",
       "highlights": [
-        "Defined and executed a strategic migration roadmap transitioning legacy PaaS platforms to AWS EKS, driving cost reduction and scalability",
-        "Collaborated with cross-functional leadership to implement a Cloudflare control plane, enhancing security posture and resilience",
-        "Architected and led adoption of a multi-account AWS hub-and-spoke model, ensuring SOC2, ISO 27001, and 27701 compliance",
-        "Established enterprise Kubernetes and edge deployment standards, mentoring engineering teams in best practices and governance",
-        "Spearheaded design and implementation of a GitOps-based CI/CD pipeline, accelerating deployments by 30x",
-        "Partnered with product and analytics teams to develop an end-to-end analytics stack, enabling data-driven decision-making"
+        "Built a GitOps-based CI/CD pipeline that accelerated deployments by 30x",
+        "Led the migration from legacy PaaS to AWS EKS, with a multi-account model meeting SOC2, ISO 27001, and 27701 compliance",
+        "Built an end-to-end product-analytics stack that enabled data-driven decisions across the company",
+        "Built autonomous AI agents with LangChain to automate user account management (auto change password, login, and email)",
+        "Turned those AI agents into a core fundraising narrative and a sticky, AI-powered onboarding experience that boosted adoption and retention",
+        "Launched a cross-functional ideation portal connecting design, product, engineering, and executives with transparent status tracking"
       ]
     },
     {
