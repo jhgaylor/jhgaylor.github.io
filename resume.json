@@ -18,7 +18,7 @@
     "email": "jhgaylor@gmail.com",
     "phone": "720.453.3994",
     "url": "https://jakegaylor.com",
-    "summary": "15+ years building and shipping products at scale—from founding SaaS ventures to architecting AI-powered platforms. I combine deep SWE expertise with business leadership to drive product vision, go-to-market strategy, and revenue growth.",
+    "summary": "15+ years building and shipping products at scale, from founding SaaS ventures to architecting AI-powered platforms. I combine deep SWE expertise with business leadership to drive product vision, go-to-market strategy, and revenue growth.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -40,6 +40,20 @@
     ]
   },
   "work": [
+    {
+      "name": "Ravi",
+      "position": "Co-Founder",
+      "url": "https://ravi.id",
+      "startDate": "2024-06",
+      "endDate": "2026-05",
+      "summary": "Cofounded an agent-native SaaS that lets AI agents manage their own accounts and secrets. Built prototypes and a mobile app starting in 2024, then raised a $400K pre-seed from South Park Commons and ran the funded venture in early 2026.",
+      "highlights": [
+        "Raised a $400K pre-seed from South Park Commons",
+        "Grew to hundreds of users",
+        "Built the product end to end: a web SaaS plus a cross-platform Flutter mobile app, live on the Apple App Store",
+        "Designed agent-native account, secret, and 2FA management so AI agents can operate their own identities"
+      ]
+    },
     {
       "name": "Block Party (acquired by DeleteMe)",
       "position": "Staff Software Engineer",
