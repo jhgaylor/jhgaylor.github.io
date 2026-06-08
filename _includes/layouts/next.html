@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Gaylor · makes good teams ship like great ones</title>
+    <meta name="description" content="Jake Gaylor makes good teams ship like great ones. 15+ years across the stack: SaaS, petabyte-scale infrastructure, IoT, mobile apps, browser extensions. Open to senior, staff, and engineering leadership roles." />
+    <link rel="canonical" href="https://jakegaylor.com/next/" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231d4ed8'/><text x='32' y='45' font-family='system-ui,sans-serif' font-size='32' font-weight='700' fill='%23ffffff' text-anchor='middle'>JG</text></svg>" />
+
+    <!-- Open Graph / social preview (shown when the link is pasted into email, LinkedIn, Slack, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jake Gaylor" />
+    <meta property="og:url" content="https://jakegaylor.com/next/" />
+    <meta property="og:title" content="Jake Gaylor · makes good teams ship like great ones" />
+    <meta property="og:description" content="Makes good teams ship like great ones. 15+ years across the stack: SaaS, petabyte-scale infrastructure, IoT, mobile apps, browser extensions. Plus a $500K P&amp;L of my own. Open to senior, staff, and engineering leadership roles." />
+    <meta property="og:image" content="https://jakegaylor.com/images/og-card.png" />
+    <meta property="og:image:alt" content="Jake Gaylor" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jake Gaylor · makes good teams ship like great ones" />
+    <meta name="twitter:description" content="Makes good teams ship like great ones. 15+ years across the stack: SaaS, petabyte-scale infrastructure, IoT, mobile apps, browser extensions. Plus a $500K P&amp;L of my own. Open to senior, staff, and engineering leadership roles." />
+    <meta name="twitter:image" content="https://jakegaylor.com/images/og-card.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/bundle.css">
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_2eJY8Qs3B3H34qrYmBTK1d8GqN2xVsblmaTthTQujAB', {
+            api_host: 'https://us.i.posthog.com',
+            person_profiles: 'always',
+            // Channel / recipient tagging: append ?tag=recruiter|referral|cold (and optionally
+            // &r=acme-founder) to a shared link, and every event from that visit carries it.
+            // This is the highest-value signal at single-digit-N volume: which audience even
+            // opens it. Runs in the `loaded` callback so register() persists against the real
+            // library, not the early stub.
+            loaded: function (ph) {
+                try {
+                    var params = new URLSearchParams(window.location.search);
+                    var props = {};
+                    var tag = params.get('tag') || params.get('utm_source');
+                    if (tag) props.channel_tag = tag;
+                    var recipient = params.get('r') || params.get('to');
+                    if (recipient) props.recipient_tag = recipient;
+                    if (Object.keys(props).length) {
+                        ph.register(props);
+                        ph.capture('tagged_visit', props);
+                    }
+                } catch (e) {}
+            },
+        })
+</script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <main class="flex-grow">
+        {{ content }}
+    </main>
+
+    <footer class="bg-gray-100 border-t border-gray-200">
+      <div class="container mx-auto px-6 py-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+              <div class="text-gray-600 mb-4 md:mb-0">
+                  © 2026 Jake Gaylor. All rights reserved.
+              </div>
+              <div class="flex space-x-6">
+                  <a href="mailto:jhgaylor@gmail.com" class="text-gray-600 hover:text-blue-600 transition-colors">
+                      <i class="fas fa-envelope"></i>
+                  </a>
+                  <a href="https://github.com/jhgaylor" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
+                      <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/jhgaylor" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
+                      <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a href="/blog" class="text-gray-600 hover:text-blue-600 transition-colors" title="Blog">
+                      <i class="fas fa-book"></i>
+                  </a>
+                  <a href="/feed.xml" class="text-gray-600 hover:text-blue-600 transition-colors" title="RSS Feed">
+                      <i class="fas fa-rss"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+    </footer>
+    
+</body>
+</html> 
