@@ -44,13 +44,13 @@
       "name": "Ravi",
       "position": "Co-Founder",
       "url": "https://ravi.id",
-      "startDate": "2024-06",
+      "startDate": "2026-01",
       "endDate": "2026-05",
-      "summary": "Cofounded an agent-native SaaS that lets AI agents manage their own accounts and secrets. Built prototypes and a mobile app starting in 2024, then raised a $400K pre-seed from South Park Commons and ran the funded venture in early 2026.",
+      "summary": "Cofounded an agent-native SaaS that lets AI agents manage their own accounts and secrets.",
       "highlights": [
         "Raised a $400K pre-seed from South Park Commons",
         "Grew to hundreds of users",
-        "Built the product end to end: a web SaaS plus a cross-platform Flutter mobile app, live on the Apple App Store",
+        "Shipped the product end to end: a web SaaS and a cross-platform Flutter mobile app on the Apple App Store, built on prototypes started in 2024",
         "Designed agent-native account, secret, and 2FA management so AI agents can operate their own identities"
       ]
     },
