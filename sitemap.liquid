@@ -1,0 +1,14 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jakegaylor.com/</loc></url>
+  <url><loc>https://jakegaylor.com/resume/</loc></url>
+  <url><loc>https://jakegaylor.com/projects/</loc></url>
+  <url><loc>https://jakegaylor.com/blog/</loc></url>
+{%- for post in collections.posts %}
+  <url><loc>https://jakegaylor.com{{ post.url }}</loc><lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod></url>
+{%- endfor %}
+</urlset>

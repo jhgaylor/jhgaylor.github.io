@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jake Gaylor · makes good teams ship like great ones</title>
-    <meta name="description" content="Jake Gaylor makes good teams ship like great ones. Good teams rarely lack talent, they lack speed, focus, and visibility, and that is the gap he closes, fast. Open to senior, staff, and engineering leadership roles." />
-    <link rel="canonical" href="https://jakegaylor.com/" />
+    {%- comment -%}
+      Brand layout shared by the homepage and the rebranded inner pages.
+      Pages set title / description / socialDescription / canonicalPath in
+      front matter; defaults below keep the homepage values as the fallback.
+    {%- endcomment -%}
+    {%- assign pageTitle = title | default: "Jake Gaylor · makes good teams ship like great ones" -%}
+    {%- assign pageDescription = description | default: "Jake Gaylor makes good teams ship like great ones. Good teams rarely lack talent, they lack speed, focus, and visibility, and that is the gap he closes, fast. Open to senior, staff, and engineering leadership roles." -%}
+    {%- assign pageSocialDescription = socialDescription | default: "Good teams rarely lack talent. They lack speed, focus, and the visibility to see what&rsquo;s working. That&rsquo;s the gap I close, fast. Open to senior, staff, and engineering leadership roles." -%}
+    {%- assign pageCanonical = canonicalPath | default: page.url -%}
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ pageDescription }}" />
+    <link rel="canonical" href="https://jakegaylor.com{{ pageCanonical }}" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231d4ed8'/><text x='32' y='45' font-family='system-ui,sans-serif' font-size='32' font-weight='700' fill='%23ffffff' text-anchor='middle'>JG</text></svg>" />
 
     <!-- Open Graph / social preview (shown when the link is pasted into email, LinkedIn, Slack, etc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Jake Gaylor" />
-    <meta property="og:url" content="https://jakegaylor.com/" />
-    <meta property="og:title" content="Jake Gaylor · makes good teams ship like great ones" />
-    <meta property="og:description" content="Good teams rarely lack talent. They lack speed, focus, and the visibility to see what&rsquo;s working. That&rsquo;s the gap I close, fast. Open to senior, staff, and engineering leadership roles." />
-    <meta property="og:image" content="https://jakegaylor.com/images/og-card.png?v=2" />
+    <meta property="og:url" content="https://jakegaylor.com{{ pageCanonical }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ pageSocialDescription }}" />
+    <meta property="og:image" content="https://jakegaylor.com/images/og-card.jpg?v=3" />
     <meta property="og:image:alt" content="Jake Gaylor" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jake Gaylor · makes good teams ship like great ones" />
-    <meta name="twitter:description" content="Good teams rarely lack talent. They lack speed, focus, and the visibility to see what&rsquo;s working. That&rsquo;s the gap I close, fast. Open to senior, staff, and engineering leadership roles." />
-    <meta name="twitter:image" content="https://jakegaylor.com/images/og-card.png?v=2" />
+    <meta name="twitter:title" content="{{ pageTitle }}" />
+    <meta name="twitter:description" content="{{ pageSocialDescription }}" />
+    <meta name="twitter:image" content="https://jakegaylor.com/images/og-card.jpg?v=3" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/bundle.css">
     <script>
@@ -60,7 +69,7 @@
       <div class="container mx-auto px-6 py-8">
           <div class="flex flex-col md:flex-row justify-between items-center">
               <div class="text-gray-600 mb-4 md:mb-0">
-                  © 2026 Jake Gaylor. All rights reserved.
+                  © {{ "now" | date: "%Y" }} Jake Gaylor. All rights reserved.
               </div>
               <div class="flex space-x-6">
                   <a href="mailto:jhgaylor@gmail.com" class="text-gray-600 hover:text-blue-600 transition-colors">
@@ -71,6 +80,12 @@
                   </a>
                   <a href="https://linkedin.com/in/jhgaylor" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
                       <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a href="/blog/" class="text-gray-600 hover:text-blue-600 transition-colors" title="Blog">
+                      <i class="fas fa-book"></i>
+                  </a>
+                  <a href="/feed.xml" class="text-gray-600 hover:text-blue-600 transition-colors" title="RSS Feed">
+                      <i class="fas fa-rss"></i>
                   </a>
               </div>
           </div>

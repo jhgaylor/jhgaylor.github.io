@@ -1,166 +1,206 @@
-<!doctype html>
-    <html lang="en" style="--color-background-light:#ffffff; --color-background-dark:#191e23; --color-dimmed-light:#f3f4f5; --color-dimmed-dark:#23282d; --color-primary-light:#191e23; --color-primary-dark:#fbfbfc; --color-secondary-light:#6c7781; --color-secondary-dark:#ccd0d4; --color-accent-light:#46b450; --color-accent-dark:#47d153;">
-      <head>
-        <meta charset="utf-8" />
-        
-    <title>Jake Gaylor - Projects</title>
-    <meta name="description" content="Projects and open source contributions by Jake Gaylor - AI Engineering, Platform Engineering, and Developer Tools" />
-  
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
-        <style>
-          :root{color-scheme:light dark;--color-background-light: #ffffff;--color-dimmed-light: #f3f4f5;--color-primary-light: #191e23;--color-secondary-light: #6c7781;--color-accent-light: #0073aa;--color-background-dark: #191e23;--color-dimmed-dark: #23282d;--color-primary-dark: #fbfbfc;--color-secondary-dark: #ccd0d4;--color-accent-dark: #00a0d2;--color-background: var(--color-background-light);--color-dimmed: var(--color-dimmed-light);--color-primary: var(--color-primary-light);--color-secondary: var(--color-secondary-light);--color-accent: var(--color-accent-light);--scale-ratio: 1.2;--scale0: 1rem;--scale1: calc(var(--scale0) * var(--scale-ratio));--scale2: calc(var(--scale1) * var(--scale-ratio));--scale3: calc(var(--scale2) * var(--scale-ratio));--scale4: calc(var(--scale3) * var(--scale-ratio));--scale5: calc(var(--scale4) * var(--scale-ratio))}@media (prefers-color-scheme: dark){:root{--color-background: var(--color-background-dark);--color-dimmed: var(--color-dimmed-dark);--color-primary: var(--color-primary-dark);--color-secondary: var(--color-secondary-dark);--color-accent: var(--color-accent-dark)}}*{box-sizing:border-box;margin:0;padding:0}html{font-size:18px}body{background:var(--color-background);color:var(--color-primary);display:grid;font:1em/1.5 Lato,sans-serif;gap:2em;grid-template-columns:[full-start] 1fr [main-start side-start] minmax(min-content,12em) [side-end content-start] minmax(min-content,36em) [main-end content-end] 1fr [full-end];grid-template-rows:auto [content] 0;margin-bottom:4em}body:before{content:"";grid-column:full;grid-row:content}ol,ul{padding-left:1em}:not(.icon-list,.tag-list)>li+li{margin-top:.4em}li::marker,.network{color:var(--color-secondary)}a{color:var(--color-accent);text-decoration:none}a:focus,a:hover{text-decoration:underline}h1,h2,h3,h5{font-weight:400}h1,h2,h3{line-height:1.2}h1{font-size:var(--scale5)}h2{color:var(--color-secondary);font-size:var(--scale4)}h3{color:var(--color-secondary);font-size:var(--scale3);grid-column:side;margin-bottom:1rem}h4{font-size:var(--scale2)}h5{font-size:var(--scale1)}h6{font-size:var(--scale0)}blockquote{border-left:.2em solid var(--color-dimmed);padding-left:1em}cite{color:var(--color-secondary);font-style:inherit}cite:before{content:"— "}svg{margin-right:.2em;vertical-align:text-bottom}.masthead{background:var(--color-dimmed);display:inherit;gap:inherit;grid-column:full;grid-template-columns:inherit;padding:4em 0;text-align:center}.masthead>*,section{grid-column:main}.masthead>img{border:4px solid;border-radius:50%;margin:0 auto;max-width:12em}article>*+*,blockquote>*+*,.timeline>div>*+*{margin-top:.6em}.meta{color:var(--color-secondary)}.stack{display:grid;gap:1.5em}.icon-list{display:flex;flex-wrap:wrap;gap:.4em 1em;justify-content:center;list-style:none;padding:0}.grid-list{display:grid;gap:1em}.tag-list{display:flex;flex-wrap:wrap;gap:.4em;list-style:none;padding:0}.tag-list>li{background:var(--color-dimmed);border-radius:.2em;padding:.2em .6em}.timeline>div{position:relative}.timeline>div:not(:last-child){padding-bottom:1rem}.timeline>div:not(:last-child):before{content:"";position:absolute;top:1rem;left:-15px;width:2px;height:100%;background:var(--color-secondary)}.timeline>div:not(:only-child):after{content:"";position:absolute;top:.6rem;left:-20px;width:8px;height:8px;background:var(--color-secondary);border:2px solid var(--color-background);border-radius:50%}@media (max-width: 640px){h2 .role-line{display:block}h2 .role-separator{display:none}}@media print,(min-width: 48em){h3{text-align:right;margin-bottom:inherit}.masthead{text-align:inherit}.masthead>*,section{grid-column:content}.masthead img{grid-column:side;grid-row:span 2;max-width:100%}section{display:contents}.icon-list{flex-direction:column}.grid-list{grid-template-columns:repeat(auto-fit,minmax(calc((100% - 1em)/2),1fr))}}@media print{.duration{display:none}}.back-link{grid-column:main;margin-top:2em;text-align:center}
-        </style>
-      </head>
-      <body>
-        
-    <header class="masthead">
-      <div><h1>Jake Gaylor</h1> <h2>Projects & Ventures</h2></div>
-      <article><p>A collection of my technical projects, open source contributions, and entrepreneurial ventures showcasing product development, business leadership, and technical innovation.</p></article>
-    </header>
-    
-    <div class="back-link">
-      <a href="/resume/">← Back to Resume</a>
+---
+layout: layouts/home.html
+title: Jake Gaylor · Projects & Ventures
+description: Businesses Jake Gaylor has run, products he has shipped, and the open-source work in between. Receipts behind the claim that he makes good teams ship like great ones.
+socialDescription: The receipts behind the claim. Businesses I&rsquo;ve run, products I&rsquo;ve shipped, and the open-source work in between.
+canonicalPath: /projects/
+---
+
+<!-- ===================== HEADER: same brand as the homepage ===================== -->
+<header class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 text-white">
+  <div class="container mx-auto px-6 pt-8 pb-16 md:pb-20">
+    <nav class="flex items-center justify-between text-sm mb-12">
+      <a href="/" data-cta="projects-nav-home" class="text-blue-100 hover:text-white transition-colors">
+        <i class="fas fa-arrow-left mr-2"></i>jakegaylor.com
+      </a>
+      <div class="flex gap-6">
+        <a href="/resume/" data-cta="projects-nav-resume" class="text-blue-100 hover:text-white transition-colors">Resume</a>
+        <a href="/blog/" data-cta="projects-nav-blog" class="text-blue-100 hover:text-white transition-colors">Blog</a>
+      </div>
+    </nav>
+    <div class="max-w-3xl">
+      <p class="text-blue-200 font-semibold tracking-widest uppercase text-sm mb-5">Projects &amp; Ventures</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        The receipts behind
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white"> the claim.</span>
+      </h1>
+      <p class="text-xl text-blue-100">
+        Businesses I&rsquo;ve run, products I&rsquo;ve shipped, and the open-source work in between.
+        If the homepage is the pitch, this page is the evidence locker.
+      </p>
     </div>
-   
-      <section id="ventures">
-        <h3>Business Ventures</h3>
-        <div class="stack">
-          
-              <article>
-                <header>
-                  <h4><a href="https://ravi.id">Ravi</a></h4>
-                  <div class="meta">
-                    <div>Jan 2026 – May 2026</div>
-                  </div>
-                </header>
-                <p>Co-Founder - Agent-native SaaS that lets AI agents manage their own accounts and secrets</p>
+  </div>
+</header>
 
-                  <ul>
-                    <li><p>Raised a $400K pre-seed from South Park Commons</p></li><li><p>Grew to hundreds of users</p></li><li><p>Shipped the product end to end: a web SaaS and a cross-platform Flutter mobile app on the Apple App Store, built on prototypes started in 2024</p></li><li><p>Designed agent-native account, secret, and 2FA management so AI agents can operate their own identities</p></li>
-                  </ul>
+<!-- ===================== BUSINESS VENTURES ===================== -->
+<section id="ventures" class="py-16 md:py-20 bg-white text-gray-900">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <div class="mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-3">Business Ventures</h2>
+      <p class="text-lg text-gray-600">Three businesses, three very different markets. Same operating system: ship small, measure, iterate.</p>
+    </div>
 
-              </article>
-
-              <article>
-                <header>
-                  <h4>The Onward Store Steakhouse</h4>
-                  <div class="meta">
-                    <div>Oct 2021 – Jan 2024</div>
-                  </div>
-                </header>
-                <p>Co-Owner with my wife - Partnership venture where we led all aspects of the business together</p>
-                
-                  <ul>
-                    <li><p>Executed full business lifecycle together from opportunity identification and acquisition to building $500K annual revenue operation</p></li><li><p>Built and led high-performing team of 7 through hands-on leadership, creating culture of excellence, accountability, and pride in their work</p></li><li><p>Established operational systems and feedback loops that drove consistent quality and customer satisfaction</p></li><li><p>Applied tech product mindset to traditional business: rapid iteration, data-driven decisions, and continuous improvement</p></li>
-                  </ul>
-                
-              </article>
-            
-              <article>
-                <header>
-                  <h4><a href="/socialdrizzle_com/">SocialDrizzle</a></h4>
-                  <div class="meta">
-                    <div>2013 – 2015</div>
-                  </div>
-                </header>
-                <p>Founder - Social media engagement platform for stadium video boards at public events</p>
-                
-                  <ul>
-                    <li><p>Built complete microservices architecture using Docker, Ansible, and Jenkins, including data collection bots, routing, processing, and web application</p></li><li><p>Launched MVP at Mississippi State University in just 12 weeks using Meteor framework</p></li><li><p>Provided turnkey solution for game day production crews including hardware integration, custom templates, and on-site support</p></li><li><p>Developed fleet of social media bots to aggregate and curate fan content for real-time stadium display</p></li>
-                  </ul>
-                
-              </article>
-            
+    <div class="space-y-8">
+      <article class="bg-gray-50 rounded-2xl border border-gray-100 p-8 hover:border-blue-200 hover:shadow-md transition">
+        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
+          <h3 class="text-2xl font-semibold">
+            <a href="https://ravi.id" data-cta="projects-ravi" class="hover:text-blue-700 transition-colors">Ravi <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+          </h3>
+          <span class="text-sm text-gray-500 whitespace-nowrap">Co-Founder · Jan 2026 – May 2026</span>
         </div>
-      </section>
+        <p class="text-gray-700 mb-4">Agent-native SaaS that lets AI agents manage their own accounts and secrets.</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-600 list-disc list-inside">
+          <li>Raised a $400K pre-seed from South Park Commons</li>
+          <li>Grew to hundreds of users</li>
+          <li>Shipped the product end to end: a web SaaS and a cross-platform Flutter mobile app on the Apple App Store, built on prototypes started in 2024</li>
+          <li>Designed agent-native account, secret, and 2FA management so AI agents can operate their own identities</li>
+        </ul>
+      </article>
 
-      <section id="technical-projects">
-        <h3>Technical Projects</h3>
-        <div class="stack">
-          
-              
-            
-              <article>
-                <header>
-                  <h4><a href="https://github.com/jhgaylor">MCP Working Group Contributions</a></h4>
-                </header>
-                <p>Active participant in Model Context Protocol (MCP) community development</p>
-                
-                  <ul>
-                    <li><p>Member of the MCP Hosting Working Group</p></li><li><p>Developed strategies for deploying and running MCP servers at scale</p></li><li><p>Contributed to Dart SDK, Express tool for binding to MCP servers</p></li><li><p>Developed various MCP servers (Hirebase, Candidate Job Search, Text Extraction)</p></li><li><p>Created GitOps tool for MCP deployments</p></li><li><p>Operate publicly available MCP servers for community testing</p></li>
-                  </ul>
-                
-                
-              </article>
-            
-              <article>
-                <header>
-                  <h4>CareerFlick LLM-Driven Mobile App</h4>
-                </header>
-                <p>Developed a Flutter mobile application with a Tinder-like LLM interface</p>
-                
-                  <ul>
-                    <li><p>Built intuitive swipe-based interface for interacting with LLMs using Flutter</p></li><li><p>Implemented AI-driven content generation and response system</p></li><li><p>Developed a cross-platform mobile app for iOS and Android</p></li>
-                  </ul>
-                
-                
-              </article>
-            
-              <article>
-                <header>
-                  <h4><a href="https://github.com/jhgaylor/hirebase-mcp">Hirebase MCP Server</a></h4>
-                </header>
-                <p>A Python MCP server for Hirebase.org's API</p>
-                
-                  <ul>
-                    <li><p>Built a Python-based Model Context Protocol (MCP) server for searching jobs on Hirebase.org</p></li><li><p>Dockerized the service and set up GitOps CI/CD pipelines for automated builds and releases</p></li>
-                  </ul>
-                
-                
-              </article>
-            
-              <article>
-                <header>
-                  <h4><a href="https://github.com/jhgaylor/express-mcp-handler">Express MCP Handler</a></h4>
-                </header>
-                <p>Package to simplify MCP handling in Express.js</p>
-                
-                  <ul>
-                    <li><p>Developed Express middleware in TypeScript to streamline MCP request handling</p></li><li><p>Authored full type definitions and robust error handling for production-grade reliability</p></li>
-                  </ul>
-                
-                
-              </article>
-            
-              <article>
-                <header>
-                  <h4><a href="https://github.com/jhgaylor/node-candidate-mcp-server">Node Candidate MCP Server</a></h4>
-                </header>
-                <p>A TypeScript library to build customizable candidate MCP servers</p>
-                
-                  <ul>
-                    <li><p>Authored a reusable library enabling developers to integrate their own candidate data into MCP flows</p></li><li><p>Published as an npm package for easy adoption and extension by other teams</p></li>
-                  </ul>
-                
-                
-              </article>
-            
-              <article>
-                <header>
-                  <h4><a href="https://github.com/leehack/mcp_dart">mcp_dart</a></h4>
-                </header>
-                <p>Dart SDK implementation of the Model Context Protocol (MCP)</p>
-                
-                  <ul>
-                    <li><p>Contributed stream based support for in-process MCP servers</p></li><li><p>Add support for running MCP servers in flutter apps</p></li><li><p>Authored Dart examples to accelerate SDK adoption</p></li>
-                  </ul>
-                
-                
-              </article>
-            
+      <article class="bg-gray-50 rounded-2xl border border-gray-100 p-8 hover:border-blue-200 hover:shadow-md transition">
+        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
+          <h3 class="text-2xl font-semibold">The Onward Store Steakhouse</h3>
+          <span class="text-sm text-gray-500 whitespace-nowrap">Co-Owner with my wife · Oct 2021 – Jan 2024</span>
         </div>
-      </section>
-      
-      </body>
-    </html>
+        <p class="text-gray-700 mb-4">A full-service steakhouse we owned and ran outright: the part of business most engineers never see.</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-600 list-disc list-inside">
+          <li>Executed the full business lifecycle together, from opportunity identification and acquisition to a $500K annual revenue operation</li>
+          <li>Built and led a high-performing team of 7 through hands-on leadership, creating a culture of excellence, accountability, and pride</li>
+          <li>Established operational systems and feedback loops that drove consistent quality and customer satisfaction</li>
+          <li>Applied a tech product mindset to a traditional business: rapid iteration, data-driven decisions, continuous improvement</li>
+        </ul>
+      </article>
+
+      <article class="bg-gray-50 rounded-2xl border border-gray-100 p-8 hover:border-blue-200 hover:shadow-md transition">
+        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
+          <h3 class="text-2xl font-semibold">
+            <a href="/socialdrizzle_com/" data-cta="projects-socialdrizzle" class="hover:text-blue-700 transition-colors">SocialDrizzle <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+          </h3>
+          <span class="text-sm text-gray-500 whitespace-nowrap">Founder · 2013 – 2015</span>
+        </div>
+        <p class="text-gray-700 mb-4">Social media engagement platform for stadium video boards at public events.</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-600 list-disc list-inside">
+          <li>Built a complete microservices architecture with Docker, Ansible, and Jenkins: data collection bots, routing, processing, and the web app</li>
+          <li>Launched the MVP at Mississippi State University in just 12 weeks using the Meteor framework</li>
+          <li>Provided a turnkey solution for game-day production crews: hardware integration, custom templates, on-site support</li>
+          <li>Developed a fleet of social media bots to aggregate and curate fan content for real-time stadium display</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OPEN SOURCE & TECHNICAL PROJECTS ===================== -->
+<section id="technical-projects" class="py-16 md:py-20 bg-gray-50 text-gray-900 border-t border-gray-100">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <div class="mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold mb-3">Open Source &amp; Technical Projects</h2>
+      <p class="text-lg text-gray-600">Mostly Model Context Protocol infrastructure: the plumbing that lets AI agents do real work.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
+          <a href="https://github.com/jhgaylor" data-cta="projects-mcp-wg" class="hover:text-blue-700 transition-colors">MCP Working Group Contributions <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">Active participant in Model Context Protocol (MCP) community development.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Member of the MCP Hosting Working Group</li>
+          <li>Developed strategies for deploying and running MCP servers at scale</li>
+          <li>Contributed to the Dart SDK and an Express tool for binding to MCP servers</li>
+          <li>Built MCP servers for Hirebase, candidate job search, and text extraction</li>
+          <li>Created a GitOps tool for MCP deployments; operate public MCP servers for community testing</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">CareerFlick</h3>
+        <p class="text-sm text-gray-700 mb-3">Flutter mobile app with a Tinder-like LLM interface.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Built an intuitive swipe-based interface for interacting with LLMs using Flutter</li>
+          <li>Implemented AI-driven content generation and response system</li>
+          <li>Shipped cross-platform for iOS and Android</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
+          <a href="https://github.com/jhgaylor/hirebase-mcp" data-cta="projects-hirebase" class="hover:text-blue-700 transition-colors">Hirebase MCP Server <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">A Python MCP server for Hirebase.org&rsquo;s API.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Built a Python-based MCP server for searching jobs on Hirebase.org</li>
+          <li>Dockerized the service and set up GitOps CI/CD pipelines for automated builds and releases</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
+          <a href="https://github.com/jhgaylor/express-mcp-handler" data-cta="projects-express-mcp" class="hover:text-blue-700 transition-colors">Express MCP Handler <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">Package to simplify MCP handling in Express.js.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Developed Express middleware in TypeScript to streamline MCP request handling</li>
+          <li>Authored full type definitions and robust error handling for production-grade reliability</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
+          <a href="https://github.com/jhgaylor/node-candidate-mcp-server" data-cta="projects-candidate-mcp" class="hover:text-blue-700 transition-colors">Node Candidate MCP Server <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">A TypeScript library to build customizable candidate MCP servers.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Authored a reusable library so developers can integrate their own candidate data into MCP flows</li>
+          <li>Published as an npm package for easy adoption and extension by other teams</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
+          <a href="https://github.com/leehack/mcp_dart" data-cta="projects-mcp-dart" class="hover:text-blue-700 transition-colors">mcp_dart <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">Dart SDK implementation of the Model Context Protocol.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Contributed stream-based support for in-process MCP servers</li>
+          <li>Added support for running MCP servers in Flutter apps</li>
+          <li>Authored Dart examples to accelerate SDK adoption</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING CTA: never dead-end a recruiter ===================== -->
+<section class="py-16 md:py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+  <div class="container mx-auto px-6 text-center max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-bold mb-5">Want this on your team?</h2>
+    <p class="text-xl text-blue-100 mb-10">
+      Every project above started the same way: find what&rsquo;s slow, build the tool, measure the result. Let&rsquo;s talk about doing it for you.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/resume/" data-cta="projects-view-resume" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-md text-blue-800 bg-white hover:bg-blue-50 transition-colors shadow-lg">
+        <i class="fas fa-file-lines mr-2"></i>
+        View Resume
+      </a>
+      <a href="mailto:jhgaylor@gmail.com" data-cta="projects-email" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-md text-white border border-white/40 hover:bg-white/10 transition-colors">
+        <i class="fas fa-envelope mr-2"></i>
+        Email Me
+      </a>
+      <a href="sms:+17204533994" data-cta="projects-text" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-medium rounded-md text-white border border-white/40 hover:bg-white/10 transition-colors">
+        <i class="fas fa-message mr-2"></i>
+        Text Me
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Signal layer: same cta_click events as the homepage (PostHog loads in the layout).
+  document.addEventListener('click', function (ev) {
+    var el = ev.target.closest('[data-cta]');
+    if (el && typeof posthog !== 'undefined') {
+      posthog.capture('cta_click', { cta: el.getAttribute('data-cta') });
+    }
+  });
+</script>

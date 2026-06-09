@@ -24,6 +24,15 @@ Starts an Eleventy dev server with live reload:
 npx @11ty/eleventy --serve
 ```
 
+### Rebuild the Tailwind CSS
+
+Styles are a static Tailwind build (no CDN). After adding or changing Tailwind
+classes in any template, regenerate `_assets/css/tailwind.css`:
+
+```
+npm run build:css
+```
+
 ### Rebuild the résumé
 
 1. Update `resume.json` as needed.

@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if title %}{{ title }} · Jake Gaylor{% else %}Jake Gaylor · makes good teams ship like great ones{% endif %}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    {%- assign pageTitle = title | default: "Jake Gaylor · makes good teams ship like great ones" -%}
+    {%- if title -%}{%- assign pageTitle = title | append: " · Jake Gaylor" -%}{%- endif -%}
+    {%- assign pageDescription = description | default: "Writing by Jake Gaylor, an engineer who makes good teams ship like great ones." -%}
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ pageDescription }}" />
+    <link rel="canonical" href="https://jakegaylor.com{{ page.url }}" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231d4ed8'/><text x='32' y='45' font-family='system-ui,sans-serif' font-size='32' font-weight='700' fill='%23ffffff' text-anchor='middle'>JG</text></svg>" />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Jake Gaylor" />
+    <meta property="og:url" content="https://jakegaylor.com{{ page.url }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ pageDescription }}" />
+    <meta property="og:image" content="https://jakegaylor.com/images/og-card.jpg?v=3" />
+    <meta property="og:image:alt" content="Jake Gaylor" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ pageTitle }}" />
+    <meta name="twitter:description" content="{{ pageDescription }}" />
+    <meta name="twitter:image" content="https://jakegaylor.com/images/og-card.jpg?v=3" />
+
+    <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/bundle.css">
     <script>
@@ -16,10 +36,20 @@
     </script>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
-    <a href="mailto:jhgaylor@gmail.com" class="corner-ribbon">
-        Available to Hire
-    </a>
-    
+    <nav class="bg-white border-b border-gray-200">
+        <div class="container mx-auto px-6 py-3 flex items-center justify-between text-sm">
+            <a href="/" data-cta="blog-nav-home" class="text-gray-600 hover:text-blue-700 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>jakegaylor.com
+            </a>
+            <div class="flex items-center gap-5">
+                <a href="/projects/" data-cta="blog-nav-projects" class="text-gray-600 hover:text-blue-700 transition-colors hidden sm:inline">Projects</a>
+                <a href="/resume/" data-cta="blog-nav-hire" class="inline-flex items-center px-3 py-1.5 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
+                    Available to hire<i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <main class="flex-grow">
         {{ content }}
     </main>
@@ -40,7 +70,7 @@
                   <a href="https://linkedin.com/in/jhgaylor" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
                       <i class="fab fa-linkedin"></i>
                   </a>
-                  <a href="/blog" class="text-gray-600 hover:text-blue-600 transition-colors" title="Blog">
+                  <a href="/blog/" class="text-gray-600 hover:text-blue-600 transition-colors" title="Blog">
                       <i class="fas fa-book"></i>
                   </a>
                   <a href="/feed.xml" class="text-gray-600 hover:text-blue-600 transition-colors" title="RSS Feed">
@@ -50,6 +80,15 @@
           </div>
       </div>
     </footer>
-    
+
+    <script>
+      // Signal layer: same cta_click events as the rest of the site.
+      document.addEventListener('click', function (ev) {
+        var el = ev.target.closest('[data-cta]');
+        if (el && typeof posthog !== 'undefined') {
+          posthog.capture('cta_click', { cta: el.getAttribute('data-cta') });
+        }
+      });
+    </script>
 </body>
 </html> 
