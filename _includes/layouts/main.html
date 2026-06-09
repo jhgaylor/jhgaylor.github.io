@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jake Gaylor - Engineer and Leader</title>
+    <title>{% if title %}{{ title }} · Jake Gaylor{% else %}Jake Gaylor · makes good teams ship like great ones{% endif %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/bundle.css">
@@ -28,7 +28,7 @@
       <div class="container mx-auto px-6 py-8">
           <div class="flex flex-col md:flex-row justify-between items-center">
               <div class="text-gray-600 mb-4 md:mb-0">
-                  © 2024 Jake Gaylor. All rights reserved.
+                  © {{ "now" | date: "%Y" }} Jake Gaylor. All rights reserved.
               </div>
               <div class="flex space-x-6">
                   <a href="mailto:jhgaylor@gmail.com" class="text-gray-600 hover:text-blue-600 transition-colors">
