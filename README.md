@@ -9,7 +9,7 @@ This is Jake Gaylor's personal portfolio site — a static site built with [Elev
 - **`index.html`** — Home page and landing experience
 - **`blog/`** — Writing and blog posts
 - **`projects.html`** — Portfolio of projects Jake has worked on
-- **`resume.html`** — Résumé generated from `resume.json` (via `npm run build-resume`)
+- **`resume.html`** — Résumé page template; renders from `resume.json` at build time
 - **`bio/`**, **`old.html`**, **`interactive-resume.html`**, **`next.html`** — retired pages kept as redirect stubs so old links don't 404
 
 ---
@@ -33,9 +33,11 @@ classes in any template, regenerate `_assets/css/tailwind.css`:
 npm run build:css
 ```
 
-### Rebuild the résumé
+### Update the résumé
 
-1. Update `resume.json` as needed.
-2. Run `npm run build-resume` (renders the theme, then `scripts/postprocess-resume.mjs` injects the title, site nav, and analytics).
-3. Regenerate `_assets/JakeGaylor_resume.pdf` from the rebuilt `/resume/` page so the download stays in sync.
-4. Git commit all the changes.
+1. Update `resume.json` as needed — `/resume/` renders from it automatically
+   (`resume.html` is an Eleventy template; data is wired up in `.eleventy.js`).
+2. Regenerate `_assets/JakeGaylor_resume.pdf` from the rebuilt `/resume/` page so
+   the download stays in sync. The page has print styles, so print-to-PDF the
+   built page (letter, 0.5in margins, background graphics off).
+3. Git commit all the changes.
