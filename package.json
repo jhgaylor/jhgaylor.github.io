@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-resume": "npx jsonresume-theme-even < resume.json > resume.html"
+    "build-resume": "npx jsonresume-theme-even < resume.json > resume.html && node scripts/postprocess-resume.mjs"
   },
   "keywords": [],
   "author": "",
