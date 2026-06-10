@@ -19,20 +19,29 @@ canonicalPath: /resume/
     #resume-hero p { font-size: 10pt !important; margin-bottom: 0.5rem !important; }
     #resume-hero .contact-chips { display: block !important; }
     #resume-hero .contact-chips a, #resume-hero .contact-chips span { display: inline !important; border: none !important; background: none !important; padding: 0 !important; margin-right: 12px; white-space: nowrap; }
-    section.resume-section { background: #fff !important; border: none !important; padding: 0.3rem 0 !important; }
-    .resume-card { background: #fff !important; border: none !important; box-shadow: none !important; padding: 0.35rem 0 !important; break-inside: avoid; }
-    #resume-content .space-y-6 > * + * { margin-top: 0.3rem !important; }
+    section.resume-section { background: #fff !important; border: none !important; padding: 0.25rem 0 !important; }
+    .resume-card { background: #fff !important; border: none !important; box-shadow: none !important; padding: 0.3rem 0 !important; break-inside: avoid; }
+    #resume-content .space-y-6 > * + * { margin-top: 0.25rem !important; }
     #resume-content .space-y-1\.5 > * + *, #resume-content .space-y-1 > * + * { margin-top: 0.1rem !important; }
     .resume-section h2 { border-bottom: 1.5px solid #444; padding-bottom: 2px; font-size: 12pt !important; margin-bottom: 0.4rem !important; }
     .resume-card h3, .resume-card .text-lg, .resume-card .text-xl { font-size: 10.5pt !important; }
-    .resume-card .mb-3 { margin-bottom: 0.2rem !important; }
+    .resume-card .mb-3 { margin-bottom: 0.1rem !important; }
     .resume-card .mb-1 { margin-bottom: 0 !important; }
-    #resume-content, #resume-content p, #resume-content li, #resume-content span, #resume-content a { font-size: 9.5pt !important; line-height: 1.35 !important; color: #222 !important; }
+    #resume-content, #resume-content p, #resume-content li, #resume-content span, #resume-content a { font-size: 9.5pt !important; line-height: 1.3 !important; color: #222 !important; }
     a { text-decoration: none !important; }
-    .skill-chip { border: 1px solid #ccc !important; background: none !important; padding: 0 4px !important; }
+    /* Print width sits below the md: breakpoint, so force title + dates back onto one row. */
+    .resume-card header + *, .resume-card .flex.flex-col { flex-direction: row !important; justify-content: space-between !important; align-items: baseline !important; }
+    /* Chips print as plain comma-separated text — classic resume look, half the height. */
+    #skills-grid .flex { display: block !important; }
+    .skill-chip { display: inline !important; border: none !important; background: none !important; padding: 0 !important; }
+    .skill-chip:not(:last-child):after { content: ","; }
+    #resume-content .mt-6 { margin-top: 0.3rem !important; }
     #resume-content .gap-5 { gap: 0.4rem !important; }
     #resume-content .gap-1\.5 { gap: 0.2rem !important; }
-    #skills-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0.3rem 1.2rem !important; }
+    #skills-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0.15rem 1.2rem !important; }
+    /* Older roles print as a one-line summary; full bullets stay on the web page. */
+    .print-compact ul { display: none !important; }
+    .print-compact { padding: 0.25rem 0 !important; }
   }
 </style>
 
@@ -83,7 +92,9 @@ canonicalPath: /resume/
       <h2 class="text-3xl font-bold mb-8">Work</h2>
       <div class="space-y-6">
         {%- for job in resume.work %}
-        <article class="resume-card bg-gray-50 rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        {%- comment -%} In print, only the three most recent roles keep their bullets —
+            the PDF leads with the AI-era receipts and page 1 must stand alone. {%- endcomment -%}
+        <article class="resume-card {% if forloop.index > 3 %}print-compact {% endif %}bg-gray-50 rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
           <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-1">
             <h3 class="text-xl font-semibold">{{ job.position }}</h3>
             <span class="text-sm text-gray-500 whitespace-nowrap">{{ job.startDate | monthYear }} – {{ job.endDate | monthYear }} · {{ job.startDate | duration: job.endDate }}</span>
