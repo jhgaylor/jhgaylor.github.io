@@ -19,6 +19,7 @@ canonicalPath: /resume/
     #resume-hero p { font-size: 10pt !important; margin-bottom: 0.5rem !important; }
     #resume-hero .contact-chips { display: block !important; }
     #resume-hero .contact-chips a, #resume-hero .contact-chips span { display: inline !important; border: none !important; background: none !important; padding: 0 !important; margin-right: 12px; white-space: nowrap; }
+    #resume-hero .contact-chips .print-hidden { display: none !important; }
     section.resume-section { background: #fff !important; border: none !important; padding: 0.25rem 0 !important; }
     .resume-card { background: #fff !important; border: none !important; box-shadow: none !important; padding: 0.3rem 0 !important; break-inside: avoid; }
     #resume-content .space-y-6 > * + * { margin-top: 0.25rem !important; }
@@ -81,6 +82,9 @@ canonicalPath: /resume/
       <span class="inline-flex items-center px-3 py-1.5 rounded-full border border-white/30 text-blue-50">
         <i class="fas fa-location-dot mr-2"></i>{{ resume.basics.location.region }}
       </span>
+      <a href="https://ai.jakegaylor.com/" data-cta="resume-hero-ai-mcp" class="print-hidden inline-flex items-center px-3 py-1.5 rounded-full border border-white/30 text-blue-50 hover:bg-white/10 transition-colors">
+        <i class="fas fa-robot mr-2"></i>ai.jakegaylor.com &middot; for your AI assistant
+      </a>
     </div>
   </div>
 </header>
