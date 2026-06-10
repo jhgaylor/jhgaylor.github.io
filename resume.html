@@ -14,18 +14,25 @@ canonicalPath: /resume/
     body { background: #fff !important; }
     #resume-hero { background: none !important; color: #111 !important; padding: 0 !important; }
     #resume-hero * { color: #111 !important; }
-    #resume-hero h1 { -webkit-text-fill-color: #111; background: none !important; }
+    #resume-hero h1 { -webkit-text-fill-color: #111; background: none !important; font-size: 20pt !important; margin-bottom: 0.3rem !important; }
+    #resume-hero .container { padding: 0 !important; }
+    #resume-hero p { font-size: 10pt !important; margin-bottom: 0.5rem !important; }
     #resume-hero .contact-chips { display: block !important; }
-    #resume-hero .contact-chips a, #resume-hero .contact-chips span { display: inline !important; border: none !important; background: none !important; padding: 0 !important; margin-right: 14px; white-space: nowrap; }
-    section.resume-section { background: #fff !important; border: none !important; padding: 0.5rem 0 !important; }
-    .resume-card { background: #fff !important; border: none !important; box-shadow: none !important; padding: 0.5rem 0 !important; break-inside: avoid; }
-    .resume-section h2 { border-bottom: 1.5px solid #444; padding-bottom: 2px; font-size: 13pt !important; margin-bottom: 0.6rem !important; }
-    .resume-card h3, .resume-card .text-lg, .resume-card .text-xl { font-size: 11pt !important; }
-    #resume-content, #resume-content p, #resume-content li, #resume-content span, #resume-content a { font-size: 10pt !important; line-height: 1.45 !important; color: #222 !important; }
-    #resume-hero h1 { font-size: 22pt !important; }
-    #resume-hero p { font-size: 10.5pt !important; }
+    #resume-hero .contact-chips a, #resume-hero .contact-chips span { display: inline !important; border: none !important; background: none !important; padding: 0 !important; margin-right: 12px; white-space: nowrap; }
+    section.resume-section { background: #fff !important; border: none !important; padding: 0.3rem 0 !important; }
+    .resume-card { background: #fff !important; border: none !important; box-shadow: none !important; padding: 0.35rem 0 !important; break-inside: avoid; }
+    #resume-content .space-y-6 > * + * { margin-top: 0.3rem !important; }
+    #resume-content .space-y-1\.5 > * + *, #resume-content .space-y-1 > * + * { margin-top: 0.1rem !important; }
+    .resume-section h2 { border-bottom: 1.5px solid #444; padding-bottom: 2px; font-size: 12pt !important; margin-bottom: 0.4rem !important; }
+    .resume-card h3, .resume-card .text-lg, .resume-card .text-xl { font-size: 10.5pt !important; }
+    .resume-card .mb-3 { margin-bottom: 0.2rem !important; }
+    .resume-card .mb-1 { margin-bottom: 0 !important; }
+    #resume-content, #resume-content p, #resume-content li, #resume-content span, #resume-content a { font-size: 9.5pt !important; line-height: 1.35 !important; color: #222 !important; }
     a { text-decoration: none !important; }
     .skill-chip { border: 1px solid #ccc !important; background: none !important; padding: 0 4px !important; }
+    #resume-content .gap-5 { gap: 0.4rem !important; }
+    #resume-content .gap-1\.5 { gap: 0.2rem !important; }
+    #skills-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0.3rem 1.2rem !important; }
   }
 </style>
 
@@ -100,8 +107,8 @@ canonicalPath: /resume/
     </div>
   </section>
 
-  <!-- ===================== PROJECTS ===================== -->
-  <section class="resume-section py-14 md:py-16 bg-gray-50 text-gray-900 border-t border-gray-100">
+  <!-- ===================== PROJECTS (screen only — the PDF stays work + skills) ===================== -->
+  <section class="print-hidden resume-section py-14 md:py-16 bg-gray-50 text-gray-900 border-t border-gray-100">
     <div class="container mx-auto px-6 max-w-5xl">
       <div class="flex items-baseline justify-between mb-8">
         <h2 class="text-3xl font-bold">Projects</h2>
@@ -133,7 +140,7 @@ canonicalPath: /resume/
   <section class="resume-section py-14 md:py-16 bg-white text-gray-900 border-t border-gray-100">
     <div class="container mx-auto px-6 max-w-5xl">
       <h2 class="text-3xl font-bold mb-8">Skills</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {%- for skill in resume.skills %}
         <div class="resume-card bg-gray-50 rounded-2xl border border-gray-100 p-5">
           <h3 class="font-semibold mb-3">{{ skill.name }}</h3>

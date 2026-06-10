@@ -38,6 +38,7 @@ npm run build:css
 1. Update `resume.json` as needed — `/resume/` renders from it automatically
    (`resume.html` is an Eleventy template; data is wired up in `.eleventy.js`).
 2. Regenerate `_assets/JakeGaylor_resume.pdf` from the rebuilt `/resume/` page so
-   the download stays in sync. The page has print styles, so print-to-PDF the
-   built page (letter, 0.5in margins, background graphics off).
+   the download stays in sync. The page has print styles (the PDF is a subset:
+   work + skills, no projects/references), so print-to-PDF the built page
+   (letter, 0.4in margins, background graphics off).
 3. Git commit all the changes.
