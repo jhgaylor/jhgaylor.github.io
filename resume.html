@@ -17,6 +17,11 @@ canonicalPath: /resume/
     #resume-hero h1 { -webkit-text-fill-color: #111; background: none !important; font-size: 20pt !important; margin-bottom: 0.3rem !important; }
     #resume-hero .container { padding: 0 !important; }
     #resume-hero p { font-size: 10pt !important; margin-bottom: 0.5rem !important; }
+    /* Print hierarchy: label whispers, tagline leads, summary recedes into supporting gray. */
+    #resume-hero p.uppercase { font-size: 8pt !important; letter-spacing: 0.18em !important; color: #666 !important; margin-bottom: 0.15rem !important; }
+    #resume-hero p.text-2xl { font-size: 12pt !important; font-weight: 700 !important; margin-bottom: 0.45rem !important; }
+    #resume-hero p.max-w-3xl { font-size: 9pt !important; color: #444 !important; line-height: 1.4 !important; max-width: 6.2in !important; margin-bottom: 0.7rem !important; }
+    #resume-hero .contact-chips a, #resume-hero .contact-chips span { font-size: 9pt !important; color: #333 !important; }
     #resume-hero .contact-chips { display: block !important; }
     #resume-hero .contact-chips a, #resume-hero .contact-chips span { display: inline !important; border: none !important; background: none !important; padding: 0 !important; margin-right: 12px; white-space: nowrap; }
     #resume-hero .contact-chips .print-hidden { display: none !important; }
@@ -73,6 +78,9 @@ canonicalPath: /resume/
       </a>
       <a href="sms:+17204533994" data-cta="resume-hero-text" class="inline-flex items-center px-3 py-1.5 rounded-full border border-white/30 text-blue-50 hover:bg-white/10 transition-colors">
         <i class="fas fa-message mr-2"></i>{{ resume.basics.phone }}
+      </a>
+      <a href="https://jakegaylor.com" data-cta="resume-hero-site" class="inline-flex items-center px-3 py-1.5 rounded-full border border-white/30 text-blue-50 hover:bg-white/10 transition-colors">
+        <i class="fas fa-globe mr-2"></i>jakegaylor.com
       </a>
       {%- for profile in resume.basics.profiles %}
       <a href="{{ profile.url }}" data-cta="resume-hero-{{ profile.network | downcase }}" class="inline-flex items-center px-3 py-1.5 rounded-full border border-white/30 text-blue-50 hover:bg-white/10 transition-colors">
