@@ -14,6 +14,7 @@ canonicalPath: /projects/
         <i class="fas fa-arrow-left mr-2"></i>jakegaylor.com
       </a>
       <div class="flex gap-6">
+        <a href="/homelab/" data-cta="projects-nav-homelab" class="text-blue-100 hover:text-white transition-colors">Homelab</a>
         <a href="/resume/" data-cta="projects-nav-resume" class="text-blue-100 hover:text-white transition-colors">Resume</a>
         <a href="/blog/" data-cta="projects-nav-blog" class="text-blue-100 hover:text-white transition-colors">Blog</a>
       </div>
@@ -110,6 +111,18 @@ canonicalPath: /projects/
           <li>Streams every conversation over SSE, so agent runs are observable and debuggable, not fire-and-forget</li>
         </ul>
         <p class="text-sm text-gray-500 border-t border-gray-100 pt-3">Built agent-first, in the open: <a href="https://github.com/BinaryBourbon" data-cta="projects-binarybourbon" class="underline hover:text-blue-700">BinaryBourbon</a> is the GitHub identity my agent fleet ships under. I set the roadmap, review the work, and operate the system — and Fountain is itself developed by the agents it orchestrates.</p>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
+          <a href="/homelab/" data-cta="projects-homelab" class="hover:text-blue-700 transition-colors">The Homelab <i class="fas fa-arrow-right text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">A production-grade home cloud: three M4 Mac minis running k3s over a Tailscale mesh, every manifest reconciled from git by Flux.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Full platform stack: Longhorn, Garage, CloudNativePG, Prometheus/Grafana/Loki, SOPS-encrypted secrets</li>
+          <li>Serves real production traffic &mdash; ai.jakegaylor.com and the agent fleet&rsquo;s infrastructure run on it</li>
+          <li>Photo tour, network topology, and the war stories behind the design</li>
+        </ul>
       </article>
 
       <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">

@@ -6,6 +6,7 @@ export default {
   content: [
     "./index.html",
     "./projects.html",
+    "./homelab.html",
     "./resume.html",
     "./_includes/**/*.html",
     "./blog/**/*.{html,md}",
