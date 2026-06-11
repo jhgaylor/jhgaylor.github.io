@@ -300,7 +300,7 @@
   "interests": [],
   "references": [
     {
-      "name": "Director Platform Engineering, Cloaked",
+      "name": "Aaron Biller, Director of Platform Engineering, Cloaked",
       "reference": "Jake is a force for good unlike any other. He migrated our infra to a cheaper and more scalable system, crafted a CI pipeline that accelerated deploys by 30x, and taught the whole company how to make data-driven decisions by building and showcasing an entire product analytics stack. And that was just his first 6 months."
     },
     {
@@ -321,6 +321,16 @@
     }
   ],
   "projects": [
+    {
+      "name": "Production-Grade Homelab",
+      "description": "A three-node k3s cluster on M4 Mac minis serving production traffic from home — GitOps-managed, fully observable, photo tour included",
+      "highlights": [
+        "Flux CD reconciles every manifest from git; secrets live encrypted in-repo with SOPS + age",
+        "Tailscale WireGuard mesh between Lima VMs with direct LAN paths; Traefik, cert-manager, and oauth2-proxy at the edge",
+        "Longhorn replicated block storage, Garage S3, CloudNativePG, and Prometheus/Grafana/Loki with alerts pushed to my phone"
+      ],
+      "url": "https://jakegaylor.com/homelab/"
+    },
     {
       "name": "MCP Working Group Contributions",
       "description": "Active participant in Model Context Protocol (MCP) community development",
