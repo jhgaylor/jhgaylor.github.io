@@ -11,7 +11,8 @@ canonicalPath: /homelab/
   PHOTO SHOT LIST (everything this page still needs, in one place)
   ============================================================================
   1. HERO        — DONE (IMG_2804 → /images/homelab/hero-rack.jpg)
-  2. NETWORK     — DONE (IMG_2797 → /images/homelab/front-door.jpg)
+  2. NETWORK     — DROPPED. The topology diagram + four cards carry this
+                   section; a photo of a wiring closet added noise, not signal.
   3. NODE CLOSE-UPS — DONE (IMG_2785 → /images/homelab/fleet.jpg)
   4. NOC KIOSK   — DONE (reshoot IMG_2823 → /images/homelab/noc.jpg)
   5. SCREENSHOTS (not photos):
@@ -181,17 +182,26 @@ canonicalPath: /homelab/
       </figcaption>
     </figure>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <img src="/images/homelab/front-door.jpg"
-           alt="Inside the wall-mounted network enclosure: labeled Cat6 runs landing on punch-down blocks, a coax splitter, and the conduit riser where the line enters the house"
-           class="w-full h-auto rounded-2xl border border-gray-200"/>
-      <div class="space-y-3">
-        <ul class="space-y-3 text-gray-700">
-          <li><strong>Starry fixed wireless</strong> &mdash; 500&nbsp;Mbps symmetric. The upload matters more than the download when your house is the origin server.</li>
-          <li><strong>UniFi gateway</strong> &mdash; hands out the LAN, forwards exactly the ports the front door needs, and nothing else.</li>
-          <li><strong>Tailscale mesh</strong> &mdash; every Mac and VM is a node. k3s and Flannel traffic rides WireGuard, and the VMs hold real LAN IPs so peers connect directly instead of relaying through Tailscale&rsquo;s DERP servers.</li>
-          <li><strong>Cloudflare DNS + cert-manager</strong> &mdash; public names and TLS renew themselves; I haven&rsquo;t thought about a certificate in months.</li>
-        </ul>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition">
+        <i class="fas fa-satellite-dish text-2xl text-blue-700 mb-3"></i>
+        <h3 class="font-semibold mb-2">Starry fixed wireless</h3>
+        <p class="text-sm text-gray-600">500&nbsp;Mbps symmetric. The upload matters more than the download when your house is the origin server.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition">
+        <i class="fas fa-network-wired text-2xl text-blue-700 mb-3"></i>
+        <h3 class="font-semibold mb-2">UniFi gateway</h3>
+        <p class="text-sm text-gray-600">Hands out the LAN, forwards exactly the ports the front door needs, and nothing else.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition">
+        <i class="fas fa-circle-nodes text-2xl text-blue-700 mb-3"></i>
+        <h3 class="font-semibold mb-2">Tailscale mesh</h3>
+        <p class="text-sm text-gray-600">Every Mac and VM is a node. Cluster traffic rides WireGuard, and the VMs hold real LAN IPs so peers connect directly &mdash; no DERP relay.</p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition">
+        <i class="fas fa-certificate text-2xl text-blue-700 mb-3"></i>
+        <h3 class="font-semibold mb-2">Cloudflare + cert-manager</h3>
+        <p class="text-sm text-gray-600">Public names and TLS renew themselves. I haven&rsquo;t thought about a certificate in months.</p>
       </div>
     </div>
   </div>
