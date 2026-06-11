@@ -178,14 +178,15 @@
   "publications": [],
   "skills": [
     {
-      "name": "AI Engineering",
-      "level": "Advanced",
+      "name": "AI & Agent Engineering",
+      "level": "Expert",
       "keywords": [
-        "LangChain",
-        "Crewai",
-        "Custom Agent Framework",
-        "MCP Servers",
-        "LLM Integration"
+        "MCP (servers, SDKs, Hosting Working Group)",
+        "Agent Orchestration & Sandboxing",
+        "LLM Integration",
+        "Agent-Native Product Design",
+        "Agent Memory",
+        "LangChain"
       ]
     },
     {
@@ -193,25 +194,22 @@
       "level": "Expert",
       "keywords": [
         "AWS",
-        "Kubernetes",
-        "EKS",
-        "GKE",
-        "vSphere",
+        "Kubernetes (EKS, GKE, k3s)",
         "Terraform",
-        "Infrastructure as Code",
-        "Cloudflare"
+        "Tailscale",
+        "Cloudflare",
+        "Infrastructure as Code"
       ]
     },
     {
-      "name": "CI/CD & DevOps",
+      "name": "GitOps & CI/CD",
       "level": "Expert",
       "keywords": [
-        "GitOps",
+        "Flux CD",
         "ArgoCD",
         "Argo Workflows",
-        "Jenkins",
         "Github Actions",
-        "Gitlab CI",
+        "SOPS",
         "Continuous Deployment"
       ]
     },
@@ -219,27 +217,24 @@
       "name": "Programming Languages",
       "level": "Advanced",
       "keywords": [
+        "TypeScript",
         "Javascript",
         "Python",
-        "Bash",
         "Go",
-        "Ruby",
+        "Bash",
         "Dart"
       ]
     },
     {
-      "name": "Databases",
+      "name": "Data & Storage",
       "level": "Advanced",
       "keywords": [
-        "Neo4j",
         "PostgreSQL",
-        "Timestream",
-        "MongoDB",
         "Redis",
-        "Etcd",
-        "Zookeeper",
         "Cassandra",
-        "DynamoDB"
+        "DynamoDB",
+        "S3-compatible Object Storage",
+        "MongoDB"
       ]
     },
     {
@@ -249,23 +244,19 @@
         "Kafka",
         "RabbitMQ",
         "AWS IoT",
-        "Big Data",
-        "Spark",
-        "EMR"
+        "Event-Driven Architecture"
       ]
     },
     {
-      "name": "Monitoring",
-      "level": "Advanced",
+      "name": "Observability",
+      "level": "Expert",
       "keywords": [
         "Prometheus",
-        "CloudWatch",
-        "Sensu",
-        "Pagerduty",
-        "Logstash",
-        "Kibana",
         "Grafana",
-        "Graphite"
+        "Loki",
+        "Pagerduty",
+        "CloudWatch",
+        "Product Analytics"
       ]
     },
     {
