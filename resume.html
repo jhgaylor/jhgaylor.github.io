@@ -48,6 +48,8 @@ canonicalPath: /resume/
     /* Older roles print as a one-line summary; full bullets stay on the web page. */
     .print-compact ul { display: none !important; }
     .print-compact { padding: 0.25rem 0 !important; }
+    /* The timeline spine is screen chrome; print stays a flat document. */
+    #work-timeline { padding-left: 0 !important; }
   }
 </style>
 
@@ -102,11 +104,20 @@ canonicalPath: /resume/
   <section class="resume-section py-14 md:py-16 bg-white text-gray-900">
     <div class="container mx-auto px-6 max-w-5xl">
       <h2 class="text-3xl font-bold mb-8">Work</h2>
-      <div class="space-y-6">
+      <div id="work-timeline" class="relative space-y-6 md:pl-20">
+        <!-- The spine: a continuous line the year dots sit on. Screen-only chrome — print stays a flat document. -->
+        <div class="print-hidden hidden md:block absolute left-2 top-3 bottom-3 w-px bg-blue-200"></div>
+        {%- assign prev_year = "" %}
         {%- for job in resume.work %}
+        {%- assign job_year = job.startDate | slice: 0, 4 %}
         {%- comment -%} In print, only the three most recent roles keep their bullets —
             the PDF leads with the AI-era receipts and page 1 must stand alone. {%- endcomment -%}
-        <article class="resume-card {% if forloop.index > 3 %}print-compact {% endif %}bg-gray-50 rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <article class="resume-card relative {% if forloop.index > 3 %}print-compact {% endif %}bg-gray-50 rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+          <div class="print-hidden hidden md:block absolute top-9 -left-[4.875rem] w-3 h-3 rounded-full bg-blue-600 ring-4 ring-white"></div>
+          {%- if job_year != prev_year %}
+          <span class="print-hidden hidden md:block absolute top-[2.05rem] -left-[3.4rem] text-xs font-semibold text-gray-400">{{ job_year }}</span>
+          {%- endif %}
+          {%- assign prev_year = job_year %}
           <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-1">
             <h3 class="text-xl font-semibold">{{ job.position }}</h3>
             <span class="text-sm text-gray-500 whitespace-nowrap">{{ job.startDate | monthYear }} – {{ job.endDate | monthYear }} · {{ job.startDate | duration: job.endDate }}</span>
