@@ -139,6 +139,19 @@ canonicalPath: /projects/
 
       <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
+          <a href="https://otfl.inevitable.fyi" data-cta="projects-otfl" class="hover:text-blue-700 transition-colors">OTFL &mdash; On The Fly List <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">A free, open service for shareable checklists. Every list is a UUID and knowing the link is the only key &mdash; no account required.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Programmatic by design: a small JSON REST API to create and drive lists, plus a generated llms.txt so an assistant learns the whole API from one fetch</li>
+          <li>A built-in, stateless MCP server at <code class="text-xs bg-gray-100 rounded px-1">/mcp</code> lets AI assistants create lists, toggle items, and clear checked ones directly</li>
+          <li>Optional GitHub sign-in names and tracks your own lists on a &ldquo;My lists&rdquo; dashboard; the session-less API and MCP only ever touch open, anonymous lists</li>
+          <li>Node/Express + SQLite in one container &mdash; deployed to the k3s homelab via Flux GitOps, multi-arch image built in CI, TLS via cert-manager, built agent-first with Claude Code</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
           <a href="https://github.com/jhgaylor" data-cta="projects-mcp-wg" class="hover:text-blue-700 transition-colors">MCP Working Group Contributions <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
         </h3>
         <p class="text-sm text-gray-700 mb-3">Active participant in Model Context Protocol (MCP) community development.</p>
