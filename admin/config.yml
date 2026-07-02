@@ -2,14 +2,9 @@ backend:
   name: github
   repo: jhgaylor/jhgaylor.github.io
   branch: main
-  # Sveltia supports PKCE OAuth — no proxy server or Netlify needed.
-  # Setup steps:
-  #   1. Go to https://github.com/settings/applications/new
-  #   2. Set Homepage URL: https://jakegaylor.com
-  #   3. Set Authorization callback URL: https://jakegaylor.com/admin/
-  #   4. Copy the Client ID and paste it below, then uncomment both lines.
-  auth_type: pkce
-  app_id: Ov23liRFOk2dC67b3HFW
+  # Authorization via Sveltia CMS Authenticator on Cloudflare Workers.
+  # Deploy https://github.com/sveltia/sveltia-cms-auth and set base_url below.
+  # base_url: https://sveltia-cms-auth.<your-subdomain>.workers.dev
 
 site_url: https://jakegaylor.com
 media_folder: _assets/images
