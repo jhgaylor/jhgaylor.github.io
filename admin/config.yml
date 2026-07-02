@@ -1,0 +1,51 @@
+backend:
+  name: github
+  repo: jhgaylor/jhgaylor.github.io
+  branch: main
+  # Sveltia supports PKCE OAuth — no proxy server or Netlify needed.
+  # Setup steps:
+  #   1. Go to https://github.com/settings/applications/new
+  #   2. Set Homepage URL: https://jakegaylor.com
+  #   3. Set Authorization callback URL: https://jakegaylor.com/admin/
+  #   4. Copy the Client ID and paste it below, then uncomment both lines.
+  auth_type: pkce
+  app_id: Ov23liRFOk2dC67b3HFW
+
+site_url: https://jakegaylor.com
+media_folder: _assets/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: blog/posts
+    create: true
+    slug: "{{slug}}"
+    preview_path: "/blog/posts/{{slug}}/"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Date
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+      - label: Tags
+        name: tags
+        widget: list
+        default: ["posts"]
+        hint: '"posts" must stay in this list for the post to appear on the blog index and RSS feed.'
+      - label: Description
+        name: description
+        widget: text
+        required: false
+        hint: Short excerpt shown in the blog listing.
+      - label: Exclude from Collections
+        name: eleventyExcludeFromCollections
+        widget: boolean
+        required: false
+        default: false
+        hint: Hides post from blog index and RSS feed without deleting it.
+      - { label: Layout, name: layout, widget: hidden, default: "layouts/blog.html" }
+      - { label: Body, name: body, widget: markdown }
