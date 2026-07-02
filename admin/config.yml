@@ -8,8 +8,8 @@ backend:
   #   2. Set Homepage URL: https://jakegaylor.com
   #   3. Set Authorization callback URL: https://jakegaylor.com/admin/
   #   4. Copy the Client ID and paste it below, then uncomment both lines.
-  # auth_type: pkce
-  # app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID
+  auth_type: pkce
+  app_id: Ov23liRFOk2dC67b3HFW
 
 site_url: https://jakegaylor.com
 media_folder: _assets/images
