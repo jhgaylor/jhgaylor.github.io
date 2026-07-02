@@ -67,6 +67,8 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy({ "resume.json": "./resume.json" });
 
+    eleventyConfig.addPassthroughCopy({ "admin": "admin" });
+
     eleventyConfig.addPairedShortcode("infobox", function(content) {
         return `<div class="info-box">${content}</div>`;
     });
