@@ -30,43 +30,40 @@ Rotation was a chore, so I rotated less than I should have. Every new app meant 
 
 Any one of those is livable. All of them together meant I dreaded touching secrets, and dreading rotation is how secrets end up three years old.
 
+## Then the agents showed up
+
+The thing that actually pushed me over the edge wasn't any of that. It was that the way I build software changed. AI agents work in my repos every day now, and agents change what a secret store needs to be.
+
+An agent should never read a secret. It doesn't need the value. It needs a handle, a well-known name that every agent and every human can use to talk about the same thing. It needs to see what secrets exist without seeing what's inside them. And it needs to write the wiring that lets other systems consume a secret, again without the value ever appearing anywhere.
+
+SOPS fails all three of those in the same way, because under SOPS the encrypted file is the secret. The only way for an agent to know what exists, reference a key, or wire up a consumer is to decrypt, and the moment it decrypts, the plaintext is sitting in its context window and its transcripts.
+
+There's a second agent problem, and it's about leaking. Secrets get leaked all the time, by humans and agents alike. Pretending otherwise is how you end up with a system that handles leaks badly. What you actually want is recovery so cheap that reporting a leak is a reflex. Under SOPS the recovery path was that six-step diagram up there, and nobody does that as a reflex.
+
 ## What I wanted instead
 
-Before shopping for a replacement I wrote down what would actually make me happy.
+So the shopping list came out longer than the one I would have written a few years ago.
 
 - Rotate a secret without a git commit or a manual pod restart
 - Per-app scoping, so one leaked credential exposes one app instead of all of them
 - No long-lived credentials sitting in the cluster or in my shell history
 - A real story for rebuilding the cluster from nothing
 - Plain Kubernetes Secrets on the consuming side, so apps don't have to change at all
+- Secrets addressable by name, so agents and humans share a handle and nobody has to touch a value
+- A way for an agent to list what secrets exist without reading any of them
+- Rotation cheap enough that responding to a leak is boring
 
 ## Why Infisical won
 
 There are other tools in this space that can do most of this. Infisical won for me because one product covered every box, and the pieces I cared most about came out of the box.
 
-The secrets-operator turns a small CR into a plain Kubernetes Secret, so apps keep reading env vars and volume mounts like nothing happened. Kubernetes native auth means each app's identity is its ServiceAccount, validated by the cluster itself, so there are no stored credentials anywhere for any app. And because Infisical also runs as a cloud service, the three bootstrap secrets that must exist before my self-hosted server does live in a tiny cloud project, while everything else stays in my house. The [how post](/blog/posts/how-i-use-infisical/) walks through that two tier design in detail.
+The secrets-operator turns a small CR into a plain Kubernetes Secret, so apps keep reading env vars and volume mounts like nothing happened. Kubernetes native auth means each app's identity is its ServiceAccount, validated by the cluster itself, so there are no stored credentials anywhere for any app. Every secret has a stable address, the project plus the secret name plus the key, and that address is what shows up in CRs, in diffs, and in conversations with agents, while the value stays in the store. And because Infisical also runs as a cloud service, the three bootstrap secrets that must exist before my self-hosted server does live in a tiny cloud project, while everything else stays in my house. The [how post](/blog/posts/how-i-use-infisical/) walks through that two tier design in detail.
 
 Here's the same rotation from the SOPS diagram, today.
 
 ![The Infisical rotation lifecycle. You paste the new value into the Infisical UI, the operator pulls it with k8s native auth, updates the Kubernetes Secret, and auto-reload restarts the workload.](/images/infisical-secret-lifecycle.svg)
 
-One step is me. The rest is machinery.
-
-## Then the agents showed up
-
-Here's a requirement I didn't have when I wrote that list, and it might be the strongest one now. AI agents work in my repos every day, and agents change what you need from a secret store.
-
-An agent should never read a secret. It doesn't need the value. It needs a handle, a well-known name that every agent and every human can use to talk about the same thing. In my setup that handle is the project, the Secret name, and the key. An agent can wire a new app up to `myapp-secrets` without ever knowing what's inside it.
-
-Under SOPS that was impossible. The only way to do anything with a secret was to decrypt the file, and the moment an agent decrypts, the plaintext is sitting in its context window and its transcripts.
-
-Names fix most of this.
-
-- An agent can discover what secrets exist by listing names, never values
-- An agent can write the CR and the deployment wiring that let other systems consume a secret, and the value never appears in a single diff
-- Every agent on every machine resolves the same name to the same secret, so two of them are never quietly working with different things
-
-And then there's leaking. Secrets get leaked all the time, by humans and agents alike. What matters isn't pretending it won't happen, it's how cheap recovery is. Rotation in my setup is one paste, so an agent that catches a token in a log can flag it and the fix happens in minutes. When rotation is painful, the developer who leaked a secret feels the pull to keep quiet and hope. When rotation is one paste, there's no shame to manage. You just rotate.
+One step is me. The rest is machinery. And that one step is cheap enough that leak response finally works the way it should. An agent that catches a token in a log can flag it and the fix happens in minutes. When rotation is painful, the developer who leaked a secret feels the pull to keep quiet and hope. When rotation is one paste, there's no shame to manage. You just rotate.
 
 ## What I gave up
 
@@ -84,6 +81,6 @@ Oh, and migrations leave scars. Weeks after the cutover I found a comment in my 
 
 If you're happy with SOPS, genuinely, stay. Offline bootstrap and zero moving parts are real features, and a small cluster that rarely rotates secrets may never feel the friction I did.
 
-But if rotation has become the chore you keep putting off, or you're tired of one key that decrypts everything you own, a hosted secret store with an operator changes the daily experience completely. And if agents are writing code in your repos, giving them names instead of values stops being a nice to have.
+But if rotation has become the chore you keep putting off, or you're tired of one key that decrypts everything you own, or agents are writing code in your repos and you'd rather hand them names than values, a hosted secret store with an operator changes the daily experience completely.
 
 For me the test is simple. I used to dread rotations and now I don't.
