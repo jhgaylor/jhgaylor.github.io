@@ -52,6 +52,22 @@ Here's the same rotation from the SOPS diagram, today.
 
 One step is me. The rest is machinery.
 
+## Then the agents showed up
+
+Here's a requirement I didn't have when I wrote that list, and it might be the strongest one now. AI agents work in my repos every day, and agents change what you need from a secret store.
+
+An agent should never read a secret. It doesn't need the value. It needs a handle, a well-known name that every agent and every human can use to talk about the same thing. In my setup that handle is the project, the Secret name, and the key. An agent can wire a new app up to `myapp-secrets` without ever knowing what's inside it.
+
+Under SOPS that was impossible. The only way to do anything with a secret was to decrypt the file, and the moment an agent decrypts, the plaintext is sitting in its context window and its transcripts.
+
+Names fix most of this.
+
+- An agent can discover what secrets exist by listing names, never values
+- An agent can write the CR and the deployment wiring that let other systems consume a secret, and the value never appears in a single diff
+- Every agent on every machine resolves the same name to the same secret, so two of them are never quietly working with different things
+
+And then there's leaking. Secrets get leaked all the time, by humans and agents alike. What matters isn't pretending it won't happen, it's how cheap recovery is. Rotation in my setup is one paste, so an agent that catches a token in a log can flag it and the fix happens in minutes. When rotation is painful, the developer who leaked a secret feels the pull to keep quiet and hope. When rotation is one paste, there's no shame to manage. You just rotate.
+
 ## What I gave up
 
 This wasn't free, and I'd rather tell you the costs than pretend there aren't any.
@@ -68,6 +84,6 @@ Oh, and migrations leave scars. Weeks after the cutover I found a comment in my 
 
 If you're happy with SOPS, genuinely, stay. Offline bootstrap and zero moving parts are real features, and a small cluster that rarely rotates secrets may never feel the friction I did.
 
-But if rotation has become the chore you keep putting off, or you're tired of one key that decrypts everything you own, a hosted secret store with an operator changes the daily experience completely.
+But if rotation has become the chore you keep putting off, or you're tired of one key that decrypts everything you own, a hosted secret store with an operator changes the daily experience completely. And if agents are writing code in your repos, giving them names instead of values stops being a nice to have.
 
 For me the test is simple. I used to dread rotations and now I don't.
