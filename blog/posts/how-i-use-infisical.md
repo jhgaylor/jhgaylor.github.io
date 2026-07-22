@@ -18,13 +18,15 @@ It's two tiers.
 
 **Cloud Infisical** holds exactly three things in a project I call the bootstrap kernel. The Cloudflare token cert-manager needs for DNS-01, the Tailscale OAuth client, and the on-prem server's own environment.
 
-Why the split? Because the on-prem server's database lives on storage *inside the cluster it serves*. On a full rebuild nothing can come from on-prem because on-prem doesn't exist yet. Anything needed before the secret store exists has to live somewhere else.
-
-One warning here. The tempting move is to also put your on-prem admin credentials in cloud so a rebuild is fully hands-off. Don't. If cloud gets compromised, the attacker now reads runtime secrets from your publicly reachable on-prem instance. My cloud tier can bootstrap the platform, but it can't read a single app secret.
-
 Here's the whole system on one picture.
 
 ![Diagram of the two tier setup. You seed one credential into the secrets-operator. Cloud Infisical feeds the bootstrap kernel to cert-manager, the Tailscale operator, and the on-prem server, and syncs a break-glass copy to the password manager. On-prem Infisical feeds runtime secrets to the apps as plain Kubernetes Secrets.](/images/infisical-two-tier.svg)
+
+## Why the split
+
+The on-prem server's database lives on storage *inside the cluster it serves*. On a full rebuild nothing can come from on-prem because on-prem doesn't exist yet. Anything needed before the secret store exists has to live somewhere else.
+
+One warning here. The tempting move is to also put your on-prem admin credentials in cloud so a rebuild is fully hands-off. Don't. If cloud gets compromised, the attacker now reads runtime secrets from your publicly reachable on-prem instance. My cloud tier can bootstrap the platform, but it can't read a single app secret.
 
 ## Infisical bootstraps Infisical
 
