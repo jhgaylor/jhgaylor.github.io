@@ -16,6 +16,10 @@ Just as important, this setup is what lets AI agents work in the cluster the rig
 
 **Cloud Infisical** holds exactly three things in a project I call the bootstrap kernel. The Cloudflare token cert-manager needs for DNS-01, the Tailscale OAuth client, and the on-prem server's own environment. These live in cloud because the on-prem server's database sits on storage *inside the cluster it serves*, so on a full rebuild anything needed before the secret store exists has to come from somewhere else.
 
+That third item is my favorite part. The server needs an `ENCRYPTION_KEY` and `AUTH_SECRET` before it can start, and it can't fetch its own encryption key from itself. So a cloud-backed InfisicalSecret delivers its env as a plain Kubernetes Secret and the server boots off it like any other app. Infisical delivering Infisical's secrets to Infisical.
+
+The break-glass copy takes care of itself too. When the bootstrap kernel changes in cloud Infisical, my password manager gets the update automatically, so there's always a copy a human can reach. A wrong encryption key doesn't error politely. It just makes the server unable to read its own data. Ask me how I know to be careful here.
+
 Here's the whole system on one picture.
 
 ![Diagram of the two tier setup. You seed one credential into the secrets-operator. Cloud Infisical feeds the bootstrap kernel to cert-manager, the Tailscale operator, and the on-prem server, and syncs a break-glass copy to the password manager. On-prem Infisical feeds runtime secrets to the apps as plain Kubernetes Secrets.](/images/infisical-two-tier.svg)
@@ -23,14 +27,6 @@ Here's the whole system on one picture.
 <div class="warning-box">
 Don't store on-prem admin credentials in cloud, tempting as a hands-off rebuild sounds. A compromised cloud account would read every runtime secret. Cloud bootstraps the platform and nothing more.
 </div>
-
-### Infisical bootstraps Infisical
-
-Here's my favorite part. The on-prem server needs an `ENCRYPTION_KEY` and `AUTH_SECRET` in its environment before it can start, and a server can't fetch its own encryption key from itself.
-
-So the on-prem server's env is delivered by a *cloud-backed* InfisicalSecret. Infisical delivering Infisical's secrets to Infisical. The operator pulls them from cloud, materializes a plain Kubernetes Secret, and the server boots off it like any other app.
-
-The break-glass copy takes care of itself too. When the bootstrap kernel changes in cloud Infisical, my password manager gets the update automatically, so there's always a copy a human can reach. A wrong encryption key doesn't error politely. It just makes the server unable to read its own data. Ask me how I know to be careful here.
 
 ## Runtime secrets with zero stored credentials
 
