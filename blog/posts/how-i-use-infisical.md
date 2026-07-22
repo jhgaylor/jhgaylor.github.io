@@ -24,7 +24,7 @@ One warning here. The tempting move is to also put your on-prem admin credential
 
 Here's the whole system on one picture.
 
-![Diagram of the two tier setup. You seed one credential into the secrets-operator and keep a break-glass key in a password manager. Cloud Infisical feeds the bootstrap kernel to cert-manager, the Tailscale operator, and the on-prem server. On-prem Infisical feeds runtime secrets to the apps as plain Kubernetes Secrets.](/images/infisical-two-tier.svg)
+![Diagram of the two tier setup. You seed one credential into the secrets-operator. Cloud Infisical feeds the bootstrap kernel to cert-manager, the Tailscale operator, and the on-prem server, and syncs a break-glass copy to the password manager. On-prem Infisical feeds runtime secrets to the apps as plain Kubernetes Secrets.](/images/infisical-two-tier.svg)
 
 ## Infisical bootstraps Infisical
 
@@ -32,7 +32,7 @@ Here's my favorite part. The on-prem server needs an `ENCRYPTION_KEY` and `AUTH_
 
 So the on-prem server's env is delivered by a *cloud-backed* InfisicalSecret. Infisical delivering Infisical's secrets to Infisical. The operator pulls them from cloud, materializes a plain Kubernetes Secret, and the server boots off it like any other app.
 
-One hack I recommend. Export the `ENCRYPTION_KEY` to your password manager anyway. A wrong encryption key doesn't error politely. It just makes the server unable to read its own data. Ask me how I know to be careful here.
+The break-glass copy takes care of itself too. When the bootstrap kernel changes in cloud Infisical, my password manager gets the update automatically, so there's always a copy a human can reach. A wrong encryption key doesn't error politely. It just makes the server unable to read its own data. Ask me how I know to be careful here.
 
 ## Runtime secrets with zero stored credentials
 
