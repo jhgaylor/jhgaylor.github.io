@@ -12,19 +12,13 @@ Just as important, this setup is what lets AI agents work in the cluster the rig
 
 ## Two Infisicals
 
-It's two tiers.
-
 **On-prem Infisical**, self-hosted in the cluster, is the source of truth for runtime app secrets. Every app gets its own project and its own machine identity. If an app reads an API key at runtime, it comes from here.
 
-**Cloud Infisical** holds exactly three things in a project I call the bootstrap kernel. The Cloudflare token cert-manager needs for DNS-01, the Tailscale OAuth client, and the on-prem server's own environment.
+**Cloud Infisical** holds exactly three things in a project I call the bootstrap kernel. The Cloudflare token cert-manager needs for DNS-01, the Tailscale OAuth client, and the on-prem server's own environment. These live in cloud because the on-prem server's database sits on storage *inside the cluster it serves*, so on a full rebuild anything needed before the secret store exists has to come from somewhere else.
 
 Here's the whole system on one picture.
 
 ![Diagram of the two tier setup. You seed one credential into the secrets-operator. Cloud Infisical feeds the bootstrap kernel to cert-manager, the Tailscale operator, and the on-prem server, and syncs a break-glass copy to the password manager. On-prem Infisical feeds runtime secrets to the apps as plain Kubernetes Secrets.](/images/infisical-two-tier.svg)
-
-## Why the split
-
-The on-prem server's database lives on storage *inside the cluster it serves*. On a full rebuild nothing can come from on-prem because on-prem doesn't exist yet. Anything needed before the secret store exists has to live somewhere else.
 
 <div class="warning-box">
 Don't store on-prem admin credentials in cloud, tempting as a hands-off rebuild sounds. A compromised cloud account would read every runtime secret. Cloud bootstraps the platform and nothing more.
