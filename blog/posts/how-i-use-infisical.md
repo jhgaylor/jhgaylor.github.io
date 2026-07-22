@@ -8,7 +8,7 @@ date: 2026-07-22
 
 My homelab is a k3s cluster spread across a few Mac minis. Linux VMs via Lima, Tailscale for the network, and Flux reconciling everything from a git repo. I gave the full tour of that architecture over on the [homelab page](/homelab/). This post is about the secrets side, because every credential in that cluster now flows through Infisical, and Infisical ended up doing way more jobs than I planned to give it.
 
-I count at least eleven. If you're wondering why Infisical instead of SOPS, I wrote up [that decision separately](/blog/posts/why-infisical-over-sops/). This post is about how the system works today.
+Just as important, this setup is what lets AI agents work in the cluster the right way. Agents get names to work with, never values. If you're wondering why Infisical instead of SOPS, I wrote up [that decision separately](/blog/posts/why-infisical-over-sops/). This post is about how the system works today.
 
 ## Two Infisicals
 
@@ -59,6 +59,8 @@ spec:
 
 When I rotate a value, my whole job is pasting the new one into the Infisical UI. The operator updates the Secret and an annotation restarts the workload.
 
+Names are also what make this safe for AI agents. An agent can list what secrets exist, reference `myapp-secrets` in the wiring it writes, and never see a value along the way.
+
 ## One secret to carry
 
 Under SOPS my secret zero was an age key that decrypted everything. Now it's a single cloud machine identity with viewer access to three bootstrap secrets. Losing it exposes those three secrets and nothing else.
@@ -69,7 +71,7 @@ I'd much rather babysit one tightly scoped credential than a god key.
 
 ## Everything else it quietly does
 
-This is where "umpteen" earns the title. Once the pattern existed, everything migrated into it.
+Once the pattern existed, everything migrated into it.
 
 - Flux's GitHub webhook token, so pushes trigger reconciles instantly
 - Alertmanager's ntfy token, so my phone buzzes when something breaks
@@ -97,4 +99,4 @@ Nobody blogs the error messages, so here are mine.
 
 ## Where it landed
 
-That's the system. Eleven or so jobs, two Infisicals, and exactly one credential that exists outside it all. If you're weighing a similar move away from SOPS, the [why post](/blog/posts/why-infisical-over-sops/) covers the trade-offs I accepted to get here.
+That's the system. Two Infisicals, one credential outside it all, and every secret behind a name that agents can work with without ever reading a value. If you're weighing a similar move away from SOPS, the [why post](/blog/posts/why-infisical-over-sops/) covers the trade-offs I accepted to get here.
