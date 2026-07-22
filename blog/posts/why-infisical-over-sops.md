@@ -62,7 +62,7 @@ The secrets-operator turns a small CR into a plain Kubernetes Secret, so apps ke
 
 Here's the same rotation from the SOPS diagram, today.
 
-![The Infisical rotation lifecycle. You paste the new value into the Infisical UI, the operator pulls it with k8s native auth, updates the Kubernetes Secret, and auto-reload restarts the workload.](/images/infisical-secret-lifecycle.svg)
+![The Infisical rotation lifecycle. You paste the new value into the Infisical UI, then the operator pulls it with k8s native auth, updates the Secret, and restarts the workload.](/images/infisical-secret-lifecycle.svg)
 
 One step is me, and the machinery behind it is specific and boring. The operator polls the server every 60 seconds, rewrites the Kubernetes Secret when a value changes, and restarts the workloads that read it.
 
