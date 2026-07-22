@@ -58,7 +58,7 @@ So the shopping list came out longer than the one I would have written a few yea
 
 There are other tools in this space that can do most of this. Infisical won for me because one product covered every box, and the pieces I cared most about came out of the box.
 
-The secrets-operator turns a small CR into a plain Kubernetes Secret, so apps keep reading env vars and volume mounts like nothing happened. Kubernetes native auth means each app's identity is its ServiceAccount, validated by the cluster itself, so there are no stored credentials anywhere for any app. Every secret has a stable address, the project plus the secret name plus the key, and that address is what shows up in CRs, in diffs, and in conversations with agents, while the value stays in the store. And because Infisical also runs as a cloud service, the three bootstrap secrets that must exist before my self-hosted server does live in a tiny cloud project, while everything else stays in my house. The [how post](/blog/posts/how-i-use-infisical/) walks through that two tier design in detail.
+The secrets-operator turns a small CR into a plain Kubernetes Secret, so apps keep reading env vars and volume mounts like nothing happened. Kubernetes native auth means each app's identity is its ServiceAccount, validated by the cluster itself, so there are no stored credentials anywhere for any app. Every secret has a stable address, the project plus the secret name plus the key, and that address is what shows up in CRs, in diffs, and in conversations with agents, while the value stays in the store.
 
 Here's the same rotation from the SOPS diagram, today.
 
@@ -66,9 +66,9 @@ Here's the same rotation from the SOPS diagram, today.
 
 One step is me, and the machinery behind it is specific and boring. The operator polls the server every 60 seconds, rewrites the Kubernetes Secret when a value changes, and restarts the workloads that read it.
 
-I want to be honest about the scope here. Out of the box, minting the new credential at the provider is still my job. What SOPS could never skip is the ceremony in the middle, because with SOPS the git commit is the transport.
+Out of the box, minting the new credential at the provider is still my job.
 
-The paste is only the default, though. Infisical has an API, and so do a lot of the providers that issue these credentials. When both ends have one, minting can be programmatic too. Something mints a new credential at the provider, writes it to Infisical, lets the propagation machinery roll it out, and revokes the old one. Not every secret supports this, and some take a lot more wiring than others. But for the ones that do, the whole loop closes without me.
+Manually pasting it into Infisical is only the fallback, though. Infisical has an API, and so do a lot of the providers that issue these credentials. When both ends have one, minting can be programmatic too. Something mints a new credential at the provider, writes it to Infisical, lets the propagation machinery roll it out, and revokes the old one. Not every secret supports this, and some take a lot more wiring than others. But for the ones that do, the whole loop closes without me.
 
 So leak response has tiers now. The worst case is one paste. The best case is an agent that catches a token in a log and triggers the rotation itself, and the leak is fixed before I've read the alert. When rotation is painful, the developer who leaked a secret feels the pull to keep quiet and hope. When rotation is cheap, there's no shame to manage. You just rotate.
 
