@@ -26,7 +26,9 @@ Here's the whole system on one picture.
 
 The on-prem server's database lives on storage *inside the cluster it serves*. On a full rebuild nothing can come from on-prem because on-prem doesn't exist yet. Anything needed before the secret store exists has to live somewhere else.
 
-One warning here. The tempting move is to also put your on-prem admin credentials in cloud so a rebuild is fully hands-off. Don't. If cloud gets compromised, the attacker now reads runtime secrets from your publicly reachable on-prem instance. My cloud tier can bootstrap the platform, but it can't read a single app secret.
+<div class="warning-box">
+Don't store on-prem admin credentials in cloud, tempting as a hands-off rebuild sounds. A compromised cloud account would read every runtime secret. Cloud bootstraps the platform and nothing more.
+</div>
 
 ## Infisical bootstraps Infisical
 
