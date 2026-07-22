@@ -1,9 +1,12 @@
 ---
-layout: layouts/blog.html
-tags: ["posts"]
-title: "The umpteen jobs Infisical does in my home cloud"
-permalink: /blog/posts/infisical-home-cloud/
+title: The umpteen jobs Infisical does in my home cloud
 date: 2026-07-22
+tags:
+  - posts
+description: ''
+eleventyExcludeFromCollections: true
+layout: layouts/blog.html
+permalink: /blog/posts/infisical-home-cloud/
 ---
 
 My homelab is a k3s cluster spread across a few Mac minis. Linux VMs via Lima, Tailscale for the network, and Flux reconciling everything from a git repo. I gave the full tour of that architecture over on the [homelab page](/homelab/). This post is about secrets. I recently ripped SOPS out of that repo and replaced it with Infisical, and Infisical ended up doing way more jobs than I planned to give it.
@@ -28,7 +31,7 @@ The replacement is two tiers.
 
 **Cloud Infisical** holds exactly three things in a project I call the bootstrap kernel. The Cloudflare token cert-manager needs for DNS-01, the Tailscale OAuth client, and the on-prem server's own environment.
 
-Why the split? Because the on-prem server's database lives on storage *inside the cluster it serves*. On a full rebuild nothing can come from on-prem because on-prem doesn't exist yet. Anything needed before the secret store exists has to live somewhere else.
+Why the split? Because the on-prem server's database lives on storage _inside the cluster it serves_. On a full rebuild nothing can come from on-prem because on-prem doesn't exist yet. Anything needed before the secret store exists has to live somewhere else.
 
 One warning here. The tempting move is to also put your on-prem admin credentials in cloud so a rebuild is fully hands-off. Don't. If cloud gets compromised, the attacker now reads runtime secrets from your publicly reachable on-prem instance. My cloud tier can bootstrap the platform, but it can't read a single app secret.
 
@@ -40,7 +43,7 @@ Here's the whole system on one picture.
 
 Here's my favorite part. The on-prem server needs an `ENCRYPTION_KEY` and `AUTH_SECRET` in its environment before it can start, and a server can't fetch its own encryption key from itself.
 
-So the on-prem server's env is delivered by a *cloud-backed* InfisicalSecret. Infisical delivering Infisical's secrets to Infisical. The operator pulls them from cloud, materializes a plain Kubernetes Secret, and the server boots off it like any other app.
+So the on-prem server's env is delivered by a _cloud-backed_ InfisicalSecret. Infisical delivering Infisical's secrets to Infisical. The operator pulls them from cloud, materializes a plain Kubernetes Secret, and the server boots off it like any other app.
 
 One hack I recommend. Export the `ENCRYPTION_KEY` to your password manager anyway. A wrong encryption key doesn't error politely. It just makes the server unable to read its own data. Ask me how I know to be careful here.
 
@@ -111,7 +114,7 @@ Nobody blogs the error messages, so here are mine.
 
 SOPS plus git was fully offline. My cold bootstrap now needs the internet and Infisical Cloud to be up. A running cluster doesn't care, since the materialized Secrets persist and only rotation pauses. But a rebuild during an outage is a real regression and I'm choosing to accept it.
 
-I also now run a stateful service whose availability gates secret rotation. And Kubernetes auth binds every identity to *this* cluster, so a full rebuild means re-pointing all of them at the new cluster's CA.
+I also now run a stateful service whose availability gates secret rotation. And Kubernetes auth binds every identity to _this_ cluster, so a full rebuild means re-pointing all of them at the new cluster's CA.
 
 Oh, and migrations leave scars. While writing this post I found a comment in my monitoring config still confidently describing a SOPS-encrypted file that no longer exists. Rest in peace, little comment. 🪦
 
