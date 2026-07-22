@@ -6,7 +6,7 @@ permalink: /blog/posts/how-i-use-infisical/
 date: 2026-07-22
 ---
 
-My homelab is a k3s cluster spread across a few Mac minis. Linux VMs via Lima, Tailscale for the network, and Flux reconciling everything from a git repo. I gave the full tour of that architecture over on the [homelab page](/homelab/). This post is about the secrets side, because every credential in that cluster now flows through Infisical, and Infisical ended up doing way more jobs than I planned to give it.
+My homelab is a k3s cluster spread across a few Mac minis. Linux VMs via Lima, Tailscale for the network, and Flux reconciling everything from a git repo. I gave the full tour of that architecture over on the [homelab page](/homelab/). This post is about the secrets side, because every credential in that cluster now flows through Infisical, and it ended up in way more places than I expected.
 
 Just as important, this setup is what lets AI agents work in the cluster the right way. Agents get names to work with, never values. If you're wondering why Infisical instead of SOPS, I wrote up [that decision separately](/blog/posts/why-infisical-over-sops/). This post is about how the system works today.
 
@@ -30,7 +30,7 @@ Don't store on-prem admin credentials in cloud, tempting as a hands-off rebuild 
 
 ## Runtime secrets with zero stored credentials
 
-This is the job that sold me. Every app's machine identity uses Kubernetes native auth. The operator presents the app's ServiceAccount token and the Infisical server validates it against the cluster's TokenReview API.
+The auth model is what sold me. Every app authenticates with Kubernetes native auth. The operator presents the app's ServiceAccount token and the Infisical server validates it against the cluster's TokenReview API.
 
 There is no clientId or clientSecret for any app, anywhere. There's nothing to leak and nothing to accidentally commit. Each identity is pinned to exactly one ServiceAccount in one namespace, with viewer access to one project.
 
