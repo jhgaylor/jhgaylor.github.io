@@ -1,7 +1,8 @@
 ---
 layout: layouts/blog.html
 tags: ["posts"]
-title: "Why I chose Infisical over SOPS"
+title: "My AI agents changed what I need from a secret store"
+description: "Infisical > SOPS now that agents write my code"
 permalink: /blog/posts/why-infisical-over-sops/
 date: 2026-07-22
 ---
