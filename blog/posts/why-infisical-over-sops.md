@@ -65,9 +65,11 @@ Here's the same rotation from the SOPS diagram, today.
 
 One step is me, and the machinery behind it is specific and boring. The operator polls the server every 60 seconds and rewrites the Kubernetes Secret when a value changes, and an auto-reload annotation on the workload triggers a rolling restart when the Secret does. Env vars are read once at container start, so without that restart a running pod would never see the new value.
 
-I want to be honest about the scope here. Minting the new credential at the provider is still my job in both worlds, and I could have bolted a restart controller onto SOPS too. What SOPS couldn't skip is the ceremony in the middle, because with SOPS the git commit is the transport.
+I want to be honest about the scope here. Out of the box, minting the new credential at the provider is still my job, and I could have bolted a restart controller onto SOPS too. What SOPS couldn't skip is the ceremony in the middle, because with SOPS the git commit is the transport.
 
-Still, that one paste is cheap enough that leak response finally works the way it should. An agent that catches a token in a log can flag it and the fix happens in minutes. When rotation is painful, the developer who leaked a secret feels the pull to keep quiet and hope. When rotation is one paste, there's no shame to manage. You just rotate.
+The paste is only the default, though. Infisical has an API, and so do a lot of the providers that issue these credentials. When both ends have one, minting can be programmatic too. Something mints a new credential at the provider, writes it to Infisical, lets the propagation machinery roll it out, and revokes the old one. Not every secret supports this, and some take a lot more wiring than others. But for the ones that do, the whole loop closes without me.
+
+So leak response has tiers now. The worst case is one paste. The best case is an agent that catches a token in a log and triggers the rotation itself, and the leak is fixed before I've read the alert. When rotation is painful, the developer who leaked a secret feels the pull to keep quiet and hope. When rotation is cheap, there's no shame to manage. You just rotate.
 
 ## What I gave up
 
