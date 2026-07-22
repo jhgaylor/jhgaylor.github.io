@@ -101,7 +101,7 @@ SOPS plus git was fully offline. My cold bootstrap now needs the internet and In
 
 I also now run a stateful service whose availability gates secret rotation. And Kubernetes auth binds every identity to *this* cluster, so a full rebuild means re-pointing all of them at the new cluster's CA.
 
-Oh, and migrations leave scars: there's still a comment in my monitoring config confidently describing a SOPS-encrypted file that no longer exists. I'm leaving it there as a monument. 🪦
+Oh, and migrations leave scars: while writing this post I found a comment in my monitoring config still confidently describing a SOPS-encrypted file that no longer exists. Rest in peace, little comment. 🪦
 
 ## Should you do this?
 
