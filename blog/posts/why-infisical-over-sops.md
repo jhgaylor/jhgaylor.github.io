@@ -6,7 +6,11 @@ permalink: /blog/posts/why-infisical-over-sops/
 date: 2026-07-22
 ---
 
-For a long time every secret in my homelab lived in git as an age-encrypted YAML file. SOPS encrypted them, Flux decrypted them at apply time, and the whole thing genuinely worked. This summer I ripped it all out and moved everything to Infisical. This post is about why. If you want the tour of what the replacement actually looks like, that's over in [how I use Infisical in my home cloud](/blog/posts/how-i-use-infisical/).
+For a long time I used SOPS, and for a long time SOPS was the right call.
+
+If you weren't in a major cloud, the story for dealing with secrets sucked. AWS and GCP folks got a managed secrets service with IAM bolted on. The rest of us got three options. You could wire a password manager CLI into your deploy scripts and hope everyone on the project had the same setup. You could bite the bullet and install Vault, which is a great product and also a whole second job. Or you could encrypt your secrets and store them right in the repo.
+
+I picked the third one. SOPS encrypted my YAML, Flux decrypted it at apply time, and the whole thing genuinely worked. This summer I ripped it all out and moved everything to Infisical. This post is about why. If you want the tour of what the replacement actually looks like, that's over in [how I use Infisical in my home cloud](/blog/posts/how-i-use-infisical/).
 
 ## What SOPS life looked like
 
