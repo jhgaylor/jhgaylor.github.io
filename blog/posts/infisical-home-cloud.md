@@ -28,6 +28,10 @@ Why the split? Because the on-prem server's database lives on storage *inside th
 
 One warning here. The tempting move is to also put your on-prem admin credentials in cloud so a rebuild is fully hands-off. Don't. If cloud gets compromised, the attacker now reads runtime secrets from your publicly reachable on-prem instance. My cloud tier can bootstrap the platform, but it can't read a single app secret.
 
+Here's the whole system on one picture.
+
+![Diagram of the two tier setup. You seed one credential into the secrets-operator and keep a break-glass key in a password manager. Cloud Infisical feeds the bootstrap kernel to cert-manager, the Tailscale operator, and the on-prem server. On-prem Infisical feeds runtime secrets to the apps as plain Kubernetes Secrets.](/images/infisical-two-tier.svg)
+
 ## Infisical bootstraps Infisical
 
 Here's my favorite part. The on-prem server needs an `ENCRYPTION_KEY` and `AUTH_SECRET` in its environment before it can start, and a server can't fetch its own encryption key from itself.

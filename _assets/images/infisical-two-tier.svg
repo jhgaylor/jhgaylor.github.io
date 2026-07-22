@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 660" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="ah-blue" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+    <marker id="ah-green" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#059669"/>
+    </marker>
+    <marker id="ah-gray" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="880" height="660" fill="#ffffff"/>
+
+  <!-- k3s cluster boundary -->
+  <rect x="30" y="190" width="830" height="440" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="50" y="622" font-size="13" font-weight="700" fill="#475569">k3s cluster</text>
+
+  <!-- You -->
+  <rect x="40" y="40" width="130" height="64" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="105" y="66" font-size="15" font-weight="700" fill="#1e293b" text-anchor="middle">You</text>
+  <text x="105" y="84" font-size="12" fill="#64748b" text-anchor="middle">the human</text>
+
+  <!-- Password manager -->
+  <rect x="220" y="40" width="170" height="64" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="305" y="66" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">Password manager</text>
+  <text x="305" y="84" font-size="11" fill="#64748b" text-anchor="middle">break-glass ENCRYPTION_KEY</text>
+
+  <!-- Legend -->
+  <g font-size="11.5">
+    <line x1="408" y1="126" x2="432" y2="126" stroke="#2563eb" stroke-width="3"/>
+    <text x="440" y="130" fill="#334155">bootstrap flow</text>
+    <line x1="408" y1="148" x2="432" y2="148" stroke="#059669" stroke-width="3"/>
+    <text x="440" y="152" fill="#334155">runtime flow</text>
+    <line x1="408" y1="170" x2="432" y2="170" stroke="#64748b" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <text x="440" y="174" fill="#334155">human step</text>
+  </g>
+
+  <!-- Cloud Infisical -->
+  <rect x="560" y="20" width="280" height="130" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="700" y="50" font-size="15" font-weight="700" fill="#1e40af" text-anchor="middle">Cloud Infisical</text>
+  <text x="700" y="70" font-size="12" fill="#64748b" text-anchor="middle">the bootstrap kernel</text>
+  <text x="700" y="96" font-size="12" fill="#334155" text-anchor="middle">Cloudflare token &#183; Tailscale OAuth</text>
+  <text x="700" y="114" font-size="12" fill="#334155" text-anchor="middle">on-prem server env</text>
+
+  <!-- secrets-operator -->
+  <rect x="340" y="240" width="220" height="74" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="450" y="268" font-size="15" font-weight="700" fill="#1e40af" text-anchor="middle">secrets-operator</text>
+  <text x="450" y="288" font-size="12" fill="#64748b" text-anchor="middle">holds the one seeded credential</text>
+
+  <!-- cert-manager -->
+  <rect x="60" y="300" width="180" height="48" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="150" y="320" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">cert-manager</text>
+  <text x="150" y="337" font-size="11" fill="#64748b" text-anchor="middle">DNS-01 token</text>
+
+  <!-- Tailscale operator -->
+  <rect x="60" y="370" width="180" height="48" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="150" y="390" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">Tailscale operator</text>
+  <text x="150" y="407" font-size="11" fill="#64748b" text-anchor="middle">OAuth client</text>
+
+  <!-- On-prem Infisical -->
+  <rect x="580" y="370" width="240" height="110" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="700" y="398" font-size="15" font-weight="700" fill="#1e40af" text-anchor="middle">On-prem Infisical</text>
+  <text x="700" y="418" font-size="12" fill="#64748b" text-anchor="middle">runtime app secrets</text>
+  <text x="700" y="438" font-size="12" fill="#64748b" text-anchor="middle">CNPG Postgres &#183; Longhorn</text>
+
+  <!-- Apps -->
+  <rect x="60" y="550" width="760" height="56" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="440" y="572" font-size="13.5" font-weight="700" fill="#1e293b" text-anchor="middle">ntfy &#183; garage &#183; mem0 &#183; oauth2-proxy &#183; Alertmanager &#183; Flux &#183; app repos</text>
+  <text x="440" y="591" font-size="11.5" fill="#64748b" text-anchor="middle">consume plain Kubernetes Secrets via envFrom and mounts</text>
+
+  <!-- Human arrows (gray, dashed) -->
+  <path d="M170,72 L212,72" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#ah-gray)"/>
+  <path d="M105,104 L105,215 L395,215 L395,232" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#ah-gray)"/>
+  <text x="115" y="146" font-size="11.5" fill="#64748b">seeds secret zero</text>
+  <text x="115" y="162" font-size="11.5" fill="#64748b">via Ansible</text>
+
+  <!-- Bootstrap flow (blue) -->
+  <path d="M700,150 L700,262 L568,262" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#ah-blue)"/>
+  <text x="712" y="200" font-size="11.5" fill="#2563eb">bootstrap kernel</text>
+  <text x="712" y="216" font-size="11.5" fill="#2563eb">universal auth</text>
+
+  <path d="M340,262 L300,262 L300,324 L248,324" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#ah-blue)"/>
+  <path d="M300,324 L300,394 L248,394" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#ah-blue)"/>
+
+  <path d="M520,314 L520,348 L640,348 L640,362" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#ah-blue)"/>
+  <text x="528" y="336" font-size="11.5" fill="#2563eb">server env</text>
+
+  <!-- Runtime flow (green) -->
+  <path d="M580,440 L450,440 L450,322" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#ah-green)"/>
+  <text x="515" y="430" font-size="11.5" fill="#059669" text-anchor="middle">runtime secrets</text>
+  <text x="515" y="458" font-size="11.5" fill="#059669" text-anchor="middle">k8s native auth</text>
+
+  <path d="M380,314 L380,542" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#ah-green)"/>
+  <text x="390" y="480" font-size="11.5" fill="#059669">plain Secrets</text>
+</svg>
