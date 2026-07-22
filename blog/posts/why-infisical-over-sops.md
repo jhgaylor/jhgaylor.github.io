@@ -63,7 +63,7 @@ Here's the same rotation from the SOPS diagram, today.
 
 ![The Infisical rotation lifecycle. You paste the new value into the Infisical UI, the operator pulls it with k8s native auth, updates the Kubernetes Secret, and auto-reload restarts the workload.](/images/infisical-secret-lifecycle.svg)
 
-One step is me, and the machinery behind it is specific and boring. The operator polls the server every 60 seconds and rewrites the Kubernetes Secret when a value changes, and an auto-reload annotation on the workload triggers a rolling restart when the Secret does. That annotation matters because env vars are read once at container start, so without the restart a running pod would never see the new value.
+One step is me, and the machinery behind it is specific and boring. The operator polls the server every 60 seconds and rewrites the Kubernetes Secret when a value changes, and an auto-reload annotation on the workload triggers a rolling restart when the Secret does. Env vars are read once at container start, so without that restart a running pod would never see the new value.
 
 I want to be honest about the scope here. Minting the new credential at the provider is still my job in both worlds, and I could have bolted a restart controller onto SOPS too. What SOPS couldn't skip is the ceremony in the middle, because with SOPS the git commit is the transport.
 
