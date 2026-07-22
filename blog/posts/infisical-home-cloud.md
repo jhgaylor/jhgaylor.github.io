@@ -6,7 +6,7 @@ permalink: /blog/posts/infisical-home-cloud/
 date: 2026-07-22
 ---
 
-My homelab is a k3s cluster spread across a few Mac minis. Linux VMs via Lima, Tailscale for the network, and Flux reconciling everything from a git repo. That architecture is a post for another day. This post is about secrets. I recently ripped SOPS out of that repo and replaced it with Infisical, and Infisical ended up doing way more jobs than I planned to give it.
+My homelab is a k3s cluster spread across a few Mac minis. Linux VMs via Lima, Tailscale for the network, and Flux reconciling everything from a git repo. I gave the full tour of that architecture over on the [homelab page](/homelab/). This post is about secrets. I recently ripped SOPS out of that repo and replaced it with Infisical, and Infisical ended up doing way more jobs than I planned to give it.
 
 I count at least eleven. Let's go.
 
