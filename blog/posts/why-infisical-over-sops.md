@@ -19,9 +19,9 @@ My cluster is a few Mac minis running k3s, with Flux reconciling everything from
 
 Here's what rotating one secret actually involved.
 
-![The SOPS rotation lifecycle. You pull the repo, decrypt and edit the file with the age key, re-encrypt and push, Flux decrypts it with the cluster age key and applies the Secret, then you restart the pods yourself.](/images/sops-secret-lifecycle.svg)
+![The SOPS rotation lifecycle. You pull the repo, decrypt and edit the file with the age key, then re-encrypt and push. Flux decrypts it with the cluster age key, applies the Secret, and restarts the pods.](/images/sops-secret-lifecycle.svg)
 
-Four of those six steps are me. And notice the age key shows up twice, once on my laptop and once in the cluster.
+Three of those five steps are me. And notice the age key shows up twice, once on my laptop and once in the cluster.
 
 ## The friction that added up
 
@@ -39,13 +39,13 @@ An agent should never read a secret. It doesn't need the value. It needs a handl
 
 To be fair, SOPS handles more of this than you'd guess. It encrypts the values and leaves the structure readable, so an agent can look at an encrypted file and see the key names without decrypting anything. Discovery was possible, it just wasn't natural. The names were scattered across encrypted files in whatever directory used them, with no single place to list them. And everything past discovery ran through decryption. Editing a value meant decrypting the whole file, and the age key sat right on my laptop, so an agent doing routine work was always one command away from plaintext it didn't need. The moment it decrypts, that plaintext is in its context window and its transcripts. Nothing about the design pushed toward names instead of values.
 
-There's a second agent problem, and it's about leaking. Secrets get leaked all the time, by humans and agents alike. Pretending otherwise is how you end up with a system that handles leaks badly. What you actually want is recovery so cheap that reporting a leak is a reflex. Under SOPS the recovery path was that six-step diagram up there, and nobody does that as a reflex.
+There's a second agent problem, and it's about leaking. Secrets get leaked all the time, by humans and agents alike. Pretending otherwise is how you end up with a system that handles leaks badly. What you actually want is recovery so cheap that reporting a leak is a reflex. Under SOPS the recovery path was everything in that diagram up there, and nobody does that as a reflex.
 
 ## What I wanted instead
 
 So the shopping list came out longer than the one I would have written a few years ago.
 
-- Rotate a secret without a git commit or a manual pod restart
+- Rotate a secret without a git commit
 - Per-app scoping, so one leaked credential exposes one app instead of all of them
 - No long-lived credentials sitting in the cluster or in my shell history
 - A real story for rebuilding the cluster from nothing
@@ -64,9 +64,9 @@ Here's the same rotation from the SOPS diagram, today.
 
 ![The Infisical rotation lifecycle. You paste the new value into the Infisical UI, the operator pulls it with k8s native auth, updates the Kubernetes Secret, and auto-reload restarts the workload.](/images/infisical-secret-lifecycle.svg)
 
-One step is me, and the machinery behind it is specific and boring. The operator polls the server every 60 seconds and rewrites the Kubernetes Secret when a value changes, and an auto-reload annotation on the workload triggers a rolling restart when the Secret does. Env vars are read once at container start, so without that restart a running pod would never see the new value.
+One step is me, and the machinery behind it is specific and boring. The operator polls the server every 60 seconds, rewrites the Kubernetes Secret when a value changes, and restarts the workloads that read it.
 
-I want to be honest about the scope here. Out of the box, minting the new credential at the provider is still my job, and I could have bolted a restart controller onto SOPS too. What SOPS couldn't skip is the ceremony in the middle, because with SOPS the git commit is the transport.
+I want to be honest about the scope here. Out of the box, minting the new credential at the provider is still my job. What SOPS could never skip is the ceremony in the middle, because with SOPS the git commit is the transport.
 
 The paste is only the default, though. Infisical has an API, and so do a lot of the providers that issue these credentials. When both ends have one, minting can be programmatic too. Something mints a new credential at the provider, writes it to Infisical, lets the propagation machinery roll it out, and revokes the old one. Not every secret supports this, and some take a lot more wiring than others. But for the ones that do, the whole loop closes without me.
 
