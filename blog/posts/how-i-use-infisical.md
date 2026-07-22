@@ -24,7 +24,7 @@ Here's the whole system on one picture.
 Don't store on-prem admin credentials in cloud, tempting as a hands-off rebuild sounds. A compromised cloud account would read every runtime secret. Cloud bootstraps the platform and nothing more.
 </div>
 
-## Infisical bootstraps Infisical
+### Infisical bootstraps Infisical
 
 Here's my favorite part. The on-prem server needs an `ENCRYPTION_KEY` and `AUTH_SECRET` in its environment before it can start, and a server can't fetch its own encryption key from itself.
 
