@@ -14,6 +14,10 @@ I count at least eleven. Let's go.
 
 For a long time every secret in my cluster lived in git as an age-encrypted YAML file. Flux decrypted them at apply time, which meant a decryption block in every single Kustomization. All 26 of them. Rotating a secret meant re-encrypting a file and pushing a commit. The age key was the crown jewel, one file hand-carried between machines that could decrypt everything I own.
 
+Here's what rotating one secret actually involved.
+
+![The SOPS rotation lifecycle. You pull the repo, decrypt and edit the file with the age key, re-encrypt and push, Flux decrypts it with the cluster age key and applies the Secret, then you restart the pods yourself.](/images/sops-secret-lifecycle.svg)
+
 It worked. It was fine. But every new app meant another encrypted file, another decryption block, another chance to fat-finger the recipient list. And the longer I ran it, the less comfortable I got with a single key that decrypts everything forever.
 
 ## Two Infisicals
@@ -62,6 +66,10 @@ spec:
     - secretName: myapp-secrets
       secretNamespace: myapp
 ```
+
+And here's the same rotation from the SOPS diagram, today.
+
+![The Infisical rotation lifecycle. You paste the new value into the Infisical UI, the operator pulls it with k8s native auth, updates the Kubernetes Secret, and auto-reload restarts the workload.](/images/infisical-secret-lifecycle.svg)
 
 ## One secret to carry
 
