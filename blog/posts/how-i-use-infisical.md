@@ -3,7 +3,7 @@ layout: layouts/blog.html
 tags: ["posts"]
 title: "How I use Infisical in my home cloud"
 permalink: /blog/posts/how-i-use-infisical/
-date: 2026-07-22
+date: 2026-07-21
 ---
 
 My homelab is a k3s cluster spread across a few Mac minis. Linux VMs via Lima, Tailscale for the network, and Flux reconciling everything from a git repo. I gave the full tour of that architecture over on the [homelab page](/homelab/). This post is about the secrets side, because every credential in that cluster now flows through Infisical, and it ended up in way more places than I expected.

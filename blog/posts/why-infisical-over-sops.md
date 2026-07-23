@@ -4,7 +4,7 @@ tags: ["posts"]
 title: "My AI agents changed what I need from a secret store"
 description: "Infisical > SOPS now that agents write my code"
 permalink: /blog/posts/why-infisical-over-sops/
-date: 2026-07-22
+date: 2026-07-20
 ---
 
 For a long time I used SOPS, and for a long time SOPS was the right call.
