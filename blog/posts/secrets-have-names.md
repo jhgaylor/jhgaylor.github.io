@@ -25,7 +25,9 @@ When an agent onboards an app to my cluster, it writes the InfisicalSecret CR, t
 
 The resolution happens later, somewhere else. The operator presents the app's ServiceAccount token, the server validates it against the cluster, and a plain Kubernetes Secret appears where the manifest said it would. The agent authored correct, working secret plumbing from end to end and was never trusted with a value at any point. It didn't even handle a credential *for the store*, because [Kubernetes native auth](/blog/posts/how-i-use-infisical/) means there's no clientId or clientSecret in the diff to guard.
 
-The division of labor I've come to rely on: the agent creates the slot, I fill the value. A new app's scaffold arrives with the secret names already defined and referenced, and my entire contribution is pasting values into the UI. Agents own structure. Humans own values.
+The division of labor I've come to rely on: the agent creates the slot, I fill the value. A new app's scaffold arrives with the secret names already defined and referenced, and my entire contribution is pasting values into the UI.
+
+For self-minted secrets, even the paste isn't mine. oauth2-proxy's session secret is 32 random bytes that nobody needs to know, and the agent knows both the algorithm and the address. So it writes the one-liner, `infisical secrets set SESSION_SECRET=$(openssl rand -base64 32)`, and runs it through my logged-in CLI. The value travels from openssl into the store without ever existing in the agent's context, my clipboard, or a screen. Nobody has seen that secret, and nobody needs to. My job is down to the values only a third party's dashboard will mint. Agents own structure. Increasingly, they own the values too.
 
 ## They can see the whole inventory
 
@@ -43,7 +45,7 @@ Not every secret supports that today. But it changes what I need from an agent. 
 
 ## The frontier: identities for the agents themselves
 
-My agents currently have no Infisical identity at all, and that's not an oversight, it's the design. Names need no authentication. Everything above, the conversations, the wiring, the inventory work, runs on information that's already in the repo and the CRs.
+My agents have no Infisical identity of their own, and that's not an oversight, it's the design. Names need no authentication, and the one write in this post, minting a value, borrows my logged-in CLI. The identity stays mine; only the hands are the agent's.
 
 At some point an agent will need real access, probably the day one takes over rotation end to end. When that happens it won't get my credentials. It'll get what every app in the cluster gets: its own machine identity, scoped to exactly the projects it needs, with the smallest role that does the job. The pattern that onboarded umpteen apps is sitting there waiting to onboard a new kind of worker.
 
