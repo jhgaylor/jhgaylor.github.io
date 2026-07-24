@@ -7,7 +7,7 @@ permalink: /blog/posts/secrets-have-names/
 date: 2026-07-24
 ---
 
-AI agents work in my repos and my [home cloud](/homelab/) every day. They write manifests, onboard apps, and diagnose failures. The models have been good enough for that work for a while now. The wins come from enablement, arranging the environment so that more of the work is safely theirs, and moving my secrets behind names is the biggest one so far.
+AI agents work in my repos and my [home cloud](/homelab/) every day. They write manifests, onboard apps, and diagnose failures. The models have been good enough for that work for a while. The wins are in enablement, arranging the environment so more of the work is safely theirs. The biggest so far is moving my secrets behind names.
 
 Every secret in my cluster lives in Infisical and has a stable address, the project plus the secret name plus the key. The value stays in the store. Only the systems with runtime privilege, the operator and the apps themselves, ever resolve a name into a value.
 
