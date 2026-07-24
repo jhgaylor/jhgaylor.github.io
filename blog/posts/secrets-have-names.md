@@ -39,13 +39,13 @@ Infisical has an API, and so do many of the providers that mint these credential
 
 Not every secret supports that today. But it changes what I need from an agent. I don't need one that provably never mishandles a secret. I need recovery cheap enough that responding to a mistake is a reflex, whether the mistake was mine or the machine's. Bounded blast radius beats flawless behavior, for humans and agents alike.
 
-## The frontier: identities for the agents themselves
+## The next step: identities for the agents themselves
 
 My agents do all of this without any Infisical access of their own. Names need no authentication. The one write, minting a value, goes through my logged-in CLI. The identity stays mine; only the hands are the agent's.
 
-At some point an agent will need real access, probably the day one takes over rotation end to end. When that happens it won't get my credentials. It'll get what every app in the cluster gets: its own machine identity, scoped to exactly the projects it needs, with the smallest role that does the job. The pattern that onboarded umpteen apps is sitting there waiting to onboard a new kind of worker.
+That borrowed CLI is the loose end. An agent working through my login carries every permission I have, and this whole migration was about killing that shape of credential. The fix already runs in the cluster. Every app has its own machine identity, scoped to one project with the smallest role that does the job. My agents are next. Purpose-built identities, scoped to the work each one does, minted by the same pattern that onboarded every app.
 
-That's a post for when it happens.
+That's the next post.
 
 ## Do more means delegate more
 
