@@ -51,6 +51,6 @@ That's the next post.
 
 In the [agent-ready infrastructure post](/blog/posts/agent-ready-infrastructure/) I asked whether a competent stranger could operate your system on day one. Secrets were always the room the stranger could never enter, so every task that passed through that room bounced back to me.
 
-Names changed the shape of the room. The stranger still can't enter, and now it doesn't need to. It can describe the room, wire things to it, inventory it, and call for a locksmith when a key leaks, all from the hallway.
+Names fixed that. The stranger still can't enter the room, and it no longer needs to.
 
 That's what "doing more with agents" has actually meant here. Not smarter agents, and not more trust. A system arranged so that trust is mostly unnecessary, and the work flows anyway.
