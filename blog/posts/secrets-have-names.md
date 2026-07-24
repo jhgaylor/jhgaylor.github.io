@@ -29,7 +29,7 @@ The agent creates the slot and I fill the value. For self-minted secrets, even t
 
 An agent in my repo can list every secret that exists without reading any of them. Which projects exist, which keys each app consumes, which InfisicalSecret delivers what to where.
 
-That read-only view covers a whole class of chores. Auditing which apps consume which credentials. Spotting the key that no workload references anymore. Onboarding app N+1 by pattern-matching apps one through N. Under SOPS this was [possible but never natural](/blog/posts/why-infisical-over-sops/), because the names were scattered across encrypted files and everything past discovery ran through decryption on my laptop. Now discovery is the cheap, safe, default path, and an agent can be exhaustively curious about my secrets without a single value moving.
+That read-only view covers a whole class of chores. Auditing which apps consume which credentials. Spotting the key that no workload references anymore. Onboarding app N+1 by pattern-matching apps one through N. Under SOPS this was [possible but never natural](/blog/posts/why-infisical-over-sops/), because the names were scattered across encrypted files and everything past discovery ran through decryption on my laptop. Now discovery is the cheap, safe, default path. An agent can be exhaustively curious about my secrets and never read a single value.
 
 ## Leak response is becoming an agent task
 
