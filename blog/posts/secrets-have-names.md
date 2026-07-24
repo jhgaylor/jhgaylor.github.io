@@ -41,7 +41,7 @@ Not every secret supports that today. But it changes what I need from an agent. 
 
 ## The frontier: identities for the agents themselves
 
-My agents have no Infisical identity of their own, and that's not an oversight, it's the design. Names need no authentication, and the one write in this post, minting a value, borrows my logged-in CLI. The identity stays mine; only the hands are the agent's.
+My agents do all of this without any Infisical access of their own. Names need no authentication. The one write, minting a value, goes through my logged-in CLI. The identity stays mine; only the hands are the agent's.
 
 At some point an agent will need real access, probably the day one takes over rotation end to end. When that happens it won't get my credentials. It'll get what every app in the cluster gets: its own machine identity, scoped to exactly the projects it needs, with the smallest role that does the job. The pattern that onboarded umpteen apps is sitting there waiting to onboard a new kind of worker.
 
