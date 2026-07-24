@@ -9,7 +9,7 @@ date: 2026-07-24
 
 AI agents work in my repos and my [home cloud](/homelab/) every day. They write manifests, onboard apps, and diagnose failures. And the single biggest expansion of what I can hand them didn't come from a better model. It came from moving my secrets behind names.
 
-The lever is simple enough to state once. Every secret in my cluster lives in Infisical and has a stable address, the project plus the secret name plus the key. The value stays in the store. Only the systems with runtime privilege, the operator and the apps themselves, ever resolve a name into a value. Everything in this post falls out of that one property.
+Every secret in my cluster lives in Infisical and has a stable address, the project plus the secret name plus the key. The value stays in the store. Only the systems with runtime privilege, the operator and the apps themselves, ever resolve a name into a value.
 
 I've already written about [why I chose Infisical over SOPS](/blog/posts/why-infisical-over-sops/) and [how the whole setup is wired](/blog/posts/how-i-use-infisical/). This post is the payoff. It's a list of jobs that used to be mine and are now things I can delegate, because a secret an agent can name is a secret an agent can work with.
 
