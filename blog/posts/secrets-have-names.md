@@ -23,7 +23,7 @@ Now secrets are nouns. An agent and I can discuss the Cloudflare token in the bo
 
 When an agent onboards an app to my cluster, it writes the InfisicalSecret CR, the ServiceAccount, and the `envFrom` that points the pod at `myapp-secrets`. When it updates a runbook, it can write "rotate `SMTP_PASSWORD` in the mailer project" instead of gesturing vaguely at "the mail credentials." Code and docs can finally name secrets precisely, because naming is safe.
 
-The resolution happens later, somewhere else, by the operator that actually holds privilege. The agent authored working secret plumbing end to end without being trusted with a value, and [Kubernetes native auth](/blog/posts/how-i-use-infisical/) means there's no clientId or clientSecret in the diff to guard either.
+The resolution happens later, somewhere else, by the operator that actually holds privilege. The agent wrote every line of the plumbing and was never trusted with a value. [Kubernetes native auth](/blog/posts/how-i-use-infisical/) means there's no clientId or clientSecret in the diff to guard either.
 
 The division of labor I've come to rely on: the agent creates the slot, I fill the value. A new app's scaffold arrives with the secret names already defined and referenced, and my entire contribution is pasting values into the UI.
 
