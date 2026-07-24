@@ -41,7 +41,7 @@ Not every secret supports that today. But it changes what I need from an agent. 
 
 ## The next step: identities for the agents themselves
 
-My agents do all of this without any Infisical access of their own. Names need no authentication. The one write, minting a value, goes through my logged-in CLI. The identity stays mine; only the hands are the agent's.
+My agents do all of this without any Infisical access of their own. The names in the repo are free to read. Everything that touches the store, listing what exists and minting the occasional value, runs through my logged-in CLI. The identity stays mine; only the hands are the agent's.
 
 That borrowed CLI is the loose end. An agent working through my login carries every permission I have, and this whole migration was about killing that shape of credential. The fix already runs in the cluster. Every app has its own machine identity, scoped to one project with the smallest role that does the job. My agents are next. Purpose-built identities, scoped to the work each one does, minted by the same pattern that onboarded every app.
 
