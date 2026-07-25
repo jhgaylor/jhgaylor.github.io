@@ -25,7 +25,7 @@ There's a third option the first two hide: change the tool so the workaround doe
 
 ## The grain cuts deeper now
 
-There's a second effect stacked on the first. Agents follow a tool's grain harder than people do. A human will occasionally fight the tool out of taste, or stubbornness, or because they remember a better way from a previous job. An agent takes the cheap path almost every time, and then generalizes from it, because [precedent is how agents work](/blog/posts/agent-ready-infrastructure/).
+There's a second effect stacked on the first. Agents follow a tool's grain harder than people do. A human will occasionally fight the tool out of taste, or stubbornness, or because they remember a better way from a previous job. An agent takes the cheap path almost every time, and then generalizes from it, because precedent is how agents work.
 
 So the tool's opinion no longer just influences your solutions. It becomes them, repeated at machine speed by a workforce that never pushes back on the defaults. If the grain runs the wrong direction, you don't get occasional drift. You get a system that is confidently, consistently wrong in the exact shape of the tool's bad defaults.
 
