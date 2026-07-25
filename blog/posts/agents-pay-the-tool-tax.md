@@ -13,9 +13,7 @@ None of this used to bother me much, because humans are good at absorbing a bad 
 
 ## Surviving a bad tool takes memory
 
-A badly fitting tool usually gets survived rather than replaced. You learn the workaround once and it settles into muscle memory. The new hire picks it up in a hallway. A year in, nobody experiences the friction anymore, since everyone's hands route around it without involving their brains. The misfit is still there, it just stopped generating complaints.
-
-That trick is amortization, and it runs on memory. You pay the learning cost once and spread it over years of not noticing.
+A badly fitting tool usually gets survived rather than replaced. You learn the workaround once and it settles into muscle memory. The new hire picks it up in a hallway. A year in, nobody experiences the friction anymore, since everyone's hands route around it without involving their brains. The misfit is still there, it just stopped generating complaints. The team amortized it, paying the learning cost once and spreading it over years of not noticing, and that only works if the workers remember.
 
 Agents have horrible memories. Every session is day one. Muscle memory never forms because there is no muscle and no memory to form it in. Whatever it costs to fight the tool, an agent pays full price every single session.
 
