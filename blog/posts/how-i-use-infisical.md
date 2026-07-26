@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "How I use Infisical in my home cloud"
+og_image: /images/og/how-i-use-infisical.jpg
 description: "Every credential in my k3s cluster flows through Infisical, and it ended up in way more places than I expected"
 permalink: /blog/posts/how-i-use-infisical/
 date: 2026-07-21

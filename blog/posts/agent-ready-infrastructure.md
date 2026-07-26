@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "Agent-ready infrastructure is mostly good ops"
+og_image: /images/og/agent-ready-infrastructure.jpg
 description: "The properties that let AI agents safely operate a system are the ones good systems always wanted"
 permalink: /blog/posts/agent-ready-infrastructure/
 date: 2026-07-22

@@ -12,8 +12,17 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231d4ed8'/><text x='32' y='45' font-family='system-ui,sans-serif' font-size='32' font-weight='700' fill='%23ffffff' text-anchor='middle'>JG</text></svg>" />
 
     <!-- Open Graph / social preview -->
-    {%- assign ogImage = image | default: "/images/og-card.jpg?v=3" -%}
-    {%- assign ogImageAlt = image_alt | default: "Jake Gaylor" -%}
+    {%- comment -%} og_image: social card only. image: on-page hero, doubles as the card when no og_image. {%- endcomment -%}
+    {%- if og_image -%}
+        {%- assign ogImage = og_image -%}
+        {%- assign ogImageAlt = pageTitle -%}
+    {%- elsif image -%}
+        {%- assign ogImage = image -%}
+        {%- assign ogImageAlt = image_alt | default: pageTitle -%}
+    {%- else -%}
+        {%- assign ogImage = "/images/og-card.jpg?v=3" -%}
+        {%- assign ogImageAlt = "Jake Gaylor" -%}
+    {%- endif -%}
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Jake Gaylor" />
     <meta property="og:url" content="https://jakegaylor.com{{ page.url }}" />

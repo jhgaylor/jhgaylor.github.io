@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts", "startup-posts"]
 title: "Can't find your first user? You might have built the wrong thing."
+og_image: /images/og/users-are-critical.jpg
 description: "Three ways engineers building products can find their first users, and what it means when none of them work"
 permalink: /blog/posts/users-are-critical/
 date: 2025-04-01

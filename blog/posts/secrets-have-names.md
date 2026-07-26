@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "What my agents can do now that secrets have names"
+og_image: /images/og/secrets-have-names.jpg
 description: "Moving secrets behind names expanded what I can delegate more than any model upgrade"
 permalink: /blog/posts/secrets-have-names/
 date: 2026-07-24

@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "A lot more people are about to learn about micro vms"
+og_image: /images/og/micro-vms.jpg
 description: "MCP servers mean businesses will be running piles of untrusted code, and micro VMs are how they do it safely"
 image: /images/mcp-micro-vms.png
 image_alt: "Diagram showing MCP servers running in micro VMs"

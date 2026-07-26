@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "Hello World"
+og_image: /images/og/hello-world.jpg
 description: "Why I'm writing about building products after 20 years of shipping them, and what to expect here"
 permalink: /blog/posts/hello-world/
 date: 2025-03-28

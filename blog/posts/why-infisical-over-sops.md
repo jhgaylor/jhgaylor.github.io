@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "My AI agents changed what I need from a secret store"
+og_image: /images/og/why-infisical-over-sops.jpg
 description: "Infisical > SOPS now that agents write my code"
 permalink: /blog/posts/why-infisical-over-sops/
 date: 2026-07-20

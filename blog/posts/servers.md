@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts", "interview-series"]
 title: "Interview series: When should I use serverless? It isn't about cost."
+og_image: /images/og/servers-vs-serverless.jpg
 description: "Cost is the least interesting part of the servers vs serverless decision"
 permalink: /blog/posts/servers-vs-serverless/
 date: 2025-03-30

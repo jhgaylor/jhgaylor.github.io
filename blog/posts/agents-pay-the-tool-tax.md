@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "Your agents pay the tool tax every day"
+og_image: /images/og/agents-pay-the-tool-tax.jpg
 description: "A workforce with no memory can't amortize a bad tool, so fit matters more than it ever did"
 permalink: /blog/posts/agents-pay-the-tool-tax/
 date: 2026-07-25
