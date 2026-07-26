@@ -2,6 +2,9 @@
 layout: layouts/blog.html
 tags: ["posts"]
 title: "A lot more people are about to learn about micro vms"
+description: "MCP servers mean businesses will be running piles of untrusted code, and micro VMs are how they do it safely"
+image: /images/mcp-micro-vms.png
+image_alt: "Diagram showing MCP servers running in micro VMs"
 permalink: /blog/posts/micro-vms/
 date: 2025-04-06
 ---
@@ -17,5 +20,3 @@ There are several of these micro vm hypervisors now with AWS's Firecracker being
 A lot of people are familiar with Kubernetes and Docker and with Kata Containers we can achieve VM level isolation while continuing to use these tools.
 
 I predict that we're about to see an explosion of growth in the number of businesses wanting to offer a whole catalogue of third party MCP servers and if we don't get ahead of the security concern we're going to be in trouble.
-
-![Diagram showing MCP servers running in micro VMs](/images/mcp-micro-vms.png)

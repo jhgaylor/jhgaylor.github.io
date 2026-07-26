@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts", "shitposts", "prompts"]
 title: "Making work more fun with Claude"
+description: "I got tired of Claude's default voice, so I wrote the prompt that unlocks THE CHAOS APE"
 permalink: /blog/posts/chaos-ape-claude/
 date: 2025-03-31
 ---

@@ -2,6 +2,7 @@
 layout: layouts/blog.html
 tags: ["posts", "shitposts", "prompts"]
 title: "Revolutionize Your Job Search: An AI-Powered Pipeline for Non-Coders"
+description: "Using Claude and an MCP server to surface companies worth applying to instead of scrolling job boards"
 permalink: /blog/posts/claude-mcp-job-search/
 date: 2025-04-03
 eleventyExcludeFromCollections: true

@@ -12,17 +12,19 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231d4ed8'/><text x='32' y='45' font-family='system-ui,sans-serif' font-size='32' font-weight='700' fill='%23ffffff' text-anchor='middle'>JG</text></svg>" />
 
     <!-- Open Graph / social preview -->
+    {%- assign ogImage = image | default: "/images/og-card.jpg?v=3" -%}
+    {%- assign ogImageAlt = image_alt | default: "Jake Gaylor" -%}
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Jake Gaylor" />
     <meta property="og:url" content="https://jakegaylor.com{{ page.url }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ pageDescription }}" />
-    <meta property="og:image" content="https://jakegaylor.com/images/og-card.jpg?v=3" />
-    <meta property="og:image:alt" content="Jake Gaylor" />
+    <meta property="og:image" content="https://jakegaylor.com{{ ogImage }}" />
+    <meta property="og:image:alt" content="{{ ogImageAlt }}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ pageTitle }}" />
     <meta name="twitter:description" content="{{ pageDescription }}" />
-    <meta name="twitter:image" content="https://jakegaylor.com/images/og-card.jpg?v=3" />
+    <meta name="twitter:image" content="https://jakegaylor.com{{ ogImage }}" />
 
     <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

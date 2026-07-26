@@ -20,6 +20,9 @@ layout: layouts/main.html
 
 <!-- Blog Content -->
 <main class="container mx-auto px-6 py-12">
+    {% if image %}
+    <img src="{{ image }}" alt="{{ image_alt | default: '' }}" class="block max-w-3xl w-full mx-auto mb-8 rounded-lg shadow-lg" />
+    {% endif %}
     <article class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-12 blog-content">
         {{ content }}
     </article>
