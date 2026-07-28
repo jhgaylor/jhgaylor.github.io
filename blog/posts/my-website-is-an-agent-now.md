@@ -16,4 +16,4 @@ The build was small. The official [JS SDK](https://github.com/a2aproject/a2a-js)
 
 The implication I actually care about is the hiring flow. Sourcing tools are already agents; the awkward part of the pipeline is that everything they read was written for humans. A card at a well-known URL flips that. When recruiter-side agents start crawling for them, the first screen stops being a human skimming a PDF and becomes their agent interviewing mine, asking pointed questions about Kubernetes or agent orchestration and getting grounded answers back at three in the morning. The people who are addressable that way get evaluated first. It's the same bet `llms.txt` was two years ago, an afternoon of work wagered on where the consumers of your professional identity are moving, except this time the consumer can ask follow-up questions.
 
-Point any A2A client at `https://ai.jakegaylor.com` and ask it something. If it's worth a conversation, start your message with `CONTACT:` and my agent will make sure it finds me.
+Point any A2A client at `https://ai.jakegaylor.com` and ask it something.
