@@ -12,7 +12,7 @@ A new kind of computer showed up over the last couple of years, and we're callin
 
 ## What you're actually operating
 
-What happened is that the workload changed shape. For fifteen years the unit of cloud compute was the request, a few hundred milliseconds of stateless work for a human who is still watching the spinner, and we built our platforms, autoscalers, and pricing models around it. An agent moves into its computer. It installs tools, writes files, kicks off long jobs, sits parked while the model thinks or a person sleeps, and expects its half-finished work to be exactly where it left it when the next message lands.
+What happened is that the workload changed shape. For more than twenty years the unit of cloud compute was the request, a few hundred milliseconds of stateless work for a human who is still watching the spinner, and we built our platforms, autoscalers, and pricing models around it. An agent moves into its computer. It installs tools, writes files, kicks off long jobs, sits parked while the model thinks or a person sleeps, and expects its half-finished work to be exactly where it left it when the next message lands.
 
 Nobody gets just one, either. A person burns through dozens of agents in a working day, parks most of them mid-task, and reopens a conversation from three weeks ago expecting the terminal, the installed tools, and the working tree to be right where everything was left. Multiply that by a team and you're operating thousands of these computers, nearly all of them asleep at any given moment.
 
