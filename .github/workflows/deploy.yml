@@ -45,6 +45,9 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: '_site'  # Output directory for 11ty
+          # .well-known/agent-card.json is a dot-path; the action drops
+          # hidden files unless told otherwise.
+          include-hidden-files: true
 
   deploy:
     needs: build
