@@ -8,22 +8,13 @@ permalink: /blog/posts/new-kind-of-computer/
 date: 2026-07-28
 ---
 
-Here are four product descriptions with the vendor names removed.
-
-* A persistent Linux computer that pauses when idle, checkpoints its whole filesystem in about 300ms, and wakes when a request hits its URL.
-* An execution layer for agents where sandboxes persist by default and the filesystem snapshots itself.
-* A sandbox that spins up in under 90 milliseconds, stays around indefinitely for persistent agents, and resumes any workflow from a saved snapshot.
-* A managed microVM that suspends when idle and resumes with its RAM intact.
-
-Can you tell which one is Fly's Sprites, which is Vercel Sandbox, which is Daytona, and which is AWS Lambda MicroVMs? They're in that order. All four shipped within about eighteen months of each other, from teams that were not talking to each other, and the feature lists converged anyway. When that many vendors independently arrive at the same spec, it seems to me the spec is describing a primitive.
-
-The public conversation about these products is cold start benchmarks and per-vCPU pricing tables, which makes sense if the CPU time is a commodity. But the vCPUs aren't all the same, because the platforms they run on aren't the same. What you're actually buying is a suspendable, individually addressable, state-preserving computer that spends most of its life idle, and no container platform was ever pointed at that spec.
-
-What happened is that the workload changed shape. For fifteen years the unit of cloud compute was the request, a few hundred milliseconds of stateless work for a human who is still watching the spinner, and we built our platforms, autoscalers, and pricing models around it. An agent session is two workloads. The model half, the messages and the token generation, runs on someone else's GPUs and is not your problem. The other half is a computer the agent moves into. It installs tools, writes files, kicks off long jobs, sits parked while the model thinks or a person sleeps, and expects its half-finished work to be exactly where it left it when the next message lands. That computer is what these platforms sell, and it behaves nothing like a request.
+A new kind of computer showed up over the last couple of years and it still doesn't have a name. I've been calling it the agent's computer. It suspends when idle, wakes on demand, keeps its state, and answers to its own name, and it's what Fly sells as Sprites, Vercel as Vercel Sandbox, Daytona as its sandboxes, and AWS as Lambda MicroVMs. The industry filed the whole category under sandboxes and moved on to benchmarking cold starts. Nobody filed the operational discipline for running these things anywhere, because it doesn't exist yet.
 
 ## Four assumptions broke at once
 
-The agent's computer is a long-lived, mostly idle, stateful, individually addressable process running code nobody reviewed. A Pod is none of those things, and each mismatch shows up as a feature on the new primitive.
+What happened is that the workload changed shape. For fifteen years the unit of cloud compute was the request, a few hundred milliseconds of stateless work for a human who is still watching the spinner, and we built our platforms, autoscalers, and pricing models around it. An agent session is two workloads. The model half, the messages and the token generation, runs on someone else's GPUs and is not your problem. The other half is a computer the agent moves into. It installs tools, writes files, kicks off long jobs, sits parked while the model thinks or a person sleeps, and expects its half-finished work to be exactly where it left it when the next message lands.
+
+That computer is the primitive. It's a long-lived, mostly idle, stateful, individually addressable process running code nobody reviewed, and a Pod is none of those things. Each mismatch shows up as a feature on the new platforms.
 
 Idle first. An agent spends most of its wall clock blocked, waiting on token generation, a tool call, or a human who wandered off. A Pod holds its full memory reservation through all of it. Google's experimental [Agent Substrate](https://github.com/agent-substrate/substrate) starts its whole design from that duty cycle, mapping a large set of actors onto a small pool of ready workers because agent sessions sit quiet most of the time, and its demo multiplexes about 250 stateful sessions across 8 pods. [KubeMicroVM](https://github.com/codriverlabs/KubeMicroVM), a Kubernetes operator that wraps Lambda MicroVMs in CRDs, takes the other route and pushes the idle cost down to AWS with an idle timeout on the resource itself.
 
@@ -35,7 +26,7 @@ Then there's what runs inside. Namespaces and cgroups were never a security boun
 
 ## The primitive shipped before the discipline
 
-We spent ten years building an operational discipline around the stateless container. Identity, egress, observability, capacity planning, cost attribution, blast radius. Almost none of it transfers to a workload that has no request boundary and keeps its state in RAM, and the comparison posts cover none of this.
+The public conversation about these products is cold start benchmarks and per-vCPU pricing tables, which makes sense if the CPU time is a commodity. But the vCPUs aren't all the same, because the platforms they run on aren't the same, and the differences live exactly where the comparison posts stop. We spent ten years building an operational discipline around the stateless container. Identity, egress, observability, capacity planning, cost attribution, blast radius. Almost none of it transfers to a workload that has no request boundary and keeps its state in RAM.
 
 Every platform on the list answers how you get into the sandbox. None of them answers how the thing running inside proves who it is to anyone else. Sprites ship an allow and deny list of domains enforced at the network layer, which is a firewall. KubeMicroVM runs a TokenReview and a SubjectAccessReview before it will mint a token for a VM, then refreshes those tokens into an in-memory volume inside the sandbox, which is real workload identity for the caller. The agent's own outbound identity, the sandbox proving to a third party API what it is and who it acts for, stays open on every product in the category. I work on agent identity for a living, so discount my emphasis however you like, the gap is checkable in the docs.
 
@@ -63,6 +54,15 @@ Understand snapshot boot, because it moved image build time. KubeMicroVM pays 2 
 
 And learn workload identity for non-human callers. [SPIFFE](https://spiffe.io), token exchange, short-lived credentials injected across a trust boundary. It's the least mature of the five and it's where the open problem in this whole category lives.
 
-## The curve looks familiar
+## The convergence is the proof
+
+If you're not convinced this is a primitive rather than a pile of products, here are four product descriptions with the vendor names removed.
+
+* A persistent Linux computer that pauses when idle, checkpoints its whole filesystem in about 300ms, and wakes when a request hits its URL.
+* An execution layer for agents where sandboxes persist by default and the filesystem snapshots itself.
+* A sandbox that spins up in under 90 milliseconds, stays around indefinitely for persistent agents, and resumes any workflow from a saved snapshot.
+* A managed microVM that suspends when idle and resumes with its RAM intact.
+
+Can you tell which one is Sprites, which is Vercel Sandbox, which is Daytona, and which is Lambda MicroVMs? They're in that order. All four shipped within about eighteen months of each other, from teams that were not talking to each other, and the feature lists converged anyway. When that many vendors independently arrive at the same spec, it seems to me the spec is describing a primitive.
 
 I was building Kubernetes clusters on vSphere with CoreOS and fleet in the summer of 2015, right as 1.0 shipped. The primitive worked then too. The discipline took another five years of postmortems. This new computer is at the same spot on that curve, and the fastest way to feel it is direct. Spin one up, suspend it mid-session, restore it, and count how many of your assumptions come back broken.
