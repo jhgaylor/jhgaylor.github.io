@@ -8,7 +8,7 @@ permalink: /blog/posts/new-kind-of-computer/
 date: 2026-07-28
 ---
 
-A new kind of computer showed up over the last couple of years and it still doesn't have a name. I've been calling it the agent's computer. It suspends when idle, wakes on demand, keeps its state, and answers to its own name, and it's what Fly sells as Sprites, Vercel as Vercel Sandbox, Daytona as its sandboxes, and AWS as Lambda MicroVMs. The industry filed the whole category under sandboxes and moved on to benchmarking cold starts. Nobody filed the operational discipline for running these things anywhere, because it doesn't exist yet.
+A new kind of computer showed up over the last couple of years, and we're calling the primitive an agent sandbox. It suspends when idle, wakes on demand, keeps its state, and answers to its own name. Fly sells one as Sprites, Vercel as Vercel Sandbox, Daytona as its sandboxes, and AWS as Lambda MicroVMs. This is a new class of software to operate. A lot of infrastructure people need to skill up on it, and the operational discipline for running it still has to be built.
 
 ## Four assumptions broke at once
 
