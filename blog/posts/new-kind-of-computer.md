@@ -50,7 +50,7 @@ Start with checkpoint and restore mechanics, [CRIU](https://criu.org) on plain L
 
 Then place [gVisor](https://gvisor.dev) and [Firecracker](https://firecracker-microvm.github.io) on the isolation and density curve. One intercepts syscalls with a userspace kernel and pays a compatibility tax, the other boots a real kernel in a hardware-isolated VM and pays in memory per guest. Whatever platform you buy is built on one of the two, and its tradeoff becomes yours.
 
-Treat egress policy as a first-class config surface. When the workload is untrusted by construction, the domain allow list is where exfiltration defense lives. [Sprites](https://sprites.dev) ships one as a headline feature, and new rules push over the API while the sandbox runs, dropping connections to newly blocked domains without a restart. Your NetworkPolicy instincts are correct, they just point at a new enforcement point now.
+Treat egress policy as a first-class config surface. When the workload is untrusted by construction, the domain allow list is where exfiltration defense lives. [Sprites](https://sprites.dev) ships one as a headline feature, and new rules push over the API while the sandbox runs, dropping connections to newly blocked domains without a restart. Your firewall instincts are correct, they just point at a new enforcement point now.
 
 Understand snapshot boot, because it moved image build time. KubeMicroVM pays 2 to 4 minutes building an environment once, then launches clones from the snapshot. That kills cold starts and quietly breaks your patching story, since a snapshot is a frozen root filesystem that never picks up your base image rebuilds.
 
