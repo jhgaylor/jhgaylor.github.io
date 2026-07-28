@@ -32,7 +32,7 @@ The public conversation about these products is cold start benchmarks and per-vC
 
 ### Machines that belong to users
 
-I'm the CTO of Ravi, which sells identity for agents, so I'm talking my own book in this section.
+I helped build Ravi, which sells identity for agents, so I know this gap up close.
 
 Issuing machine credentials is not the hard part, the container era solved that for the workloads a platform team deploys. The new part is that users need them in bulk. A developer used to hold machine credentials for one laptop and that was the whole story. The same developer now parks dozens of sandboxes a week, each calling third party APIs on their behalf, each needing a credential that says what it is and who it acts for, minted at session start and revocable one sandbox at a time. A decade of identity tooling assumed machines belong to the platform, and these machines belong to users.
 
