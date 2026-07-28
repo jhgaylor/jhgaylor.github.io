@@ -3,7 +3,7 @@ layout: layouts/blog.html
 tags: ["posts"]
 title: "We built a new kind of computer and called it a sandbox"
 og_image: /images/og/new-kind-of-computer.jpg
-description: "Fly, Vercel, Google, and AWS independently shipped the same agent-shaped primitive, and the operational discipline around it doesn't exist yet"
+description: "Fly, Vercel, Daytona, and AWS independently shipped the same agent-shaped primitive, and the operational discipline around it doesn't exist yet"
 permalink: /blog/posts/new-kind-of-computer/
 date: 2026-07-28
 ---
@@ -12,10 +12,10 @@ Here are four product descriptions with the vendor names removed.
 
 * A persistent Linux computer that pauses when idle, checkpoints its whole filesystem in about 300ms, and wakes when a request hits its URL.
 * An execution layer for agents where sandboxes persist by default and the filesystem snapshots itself.
-* A control plane that packs about 250 stateful sessions onto 8 pods by freezing whichever ones go quiet.
+* A sandbox that spins up in under 90 milliseconds, stays around indefinitely for persistent agents, and resumes any workflow from a saved snapshot.
 * A managed microVM that suspends when idle and resumes with its RAM intact.
 
-Can you tell which one is Fly's Sprites, which is Vercel Sandbox, which is Google's [Agent Substrate](https://github.com/agent-substrate/substrate), and which is AWS Lambda MicroVMs? They're in that order. All four shipped within about eighteen months of each other, from teams that were not talking to each other, and the feature lists converged anyway. When that many vendors independently arrive at the same spec, it seems to me the spec is describing a primitive.
+Can you tell which one is Fly's Sprites, which is Vercel Sandbox, which is Daytona, and which is AWS Lambda MicroVMs? They're in that order. All four shipped within about eighteen months of each other, from teams that were not talking to each other, and the feature lists converged anyway. When that many vendors independently arrive at the same spec, it seems to me the spec is describing a primitive.
 
 The public conversation about these products is cold start benchmarks and per-vCPU pricing tables, which makes sense if the CPU time is a commodity. But the vCPUs aren't all the same, because the platforms they run on aren't the same. What you're actually buying is a suspendable, individually addressable, state-preserving computer that spends most of its life idle, and no container platform was ever pointed at that spec.
 
@@ -23,7 +23,7 @@ The public conversation about these products is cold start benchmarks and per-vC
 
 An agent session is a long-lived, mostly idle, stateful, individually addressable process running code nobody reviewed. A Pod is none of those things, and each mismatch shows up as a feature on the new primitive.
 
-Idle first. An agent spends most of its wall clock blocked, waiting on token generation, a tool call, or a human who wandered off. A Pod holds its full memory reservation through all of it. Substrate's whole design starts from that duty cycle, mapping a large set of actors onto a small pool of ready workers because agent sessions sit quiet most of the time, and 250 sessions on 8 pods is the multiplexing that falls out. [KubeMicroVM](https://github.com/codriverlabs/KubeMicroVM), a Kubernetes operator that wraps Lambda MicroVMs in CRDs, takes the other route and pushes the idle cost down to AWS with an idle timeout on the resource itself.
+Idle first. An agent spends most of its wall clock blocked, waiting on token generation, a tool call, or a human who wandered off. A Pod holds its full memory reservation through all of it. Google's experimental [Agent Substrate](https://github.com/agent-substrate/substrate) starts its whole design from that duty cycle, mapping a large set of actors onto a small pool of ready workers because agent sessions sit quiet most of the time, and its demo multiplexes about 250 stateful sessions across 8 pods. [KubeMicroVM](https://github.com/codriverlabs/KubeMicroVM), a Kubernetes operator that wraps Lambda MicroVMs in CRDs, takes the other route and pushes the idle cost down to AWS with an idle timeout on the resource itself.
 
 The state that matters in one of these sessions is the process. Terminal buffers, shell history, a half-written file the agent plans to come back to. You can't drain that onto another node the way you reschedule a stateless replica, so everyone landed on checkpoint and restore of the live workload. Substrate drives runsc checkpoints under gVisor. The microVM camp snapshots the whole machine.
 
