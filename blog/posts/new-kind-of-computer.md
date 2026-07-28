@@ -32,7 +32,7 @@ The public conversation about these products is cold start benchmarks and per-vC
 
 Issuing machine credentials is not the hard part, the container era solved that for the workloads a platform team deploys. The new part is that users need them in bulk. A developer used to hold machine credentials for one laptop and that was the whole story. The same developer now parks dozens of sandboxes a week, each calling third party APIs on their behalf, each needing a credential that says what it is and who it acts for, minted at session start and revocable one sandbox at a time. A decade of identity tooling assumed machines belong to the platform, and these machines belong to users.
 
-Nobody has a story for observability across a suspend boundary. A session gets frozen for six hours, restored on a different host, and keeps going. Think about the trace that was open when it froze, the metrics that assume monotonic time, the log stream that now has a gap the length of a workday. Ten years of tooling assumes a process either runs or dies.
+Few teams have a story for observability across a suspend boundary, and everyone operating these will need one. A session gets frozen for six hours, restored on a different host, and keeps going. Think about the trace that was open when it froze, the metrics that assume monotonic time, the log stream that now has a gap the length of a workday. Ten years of tooling assumes a process either runs or dies.
 
 Capacity planning loses its instruments too. There's no request to count, so RPS and p99 mean nothing. Sprites' own pricing example is a four hour session that bursts to 8 CPUs and averages 30 percent of 2. That's a pricing example on the outside and a capacity planning nightmare on the inside.
 
