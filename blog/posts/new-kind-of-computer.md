@@ -42,11 +42,11 @@ Few teams have a story for observability across a suspend boundary, and everyone
 
 Capacity planning loses its instruments too. There's no request to count, so RPS and p99 mean nothing. Sprites' own pricing example is a four hour session that bursts to 8 CPUs and averages 30 percent of 2. That's a pricing example on the outside and a capacity planning nightmare on the inside.
 
-And the ceilings sit lower than the pitch decks suggest. KubeMicroVM published its own load test, which found a hard account limit of roughly 161 concurrent running MicroVMs in us-east-1 and creation throughput of 3 to 4 VMs per second. The density story that motivates the whole category hit an account quota before it hit anything the operator controls.
+And the ceilings sit lower than the pitch decks suggest. AWS caps the total memory across all your MicroVMs per region, running and suspended alike, so the parked sessions that make the economics work count against the same quota as the live ones. The default is adjustable by support ticket, and it still bites. KubeMicroVM's own load test hit it at about 161 concurrent VMs in us-east-1, with creation throughput of 3 to 4 VMs per second, before touching anything the operator controls.
 
 ## Where Kubernetes lands
 
-Two answers exist in the wild. KubeMicroVM keeps Kubernetes as the control plane and outsources the compute to AWS, inheriting AWS's ceilings, that 161 VM quota included. Substrate keeps Kubernetes underneath as the machine layer and takes it out of the critical path, running session scheduling through its own gRPC control plane, because going through kube-scheduler costs seconds and a human is waiting on the other end.
+Two answers exist in the wild. KubeMicroVM keeps Kubernetes as the control plane and outsources the compute to AWS, inheriting AWS's ceilings, that memory quota included. Substrate keeps Kubernetes underneath as the machine layer and takes it out of the critical path, running session scheduling through its own gRPC control plane, because going through kube-scheduler costs seconds and a human is waiting on the other end.
 
 My money is on the second shape. The economics of this category are oversubscription, and you can't oversubscribe a primitive someone else meters per instance. The commercial products already point this way. Sprites packs Firecracker microVMs on Fly's own orchestration, and nothing else in the intro lineup advertises Kubernetes anywhere near the session path. Kubernetes gets demoted a layer rather than displaced, from the thing that schedules your workload to the thing that manages the machines your real scheduler packs sessions onto. VMs took the same demotion when containers arrived.
 
