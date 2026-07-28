@@ -44,18 +44,6 @@ Two answers exist in the wild. KubeMicroVM keeps Kubernetes as the control plane
 
 My money is on the second shape. The economics of this category are oversubscription, and you can't oversubscribe a primitive someone else meters per instance. Kubernetes gets demoted a layer rather than displaced, from the thing that schedules your workload to the thing that manages the machines your real scheduler packs sessions onto. VMs took the same demotion when containers arrived.
 
-## What to go learn
-
-Start with checkpoint and restore mechanics, [CRIU](https://criu.org) on plain Linux and [runsc checkpoints](https://gvisor.dev/docs/user_guide/checkpoint_restore/) under gVisor. Notice what fails to survive a restore: open TCP connections, GPU state, anything welded to host hardware. When a resumed session comes back subtly broken, that list tells you whether you're looking at a bug or at physics.
-
-Then place [gVisor](https://gvisor.dev) and [Firecracker](https://firecracker-microvm.github.io) on the isolation and density curve. One intercepts syscalls with a userspace kernel and pays a compatibility tax, the other boots a real kernel in a hardware-isolated VM and pays in memory per guest. Whatever platform you buy is built on one of the two, and its tradeoff becomes yours.
-
-Treat egress policy as a first-class config surface. When the workload is untrusted by construction, the domain allow list is where exfiltration defense lives. [Sprites](https://sprites.dev) ships one as a headline feature, and new rules push over the API while the sandbox runs, dropping connections to newly blocked domains without a restart. Your firewall instincts are correct, they just point at a new enforcement point now.
-
-Understand snapshot boot, because it moved image build time. KubeMicroVM pays 2 to 4 minutes building an environment once, then launches clones from the snapshot. That kills cold starts and quietly breaks your patching story, since a snapshot is a frozen root filesystem that never picks up your base image rebuilds.
-
-And learn workload identity for non-human callers. [SPIFFE](https://spiffe.io), token exchange, short-lived credentials injected across a trust boundary. It's the least mature of the five and it's where the open problem in this whole category lives.
-
 ## The convergence is the proof
 
 If you're not convinced this is a primitive rather than a pile of products, here are four product descriptions with the vendor names removed.
