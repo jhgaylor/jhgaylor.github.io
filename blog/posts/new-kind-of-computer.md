@@ -24,7 +24,7 @@ Its state is the process itself. Terminal buffers, shell history, a half-written
 
 Each one is a named individual. You route to agent-session-1 and nothing else will do, which is why Substrate hands every actor its own hostname and KubeMicroVM's example resource carries a per-VM endpoint and a per-VM token. Fungibility is gone, and with it the whole mental stack of load balancers, replica counts, and Service selectors that don't care which copy answers.
 
-And it runs code nobody reviewed. Namespaces and cgroups were never a security boundary, which stayed a tolerable fiction while everything in the cluster came through your CI, and it stops being tolerable when the process executes whatever the model just wrote. I made this argument about [MCP servers in April 2025](/blog/posts/micro-vms/), and agents settled it. A kernel boundary is mandatory here, and the choice between gVisor's userspace kernel and full hardware virtualization is the defining architectural bet of every platform in the category. Building the image yourself buys you nothing, since the interesting code arrives at runtime.
+And it runs code nobody reviewed. Namespaces and cgroups were never a security boundary, which stayed a tolerable fiction while everything in the cluster came through your CI, and it stops being tolerable when the process executes whatever the model just wrote. I made this argument about [MCP servers in April 2025](/blog/posts/micro-vms/), and agents settled it. A kernel boundary is mandatory here, and the choice between gVisor's userspace kernel and full hardware virtualization is where the platforms actually differ. Building the image yourself buys you nothing, since the interesting code arrives at runtime.
 
 ## The primitive shipped before the discipline
 
