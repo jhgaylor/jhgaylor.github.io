@@ -44,7 +44,7 @@ Two answers exist in the wild. KubeMicroVM keeps Kubernetes as the control plane
 
 My money is on the second shape. The economics of this category are oversubscription, and you can't oversubscribe a primitive someone else meters per instance. The commercial products already point this way. Sprites packs Firecracker microVMs on Fly's own orchestration, and nothing else in the intro lineup advertises Kubernetes anywhere near the session path. Kubernetes gets demoted a layer rather than displaced, from the thing that schedules your workload to the thing that manages the machines your real scheduler packs sessions onto. VMs took the same demotion when containers arrived.
 
-## The convergence is the proof
+## Don't take my word for it
 
 If you're not convinced this is a primitive rather than a pile of products, here are four product descriptions with the vendor names removed.
 
