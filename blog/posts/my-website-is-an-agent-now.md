@@ -5,7 +5,7 @@ title: "My website is an agent now"
 og_image: /images/og/my-website-is-an-agent-now.jpg
 description: "ai.jakegaylor.com speaks A2A 1.0 — a recruiter's agent can now discover my agent, interview it about my experience, and email me, with no human configuring anything"
 permalink: /blog/posts/my-website-is-an-agent-now/
-date: 2026-07-28
+date: 2026-07-29
 ---
 
 The [Agent2Agent protocol](https://a2a-protocol.org/) hit 1.0 under the Linux Foundation back in March, and the official JS SDK's stable 1.0 landed this month, which is the part that matters if you want to ship one in an afternoon. As of this week, [ai.jakegaylor.com](https://ai.jakegaylor.com) implements it. One unauthenticated GET to [`/.well-known/agent-card.json`](https://ai.jakegaylor.com/.well-known/agent-card.json) returns a card describing an agent that represents me, and a JSON-RPC endpoint behind it will answer questions about my experience, explain how to connect to my MCP server, or deliver a message to my inbox.
