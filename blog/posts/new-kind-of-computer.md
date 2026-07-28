@@ -8,9 +8,14 @@ permalink: /blog/posts/new-kind-of-computer/
 date: 2026-07-28
 ---
 
-Four product descriptions, vendor names removed. A persistent Linux computer that pauses when idle, checkpoints its whole filesystem in about 300ms, and wakes when a request hits its URL. An execution layer for agents where sandboxes persist by default and the filesystem snapshots itself. A control plane that packs about 250 stateful sessions onto 8 pods by freezing whichever ones go quiet. A managed microVM that suspends when idle and resumes with its RAM intact.
+Here are four product descriptions with the vendor names removed.
 
-Those are Fly's Sprites, Vercel Sandbox, [Agent Substrate](https://github.com/agent-substrate/substrate), and AWS Lambda MicroVMs. Substrate wears Google's standard disclaimer about not being an officially supported product while Google's own Agent Executor runtime builds on it, so I'm counting it as Google's entry. All four shipped within about eighteen months of each other, from teams that were not talking to each other, and the feature lists converged anyway. When that many vendors independently arrive at the same spec, the spec is describing a primitive.
+* A persistent Linux computer that pauses when idle, checkpoints its whole filesystem in about 300ms, and wakes when a request hits its URL.
+* An execution layer for agents where sandboxes persist by default and the filesystem snapshots itself.
+* A control plane that packs about 250 stateful sessions onto 8 pods by freezing whichever ones go quiet.
+* A managed microVM that suspends when idle and resumes with its RAM intact.
+
+Can you tell which one is Fly's Sprites, which is Vercel Sandbox, which is [Agent Substrate](https://github.com/agent-substrate/substrate), and which is AWS Lambda MicroVMs? They're in that order. Substrate wears Google's standard disclaimer about not being an officially supported product while Google's own Agent Executor runtime builds on it, so I'm counting it as Google's entry. All four shipped within about eighteen months of each other, from teams that were not talking to each other, and the feature lists converged anyway. When that many vendors independently arrive at the same spec, the spec is describing a primitive.
 
 The public conversation about these products is cold start benchmarks and per-vCPU pricing tables, which is the conversation you have when you think you're buying a commodity. The thing itself deserves a closer look. It's a suspendable, individually addressable, state-preserving computer that spends most of its life idle, and no container platform was ever pointed at that spec.
 
