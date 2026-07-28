@@ -16,7 +16,7 @@ What happened is that the workload changed shape. For more than twenty years the
 
 Nobody gets just one, either. A person burns through dozens of agents in a working day, parks most of them mid-task, and reopens a conversation from three weeks ago expecting the terminal, the installed tools, and the working tree to be right where everything was left. Multiply that by a team and you're operating thousands of these computers, nearly all of them asleep at any given moment.
 
-That computer is the primitive, a long-lived, mostly idle, stateful, individually addressable process running code nobody reviewed. Each of those properties changes how you operate it.
+That computer is the primitive, a long-lived, mostly idle, stateful, individually addressable process running code nobody reviewed.
 
 Its duty cycle is mostly idle. The machine sits parked while the model generates tokens, while a tool call runs somewhere else, and while the human wanders off for hours, so the economics of running it are suspension and oversubscription. That's why every platform leads with pause and resume. Google's experimental [Agent Substrate](https://github.com/agent-substrate/substrate) maps a large set of actors onto a small pool of ready workers, and its demo multiplexes about 250 stateful sessions across 8 pods. [KubeMicroVM](https://github.com/codriverlabs/KubeMicroVM), a Kubernetes operator that wraps Lambda MicroVMs in CRDs, takes the other route and pushes the parked time down to AWS with an idle timeout on the resource itself. Holding a full memory reservation around the clock is the cost structure this machine exists to escape.
 
