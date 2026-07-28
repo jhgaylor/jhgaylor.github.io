@@ -46,7 +46,7 @@ My money is on the second shape. The economics of this category are oversubscrip
 
 ## What to go learn
 
-Start with checkpoint and restore mechanics, [CRIU](https://criu.org) on plain Linux and [runsc checkpoints](https://gvisor.dev/docs/user_guide/checkpoint_restore/) under gVisor. The revealing part is what fails to survive a restore. Open TCP connections, GPU state, anything welded to host hardware. When a resumed session comes back subtly broken, that list tells you whether you're looking at a bug or at physics.
+Start with checkpoint and restore mechanics, [CRIU](https://criu.org) on plain Linux and [runsc checkpoints](https://gvisor.dev/docs/user_guide/checkpoint_restore/) under gVisor. Notice what fails to survive a restore: open TCP connections, GPU state, anything welded to host hardware. When a resumed session comes back subtly broken, that list tells you whether you're looking at a bug or at physics.
 
 Then place [gVisor](https://gvisor.dev) and [Firecracker](https://firecracker-microvm.github.io) on the isolation and density curve. One intercepts syscalls with a userspace kernel and pays a compatibility tax, the other boots a real kernel in a hardware-isolated VM and pays in memory per guest. Whatever platform you buy is built on one of the two, and its tradeoff becomes yours.
 
