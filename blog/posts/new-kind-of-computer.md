@@ -19,6 +19,8 @@ Can you tell which one is Fly's Sprites, which is Vercel Sandbox, which is Dayto
 
 The public conversation about these products is cold start benchmarks and per-vCPU pricing tables, which makes sense if the CPU time is a commodity. But the vCPUs aren't all the same, because the platforms they run on aren't the same. What you're actually buying is a suspendable, individually addressable, state-preserving computer that spends most of its life idle, and no container platform was ever pointed at that spec.
 
+What happened is that the workload changed shape. For fifteen years the unit of cloud compute was the request, a few hundred milliseconds of stateless work for a human who is still watching the spinner, and we built our platforms, autoscalers, and pricing models around it. An agent moves in instead. It installs tools, writes files, kicks off long jobs, waits on a model or a person for minutes or hours, and expects its half-finished work to be exactly where it left it when it comes back. The unit of compute became the session, and a session behaves nothing like a request.
+
 ## Four assumptions broke at once
 
 An agent session is a long-lived, mostly idle, stateful, individually addressable process running code nobody reviewed. A Pod is none of those things, and each mismatch shows up as a feature on the new primitive.
