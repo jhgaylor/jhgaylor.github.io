@@ -91,29 +91,43 @@
 } 
 
 /* Blog specific styles */
+/* Shared reading column: header, hero image, and article align to it.
+   38rem ≈ 68ch at the 18px body size. */
+.blog-measure {
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .blog-content {
+    font-family: Charter, Georgia, 'Times New Roman', serif;
     font-size: 1.125rem;
-    line-height: 1.75;
+    line-height: 1.7;
+    color: #1f2937;
 }
 
 .blog-content p {
     margin-bottom: 1.5rem;
 }
 
+.blog-content h2,
+.blog-content h3 {
+    font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: #111827;
+}
+
 .blog-content h2 {
-    font-size: 1.875rem;
-    font-weight: bold;
+    font-size: 1.5rem;
     margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
-    color: #1e40af;
+    margin-bottom: 1rem;
 }
 
 .blog-content h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.25rem;
     margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #1e40af;
+    margin-bottom: 0.75rem;
 }
 
 .blog-content ul, .blog-content ol {

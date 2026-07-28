@@ -1,29 +1,26 @@
 ---
 layout: layouts/main.html
 ---
-<header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-    <div class="container mx-auto px-6 py-16">
-        <nav class="mb-8">
-            <a href="/blog/" class="text-white hover:text-blue-200 transition-colors">
+<header class="container mx-auto px-6 pt-12 pb-2">
+    <div class="blog-measure">
+        <nav class="mb-10">
+            <a href="/blog/" class="text-sm text-gray-500 hover:text-blue-700 transition-colors">
                 <i class="fas fa-arrow-left mr-2"></i>Back to Blog
             </a>
         </nav>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-gray-900 mb-3">
             {{ title }}
         </h1>
-        <div class="flex items-center text-blue-100">
-            <i class="far fa-calendar-alt mr-2"></i>
-            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %d, %Y" }}</time>
-        </div>
+        <time class="text-sm text-gray-500" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %d, %Y" }}</time>
     </div>
 </header>
 
 <!-- Blog Content -->
-<main class="container mx-auto px-6 py-12">
+<main class="container mx-auto px-6 py-10">
     {% if image %}
-    <img src="{{ image }}" alt="{{ image_alt | default: '' }}" class="block max-w-3xl w-full mx-auto mb-8 rounded-lg shadow-lg" />
+    <img src="{{ image }}" alt="{{ image_alt | default: '' }}" class="blog-measure block w-full mb-10 rounded-lg" />
     {% endif %}
-    <article class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-12 blog-content">
+    <article class="blog-measure blog-content">
         {{ content }}
     </article>
 </main>
