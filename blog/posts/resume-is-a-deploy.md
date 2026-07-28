@@ -1,6 +1,7 @@
 ---
 layout: layouts/blog.html
 tags: ["posts"]
+eleventyExcludeFromCollections: true
 title: "Resume is a deploy"
 og_image: /images/og/resume-is-a-deploy.jpg
 description: "Accessible Ops applied to the platform under an agent sandbox fleet, where the checkpoint is an artifact and the restore path is an unguarded deploy"
