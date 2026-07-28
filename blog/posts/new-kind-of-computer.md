@@ -12,7 +12,7 @@ A new kind of computer showed up over the last couple of years, and we're callin
 
 ## What you're actually operating
 
-What happened is that the workload changed shape. For fifteen years the unit of cloud compute was the request, a few hundred milliseconds of stateless work for a human who is still watching the spinner, and we built our platforms, autoscalers, and pricing models around it. An agent session is two workloads. The model half, the messages and the token generation, runs on someone else's GPUs and is not your problem. The other half is a computer the agent moves into. It installs tools, writes files, kicks off long jobs, sits parked while the model thinks or a person sleeps, and expects its half-finished work to be exactly where it left it when the next message lands.
+What happened is that the workload changed shape. For fifteen years the unit of cloud compute was the request, a few hundred milliseconds of stateless work for a human who is still watching the spinner, and we built our platforms, autoscalers, and pricing models around it. An agent moves into its computer. It installs tools, writes files, kicks off long jobs, sits parked while the model thinks or a person sleeps, and expects its half-finished work to be exactly where it left it when the next message lands.
 
 That computer is the primitive, a long-lived, mostly idle, stateful, individually addressable process running code nobody reviewed. Each of those properties changes how you operate it, and each one retires an instinct that served you well with containers.
 
