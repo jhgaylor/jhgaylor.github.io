@@ -68,6 +68,16 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy({ "_assets/CNAME": "./CNAME" });
 
+    // A2A discovery from the root domain. Static snapshot of the card served
+    // live at ai.jakegaylor.com/.well-known/agent-card.json — the interface
+    // URLs inside point at ai.jakegaylor.com, so agents that check the
+    // canonical domain first still find their way to the real endpoint.
+    // Static means v1.0 shape only; version negotiation for legacy v0.3
+    // clients happens at ai.jakegaylor.com. Refresh with:
+    //   curl -s https://ai.jakegaylor.com/.well-known/agent-card.json \
+    //     -H 'A2A-Version: 1.0' > _assets/well-known/agent-card.json
+    eleventyConfig.addPassthroughCopy({ "_assets/well-known": ".well-known" });
+
     eleventyConfig.addPassthroughCopy({ "resume.json": "./resume.json" });
 
     eleventyConfig.addPassthroughCopy({ "admin": "admin" });

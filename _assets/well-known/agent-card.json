@@ -1,0 +1,104 @@
+{
+    "name": "Jake Gaylor",
+    "description": "Agent representing Jake Gaylor, a software engineer (platform engineering, Kubernetes, developer tooling). Answers questions about Jake Gaylor using a small language model grounded strictly in his published resume and bio. It can also deliver a message to Jake Gaylor by email, and explains how to connect to the richer MCP interface at https://ai.jakegaylor.com/mcp.",
+    "supportedInterfaces": [
+        {
+            "url": "https://ai.jakegaylor.com/a2a",
+            "protocolBinding": "JSONRPC",
+            "tenant": "",
+            "protocolVersion": "1.0"
+        },
+        {
+            "url": "https://ai.jakegaylor.com/a2a",
+            "protocolBinding": "JSONRPC",
+            "tenant": "",
+            "protocolVersion": "0.3"
+        }
+    ],
+    "provider": {
+        "organization": "Jake Gaylor",
+        "url": "https://jakegaylor.com"
+    },
+    "version": "1.3.0",
+    "documentationUrl": "https://ai.jakegaylor.com",
+    "capabilities": {
+        "streaming": true,
+        "pushNotifications": false,
+        "extensions": [],
+        "extendedAgentCard": false
+    },
+    "securitySchemes": {},
+    "securityRequirements": [],
+    "defaultInputModes": [
+        "text/plain"
+    ],
+    "defaultOutputModes": [
+        "text/markdown",
+        "text/plain"
+    ],
+    "skills": [
+        {
+            "id": "about-jake",
+            "name": "About Jake Gaylor",
+            "description": "Answers any question about Jake Gaylor's experience, skills, and background, grounded in his resume and bio. Falls back to returning the complete resume as markdown if the answer cannot be generated.",
+            "tags": [
+                "resume",
+                "hiring",
+                "background",
+                "software-engineer"
+            ],
+            "examples": [
+                "Tell me about Jake Gaylor's work experience",
+                "What is Jake Gaylor's background with Kubernetes?"
+            ],
+            "inputModes": [
+                "text/plain"
+            ],
+            "outputModes": [
+                "text/markdown"
+            ],
+            "securityRequirements": []
+        },
+        {
+            "id": "connect-via-mcp",
+            "name": "Connect via MCP",
+            "description": "Returns instructions for connecting to Jake Gaylor's Model Context Protocol server, which exposes his resume, links, and contact tools to MCP-capable clients. Triggered by any message mentioning MCP.",
+            "tags": [
+                "mcp",
+                "integration",
+                "model-context-protocol"
+            ],
+            "examples": [
+                "How do I connect to Jake Gaylor's MCP server?"
+            ],
+            "inputModes": [
+                "text/plain"
+            ],
+            "outputModes": [
+                "text/markdown"
+            ],
+            "securityRequirements": []
+        },
+        {
+            "id": "contact-jake",
+            "name": "Contact Jake Gaylor",
+            "description": "Delivers a message to Jake Gaylor by email. Start the message text with \"CONTACT:\" and include the opportunity details plus a reply address so Jake Gaylor can respond.",
+            "tags": [
+                "contact",
+                "email",
+                "hiring"
+            ],
+            "examples": [
+                "CONTACT: We're hiring a staff platform engineer at Acme. Reach me at recruiter@acme.com"
+            ],
+            "inputModes": [
+                "text/plain"
+            ],
+            "outputModes": [
+                "text/plain"
+            ],
+            "securityRequirements": []
+        }
+    ],
+    "signatures": []
+}
