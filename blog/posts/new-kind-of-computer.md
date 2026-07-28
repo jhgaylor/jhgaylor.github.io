@@ -40,9 +40,9 @@ And the ceilings sit lower than the pitch decks suggest. KubeMicroVM published i
 
 ## Where Kubernetes lands
 
-Two answers exist in the wild. KubeMicroVM keeps Kubernetes as the control plane and outsources the compute to a managed AWS primitive, so it inherits AWS's ceiling, see the 161 VMs above. Substrate keeps Kubernetes underneath as the machine layer and takes it out of the critical path, running session scheduling through its own gRPC control plane, because going through kube-scheduler costs seconds and a human is waiting on the other end.
+Two answers exist in the wild. KubeMicroVM keeps Kubernetes as the control plane and outsources the compute to AWS, inheriting AWS's ceilings, that 161 VM quota included. Substrate keeps Kubernetes underneath as the machine layer and takes it out of the critical path, running session scheduling through its own gRPC control plane, because going through kube-scheduler costs seconds and a human is waiting on the other end.
 
-My money is on the second shape. The economics of this category are oversubscription, and you can't oversubscribe a primitive someone else meters per instance. Kubernetes gets demoted a layer rather than displaced, from the thing that schedules your workload to the thing that manages the machines your real scheduler packs sessions onto. VMs took the same demotion when containers arrived.
+My money is on the second shape. The economics of this category are oversubscription, and you can't oversubscribe a primitive someone else meters per instance. The commercial products already point this way. Sprites packs Firecracker microVMs on Fly's own orchestration, and nothing else in the intro lineup advertises Kubernetes anywhere near the session path. Kubernetes gets demoted a layer rather than displaced, from the thing that schedules your workload to the thing that manages the machines your real scheduler packs sessions onto. VMs took the same demotion when containers arrived.
 
 ## The convergence is the proof
 
