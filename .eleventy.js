@@ -31,6 +31,9 @@ function withRSS(eleventyConfig) {
 }
 
 export default function(eleventyConfig) {
+    // Claude Code session files; skill markdown contains Liquid-like syntax that breaks the build.
+    eleventyConfig.ignores.add(".claude/**");
+
     // /resume/ renders from the same resume.json the rest of the tooling consumes.
     eleventyConfig.addGlobalData("resume", () => JSON.parse(readFileSync("./resume.json", "utf8")));
 
