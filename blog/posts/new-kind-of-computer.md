@@ -8,7 +8,7 @@ permalink: /blog/posts/new-kind-of-computer/
 date: 2026-07-28
 ---
 
-A new kind of computer showed up over the last couple of years, and we're calling the primitive an agent sandbox. It suspends when idle, wakes on demand, keeps its state, and answers to its own name. Fly sells them as Sprites, Vercel as Vercel Sandbox, Daytona as its sandboxes, and AWS as Lambda MicroVMs. This is a new class of software to operate. A lot of infrastructure people need to skill up on it, and the operational discipline for running it still has to be built.
+A new kind of computer showed up over the last couple of years, and we're calling the primitive an agent sandbox. It suspends when idle, wakes on demand, keeps its state, and answers to its own name. Fly sells them as Sprites, Vercel as Vercel Sandbox, AWS as Lambda MicroVMs, and Daytona built its whole product around them. This is a new class of software to operate, and the operational discipline for running it still has to be built.
 
 ## What you're actually operating
 
@@ -30,7 +30,13 @@ And it runs code nobody reviewed. Namespaces and cgroups were never a security b
 
 The public conversation about these products is cold start benchmarks and per-vCPU pricing tables, which makes sense if the CPU time is a commodity. But the vCPUs aren't all the same, because the platforms they run on aren't the same. The differences start where the comparison posts stop. We spent ten years building an operational discipline around the stateless container. Identity, egress, observability, capacity planning, cost attribution, blast radius. The categories all still apply, but the tooling under each one leans on a request boundary or a disposable instance somewhere, and this workload has neither.
 
+### Machines that belong to users
+
+I'm the CTO of Ravi, which sells identity for agents, so I'm talking my own book in this section.
+
 Issuing machine credentials is not the hard part, the container era solved that for the workloads a platform team deploys. The new part is that users need them in bulk. A developer used to hold machine credentials for one laptop and that was the whole story. The same developer now parks dozens of sandboxes a week, each calling third party APIs on their behalf, each needing a credential that says what it is and who it acts for, minted at session start and revocable one sandbox at a time. A decade of identity tooling assumed machines belong to the platform, and these machines belong to users.
+
+### The gauges break too
 
 Few teams have a story for observability across a suspend boundary, and everyone operating these will need one. A session gets frozen for six hours, restored on a different host, and keeps going. Think about the trace that was open when it froze, the metrics that assume monotonic time, the log stream that now has a gap the length of a workday. Ten years of tooling assumes a process either runs or dies.
 
@@ -44,6 +50,8 @@ Two answers exist in the wild. KubeMicroVM keeps Kubernetes as the control plane
 
 My money is on the second shape. The economics of this category are oversubscription, and you can't oversubscribe a primitive someone else meters per instance. The commercial products already point this way. Sprites packs Firecracker microVMs on Fly's own orchestration, and nothing else in the intro lineup advertises Kubernetes anywhere near the session path. Kubernetes gets demoted a layer rather than displaced, from the thing that schedules your workload to the thing that manages the machines your real scheduler packs sessions onto. VMs took the same demotion when containers arrived.
 
+The strongest counter-case is enterprise BYOC. Buyers with compliance requirements want this running inside their own cloud account, and vendors are meeting them there. [Northflank](https://northflank.com/product/bring-your-own-cloud) sells self-serve BYOC that provisions Kubernetes clusters in your AWS, GCP, or Azure account and runs its sandboxes on top of them, keeping Kubernetes in the session path. [Runloop](https://www.runloop.ai/deploy-to-vpc) lands its own hypervisor and scheduler inside your VPC instead. BYOC settles where the machines live and which boundary the data stays inside, and both shapes can deliver that. The suspend economics don't move when the account changes hands, so my bet stays on the scheduler built to pack idle sessions, wherever it runs.
+
 ## Don't take my word for it
 
 If you're not convinced this is a primitive rather than a pile of products, here are four product descriptions with the vendor names removed.
@@ -53,6 +61,6 @@ If you're not convinced this is a primitive rather than a pile of products, here
 * A sandbox that spins up in under 90 milliseconds, stays around indefinitely for persistent agents, and resumes any workflow from a saved snapshot.
 * A managed microVM that suspends when idle and resumes with its RAM intact.
 
-Can you tell which one is Sprites, which is Vercel Sandbox, which is Daytona, and which is Lambda MicroVMs? They're in that order. All four shipped within about eighteen months of each other, from teams that were not talking to each other, and the feature lists converged anyway. When that many vendors independently arrive at the same spec, it seems to me the spec is describing a primitive.
+Can you tell which one is Sprites, which is Vercel Sandbox, which is Daytona, and which is Lambda MicroVMs? They're in that order. All four shipped within about eighteen months of each other, from teams that were not talking to each other, and the feature lists converged anyway. When that many vendors independently arrive at the same spec, it seems to me the spec is describing a primitive. The list runs longer than these four, too. E2B, Modal, and Cloudflare all sell their own take, pause and resume included, and every addition makes the convergence harder to dismiss.
 
 I was building Kubernetes clusters on vSphere with CoreOS and fleet in the summer of 2015, right as 1.0 shipped. The primitive worked then too. The discipline took another five years of postmortems. This new computer is at the same spot on that curve, and the fastest way to feel it is direct. Spin one up, suspend it mid-session, restore it, and count how many of your assumptions come back broken.
