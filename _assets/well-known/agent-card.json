@@ -60,6 +60,72 @@
             "securityRequirements": []
         },
         {
+            "id": "candidate-preferences",
+            "name": "Screening & Logistics",
+            "description": "Structured screening data as JSON: role types, level, location, relocation, remote preference, work authorization, compensation stance, availability, and machine-readable resume links (JSON Resume at https://jakegaylor.com/resume.json). Ask for \"preferences\" or \"screening data\".",
+            "tags": [
+                "screening",
+                "logistics",
+                "hiring",
+                "structured-data"
+            ],
+            "examples": [
+                "What are Jake Gaylor's preferences and screening logistics?"
+            ],
+            "inputModes": [
+                "text/plain"
+            ],
+            "outputModes": [
+                "application/json",
+                "text/markdown"
+            ],
+            "securityRequirements": []
+        },
+        {
+            "id": "schedule-intro-call",
+            "name": "Schedule an Intro Call",
+            "description": "Books a 30-minute intro call on Jake Gaylor's real calendar. Ask about availability to get open slots, then send `BOOK: <slot ISO time> | <your email> | <your name> | <optional note>`. Bookings are pending until Jake Gaylor confirms; the booker receives the outcome by email. Humans can book directly at the booking page returned with the slots.",
+            "tags": [
+                "scheduling",
+                "calendar",
+                "hiring",
+                "booking"
+            ],
+            "examples": [
+                "What is Jake Gaylor's availability this week?",
+                "BOOK: 2026-08-03T15:00:00.000Z | recruiter@acme.com | Jane Smith | Staff platform role"
+            ],
+            "inputModes": [
+                "text/plain"
+            ],
+            "outputModes": [
+                "application/json",
+                "text/markdown"
+            ],
+            "securityRequirements": []
+        },
+        {
+            "id": "assess-role-fit",
+            "name": "Assess Role Fit",
+            "description": "Send a job description (paste it directly or prefix with \"JD:\") and get an honest fit assessment grounded in Jake Gaylor's resume: a direct verdict, strengths with cited evidence, gaps named plainly, a logistics check against his screening data, and suggested interview questions. LLM-backed; if the model is unavailable it returns the resume and screening data for the caller to assess directly.",
+            "tags": [
+                "hiring",
+                "role-fit",
+                "assessment",
+                "job-description"
+            ],
+            "examples": [
+                "JD: Staff Platform Engineer at Acme \u2014 Kubernetes, AWS, GitOps. Requirements: ..."
+            ],
+            "inputModes": [
+                "text/plain"
+            ],
+            "outputModes": [
+                "text/markdown"
+            ],
+            "securityRequirements": []
+        },
+        {
             "id": "connect-via-mcp",
             "name": "Connect via MCP",
             "description": "Returns instructions for connecting to Jake Gaylor's Model Context Protocol server, which exposes his resume, links, and contact tools to MCP-capable clients. Triggered by any message mentioning MCP.",
@@ -100,5 +166,10 @@
             "securityRequirements": []
         }
     ],
-    "signatures": []
+    "signatures": [
+        {
+            "protected": "eyJhbGciOiJFUzI1NiIsImtpZCI6Impha2VnYXlsb3ItYTJhLTIwMjYiLCJ0eXAiOiJKT1NFIiwiamt1IjoiaHR0cHM6Ly9haS5qYWtlZ2F5bG9yLmNvbS8ud2VsbC1rbm93bi9qd2tzLmpzb24ifQ",
+            "signature": "KK1rOmG7EINzAo3anpNpjrzDslz45myyZ4n09ff1mECi1BLHcXmz3tU3hmtBas7tpAt9rdTwHndfHJ97dKZqpA"
+        }
+    ]
 }
