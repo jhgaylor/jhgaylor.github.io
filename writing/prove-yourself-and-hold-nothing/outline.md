@@ -1,64 +1,69 @@
-# Outline: Prove yourself and hold nothing (v2)
+# Outline v3: identity bootstraps everything
 
-Restructured 2026-07-29 per Jake's direction. No camps. The post is organized around the secret requirements of agentic systems, and the vendors show up as evidence that everyone is building pieces of one system. v1 outline (two-camps spine) is in git history.
+Reshaped 2026-07-29 after Jake's thesis pivot (see thinking.md). v1 (two camps) and v2 (three secret classes) are in git history.
 
-Working title "Prove yourself and hold nothing". Description candidate: "An agent sandbox needs an identity of its own, borrowed money, and borrowed access. Each wants a different kind of secret, and two of them barely want a secret at all."
+**Thesis, Jake's words:** secret management for agentic sandboxes relies on us somehow asserting the sandbox's identity so that we can then bootstrap secret management.
 
-Intended front matter when it ships: layout `layouts/blog.html`, tags `["posts"]`, og_image `/images/og/prove-yourself-and-hold-nothing.jpg` (needs generating), permalink `/blog/posts/prove-yourself-and-hold-nothing/`, date TBD. Folder renames to match slug at ship time if the title holds.
+**Thesis, essay form:** every mechanism for getting secrets to a sandbox safely (leases, proxies, scoped paths, budgets, per-sandbox revocation) is a policy decision, policy needs a subject, and "which sandbox is asking" is the input they all consume. Assert the identity and everything bootstraps from it. Skip it and you're injecting long-lived copies, which is secret zero wearing a control plane.
+
+Working title TBD. "Prove yourself and hold nothing" reads taxonomy-first and probably retires. Shapes to try at draft time: the bootstrap/name angle ("Secret management starts with the sandbox's name", "The sandbox has to say who it is first"). Description candidate: "Leases, proxies, scoped reads, and budgets are all policy, and policy needs a subject. Every secrets design for agent sandboxes bootstraps from asserting which sandbox is asking."
+
+Intended front matter when it ships: layout `layouts/blog.html`, tags `["posts"]`, og_image and permalink to match final title, date TBD. Folder renames at ship time.
 
 Links budget (each post linked exactly once):
 
 - new-kind-of-computer (intro)
-- how-i-use-infisical (identity section, Kubernetes auth already running)
-- secrets-have-names (closing, pays off the teased next step)
+- how-i-use-infisical (attestation precedent in my cluster)
+- secrets-have-names (closing payoff)
 
 ## 1. Intro (no header)
 
-The sandbox from the last post needs a credential inside the first few minutes of any real job. "The sandbox needs secrets" flattens three requirements with nothing in common. An identity of its own. Permission to spend money. Access to systems that hold real data. Each wants a different kind of secret, two barely want a secret at all.
+The sandbox from the last post needs a credential minutes into any real job. Every scheme for getting it one safely turns out to rest on the same capability, asserting which sandbox is asking. State the thesis plainly, then promise the tour: why injection fails, how assertion works, what it unlocks, who can do it today.
 
-## 2. Seen means compromised
+## 2. Secret zero (why the naive answer fails)
 
-- The rule that shapes everything. Unreviewed code, exfiltration is one HTTP request, so any secret the agent can read is one you should already be rotating.
-- The design question for every credential becomes what a stolen copy is worth. The rest of the post answers it per class.
+- Injection at create time rebuilds the vault inside the control plane. Long-lived copies, no per-sandbox revocation.
+- The bootstrap problem named: the credential that fetches secrets is itself a secret. Secret zero.
+- The escape is categorical, not incremental: the first credential must not be a secret at all. It must be an assertion someone else can verify.
 
-## 3. The identity is the only secret an agent should own
+## 3. Asserting the identity (the mechanism)
 
-- Ownership cut first. Minted for the agent, boots with it, dies with it. Everything else is borrowed.
-- Secret zero compressed (injection rebuilds the vault in the control plane; the credential that fetches secrets is itself a secret).
-- Done right the identity isn't a secret. Attestation, the platform signs a statement about the machine, the store verifies with the platform. A Fly Machines OIDC token is mintable only inside that machine, audience-bound, minutes long. A stolen copy is nearly worthless. Identity documents, not secrets.
-- Already running in my cluster (link how-i-use-infisical), Kubernetes auth, zero stored credentials. GitHub Actions normalized this for CI in 2021.
-- Infisical's attested methods (K8s, AWS, GCP, Azure, OIDC, JWT, SPIFFE JWT-SVID). ABAC path templating per sandbox off an attested claim. Identity lifecycle per sandbox via API, delete revokes every token.
-- Platform survey as evidence. Fly Machines (image_digest, best claims), Modal (container_id, off by default for Sandboxes), AWS MicroVMs (execution role, role granularity caveat), Vercel (firewall staples sandbox_id token to forwarded egress).
-- Sprites socket hunt stays as the empirical beat. Fly gives Machines the best identity surveyed and strips it from the agent product. Keep the finding, drop the "camps" conclusion, the read is now that Sprites assumes the valuables never live in the machine, which the next two sections justify.
+- Attestation: the platform signs a statement about the machine, the verifier checks with the platform, nothing pre-shared sits in the environment.
+- Stolen-copy property: a Fly Machines OIDC token is mintable only inside the machine, audience-bound, minutes long. An ID card that expires before it gets home. Identity documents, not secrets.
+- Precedent: my cluster (link how-i-use-infisical), Kubernetes service account tokens, zero stored credentials. GitHub Actions normalized it for CI in 2021.
+- Store side is buyable: Infisical verifies K8s/AWS/GCP/Azure/OIDC/JWT/SPIFFE assertions. Keep to one sentence; the two details that earn themselves (ABAC path templating, delete-revokes-all) live in section 4.
 
-## 4. Secrets that gate money
+## 4. What the identity unlocks (the bootstrap payoff)
 
-- Inference keys. The theft is invisible. A stolen database credential announces itself, foreign IP, queries the app never makes. A stolen inference key hides inside your own usage, and agent spend is already bursty and unattributable, so there is no anomaly signal, the meter just runs faster.
-- Possession is unacceptable at any TTL. The proxy is the answer, and secrecy is only half of what it buys. Per-sandbox attribution and a budget live at the proxy. The exportable artifact becomes a session token useful only through the policy point.
-- The toolbox everyone built: Infisical Agent Vault (HTTPS_PROXY, creds injected on the wire, "agents should never see the underlying secret in the first place"), Cloudflare ("no token is ever granted to an untrusted user for any amount of time"), Daytona placeholders with allowlisted substitution and response scrubbing, Sprites Connectors, Vercel brokering.
+- Everything downstream is policy applied to the asserted subject.
+- Scoped reads: ABAC templates the secret path off an attested claim, `/{{identity.metadata.sandboxId}}/**`, one definition covers the fleet.
+- Per-sandbox revocation: identity minted at session start, deleted at teardown, deleting it kills every token it held. The requirement the sandbox post wrote down.
+- Binary grants: can this sandbox reach the database at all. Enforced with short-lived leases (dynamic secrets, per-lease DB user, dead on export, rotation as a side effect of teardown).
+- Tiered grants: how much, how fast, at what budget. Enforced at a proxy that holds the real key, injects it on the wire, and charges every request to the asserted identity. Inference keys as the example, one or two sentences on why possession fails for metered resources (stolen usage hides inside your own).
+- The seen-means-compromised constraint threads here: derivatives are short-lived, scoped, or withheld because anything the agent reads is compromised on sight. The identity is the one durable credential precisely because it isn't a secret.
 
-## 5. Secrets that gate access
+## 5. Where the assertion happens (the survey, unified)
 
-- Database credentials. Theft announces itself, so possession is tolerable if the copy dies fast.
-- Short-lived per-sandbox leases. Infisical dynamic secrets, per-lease DB user, provider-side revocation at lease end, renewal capped at creation plus max TTL. The credential the sandbox leaks into a log is dead before anyone reads it.
-- Rotation as a side effect of teardown. Blast radius is one sandbox.
-- Honesty beat, dynamic secrets and custom roles and IP allowlists sit behind paid tiers.
+- The industry does not disagree about whether the sandbox needs an identity. It disagrees about where the assertion happens.
+- Inside the machine: Fly Machines (socket, claims down to image digest), Modal (container-scoped, off by default for Sandboxes), AWS MicroVMs (execution role, role granularity caveat).
+- At the edge: Vercel's firewall staples a signed sandbox_id to forwarded egress. Cloudflare's supervisor Worker knows ctx.containerId and applies policy per sandbox. Daytona's placeholders are per-sandbox substitutions at the proxy. All identity assertions, made by the platform at the boundary instead of by the workload inside.
+- Sprites hunt stays as the empirical beat, reread: no socket, no env vars, nothing inside. Fly didn't skip identity, they put all of it in the control plane and none of it in the machine. Same company asserts inside on Machines and at the edge on Sprites.
 
-## 6. The parked machine holds nothing
+## 6. Suspension (identity is the durable credential)
 
-- Reframe from v1. Tokens expiring while the machine is parked is the correct default, not breakage. Wall-clock lifespan is weeks, runtime is hours, credentials should bind to runtime.
-- Wake requires re-attestation, so the identity path has to survive restore the way the filesystem does. Platform OIDC tokens run about an hour, which forces the discipline.
-- The genuine wrinkle stays: IP allowlists break when the microVM resumes on a different host.
-- Runs-or-dies line closes the section.
+- Weeks of wall clock, hours of runtime. Store tokens age on the wall clock, so the parked sandbox wakes unauthenticated, and that's alignment, not breakage.
+- The derivatives are supposed to die while parked. The identity survives because it's re-derivable: filesystem survives by checkpoint, identity survives by re-proof. The assertion path has to survive restore the way the disk does.
+- Honest wrinkle: IP allowlists break on cross-host resume. Runs-or-dies line closes.
 
 ## 7. What I'm building (closing)
 
-- Pays off the secrets-have-names teaser (link).
-- The decision rule stated compactly. The identity is attested and never distributed. Money is proxied with a budget and a name on every request. Access is leased and dies with the sandbox. Anything the agent actually saw gets rotated, so rotation stays reflex-cheap.
-- Directive ender aimed at operators, exact wording at draft time.
+- secrets-have-names payoff (link): my agents' identities, minted by the platform, verified by the store, dead with the sandbox, with every grant (binary or tiered) hanging off them.
+- Vendor question collapses from two to one: how does your platform let a sandbox's identity be asserted, inside the machine or at its edge? Who answers what, from the survey.
+- Ender: concrete claim about the bootstrap being the whole game, exact wording at draft time. No aphorism.
 
 ## Style gates before shipping
 
 - Grep for em-dashes and body colons. Scan for contrast pairs, recap openers, aphorism enders, braided sentences.
 - Each prior post linked at most once. Ravi not mentioned or past tense only.
+- Target 1,100–1,300 words per the meta-analysis findings (inventory compressed to payoff-bearing sentences).
 - Verify at publish time: Modal Sandbox OIDC still opt-in, Lambda MicroVMs GA framing, Infisical ABAC claim mapping still OIDC/K8s/AWS only.
