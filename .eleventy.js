@@ -38,6 +38,11 @@ export default function(eleventyConfig) {
     // for durability, never built — see writing/README.md.
     eleventyConfig.ignores.add("writing/**");
 
+    // Repo docs, not site pages. Without these, Eleventy publishes them at
+    // /README/ and /CLAUDE/ (README was live at jakegaylor.com/README/ until 2026-07-29).
+    eleventyConfig.ignores.add("README.md");
+    eleventyConfig.ignores.add("CLAUDE.md");
+
     // /resume/ renders from the same resume.json the rest of the tooling consumes.
     eleventyConfig.addGlobalData("resume", () => JSON.parse(readFileSync("./resume.json", "utf8")));
 
