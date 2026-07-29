@@ -18,7 +18,7 @@ Links budget (each post linked exactly once):
 
 ## 1. Intro (no header)
 
-The sandbox from the last post needs a credential minutes into any real job. Every scheme for getting it one safely turns out to rest on the same capability, asserting which sandbox is asking. State the thesis plainly, then promise the tour: why injection fails, how assertion works, what it unlocks, who can do it today.
+Call it what it is, bootstrapping. The dependency chain is the hook, stated as a ladder: the job needs secrets, the secrets need a store, and the store needs to know who's asking. The identity is the only rung the platform can supply for free, so it's where the whole chain bootstraps from. State the thesis plainly, then promise the tour: why injection fails, how assertion works, what it unlocks, who can do it today. (Jake killed the "needs a credential in minutes" urgency framing, 2026-07-29.)
 
 ## 2. Secret zero (why the naive answer fails)
 
