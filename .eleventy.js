@@ -37,6 +37,33 @@ export default function(eleventyConfig) {
     // /resume/ renders from the same resume.json the rest of the tooling consumes.
     eleventyConfig.addGlobalData("resume", () => JSON.parse(readFileSync("./resume.json", "utf8")));
 
+    // schema.org Person JSON-LD for the <head> of every page, computed from
+    // resume.json so it can't drift. The classic-crawler counterpart to the
+    // A2A agent card served at (ai.)jakegaylor.com/.well-known/agent-card.json.
+    eleventyConfig.addGlobalData("personJsonLd", () => {
+        const resume = JSON.parse(readFileSync("./resume.json", "utf8"));
+        const b = resume.basics || {};
+        return JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": "https://jakegaylor.com/#person",
+            name: b.name,
+            url: b.url || "https://jakegaylor.com",
+            email: b.email ? `mailto:${b.email}` : undefined,
+            jobTitle: b.label,
+            address: b.location ? {
+                "@type": "PostalAddress",
+                addressLocality: b.location.city,
+                addressCountry: b.location.countryCode,
+            } : undefined,
+            sameAs: [
+                ...(b.profiles || []).map((p) => p.url),
+                "https://ai.jakegaylor.com",
+            ],
+            knowsAbout: (resume.skills || []).map((s) => s.name),
+        });
+    });
+
     // "2022-06" → "Jun 2022"; empty/missing → "Present"
     eleventyConfig.addFilter("monthYear", (ym) => {
         if (!ym) return "Present";
