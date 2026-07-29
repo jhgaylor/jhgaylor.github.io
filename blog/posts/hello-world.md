@@ -24,4 +24,4 @@ I am writing because I want to work with people who want to build great products
 
 ## So what should I expect here?
 
-I will focus on topics that will help engineers and product managers build great products. The words will be mine and not Claude's. We get enough of his work in my codebases.
+I will focus on topics that will help engineers and product managers build great products. The ideas will be mine, though Claude might help me write them down. He already does plenty of work in my codebases.
