@@ -1,7 +1,7 @@
 ---
 layout: layouts/blog.html
 tags: ["posts"]
-title: "My agent takes meetings now"
+title: "My agent schedules meetings now"
 og_image: /images/og/my-agent-takes-meetings-now.jpg
 description: "The A2A agent at ai.jakegaylor.com went from answering questions to booking real calendar time — self-hosted Cal.com, explicit booking protocol, and every booking pending my approval"
 permalink: /blog/posts/my-agent-takes-meetings-now/
