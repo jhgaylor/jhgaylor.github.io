@@ -2,6 +2,8 @@
 
 Reshaped 2026-07-29 after Jake's thesis pivot (see thinking.md). v1 (two camps) and v2 (three secret classes) are in git history.
 
+**Superseded by the v4 re-spine, 2026-07-30.** Diagnosis after days of opener polishing: the draft argued this outline's thesis (identity bootstraps secret management, payoff "choose a platform by where assertion happens") while Jake's actual thesis is the security chain (agents need access, access needs secrets, agent-held secrets are compromised on read, so any secret must be short-lived and carry no new trust, so access flows through a proxy that verifies a platform-signed identity for ownership, standing, and policy). v4 opens at step one of that chain instead of the conclusion, lands the title as a derived claim at the end of the secret zero section, promotes the proxy/verification to the climax section ("Verify, then grant"), compresses the vendor survey to five sentences and suspension to two, and allows plain sentences between the dense ones. Research for the cut survey material stays in research.md and thinking.md.
+
 **Thesis, Jake's words:** secret management for agentic sandboxes relies on us somehow asserting the sandbox's identity so that we can then bootstrap secret management.
 
 **Thesis, essay form:** every mechanism for getting secrets to a sandbox safely (leases, proxies, scoped paths, budgets, per-sandbox revocation) is a policy decision, policy needs a subject, and "which sandbox is asking" is the input they all consume. Assert the identity and everything bootstraps from it. Skip it and you're injecting long-lived copies, which is secret zero wearing a control plane.
