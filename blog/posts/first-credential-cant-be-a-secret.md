@@ -7,7 +7,7 @@ permalink: /blog/posts/first-credential-cant-be-a-secret/
 date: 2026-07-30
 ---
 
-You can't trust a sandbox, so the first credential it carries, the one that says who it is, can't be a secret. Make the platform that booted it vouch for it instead. Every real credential it gets after that should arrive already expiring, and be thrown away for good when the agent shuts down, because the sandbox we just gave it to was never trustworthy to begin with.
+You can't trust a sandbox, so the credential that says who it is has to be proof. Make the platform that booted it write that proof, a signed statement anyone can verify and the sandbox can't forge. Every real credential it gets after that should arrive already expiring, and be thrown away for good when the agent shuts down, because the sandbox we just gave it to was never trustworthy to begin with.
 
 The sandbox is a [new kind of computer](/blog/posts/new-kind-of-computer/), and it needs secrets for any real job, because acting on your behalf means authenticating to the systems you care about. But you can't give it typical API keys, you can't trust it not to leak them. What it can safely hold is an identity token the platform writes for it. The platform is trusted code, it booted the untrusted code, and it knows who the agent is acting on behalf of and under what policy, so it signs a short statement saying exactly that. The sandbox carries the statement and can't alter a word of it, and any secret store or proxy that receives it checks the signature against the platform's published keys. It expires in minutes, so stealing it buys a thief a few minutes of being a sandbox we already assumed was hostile.
 
