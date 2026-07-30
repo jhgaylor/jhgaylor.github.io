@@ -9,7 +9,7 @@ date: 2026-07-30
 
 You will never be able to trust the sandbox, so stop trying to give it a secret that proves who it is. Make the platform that booted it vouch for it instead. Every real credential it gets after that should arrive already expiring, and be thrown away for good when the agent shuts down, because the sandbox we just gave it to was never trustworthy to begin with.
 
-The sandbox is a [new kind of computer](/blog/posts/new-kind-of-computer/), and it needs secrets for any real job, because acting on your behalf means authenticating to the systems you care about. The secrets live in a store, and the store needs a reason to trust who's asking. Only the platform has one to give. It booted the machine, chose the image, and watched it come up, a view no code running inside can match or fake. Which means choosing a sandbox platform is choosing a witness, and everything the agent will ever be allowed to do rests on how well that witness can speak.
+The sandbox is a [new kind of computer](/blog/posts/new-kind-of-computer/), and it needs secrets for any real job, because acting on your behalf means authenticating to the systems you care about. The secrets live in a store, and the store needs a reason to trust who's asking. Only the platform has one to give. The platform is trusted code. It booted the untrusted code, knows who is responsible for it, and knows what policy dictates its access. Which means choosing a sandbox platform is choosing a witness, and everything the agent will ever be allowed to do rests on how well that witness can speak.
 
 ## Secret zero
 
