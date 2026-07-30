@@ -19,6 +19,8 @@ The rules sound satisfiable until you try to bootstrap them. Short-lived credent
 
 The first credential has one job, answering which sandbox is asking. A claim like that needs to be unforgeable, and unforgeable is a property a public document can have. Anything the sandbox's own code could mint, an impostor's code could mint identically, so the claim has to come from outside the machine. The natural author is the platform. It booted the sandbox, it knows which user the agent belongs to and under what policy, and trusting its word costs nothing new, it already runs the hypervisor. So the platform signs a short statement saying exactly that, and anyone holding its published keys can verify the statement came from it, unaltered.
 
+That can sound like the per-sandbox minting we just rejected, since a platform-minted token lands in the machine either way. Two things changed. The signed statement grants nothing, it only names the sandbox, and access gets decided later by a verifier checking policy against that name, so a stolen copy carries a name where the injected token carried a key. And every scheme bottoms out in a long-lived secret somewhere, so the question is whose. The store-minting key was a new secret your control plane had to hold and protect. The platform's signing key never travels, and it belongs to the party that already runs the hypervisor and could already read every byte in the machine. The chain stops collecting new secrets and ends in a trust you extended the day you picked the platform.
+
 This is why the first credential can't be a secret. A secret proves possession, and a copy possesses it just as well. A signed statement proves origin, and origin is the one thing code in the sandbox can't fake.
 
 ## The signed statement
