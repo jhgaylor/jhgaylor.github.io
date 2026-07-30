@@ -9,7 +9,7 @@ date: 2026-07-30
 
 You will never be able to trust the sandbox, so stop trying to give it a secret that proves who it is. Make the platform that booted it vouch for it instead. Every real credential then hangs off that vouching as a short-lived disposable, thrown away when the agent shuts down, because the machine that held it was never trustworthy to begin with.
 
-The machine in question is the [new kind of computer](/blog/posts/new-kind-of-computer/), and it needs secrets for any real job, a GitHub token, a database login, an API key. The secrets live in a store, since you don't bake credentials into an image whose interesting code arrives at runtime. And the store needs a reason to trust who's asking, which is the strange rung, because the thing asking runs code nobody reviewed. Every safe design I've found threads that needle the same way. The platform asserts which sandbox is asking, in a way the sandbox's own code can't fake, and everything above follows.
+The machine in question is the [new kind of computer](/blog/posts/new-kind-of-computer/), and it needs secrets for any real job, a GitHub token, a database login, an API key. The secrets live in a store, since you don't bake credentials into an image whose interesting code arrives at runtime. And the store needs a reason to trust who's asking. Only the platform has one to give. It booted the machine, chose the image, and watched it come up, a view no code running inside can match or fake. So the store takes the platform's word for which sandbox is asking, and everything above rests on that word.
 
 ## Secret zero
 
