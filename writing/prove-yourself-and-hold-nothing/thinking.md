@@ -77,3 +77,22 @@ The trust paradox, worked out:
 - This also deepens inside-vs-edge: inside-assertion means the untrusted machine carries unforgeable testimony; edge-assertion means the platform speaks about the sandbox without letting it touch the testimony at all. Both route trust around the sandbox, never through it.
 
 Draft changes: intro's last rung becomes the trust paradox ("the store needs a reason to trust who's asking, and the sandbox is exactly the thing we decided not to trust"). Secret zero section restructured to two beats, delivery-first paragraph, then trust paragraph ending "Let the platform vouch." Attestation section opens as "vouching made mechanical" and gains the carries-not-authors line.
+
+## 2026-07-29 — Jake's AWS deep-dive conversation corrects the survey
+
+Jake brought a conversation (with another AI) dissecting how Lambda microVMs actually get IAM access. Key facts, and what they change:
+
+**The Lambda mechanism.** The microVM never proves its identity to anyone. The execution role's trust policy names lambda.amazonaws.com; the control plane calls sts:AssumeRole AS the Lambda service, gets session creds, and pushes them into the environment as env vars at birth over AWS-internal channels. No IMDS in Lambda (EC2's pull-based model doesn't apply). Trust anchors: the trust policy, STS trusting Lambda's internal service creds, the AWS-controlled injection path, Firecracker isolation. Confused-deputy closed with aws:SourceArn/SourceAccount conditions.
+
+**The bearer problem.** AWS guarantees isolation BETWEEN environments, not binding of the credential TO an environment. The session creds are bearer tokens, hours-long, no proof-of-possession, work from anywhere including a laptop. EC2 got condition keys (aws:Ec2InstanceSourceVpc etc.) that lock role creds to their home VPC; Lambda has no equivalent. GuardDuty exfiltration findings and lambda:SourceFunctionArn are detection and attribution, not prevention. Line worth keeping: AWS makes the boundary hard to breach and the theft easy to spot, it does not make the credential refuse to work in the wrong hands.
+
+**What it changes in the draft:**
+
+- The survey's "inside" bucket splits. Fly PULLS (on-demand socket, fresh audience-scoped minutes-long token). AWS and Modal PUSH (delivered at birth). Three modes now: pulled inside, pushed inside, spoken at the edge. AWS gets its own paragraph as the cautionary push case (real vouching, least bound credential).
+- Trust paragraph gains the possession line: a held secret proves possession, and possession is exactly what untrusted code can copy and transfer.
+- Suspension: pull platforms re-prove at wake; push platforms need the platform to re-deliver (AWS documents a /resume hook for refreshing credentials, which now slots in perfectly).
+- Attestation section gets one bearer-honesty sentence: even attested tokens are bearer instruments, hence minutes-long TTLs and narrow audiences; the stronger form binds the credential to a key the machine generates and never exports (DPoP/WIMSE direction).
+
+**Future post seeds (not this article):** proof-of-possession workload credentials (WIMSE WIT+WPT, DPoP, RFC 8705), the secret-zero ladder (launcher attestation / hardware attestation / issuer federation / TOFU with single-use bootstrap), and holder-attenuable delegation across agent hops, which no current draft standard delivers. The delegation gap is probably the next next post.
+
+**Publish-time verification added:** no-IMDS-in-microVMs claim, EC2 source-VPC condition keys vs Lambda absence, GuardDuty Lambda credential-exfiltration coverage, the /resume credential-refresh hook.

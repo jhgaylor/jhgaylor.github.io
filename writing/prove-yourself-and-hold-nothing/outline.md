@@ -66,4 +66,4 @@ Call it what it is, bootstrapping. The dependency chain is the hook, stated as a
 - Grep for em-dashes and body colons. Scan for contrast pairs, recap openers, aphorism enders, braided sentences.
 - Each prior post linked at most once. Ravi not mentioned or past tense only.
 - Target 1,100–1,300 words per the meta-analysis findings (inventory compressed to payoff-bearing sentences).
-- Verify at publish time: Modal Sandbox OIDC still opt-in, Lambda MicroVMs GA framing, Infisical ABAC claim mapping still OIDC/K8s/AWS only.
+- Verify at publish time: Modal Sandbox OIDC still opt-in, Lambda MicroVMs GA framing, Infisical ABAC claim mapping still OIDC/K8s/AWS only. From the AWS deep-dive (see thinking.md): no metadata service in Lambda microVMs, EC2 source-VPC condition keys with no Lambda equivalent, exfiltration detected not prevented, the resume hook refreshing credentials.
