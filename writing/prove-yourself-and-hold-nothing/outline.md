@@ -18,7 +18,7 @@ Links budget (each post linked exactly once):
 
 ## 1. Intro (no header)
 
-Call it what it is, bootstrapping. The dependency chain is the hook, stated as a ladder: the job needs secrets, the secrets need a store, and the store needs to know who's asking. The identity is the only rung the platform can supply for free, so it's where the whole chain bootstraps from. State the thesis plainly, then promise the tour: why injection fails, how assertion works, what it unlocks, who can do it today. (Jake killed the "needs a credential in minutes" urgency framing, 2026-07-29.)
+Thesis-first, verbatim (Jake, 2026-07-30): "You will never be able to trust the sandbox, so stop trying to give it a secret that proves who it is. Make the platform that booted it vouch for it instead. Every real credential then hangs off that vouching as a short-lived disposable," plus the thrown-away-at-shutdown clause. Second paragraph grounds it with the compressed bootstrap ladder (job needs secrets → secrets need a store → store needs a reason to trust who's asking) and hands off to the sections, which prove the opener beat by beat. (Earlier framings killed: "needs a credential in minutes" urgency, 2026-07-29; ladder-first opener, 2026-07-30.)
 
 ## 2. Secret zero (delivery, then trust)
 

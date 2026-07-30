@@ -2,9 +2,11 @@
 
 *Draft v3.3 (compression pass) for jakegaylor.com, 2026-07-29. Title is a working proposal; alternates in outline.md. Earlier versions in git history.*
 
-*Leases, proxies, scoped reads, and budgets are all policy, and policy needs a subject. Secret management for agent sandboxes bootstraps from asserting which sandbox is asking.*
+*You can't trust the sandbox, so the platform that boots it has to vouch for it, and every credential it touches is a short-lived disposable.*
 
-An agent sandbox has a bootstrapping problem. The job needs secrets, a GitHub token, a database login, an API key. The secrets need a store, because the [new kind of computer](/blog/posts/new-kind-of-computer/) runs code nobody reviewed, and you don't bake credentials into an image whose interesting code arrives at runtime. And the store needs a reason to trust who's asking, which is the strange rung, because the sandbox is exactly the thing we decided not to trust. Every safe design I've found rests on that bottom rung. Assert which sandbox is asking, in a way its own code can't fake, and everything above follows.
+You will never be able to trust the sandbox, so stop trying to give it a secret that proves who it is. Make the platform that booted it vouch for it instead. Every real credential then hangs off that vouching as a short-lived disposable, thrown away when the agent shuts down, because the machine that held it was never trustworthy to begin with.
+
+The machine in question is the [new kind of computer](/blog/posts/new-kind-of-computer/), and it needs secrets for any real job, a GitHub token, a database login, an API key. The secrets live in a store, since you don't bake credentials into an image whose interesting code arrives at runtime. And the store needs a reason to trust who's asking, which is the strange rung, because the thing asking runs code nobody reviewed. Every safe design I've found threads that needle the same way. The platform asserts which sandbox is asking, in a way the sandbox's own code can't fake, and everything above follows.
 
 ## Secret zero
 

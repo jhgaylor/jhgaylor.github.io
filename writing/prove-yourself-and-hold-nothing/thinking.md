@@ -96,3 +96,9 @@ Jake brought a conversation (with another AI) dissecting how Lambda microVMs act
 **Future post seeds (not this article):** proof-of-possession workload credentials (WIMSE WIT+WPT, DPoP, RFC 8705), the secret-zero ladder (launcher attestation / hardware attestation / issuer federation / TOFU with single-use bootstrap), and holder-attenuable delegation across agent hops, which no current draft standard delivers. The delegation gap is probably the next next post.
 
 **Publish-time verification added:** no-IMDS-in-microVMs claim, EC2 source-VPC condition keys vs Lambda absence, GuardDuty Lambda credential-exfiltration coverage, the /resume credential-refresh hook.
+
+## 2026-07-30 — Thesis-first opener
+
+Jake asked for the plain statement of what a reader should leave with, approved it, and made it the opener verbatim: "You will never be able to trust the sandbox, so stop trying to give it a secret that proves who it is. Make the platform that booted it vouch for it instead. Every real credential then hangs off that vouching as a short-lived disposable." Plus his gloss, disposables get thrown away when the agent shuts down because the sandbox was never trustworthy.
+
+The opener maps onto the sections, so this was an intro swap, not a restructure. Secret zero proves beat one (a handed secret can't work), Asserting the identity proves beat two (platform vouches), What the identity unlocks proves beat three (disposables), What survives suspension proves the throw-away clause. Old bootstrap-ladder intro compressed into the new second paragraph. Front-matter description updated to match the thesis.
