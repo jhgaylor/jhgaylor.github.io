@@ -64,3 +64,16 @@ What this changes:
 - Suspension gets stronger: the identity is the only durable credential, durable precisely because it isn't a secret, re-derivable by attestation at every wake. Everything the sandbox holds is an ephemeral derivative meant to die while parked. Filesystem survives by checkpoint, identity survives by re-proof.
 - Seen-means-compromised demotes to a supporting constraint: it explains why the derivatives are short-lived/scoped/withheld and why the identity must be the one non-secret.
 - Title likely changes again; "Prove yourself and hold nothing" reads taxonomy-first. Candidates to consider at draft time: something in the shape of "secret management starts with the sandbox's name." Folder stays put until a title sticks.
+
+## 2026-07-29 — v3 feedback: lead with delivery, add the trust paradox
+
+Jake on draft v3: the secret-zero paragraph takes too long to say that secret *delivery* is the issue. And trust is missing as a named dimension. In his words, "We can't trust the sandbox to give us a token we respect because it is an untrustable entity. we have to figure out how to trust requests coming from it anyways."
+
+The trust paradox, worked out:
+
+- Self-assertion is worthless from unreviewed code. Any credential the sandbox's code could mint, an impostor's code could mint identically. Nothing the sandbox says about itself is evidence.
+- The work still requires trusting requests from it. An agent that can't be trusted with anything can't do anything.
+- Resolution: relocate the testimony. The platform that booted the sandbox knows exactly which sandbox it is, and trusting the platform costs nothing new, it already runs the hypervisor. Attestation is the vouching made mechanical. The sandbox carries the document and can't author it.
+- This also deepens inside-vs-edge: inside-assertion means the untrusted machine carries unforgeable testimony; edge-assertion means the platform speaks about the sandbox without letting it touch the testimony at all. Both route trust around the sandbox, never through it.
+
+Draft changes: intro's last rung becomes the trust paradox ("the store needs a reason to trust who's asking, and the sandbox is exactly the thing we decided not to trust"). Secret zero section restructured to two beats, delivery-first paragraph, then trust paragraph ending "Let the platform vouch." Attestation section opens as "vouching made mechanical" and gains the carries-not-authors line.

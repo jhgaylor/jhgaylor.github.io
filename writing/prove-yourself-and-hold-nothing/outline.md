@@ -20,11 +20,11 @@ Links budget (each post linked exactly once):
 
 Call it what it is, bootstrapping. The dependency chain is the hook, stated as a ladder: the job needs secrets, the secrets need a store, and the store needs to know who's asking. The identity is the only rung the platform can supply for free, so it's where the whole chain bootstraps from. State the thesis plainly, then promise the tour: why injection fails, how assertion works, what it unlocks, who can do it today. (Jake killed the "needs a credential in minutes" urgency framing, 2026-07-29.)
 
-## 2. Secret zero (why the naive answer fails)
+## 2. Secret zero (delivery, then trust)
 
-- Injection at create time rebuilds the vault inside the control plane. Long-lived copies, no per-sandbox revocation.
-- The bootstrap problem named: the credential that fetches secrets is itself a secret. Secret zero.
-- The escape is categorical, not incremental: the first credential must not be a secret at all. It must be an assertion someone else can verify.
+- Delivery named as the problem in sentence one. Secrets are safe in the store; the first credential always has to travel.
+- Injection at create time rebuilds the vault inside the control plane. Long-lived copies, no per-sandbox revocation, and the delivered token is itself a secret. Secret zero. Shorter TTLs narrow the window without changing the shape.
+- Trust is the wall behind delivery (Jake, 2026-07-29): the sandbox is an untrustable entity, nothing it says about itself is evidence, any credential its code could mint an impostor could mint identically, and we still have to trust requests coming from it. Resolution: relocate the testimony, the platform already knows which sandbox is which and we already trust it, it runs the hypervisor. Let the platform vouch.
 
 ## 3. Asserting the identity (the mechanism)
 
