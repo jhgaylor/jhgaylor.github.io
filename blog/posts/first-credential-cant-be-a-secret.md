@@ -1,8 +1,11 @@
-# The first credential can't be a secret
-
-*Superseded 2026-07-30: the live text now lives at `blog/posts/first-credential-cant-be-a-secret.md`, published unlisted (excluded from collections) at /blog/posts/first-credential-cant-be-a-secret/. Edit there; this file stops updating. Earlier versions in git history.*
-
-*You can't trust the sandbox, so the platform that boots it has to vouch for it, and every credential it touches is a short-lived disposable.*
+---
+layout: layouts/blog.html
+eleventyExcludeFromCollections: true
+title: "The first credential can't be a secret"
+description: "You can't trust the sandbox, so the platform that boots it has to vouch for it, and every credential it touches is a short-lived disposable"
+permalink: /blog/posts/first-credential-cant-be-a-secret/
+date: 2026-07-30
+---
 
 You will never be able to trust the sandbox, so stop trying to give it a secret that proves who it is. Make the platform that booted it vouch for it instead. Every real credential then hangs off that vouching as a short-lived disposable, thrown away when the agent shuts down, because the machine that held it was never trustworthy to begin with.
 
