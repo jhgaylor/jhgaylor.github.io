@@ -9,7 +9,7 @@ date: 2026-07-30
 
 An agent is useful in proportion to what it can reach, and reaching anything real means authenticating to it. The same agent writes and runs code no human reviews before it executes, and its behavior bends to whatever it reads, so an attacker reaches its [sandbox](/blog/posts/new-kind-of-computer/) by getting text in front of it. Exfiltrating any value it can read takes one HTTP request to a domain you already allow. The machine that needs your credentials is untrusted, and every secret it can read is compromised the moment it reads it.
 
-Any secret that enters the machine must be short-lived, so a stolen copy dies before it travels far. And it must carry no new trust, so a stolen copy transfers no power beyond what the sandbox already had. We can't hand agents the same long-lived API keys we'd give traditional software. That leaves brokering. The agent carries only short-lived tokens, and a broker on the trusted side of the boundary swaps each one for the access the job needs, so nothing stable ever enters the sandbox.
+Any secret that enters the machine must be short-lived, so a stolen copy dies before it travels far. And it must carry no new trust, so a stolen copy transfers no power beyond what the sandbox already had. We can't hand agents the same long-lived API keys we'd give traditional software. By brokering the credentials through a proxy on the trusted side of the boundary, the agent carries only short-lived tokens, each one swapped for the access the job needs, and nothing stable ever enters the sandbox.
 
 ## Secret zero
 
