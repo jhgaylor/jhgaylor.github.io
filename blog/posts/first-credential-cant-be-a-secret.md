@@ -9,7 +9,7 @@ date: 2026-07-30
 
 An agent is useful in proportion to what it can reach, and reaching anything real means authenticating to it. Add to that the code in the [sandbox](/blog/posts/new-kind-of-computer/) is untrusted.
 
-The agent writes and runs code no human reviews before it executes, and its behavior bends to whatever it reads, so an attacker reaches this machine by getting text in front of it. Exfiltrating any value it can read takes one HTTP request to a domain you already allow. So every secret the agent can read is compromised the moment it reads it, the same design assumption that treats user input as hostile.
+The agent writes and runs code no human reviews before it executes, and its behavior bends to whatever it reads, so an attacker reaches this machine by getting text in front of it. Exfiltrating any value it can read takes one HTTP request to a domain you already allow. So every secret the agent can read is compromised the moment it reads it.
 
 Two rules follow. Any secret that enters the machine must be short-lived, so a stolen copy dies before it travels far. And no secret in the machine may carry new trust, so a stolen copy transfers no power beyond what the sandbox already had. The long-lived API key you'd hand a service fails both. What passes both is a first credential that is a signed name rather than a secret, with every real grant decided against that name by a verifier.
 
