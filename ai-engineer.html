@@ -1,0 +1,118 @@
+---
+layout: layouts/home.html
+title: Jake Gaylor · AI Engineer
+description: Jake Gaylor has shipped production AI agents at three companies. LangChain agents at Cloaked that became a fundraising narrative, the coding-bot framework at Block Party, the agent-native SaaS Ravi with a $400K pre-seed, and Fountain, a control plane for sandboxed coding agents.
+socialDescription: Production agents at three companies, a $400K-funded agent-native SaaS, MCP protocol work, and a coding-agent fleet I operate myself.
+canonicalPath: /ai-engineer/
+og_image: /images/og/role-ai-engineer.jpg
+og_image_alt: Hiring an AI engineer? Agents users touch, agents that write code, and the platforms that run them.
+---
+
+{% assign ctaPrefix = "ai" %}
+
+<!-- ===================== HERO ===================== -->
+<header class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 text-white">
+  <div class="container mx-auto px-6 pt-8 pb-16 md:pb-20">
+    {% include "partials/role-nav.html" %}
+    <div class="max-w-3xl">
+      <p class="text-blue-200 font-semibold tracking-widest uppercase text-sm mb-5">
+        AI Engineer &middot; Senior / Staff
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Agents users touch, agents that write code, and the platforms that run them.
+      </h1>
+      <p class="text-xl text-blue-100 mb-10">
+        I have ridden the whole arc of AI-assisted engineering, from smart line completions in an editor to agentic
+        coding to frameworks that operate fleets of coding agents, and I have been putting agents in production
+        the entire time.
+      </p>
+      {% include "partials/hero-ctas.html" %}
+    </div>
+  </div>
+</header>
+
+<!-- ===================== RECEIPTS ===================== -->
+<section class="py-16 md:py-24 bg-white text-gray-900" data-section-track="receipts">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Shipped, funded, and running</h2>
+      <p class="text-lg text-gray-600">Agent work with users, revenue stakes, and receipts.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">In product</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">agents users touch, at Cloaked</div>
+        <p class="text-gray-700 leading-relaxed">
+          I built autonomous LangChain agents that change passwords, log in, and manage email on users&rsquo; behalf.
+          They became a core fundraising narrative and powered an AI onboarding experience that measurably boosted
+          adoption and retention.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">In the repo</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">agents that write code</div>
+        <p class="text-gray-700 leading-relaxed">
+          At Block Party I designed and built the framework behind the company&rsquo;s internal AI coding bots.
+          On my own time I run Fountain, a multi-tenant control plane for sandboxed coding agents that was largely
+          built by the agents it orchestrates. Fountain ships under BinaryBourbon, the GitHub identity my agent
+          fleet works under. I set the roadmap, review the work, and operate the system.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">$400K</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">pre-seed for an agent-native SaaS</div>
+        <p class="text-gray-700 leading-relaxed">
+          I cofounded Ravi, where AI agents manage their own accounts, secrets, and 2FA. It raised a $400K pre-seed
+          from South Park Commons and grew to hundreds of users, with the instrumented v1&rsquo;s real usage data
+          carrying the pitch.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">Protocol</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">MCP and A2A in the wild</div>
+        <p class="text-gray-700 leading-relaxed">
+          I am a member of the MCP Hosting Working Group, publish MCP servers, and contributed to the Dart MCP SDK.
+          This site practices what I pitch. <a href="https://ai.jakegaylor.com/" data-cta="ai-receipt-agent-card" class="text-blue-600 underline hover:text-blue-800">ai.jakegaylor.com</a>
+          serves an A2A agent card and an MCP server, so your screening agent can interview me directly.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FIRST 90 DAYS ===================== -->
+<section class="py-16 md:py-20 bg-gray-50 text-gray-900" data-section-track="first-90">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-10">My first 90 days on your AI roadmap</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">1 &middot; Find the agent-shaped work</div>
+        <p class="text-gray-600">Most orgs have workflows an agent could own today and features an agent can&rsquo;t carry yet. I sort one from the other before writing code.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">2 &middot; Ship a small agent, instrumented</div>
+        <p class="text-gray-600">An embarrassingly small v1 in front of real users with tracking from day one, the same way Ravi won its funding.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">3 &middot; Build the guardrails as a platform</div>
+        <p class="text-gray-600">Sandboxing, review gates, and observability, so scaling from one agent to a fleet is an operations problem instead of a leap of faith.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIAL ===================== -->
+<section class="py-16 md:py-20 bg-gradient-to-b from-blue-900 to-slate-900 text-white" data-section-track="testimonial">
+  <div class="container mx-auto px-6 max-w-3xl text-center">
+    <p class="text-2xl md:text-3xl font-medium leading-relaxed mb-6">
+      &ldquo;Jake is a force for good unlike any other. He migrated our infra to a cheaper and more scalable system,
+      crafted a CI pipeline that accelerated deploys by 30x, and taught the whole company how to make data-driven
+      decisions by building an entire product analytics stack. And that was just his first 6 months.&rdquo;
+    </p>
+    <p class="text-blue-200 font-semibold">Aaron Biller, Director of Platform Engineering, Cloaked</p>
+  </div>
+</section>
+
+{% include "partials/role-cta.html" %}
+{% include "partials/signal.html" %}

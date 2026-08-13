@@ -1,0 +1,115 @@
+---
+layout: layouts/home.html
+title: Jake Gaylor · Site Reliability Engineer
+description: Jake Gaylor ran SRE for Protectwise's petabyte-scale ingestion platform through dozens of production deploys a day. Observability with Prometheus, Grafana, and Loki, a PCI incident-response program at Cardfree, and production served from his own house.
+socialDescription: Petabyte scale kept boring. Thousands of Cassandra nodes, dozens of deploys a day, and incident response that does not need heroes.
+canonicalPath: /sre/
+og_image: /images/og/role-sre.jpg
+og_image_alt: Hiring an SRE? Product teams on my systems never ask whether the backend will hold.
+---
+
+{% assign ctaPrefix = "sre" %}
+
+<!-- ===================== HERO ===================== -->
+<header class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 text-white">
+  <div class="container mx-auto px-6 pt-8 pb-16 md:pb-20">
+    {% include "partials/role-nav.html" %}
+    <div class="max-w-3xl">
+      <p class="text-blue-200 font-semibold tracking-widest uppercase text-sm mb-5">
+        Site Reliability Engineer &middot; Senior / Staff
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Product teams on my systems never ask whether the backend will hold.
+      </h1>
+      <p class="text-xl text-blue-100 mb-10">
+        At Protectwise I ran SRE for a security platform ingesting petabytes, through dozens of production deploys
+        a day. Scale stays survivable when it stays boring, so I build capacity ahead of growth, observability
+        everyone reads, and incident response that works without heroes.
+      </p>
+      {% include "partials/hero-ctas.html" %}
+    </div>
+  </div>
+</header>
+
+<!-- ===================== RECEIPTS ===================== -->
+<section class="py-16 md:py-24 bg-white text-gray-900" data-section-track="receipts">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Reliability with receipts</h2>
+      <p class="text-lg text-gray-600">Scale, visibility, and what happens when the pager goes off.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">Petabytes</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">at Protectwise, acquired by Verizon</div>
+        <p class="text-gray-700 leading-relaxed">
+          Thousands of Cassandra nodes, petabytes in S3, and a $10M+/yr AWS environment administered entirely as
+          infrastructure as code, underneath a product that could not miss data.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">Observability</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">the whole company reads</div>
+        <p class="text-gray-700 leading-relaxed">
+          Prometheus, Grafana, Loki, PagerDuty, and CloudWatch on the infrastructure side. At Cloaked I extended
+          the same instinct to the business and built the product-analytics stack the whole company used to make
+          data-driven decisions.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">IR program</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">PCI-compliant, paperwork-light</div>
+        <p class="text-gray-700 leading-relaxed">
+          At Cardfree I replaced ad-hoc Slack alerts with a structured, PCI-compliant incident-response program.
+          It satisfied the auditors without burying the engineers, which is the only way an IR process survives
+          contact with real incidents.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">On call</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">for my own house</div>
+        <p class="text-gray-700 leading-relaxed">
+          My <a href="/homelab/" data-cta="sre-receipt-homelab" class="text-blue-600 underline hover:text-blue-800">homelab</a>
+          serves production traffic from a k3s cluster with Prometheus, Grafana, and Loki, and alerts pushed to my
+          phone. Reliability practice does not stop when I clock out.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FIRST 90 DAYS ===================== -->
+<section class="py-16 md:py-20 bg-gray-50 text-gray-900" data-section-track="first-90">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-10">My first 90 days on your on-call</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">1 &middot; Join the rotation early</div>
+        <p class="text-gray-600">Nothing surfaces the real risks faster than carrying the pager. I take a shift in the first month.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">2 &middot; Make the noisy things visible</div>
+        <p class="text-gray-600">Alerts that fire without action get fixed or deleted. Dashboards get rebuilt around the questions people actually ask during incidents.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">3 &middot; Get capacity ahead of growth</div>
+        <p class="text-gray-600">I model where the system breaks next and fix it before the traffic arrives, the way Protectwise&rsquo;s teams never had to wonder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIAL ===================== -->
+<section class="py-16 md:py-20 bg-gradient-to-b from-blue-900 to-slate-900 text-white" data-section-track="testimonial">
+  <div class="container mx-auto px-6 max-w-3xl text-center">
+    <p class="text-2xl md:text-3xl font-medium leading-relaxed mb-6">
+      &ldquo;Jake was instrumental in building our cloud-native security platform. His technical leadership
+      helped shape our architecture and team practices.&rdquo;
+    </p>
+    <p class="text-blue-200 font-semibold">DevOps Engineer, Protectwise</p>
+  </div>
+</section>
+
+{% include "partials/role-cta.html" %}
+{% include "partials/signal.html" %}

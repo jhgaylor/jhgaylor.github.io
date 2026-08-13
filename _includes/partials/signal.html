@@ -1,0 +1,44 @@
+<script>
+  // ---- Signal layer: qualitative sprint intel via PostHog (already loaded in layout) ----
+  // Generic version of the homepage script: CTA clicks on any [data-cta],
+  // scroll-depth milestones, and section_reached for any [data-section-track].
+  (function () {
+    if (typeof posthog === 'undefined') return;
+
+    document.querySelectorAll('[data-cta]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        posthog.capture('cta_click', { cta: el.getAttribute('data-cta') });
+      });
+    });
+
+    var marks = [25, 50, 75, 100], fired = {};
+    window.addEventListener('scroll', function () {
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      var pct = (doc.scrollTop / scrollable) * 100;
+      marks.forEach(function (m) {
+        if (pct >= m && !fired[m]) {
+          fired[m] = true;
+          posthog.capture('scroll_depth', { percent: m });
+        }
+      });
+    }, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      document.querySelectorAll('[data-section-track]').forEach(function (el) {
+        var seen = false;
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && !seen) {
+              seen = true;
+              posthog.capture('section_reached', { section: el.getAttribute('data-section-track') });
+              io.disconnect();
+            }
+          });
+        }, { threshold: 0.4 });
+        io.observe(el);
+      });
+    }
+  })();
+</script>

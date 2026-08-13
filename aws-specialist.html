@@ -1,0 +1,115 @@
+---
+layout: layouts/home.html
+title: Jake Gaylor · AWS Specialist
+description: Jake Gaylor has run production AWS for a decade across five companies. $10M+/yr at Protectwise behind petabyte-scale ingestion, HIPAA-compliant CDK platforms at Inception Health, PCI at Cardfree, and a SOC 2 multi-account EKS migration at Cloaked.
+socialDescription: A decade of production AWS. $10M+/yr administered at petabyte scale, with HIPAA, PCI, SOC 2, and ISO 27001 audits passed along the way.
+canonicalPath: /aws-specialist/
+og_image: /images/og/role-aws-specialist.jpg
+og_image_alt: Hiring an AWS specialist? I build AWS infrastructure ahead of your scale and keep it boring.
+---
+
+{% assign ctaPrefix = "aws" %}
+
+<!-- ===================== HERO ===================== -->
+<header class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 text-white">
+  <div class="container mx-auto px-6 pt-8 pb-16 md:pb-20">
+    {% include "partials/role-nav.html" %}
+    <div class="max-w-3xl">
+      <p class="text-blue-200 font-semibold tracking-widest uppercase text-sm mb-5">
+        AWS Specialist &middot; Senior / Staff
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        I build AWS infrastructure ahead of your scale and keep it boring.
+      </h1>
+      <p class="text-xl text-blue-100 mb-10">
+        A decade of production AWS across five companies and four compliance regimes. At Protectwise I administered
+        $10M+ a year of it behind a security product ingesting petabytes, and the product teams never had to ask
+        whether the backing systems would hold.
+      </p>
+      {% include "partials/hero-ctas.html" %}
+    </div>
+  </div>
+</header>
+
+<!-- ===================== RECEIPTS ===================== -->
+<section class="py-16 md:py-24 bg-white text-gray-900" data-section-track="receipts">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">The receipts</h2>
+      <p class="text-lg text-gray-600">Scale, compliance, and platforms other teams build on.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">$10M+/yr</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">of production AWS</div>
+        <p class="text-gray-700 leading-relaxed">
+          At Protectwise, acquired by Verizon, I administered the AWS environment behind a petabyte-scale ingestion
+          platform. Thousands of Cassandra nodes, petabytes in S3, and every piece of it managed as infrastructure
+          as code.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">4 regimes</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">HIPAA &middot; PCI &middot; SOC 2 &middot; ISO 27001</div>
+        <p class="text-gray-700 leading-relaxed">
+          HIPAA-compliant patient-care infrastructure at Inception Health, a PCI-compliant payments installation at
+          Cardfree, and a multi-account model at Cloaked that met SOC 2, ISO 27001, and ISO 27701 requirements.
+          Auditors have signed off on my architecture in three different industries.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">CDK</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">as a paved road for other teams</div>
+        <p class="text-gray-700 leading-relaxed">
+          At Inception Health I designed the CDK patterns that application teams consumed to ship HIPAA-compliant
+          microservices themselves, collaborated directly with AWS partner teams, and trained the product and mobile
+          teams until they ran their own deploys.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+        <div class="text-4xl font-bold text-blue-600 mb-1">30x</div>
+        <div class="text-sm uppercase tracking-wide text-blue-700 mb-4">faster deploys after the EKS migration</div>
+        <p class="text-gray-700 leading-relaxed">
+          At Cloaked I led the move from a legacy PaaS onto AWS EKS. The new platform was cheaper, more scalable,
+          and paired with a GitOps pipeline that accelerated deployments 30x in my first 6 months.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FIRST 90 DAYS ===================== -->
+<section class="py-16 md:py-20 bg-gray-50 text-gray-900" data-section-track="first-90">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-10">My first 90 days in your account</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">1 &middot; Read the bill with the architecture</div>
+        <p class="text-gray-600">Cost and design problems are usually the same problem. I find where the account fights your growth instead of absorbing it.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">2 &middot; Put everything that moves in code</div>
+        <p class="text-gray-600">Terraform or CDK, whichever fits your team, until a fresh environment is a pull request instead of a project.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 border border-gray-100">
+        <div class="text-blue-600 font-bold mb-2">3 &middot; Make compliance a platform property</div>
+        <p class="text-gray-600">Account boundaries and controls built in from the start, so the audit is evidence collection rather than a fire drill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIAL ===================== -->
+<section class="py-16 md:py-20 bg-gradient-to-b from-blue-900 to-slate-900 text-white" data-section-track="testimonial">
+  <div class="container mx-auto px-6 max-w-3xl text-center">
+    <p class="text-2xl md:text-3xl font-medium leading-relaxed mb-6">
+      &ldquo;Jake was instrumental in building our cloud-native security platform. His technical leadership
+      helped shape our architecture and team practices.&rdquo;
+    </p>
+    <p class="text-blue-200 font-semibold">DevOps Engineer, Protectwise</p>
+  </div>
+</section>
+
+{% include "partials/role-cta.html" %}
+{% include "partials/signal.html" %}

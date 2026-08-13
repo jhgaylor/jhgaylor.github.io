@@ -45,6 +45,56 @@ const posts = readdirSync(join(REPO, "blog/posts"))
   })
   .filter((p) => !p.excluded && p.slug);
 
+// Role landing pages (see /kubernetes-engineer/ etc.) get a card each too,
+// with the page's hero claim as the title. KEEP IN SYNC BY HAND: title should
+// match the page's hero h1; editing a hero without updating this array ships
+// a stale card. Slugs must match the page files (role-<slug> ↔ <slug>.html);
+// each page opts in with  og_image: /images/og/role-<slug>.jpg
+const rolePages = [
+  {
+    slug: "role-kubernetes-engineer",
+    kicker: "HIRING A KUBERNETES ENGINEER?",
+    title: "Teams on my clusters ship more and think about Kubernetes less.",
+    description: "Production clusters since CoreOS and fleet in 2015. EKS at work, k3s at home.",
+  },
+  {
+    slug: "role-aws-specialist",
+    kicker: "HIRING AN AWS SPECIALIST?",
+    title: "I build AWS infrastructure ahead of your scale and keep it boring.",
+    description: "$10M+/yr of production AWS. HIPAA, PCI, SOC 2, and ISO 27001 on my watch.",
+  },
+  {
+    slug: "role-platform-engineer",
+    kicker: "HIRING A PLATFORM ENGINEER?",
+    title: "I build paved roads and get every engineer on them.",
+    description: "Org-wide adoption of a new deploy process in 3 days. A 30x faster GitOps pipeline.",
+  },
+  {
+    slug: "role-devops",
+    kicker: "HIRING A DEVOPS ENGINEER?",
+    title: "Quarterly deploy events become shipping on demand.",
+    description: "The same arc delivered at CyberGRX, Cloaked (30x faster), and Food Service Warehouse.",
+  },
+  {
+    slug: "role-sre",
+    kicker: "HIRING AN SRE?",
+    title: "Product teams on my systems never ask whether the backend will hold.",
+    description: "Petabyte scale kept boring, across thousands of Cassandra nodes.",
+  },
+  {
+    slug: "role-ai-engineer",
+    kicker: "HIRING AN AI ENGINEER?",
+    title: "Agents users touch, agents that write code, and the platforms that run them.",
+    description: "Production agents at three companies, plus a coding-agent fleet I operate myself.",
+  },
+  {
+    slug: "role-engineering-leader",
+    kicker: "HIRING AN ENGINEERING LEADER?",
+    title: "I make good teams ship like great ones.",
+    description: "Led as a staff engineer, ran a $500K business with full P&L, raised a $400K pre-seed.",
+  },
+];
+
 const titleSize = (t) => (t.length <= 35 ? 84 : t.length <= 55 ? 72 : t.length <= 75 ? 60 : 52);
 const kickerDate = (d) =>
   new Date(`${d}T12:00:00Z`)
@@ -88,7 +138,7 @@ const html = (p) => `<!DOCTYPE html>
   .byline .site { font-size: 26px; color: #93b4f8; }
 </style></head>
 <body>
-  <div class="kicker">BLOG&nbsp;&nbsp;·&nbsp;&nbsp;${kickerDate(p.date)}</div>
+  <div class="kicker">${p.kicker || `BLOG&nbsp;&nbsp;·&nbsp;&nbsp;${kickerDate(p.date)}`}</div>
   <div>
     <div class="title">${p.title}</div>
     ${p.description ? `<div class="desc">${p.description}</div>` : ""}
@@ -100,7 +150,7 @@ const html = (p) => `<!DOCTYPE html>
   </div>
 </body></html>`;
 
-for (const p of posts) {
+for (const p of [...posts, ...rolePages]) {
   const page = join(WORK, `${p.slug}.html`);
   const shot = join(WORK, `${p.slug}.png`);
   writeFileSync(page, html(p));

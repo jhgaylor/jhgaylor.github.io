@@ -12,6 +12,8 @@
     {%- assign pageDescription = description | default: "Jake Gaylor is a staff-level platform, DevEx, and AI-infrastructure engineer who makes good teams ship like great ones. Good teams rarely lack talent, they lack speed, focus, and visibility, and that is the gap he closes, fast. Open to senior, staff, and engineering leadership roles." -%}
     {%- assign pageSocialDescription = socialDescription | default: "Staff-level platform, DevEx, and AI-infrastructure engineer. Good teams rarely lack talent. They lack speed, focus, and the visibility to see what&rsquo;s working. That&rsquo;s the gap I close, fast. Open to senior, staff, and engineering leadership roles." -%}
     {%- assign pageCanonical = canonicalPath | default: page.url -%}
+    {%- assign pageOgImage = og_image | default: "/images/og-card.jpg?v=3" -%}
+    {%- assign pageOgImageAlt = og_image_alt | default: "Jake Gaylor" -%}
     <title>{{ pageTitle }}</title>
     <meta name="description" content="{{ pageDescription }}" />
     <link rel="canonical" href="https://jakegaylor.com{{ pageCanonical }}" />
@@ -23,12 +25,12 @@
     <meta property="og:url" content="https://jakegaylor.com{{ pageCanonical }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ pageSocialDescription }}" />
-    <meta property="og:image" content="https://jakegaylor.com/images/og-card.jpg?v=3" />
-    <meta property="og:image:alt" content="Jake Gaylor" />
+    <meta property="og:image" content="https://jakegaylor.com{{ pageOgImage }}" />
+    <meta property="og:image:alt" content="{{ pageOgImageAlt }}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ pageTitle }}" />
     <meta name="twitter:description" content="{{ pageSocialDescription }}" />
-    <meta name="twitter:image" content="https://jakegaylor.com/images/og-card.jpg?v=3" />
+    <meta name="twitter:image" content="https://jakegaylor.com{{ pageOgImage }}" />
 
     <!-- schema.org Person, generated from resume.json at build time -->
     <script type="application/ld+json">{{ personJsonLd }}</script>
