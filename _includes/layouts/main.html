@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%- assign pageTitle = title | default: "Jake Gaylor · makes good teams ship like great ones" -%}
+    {%- assign pageTitle = title | default: "Jake Gaylor · builds systems a stranger can run on day one" -%}
     {%- if title -%}{%- assign pageTitle = title | append: " · Jake Gaylor" -%}{%- endif -%}
-    {%- assign pageDescription = description | default: "Writing by Jake Gaylor, an engineer who makes good teams ship like great ones." -%}
+    {%- assign pageDescription = description | default: "Writing by Jake Gaylor, an engineer who builds systems a stranger can run on day one." -%}
     <title>{{ pageTitle }}</title>
     <meta name="description" content="{{ pageDescription }}" />
     <link rel="canonical" href="https://jakegaylor.com{{ page.url }}" />
@@ -20,7 +20,7 @@
         {%- assign ogImage = image -%}
         {%- assign ogImageAlt = image_alt | default: pageTitle -%}
     {%- else -%}
-        {%- assign ogImage = "/images/og-card.jpg?v=3" -%}
+        {%- assign ogImage = "/images/og-card.jpg?v=4" -%}
         {%- assign ogImageAlt = "Jake Gaylor" -%}
     {%- endif -%}
     <meta property="og:type" content="article" />
