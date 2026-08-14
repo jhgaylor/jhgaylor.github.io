@@ -56,7 +56,7 @@ const rolePages = [
     slug: "role-kubernetes-engineer",
     kicker: "HIRING A KUBERNETES ENGINEER?",
     title: "Teams on my clusters ship more and think about Kubernetes less.",
-    description: "Production clusters since CoreOS and fleet in 2015. EKS at work, k3s at home.",
+    description: "Production clusters from fleet in 2015 to the k3s cluster serving my house today.",
   },
   {
     slug: "role-aws-specialist",
