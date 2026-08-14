@@ -56,7 +56,7 @@ const html = `<!DOCTYPE html>
   <div class="copy">
     <div class="kicker">SENIOR &middot; STAFF &middot; ENGINEERING LEADERSHIP</div>
     <div class="title">I build systems <span class="lite">a stranger can run on day one.</span></div>
-    <div class="desc">One reviewable path to production, the conventions written down, and a blast radius you can survive.</div>
+    <div class="desc">Nothing I build needs me in the room. New teammates, human or agent, ship on day one.</div>
     <div class="byline">Jake Gaylor <span class="site">&middot; jakegaylor.com</span></div>
   </div>
   <img class="photo" src="${HEADSHOT}">
