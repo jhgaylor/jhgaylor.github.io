@@ -20,6 +20,6 @@ After drafting, grep the file for `—` and `: ` and scan for the banned shapes 
 ## Build
 
 - `npx @11ty/eleventy` builds the site. `writing/**` and `.claude/**` are ignored by the build (see `.eleventy.js`).
-- `npm run build:css` regenerates the pinned Tailwind build — required after adding Tailwind classes to any template.
+- `npm run build:css` regenerates the pinned Tailwind build — required after adding Tailwind classes to any template. Whenever the build output changes, bump the `?v=` on the tailwind.css `<link>` in both layouts (`_includes/layouts/home.html` and `main.html`) or cached browsers render new markup with stale CSS.
 - `npm run build:og` regenerates OG card images.
 - `/resume/` renders from `resume.json` at build time. When `resume.json` changes, regenerate `_assets/JakeGaylor_resume.pdf` from the built page (print styles flatten the brand chrome).
