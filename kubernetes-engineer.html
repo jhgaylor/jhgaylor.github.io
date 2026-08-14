@@ -42,24 +42,24 @@ og_image_alt: Hiring a Kubernetes engineer? Teams on my clusters ship more and t
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
         <div class="text-4xl font-bold text-brand-600 mb-1">2015</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">first production Kubernetes</div>
+        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">production Kubernetes, the year it hit 1.0</div>
         <p class="text-gray-700 leading-relaxed">
-          At Food Service Warehouse I implemented Kubernetes on vSphere with CoreOS, fleet, etcd, and flannel.
-          The Node.js teams on that infrastructure ran the fastest release cycle in the company.
+          At Food Service Warehouse I ran Kubernetes on vSphere with CoreOS, fleet, etcd, and flannel.
+          The Node.js teams on those clusters had the fastest release cycle in the company.
         </p>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
-        <div class="text-4xl font-bold text-brand-600 mb-1">Blue/green</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">as a custom resource</div>
+        <div class="text-4xl font-bold text-brand-600 mb-1">3 days</div>
+        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">to move every engineer onto blue/green</div>
         <p class="text-gray-700 leading-relaxed">
-          At CyberGRX I built a custom resource with the CoreOS operator SDK to orchestrate blue/green deployments,
-          then redesigned the build and deploy process around it and had every engineer in the org shipping with it
-          inside 3 days.
+          At CyberGRX deploys were a brittle quarterly event. I wrote a Go operator that runs blue/green
+          rollouts as a custom resource, rebuilt the deploy process around it, and had every engineer in the
+          org shipping with it inside 3 days. From then on they deployed whenever they wanted.
         </p>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
         <div class="text-4xl font-bold text-brand-600 mb-1">30x</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">faster deploys on EKS</div>
+        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">faster deploys, in my first 6 months</div>
         <p class="text-gray-700 leading-relaxed">
           At Cloaked I led the migration from a legacy PaaS to AWS EKS, with a multi-account model that met
           SOC 2, ISO 27001, and ISO 27701 requirements, and a GitOps CI/CD pipeline that accelerated deployments 30x.
@@ -67,14 +67,21 @@ og_image_alt: Hiring a Kubernetes engineer? Teams on my clusters ship more and t
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
         <div class="text-4xl font-bold text-brand-600 mb-1">3 nodes</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">serving production from my house</div>
+        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">serving production from my house right now</div>
         <p class="text-gray-700 leading-relaxed">
-          The same discipline runs off the clock. My <a href="/homelab/" data-cta="k8s-receipt-homelab" class="text-brand-600 underline hover:text-brand-800">homelab</a>
-          is a k3s cluster where Flux CD reconciles every manifest from git and secrets live encrypted in-repo with
-          SOPS. It serves real production traffic, and there&rsquo;s a photo tour.
+          My <a href="/homelab/" data-cta="k8s-receipt-homelab" class="text-brand-600 underline hover:text-brand-800">homelab</a>
+          is a k3s cluster on M4 Mac minis. Flux CD reconciles every manifest from git, secrets live encrypted
+          in-repo with SOPS and age, CloudNativePG runs the databases, and Prometheus pages my phone when
+          something breaks. There&rsquo;s a photo tour.
         </p>
       </div>
     </div>
+
+    <p class="text-xs text-gray-500 text-center mt-8 max-w-3xl mx-auto">
+      For the keyword scanners: EKS, GKE, k3s, Flux CD, ArgoCD, Argo Workflows, GitHub Actions, Terraform,
+      SOPS, Traefik, cert-manager, Longhorn, CloudNativePG, Prometheus, Grafana, Loki, Tailscale.
+      Every one of them attached to a cluster above or on <a href="/resume/" data-cta="k8s-receipt-resume" class="text-brand-600 underline hover:text-brand-800">the resume</a>.
+    </p>
   </div>
 </section>
 
@@ -103,10 +110,11 @@ og_image_alt: Hiring a Kubernetes engineer? Teams on my clusters ship more and t
 <section class="py-16 md:py-20 bg-gradient-to-b from-brand-900 to-brand-950 text-white" data-section-track="testimonial">
   <div class="container mx-auto px-6 max-w-3xl text-center">
     <p class="text-2xl md:text-3xl font-medium leading-relaxed mb-6">
-      &ldquo;We were deploying C# on vSphere when Jake joined our first Node.js team. He brought Docker,
-      we moved to Kubernetes, and our services had the fastest release cycle in the company.&rdquo;
+      &ldquo;We were deploying C# on vSphere when Jake joined our first Node.js backend team. He had been
+      using Docker, we identified Kubernetes as our next step, and Jake hit the ground running. Our Node
+      services had the fastest release cycle in the company.&rdquo;
     </p>
-    <p class="text-brand-200 font-semibold">Architect, Food Service Warehouse</p>
+    <p class="text-brand-200 font-semibold">Architect, Food Service Warehouse, 2015</p>
   </div>
 </section>
 
