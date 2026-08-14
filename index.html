@@ -55,61 +55,62 @@ layout: layouts/home.html
 <section class="bg-gray-50 text-gray-900">
   <div class="container mx-auto px-6 py-6">
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" data-section-track="numbers">
-      <div class="bg-white rounded-xl px-5 py-3 border border-gray-200">
-        <span class="text-2xl font-bold text-blue-600">30x</span>
-        <p class="text-sm text-gray-600 mt-0.5">faster deploys at Cloaked, in my first 6 months</p>
-      </div>
-      <div class="bg-white rounded-xl px-5 py-3 border border-gray-200">
-        <span class="text-2xl font-bold text-blue-600">3 days</span>
-        <p class="text-sm text-gray-600 mt-0.5">to get every CyberGRX engineer on a new deploy process</p>
-      </div>
-      <div class="bg-white rounded-xl px-5 py-3 border border-gray-200">
-        <span class="text-2xl font-bold text-blue-600">$10M+/yr</span>
-        <p class="text-sm text-gray-600 mt-0.5">of production AWS at Protectwise, acquired by Verizon</p>
-      </div>
-    </div>
-
-    <div class="mt-6" data-section-track="router">
-      <h2 class="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-3">Hiring for a specific shape? Start on the right page.</h2>
+    <!-- The receipts wall: the crunchy bits as first-class content.
+         Each card deep-links to the page that proves it. -->
+    <div data-section-track="receipts">
+      <h2 class="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-3">The receipts</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        <a href="/kubernetes-engineer/" data-cta="router-kubernetes-engineer" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
-          <span class="font-semibold text-blue-700 block mb-1">Kubernetes Engineer</span>
-          <span class="text-sm text-gray-600">Clusters in production since CoreOS and fleet in 2015, before kubeadm existed.</span>
+        <a href="/devops/" data-cta="crunch-30x" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
+          <span class="text-lg font-bold text-blue-700 block mb-1">30x faster deploys</span>
+          <span class="text-sm text-gray-600">Cloaked&rsquo;s GitOps pipeline, built in my first 6 months.</span>
         </a>
-        <a href="/aws-specialist/" data-cta="router-aws-specialist" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
-          <span class="font-semibold text-blue-700 block mb-1">AWS Specialist</span>
-          <span class="text-sm text-gray-600">$10M+/yr of production AWS. HIPAA, PCI, SOC 2, and ISO 27001 on my watch.</span>
+        <a href="/platform-engineer/" data-cta="crunch-3-days" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
+          <span class="text-lg font-bold text-blue-700 block mb-1">3 days to retrain an org</span>
+          <span class="text-sm text-gray-600">Every CyberGRX engineer shipping on a new deploy process.</span>
         </a>
-        <a href="/platform-engineer/" data-cta="router-platform-engineer" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
-          <span class="font-semibold text-blue-700 block mb-1">Platform Engineer</span>
-          <span class="text-sm text-gray-600">Retrained an entire org onto a new deploy process in 3 days.</span>
+        <a href="/aws-specialist/" data-cta="crunch-aws" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
+          <span class="text-lg font-bold text-blue-700 block mb-1">$10M+/yr of AWS</span>
+          <span class="text-sm text-gray-600">Petabyte scale at Protectwise, acquired by Verizon.</span>
         </a>
-        <a href="/devops/" data-cta="router-devops" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
-          <span class="font-semibold text-blue-700 block mb-1">DevOps Engineer</span>
-          <span class="text-sm text-gray-600">Took CyberGRX from quarterly manual deploys to shipping on demand.</span>
+        <a href="/kubernetes-engineer/" data-cta="crunch-k8s-2015" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
+          <span class="text-lg font-bold text-blue-700 block mb-1">Kubernetes since 2015</span>
+          <span class="text-sm text-gray-600">CoreOS and fleet in production, before kubeadm existed.</span>
         </a>
-        <a href="/sre/" data-cta="router-sre" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
-          <span class="font-semibold text-blue-700 block mb-1">SRE</span>
-          <span class="text-sm text-gray-600">Petabyte scale kept boring. Also on call for my own house.</span>
+        <a href="/engineering-leader/" data-cta="crunch-steakhouse" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
+          <span class="text-lg font-bold text-blue-700 block mb-1">I owned a steakhouse</span>
+          <span class="text-sm text-gray-600">Team of 7, $500K a year, my name on the P&amp;L.</span>
         </a>
-        <a href="/ai-engineer/" data-cta="router-ai-engineer" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
-          <span class="font-semibold text-blue-700 block mb-1">AI Engineer</span>
-          <span class="text-sm text-gray-600">Agents in production at three companies. My fleet ships code under its own GitHub identity.</span>
+        <a href="/homelab/" data-cta="crunch-homelab" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
+          <span class="text-lg font-bold text-blue-700 block mb-1">My house serves production</span>
+          <span class="text-sm text-gray-600">A GitOps k3s cluster with alerts to my phone. Photo tour included.</span>
         </a>
-        <a href="/engineering-leader/" data-cta="router-engineering-leader" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
-          <span class="font-semibold text-blue-700 block mb-1">Engineering Leader</span>
-          <span class="text-sm text-gray-600">Led engineering teams and owned a steakhouse. $500K a year, full P&amp;L.</span>
+        <a href="/ai-engineer/" data-cta="crunch-agent-fleet" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
+          <span class="text-lg font-bold text-blue-700 block mb-1">An agent fleet with its own GitHub account</span>
+          <span class="text-sm text-gray-600">It ships code I review, on a control plane it largely built.</span>
         </a>
-        <a href="/resume/" data-cta="router-resume" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
-          <span class="font-semibold text-blue-700 block mb-1">The Whole Resume</span>
-          <span class="text-sm text-gray-600">One 15-year career, from Hurricane Sandy research software to fleets of coding agents.</span>
+        <a href="https://ai.jakegaylor.com/" data-cta="crunch-site-agent" class="block bg-white rounded-xl px-5 py-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition">
+          <span class="text-lg font-bold text-blue-700 block mb-1">This site is an agent</span>
+          <span class="text-sm text-gray-600">Your screening AI can interview ai.jakegaylor.com over MCP and A2A.</span>
         </a>
       </div>
     </div>
 
-    <p class="text-sm text-gray-500 mt-5">
-      Boston, MA, open to relocation. Screening with an AI assistant? Point it at <a href="https://ai.jakegaylor.com/" data-cta="cta-ai-mcp" class="underline text-blue-700 hover:text-blue-900">ai.jakegaylor.com</a>.
+    <!-- Role pages, demoted to navigation: pills, no content burden.
+         data-cta names stay router-* so the PostHog trends continue. -->
+    <div class="mt-5 flex flex-wrap items-center gap-2" data-section-track="router">
+      <span class="text-sm text-gray-500 mr-1">Hiring for a role? Each gets its own page:</span>
+      <a href="/kubernetes-engineer/" data-cta="router-kubernetes-engineer" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">Kubernetes</a>
+      <a href="/aws-specialist/" data-cta="router-aws-specialist" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">AWS</a>
+      <a href="/platform-engineer/" data-cta="router-platform-engineer" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">Platform</a>
+      <a href="/devops/" data-cta="router-devops" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">DevOps</a>
+      <a href="/sre/" data-cta="router-sre" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">SRE</a>
+      <a href="/ai-engineer/" data-cta="router-ai-engineer" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">AI</a>
+      <a href="/engineering-leader/" data-cta="router-engineering-leader" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">Engineering Leadership</a>
+      <a href="/resume/" data-cta="router-resume" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">Full Resume</a>
+    </div>
+
+    <p class="text-sm text-gray-500 mt-4">
+      Boston, MA, open to relocation.
     </p>
   </div>
 </section>
