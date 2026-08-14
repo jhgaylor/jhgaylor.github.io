@@ -60,7 +60,7 @@ layout: layouts/home.html
         <h2 class="text-xs font-semibold tracking-widest uppercase text-brand-700">The receipts</h2>
         <p class="text-xs text-gray-500">The headline comes from <a href="https://accessibleops.net" data-cta="crunch-accessible-ops" class="underline text-brand-700 hover:text-brand-900">Accessible Ops</a>, a spec I co-authored.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <a href="/devops/" data-cta="crunch-30x" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-3xl xl:text-4xl font-bold text-brand-600 block">30x</span>
           <span class="text-xs font-semibold uppercase tracking-wide text-gray-900 block mt-1.5 mb-2.5">faster deploys at Cloaked</span>
@@ -82,20 +82,41 @@ layout: layouts/home.html
           <span class="text-sm text-gray-600 leading-relaxed">CoreOS and fleet, before kubeadm existed.</span>
         </a>
         <a href="/engineering-leader/" data-cta="crunch-steakhouse" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
-          <span class="text-2xl font-bold text-brand-600 block leading-snug mb-2.5">I owned a steakhouse</span>
-          <span class="text-sm text-gray-600 leading-relaxed">Team of 7, $500K a year, my name on the P&amp;L.</span>
-        </a>
-        <a href="/homelab/" data-cta="crunch-homelab" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
-          <span class="text-2xl font-bold text-brand-600 block leading-snug mb-2.5">My house serves production</span>
-          <span class="text-sm text-gray-600 leading-relaxed">A GitOps k3s cluster with alerts to my phone. Photo tour included.</span>
+          <span class="text-3xl xl:text-4xl font-bold text-brand-600 block">$500K/yr</span>
+          <span class="text-xs font-semibold uppercase tracking-wide text-gray-900 block mt-1.5 mb-2.5">from the steakhouse I owned</span>
+          <span class="text-sm text-gray-600 leading-relaxed">A team of 7, my name on the P&amp;L.</span>
         </a>
         <a href="/ai-engineer/" data-cta="crunch-agent-fleet" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-2xl font-bold text-brand-600 block leading-snug mb-2.5">I built an agent orchestrator</span>
           <span class="text-sm text-gray-600 leading-relaxed">Fountain runs my coding-agent fleet, which largely built it and ships under its own GitHub account.</span>
         </a>
-        <a href="https://ai.jakegaylor.com/" data-cta="crunch-site-agent" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
-          <span class="text-2xl font-bold text-brand-600 block leading-snug mb-2.5">This site is an agent</span>
-          <span class="text-sm text-gray-600 leading-relaxed">Send your screening agent. ai.jakegaylor.com is expecting it.</span>
+      </div>
+
+      <!-- The live pair: not career receipts, running systems you can poke
+           at right now. Pulled out of the grid and flipped to the dark brand
+           treatment so they read as a different kind of proof. -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+        <a href="/homelab/" data-cta="crunch-homelab" class="block rounded-2xl px-6 py-4 bg-gradient-to-br from-brand-700 to-brand-900 text-white shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition">
+          <span class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-brand-200 mb-1.5">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+            </span>
+            Live right now
+          </span>
+          <span class="text-xl font-bold block leading-snug mb-1">My house serves production</span>
+          <span class="text-sm text-brand-100 leading-relaxed">A GitOps k3s cluster with alerts to my phone. Photo tour included.</span>
+        </a>
+        <a href="https://ai.jakegaylor.com/" data-cta="crunch-site-agent" class="block rounded-2xl px-6 py-4 bg-gradient-to-br from-brand-700 to-brand-900 text-white shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition">
+          <span class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-brand-200 mb-1.5">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+            </span>
+            Live right now
+          </span>
+          <span class="text-xl font-bold block leading-snug mb-1">This site is an agent</span>
+          <span class="text-sm text-brand-100 leading-relaxed">Send your screening agent. ai.jakegaylor.com is expecting it.</span>
         </a>
       </div>
     </div>
