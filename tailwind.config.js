@@ -2,6 +2,8 @@
  * Scans every template that uses Tailwind classes; output goes to
  * _assets/css/tailwind.css via `npm run build:css`.
  */
+import { brand } from "./styles/brand.mjs";
+
 export default {
   content: [
     "./index.html",
@@ -19,7 +21,9 @@ export default {
     "./blog/**/*.{html,md}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: { brand },
+    },
   },
   plugins: [],
 };

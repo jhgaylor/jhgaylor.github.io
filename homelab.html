@@ -25,25 +25,25 @@ canonicalPath: /homelab/
 -->
 
 <!-- ===================== HEADER: same brand as the homepage ===================== -->
-<header class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 text-white">
+<header class="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 text-white">
   <div class="container mx-auto px-6 pt-8 pb-16 md:pb-20">
     <nav class="flex items-center justify-between text-sm mb-12">
-      <a href="/" data-cta="homelab-nav-home" class="text-blue-100 hover:text-white transition-colors">
+      <a href="/" data-cta="homelab-nav-home" class="text-brand-100 hover:text-white transition-colors">
         <i class="fas fa-arrow-left mr-2"></i>jakegaylor.com
       </a>
       <div class="flex gap-6">
-        <a href="/projects/" data-cta="homelab-nav-projects" class="text-blue-100 hover:text-white transition-colors">Projects</a>
-        <a href="/resume/" data-cta="homelab-nav-resume" class="text-blue-100 hover:text-white transition-colors">Resume</a>
-        <a href="/blog/" data-cta="homelab-nav-blog" class="text-blue-100 hover:text-white transition-colors">Blog</a>
+        <a href="/projects/" data-cta="homelab-nav-projects" class="text-brand-100 hover:text-white transition-colors">Projects</a>
+        <a href="/resume/" data-cta="homelab-nav-resume" class="text-brand-100 hover:text-white transition-colors">Resume</a>
+        <a href="/blog/" data-cta="homelab-nav-blog" class="text-brand-100 hover:text-white transition-colors">Blog</a>
       </div>
     </nav>
     <div class="max-w-3xl">
-      <p class="text-blue-200 font-semibold tracking-widest uppercase text-sm mb-5">The Homelab</p>
+      <p class="text-brand-200 font-semibold tracking-widest uppercase text-sm mb-5">The Homelab</p>
       <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
         Production practices.
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Residential square footage.</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 to-white">Residential square footage.</span>
       </h1>
-      <p class="text-xl text-blue-100">
+      <p class="text-xl text-brand-100">
         It deploys from git. It pages me when it breaks. It serves real traffic from my house. Everything else I build is virtual &mdash; I wanted to run real cables. So I did.
       </p>
     </div>
@@ -52,26 +52,26 @@ canonicalPath: /homelab/
     <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
       <div>
         <p class="text-3xl font-bold">3</p>
-        <p class="text-sm text-blue-200">M4 Mac mini k3s nodes</p>
+        <p class="text-sm text-brand-200">M4 Mac mini k3s nodes</p>
       </div>
       <div>
         <p class="text-3xl font-bold">8</p>
-        <p class="text-sm text-blue-200">apps in production</p>
+        <p class="text-sm text-brand-200">apps in production</p>
       </div>
       <div>
         <p class="text-3xl font-bold">100%</p>
-        <p class="text-sm text-blue-200">deployed from git (Flux CD)</p>
+        <p class="text-sm text-brand-200">deployed from git (Flux CD)</p>
       </div>
       <div>
         <p class="text-3xl font-bold">500/500</p>
-        <p class="text-sm text-blue-200">Mbps, symmetric, to the street</p>
+        <p class="text-sm text-brand-200">Mbps, symmetric, to the street</p>
       </div>
     </div>
   </div>
 </header>
 
 <!-- ===================== HERO PHOTO: the rack ===================== -->
-<section class="bg-slate-900">
+<section class="bg-brand-950">
   <div class="container mx-auto px-6 max-w-5xl -mb-16 relative z-10">
     <img src="/images/homelab/hero-rack.jpg"
          alt="The homelab rack: a UniFi switch and gateway glowing above three M4 Mac minis seated in blue 3D-printed alignment racks"
@@ -182,23 +182,23 @@ canonicalPath: /homelab/
     </figure>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition">
-        <i class="fas fa-satellite-dish text-2xl text-blue-700 mb-3"></i>
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-brand-200 hover:shadow-md transition">
+        <i class="fas fa-satellite-dish text-2xl text-brand-700 mb-3"></i>
         <h3 class="font-semibold mb-2">Starry fixed wireless</h3>
         <p class="text-sm text-gray-600">500&nbsp;Mbps symmetric. The upload matters more than the download when your house is the origin server.</p>
       </div>
-      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition">
-        <i class="fas fa-network-wired text-2xl text-blue-700 mb-3"></i>
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-brand-200 hover:shadow-md transition">
+        <i class="fas fa-network-wired text-2xl text-brand-700 mb-3"></i>
         <h3 class="font-semibold mb-2">UniFi gateway</h3>
         <p class="text-sm text-gray-600">Hands out the LAN, forwards exactly the ports the front door needs, and nothing else.</p>
       </div>
-      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition">
-        <i class="fas fa-circle-nodes text-2xl text-blue-700 mb-3"></i>
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-brand-200 hover:shadow-md transition">
+        <i class="fas fa-circle-nodes text-2xl text-brand-700 mb-3"></i>
         <h3 class="font-semibold mb-2">Tailscale mesh</h3>
         <p class="text-sm text-gray-600">Every Mac and VM is a node. Cluster traffic rides WireGuard, and the VMs hold real LAN IPs so peers connect directly &mdash; no DERP relay.</p>
       </div>
-      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-blue-200 hover:shadow-md transition">
-        <i class="fas fa-certificate text-2xl text-blue-700 mb-3"></i>
+      <div class="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-brand-200 hover:shadow-md transition">
+        <i class="fas fa-certificate text-2xl text-brand-700 mb-3"></i>
         <h3 class="font-semibold mb-2">Cloudflare + cert-manager</h3>
         <p class="text-sm text-gray-600">Public names and TLS renew themselves. I haven&rsquo;t thought about a certificate in months.</p>
       </div>
@@ -217,10 +217,10 @@ canonicalPath: /homelab/
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="text-lg font-semibold">jake-mini</h3>
-          <span class="text-xs font-semibold uppercase tracking-wide text-blue-700 bg-blue-50 rounded-full px-3 py-1">control plane</span>
+          <span class="text-xs font-semibold uppercase tracking-wide text-brand-700 bg-brand-50 rounded-full px-3 py-1">control plane</span>
         </div>
         <ul class="space-y-1.5 text-sm text-gray-600">
           <li>M4 Mac mini, headless</li>
@@ -229,7 +229,7 @@ canonicalPath: /homelab/
         </ul>
       </article>
 
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="text-lg font-semibold">agent5</h3>
           <span class="text-xs font-semibold uppercase tracking-wide text-gray-500 bg-gray-100 rounded-full px-3 py-1">worker</span>
@@ -241,7 +241,7 @@ canonicalPath: /homelab/
         </ul>
       </article>
 
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="text-lg font-semibold">agentnan</h3>
           <span class="text-xs font-semibold uppercase tracking-wide text-gray-500 bg-gray-100 rounded-full px-3 py-1">worker</span>
@@ -288,7 +288,7 @@ canonicalPath: /homelab/
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <article class="bg-gray-50 rounded-2xl border border-gray-100 p-7">
-        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-cubes text-blue-700 mr-2"></i>Foundation</h3>
+        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-cubes text-brand-700 mr-2"></i>Foundation</h3>
         <ul class="space-y-1.5 text-sm text-gray-600">
           <li><strong>k3s</strong> &mdash; all of Kubernetes, none of the ceremony</li>
           <li><strong>Lima + socket_vmnet</strong> &mdash; Linux VMs on macOS with real LAN IPs</li>
@@ -298,7 +298,7 @@ canonicalPath: /homelab/
       </article>
 
       <article class="bg-gray-50 rounded-2xl border border-gray-100 p-7">
-        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-code-branch text-blue-700 mr-2"></i>GitOps &amp; secrets</h3>
+        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-code-branch text-brand-700 mr-2"></i>GitOps &amp; secrets</h3>
         <ul class="space-y-1.5 text-sm text-gray-600">
           <li><strong>Flux CD</strong> &mdash; every manifest reconciled from git</li>
           <li><strong>SOPS + age</strong> &mdash; secrets encrypted in the repo, decrypted in-cluster</li>
@@ -308,7 +308,7 @@ canonicalPath: /homelab/
       </article>
 
       <article class="bg-gray-50 rounded-2xl border border-gray-100 p-7">
-        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-hard-drive text-blue-700 mr-2"></i>Storage &amp; data</h3>
+        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-hard-drive text-brand-700 mr-2"></i>Storage &amp; data</h3>
         <ul class="space-y-1.5 text-sm text-gray-600">
           <li><strong>Longhorn</strong> &mdash; volumes replicated across the minis, so any one Mac can die</li>
           <li><strong>Garage</strong> &mdash; the S3 API, but the bytes stay in the house</li>
@@ -317,7 +317,7 @@ canonicalPath: /homelab/
       </article>
 
       <article class="bg-gray-50 rounded-2xl border border-gray-100 p-7">
-        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-chart-line text-blue-700 mr-2"></i>Observability</h3>
+        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-chart-line text-brand-700 mr-2"></i>Observability</h3>
         <ul class="space-y-1.5 text-sm text-gray-600">
           <li><strong>Prometheus + Grafana</strong> &mdash; metrics, dashboards, custom alerts</li>
           <li><strong>Loki</strong> &mdash; logs</li>
@@ -327,7 +327,7 @@ canonicalPath: /homelab/
       </article>
 
       <article class="bg-gray-50 rounded-2xl border border-gray-100 p-7">
-        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-shield-halved text-blue-700 mr-2"></i>Edge &amp; identity</h3>
+        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-shield-halved text-brand-700 mr-2"></i>Edge &amp; identity</h3>
         <ul class="space-y-1.5 text-sm text-gray-600">
           <li><strong>Traefik</strong> &mdash; ingress</li>
           <li><strong>cert-manager + Cloudflare</strong> &mdash; TLS without thinking about it</li>
@@ -337,7 +337,7 @@ canonicalPath: /homelab/
       </article>
 
       <article class="bg-gray-50 rounded-2xl border border-gray-100 p-7">
-        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-wrench text-blue-700 mr-2"></i>Operability</h3>
+        <h3 class="text-lg font-semibold mb-3"><i class="fas fa-wrench text-brand-700 mr-2"></i>Operability</h3>
         <ul class="space-y-1.5 text-sm text-gray-600">
           <li><strong>Headlamp</strong> &mdash; cluster UI for when a terminal is the wrong tool</li>
           <li><strong>Flux webhooks</strong> &mdash; push to main, reconcile now, not on the next poll</li>
@@ -348,7 +348,7 @@ canonicalPath: /homelab/
     <!-- SCREENSHOT ROW (#5): proof the stack is alive -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
       <figure>
-        <a href="/images/homelab/grafana.png" data-cta="homelab-screenshot-grafana" class="block rounded-2xl border border-gray-200 hover:border-blue-300 transition overflow-hidden">
+        <a href="/images/homelab/grafana.png" data-cta="homelab-screenshot-grafana" class="block rounded-2xl border border-gray-200 hover:border-brand-300 transition overflow-hidden">
           <img src="/images/homelab/grafana.png"
                alt="Grafana cluster dashboard: an 'all systems go' banner, zero firing alerts, green subsystem checks, and per-node CPU, RAM, and disk for all three Macs and their k3s VMs"
                class="w-full h-auto"/>
@@ -356,7 +356,7 @@ canonicalPath: /homelab/
         <figcaption class="text-xs text-gray-500 text-center mt-2">Grafana &mdash; the NOC dashboard. Click to read the panels.</figcaption>
       </figure>
       <figure>
-        <a href="/images/homelab/headlamp.png" data-cta="homelab-screenshot-headlamp" class="block rounded-2xl border border-gray-200 hover:border-blue-300 transition overflow-hidden">
+        <a href="/images/homelab/headlamp.png" data-cta="homelab-screenshot-headlamp" class="block rounded-2xl border border-gray-200 hover:border-brand-300 transition overflow-hidden">
           <img src="/images/homelab/headlamp.png"
                alt="Headlamp's cluster map: every namespace laid out as a block — monitoring, loki, tailscale, fountain, grocery-aid, guild, mem0, garage, bambuddy — with zero errors or warnings"
                class="w-full h-auto"/>
@@ -364,7 +364,7 @@ canonicalPath: /homelab/
         <figcaption class="text-xs text-gray-500 text-center mt-2">Headlamp &mdash; the whole cluster as a map, filtered to errors: none.</figcaption>
       </figure>
       <figure>
-        <a href="/images/homelab/flux.jpg" data-cta="homelab-screenshot-flux" class="block rounded-2xl border border-gray-200 hover:border-blue-300 transition overflow-hidden">
+        <a href="/images/homelab/flux.jpg" data-cta="homelab-screenshot-flux" class="block rounded-2xl border border-gray-200 hover:border-brand-300 transition overflow-hidden">
           <img src="/images/homelab/flux.jpg"
                alt="Terminal output of flux get kustomizations: two dozen kustomizations from cert-manager to fountain, every one of them Ready"
                class="w-full h-auto"/>
@@ -386,49 +386,49 @@ canonicalPath: /homelab/
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
-          <a href="https://ai.jakegaylor.com/" data-cta="homelab-app-ai" class="hover:text-blue-700 transition-colors">ai.jakegaylor.com <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+          <a href="https://ai.jakegaylor.com/" data-cta="homelab-app-ai" class="hover:text-brand-700 transition-colors">ai.jakegaylor.com <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
         </h3>
-        <p class="text-sm text-gray-700">The live MCP server that teaches AI assistants about me &mdash; resume, fit-scoring, even emailing me from the conversation. Served from this rack. <a href="/projects/" data-cta="homelab-app-ai-projects" class="underline hover:text-blue-700">More on the projects page.</a></p>
+        <p class="text-sm text-gray-700">The live MCP server that teaches AI assistants about me &mdash; resume, fit-scoring, even emailing me from the conversation. Served from this rack. <a href="/projects/" data-cta="homelab-app-ai-projects" class="underline hover:text-brand-700">More on the projects page.</a></p>
       </article>
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
-          <a href="https://github.com/BinaryBourbon/fountain" data-cta="homelab-app-fountain" class="hover:text-blue-700 transition-colors">Fountain <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+          <a href="https://github.com/BinaryBourbon/fountain" data-cta="homelab-app-fountain" class="hover:text-brand-700 transition-colors">Fountain <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
         </h3>
         <p class="text-sm text-gray-700">The control plane for my fleet of sandboxed coding agents. The agents that build Fountain run on the cluster Fountain is deployed to.</p>
       </article>
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
-          <a href="https://otfl.inevitable.fyi" data-cta="homelab-app-otfl" class="hover:text-blue-700 transition-colors">OTFL <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+          <a href="https://otfl.inevitable.fyi" data-cta="homelab-app-otfl" class="hover:text-brand-700 transition-colors">OTFL <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
         </h3>
-        <p class="text-sm text-gray-700">A free, open service for shareable checklists &mdash; every list a UUID, the link the only key. A JSON REST API and a built-in MCP server let any assistant create and drive lists. Built agent-first, runs here. <a href="/projects/" data-cta="homelab-app-otfl-projects" class="underline hover:text-blue-700">More on the projects page.</a></p>
+        <p class="text-sm text-gray-700">A free, open service for shareable checklists &mdash; every list a UUID, the link the only key. A JSON REST API and a built-in MCP server let any assistant create and drive lists. Built agent-first, runs here. <a href="/projects/" data-cta="homelab-app-otfl-projects" class="underline hover:text-brand-700">More on the projects page.</a></p>
       </article>
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">Guild</h3>
         <p class="text-sm text-gray-700">Work management that connects ticketed work to agent runners &mdash; tickets go in, agents pick them up.</p>
       </article>
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
-          <a href="https://github.com/jhgaylor/convoy" data-cta="homelab-app-convoy" class="hover:text-blue-700 transition-colors">Convoy <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+          <a href="https://github.com/jhgaylor/convoy" data-cta="homelab-app-convoy" class="hover:text-brand-700 transition-colors">Convoy <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
         </h3>
         <p class="text-sm text-gray-700">A real-time strategy game you play by writing code.</p>
       </article>
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
-          <a href="https://bambuddy.cool/" data-cta="homelab-app-bambuddy" class="hover:text-blue-700 transition-colors">Bambuddy <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+          <a href="https://bambuddy.cool/" data-cta="homelab-app-bambuddy" class="hover:text-brand-700 transition-colors">Bambuddy <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
         </h3>
         <p class="text-sm text-gray-700">Manages the Bambu Lab 3D printer. Yes, the cluster runs the printer. Yes, the printer printed parts of the cluster&rsquo;s rack. More below.</p>
       </article>
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
-          <a href="https://github.com/jhgaylor/grocery-aid" data-cta="homelab-app-grocery-aid" class="hover:text-blue-700 transition-colors">Grocery Aid <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+          <a href="https://github.com/jhgaylor/grocery-aid" data-cta="homelab-app-grocery-aid" class="hover:text-brand-700 transition-colors">Grocery Aid <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
         </h3>
         <p class="text-sm text-gray-700">Shopping and meal planning for our household. The least glamorous app here, and the one with the most demanding stakeholder.</p>
       </article>
-      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition">
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
-          <a href="https://github.com/jhgaylor/express-mcp-server-echo" data-cta="homelab-app-mcp-echo" class="hover:text-blue-700 transition-colors">mcp-echo <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+          <a href="https://github.com/jhgaylor/express-mcp-server-echo" data-cta="homelab-app-mcp-echo" class="hover:text-brand-700 transition-colors">mcp-echo <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
         </h3>
         <p class="text-sm text-gray-700">A public MCP server that helps MCP creators debug what their clients are actually sending.</p>
       </article>
@@ -461,19 +461,19 @@ canonicalPath: /homelab/
     </div>
 
     <div class="space-y-6">
-      <div class="border-l-4 border-blue-700 pl-6">
+      <div class="border-l-4 border-brand-700 pl-6">
         <h3 class="font-semibold mb-1">Why Mac minis?</h3>
         <p class="text-gray-700 text-sm">Because they were already here. These machines started life as workstations for my AI agent fleet, and Apple Silicon turned out to be a genuinely good cluster substrate: an M4 mini idles in single-digit watts, makes no noise, and fits three-wide on a shelf. If I were buying hardware from scratch for a cluster, I&rsquo;d buy Linux boxes &mdash; but I wasn&rsquo;t, and repurposing beats purchasing.</p>
       </div>
-      <div class="border-l-4 border-blue-700 pl-6">
+      <div class="border-l-4 border-brand-700 pl-6">
         <h3 class="font-semibold mb-1">Why VMs on macOS instead of bare-metal Linux?</h3>
         <p class="text-gray-700 text-sm">Because I couldn&rsquo;t. Bare-metal Linux doesn&rsquo;t support M4 Macs &mdash; if it did, these would be Linux boxes. So k3s gets the next best thing: one Linux VM per mini. I started on OrbStack and switched to Lima after hitting a networking issue I couldn&rsquo;t work around. Lima with socket_vmnet gives each VM a bridged interface with a real LAN IP from the UniFi gateway&rsquo;s DHCP, which turns out to be the detail everything else depends on.</p>
       </div>
-      <div class="border-l-4 border-blue-700 pl-6">
+      <div class="border-l-4 border-brand-700 pl-6">
         <h3 class="font-semibold mb-1">Why three storage systems?</h3>
         <p class="text-gray-700 text-sm">Because each answers a different question. Longhorn replicates block volumes across the minis, so any single Mac can die without taking data with it. Garage gives apps the standard S3 API while the bytes stay on hardware I own. CloudNativePG turns Postgres into manifests &mdash; provisioning, backups, failover &mdash; instead of a hand-fed database somewhere. The common thread: no workload gets to care which physical box it landed on.</p>
       </div>
-      <div class="border-l-4 border-blue-700 pl-6">
+      <div class="border-l-4 border-brand-700 pl-6">
         <h3 class="font-semibold mb-1">The DERP detour</h3>
         <p class="text-gray-700 text-sm">Tailscale makes everything reachable, which is exactly why it can hide a problem: when peers can&rsquo;t connect directly, traffic silently falls back to relaying through Tailscale&rsquo;s DERP servers. With the VMs behind Lima&rsquo;s userspace NAT, that&rsquo;s what happened &mdash; cluster traffic between two machines sitting a foot apart was round-tripping through a relay on the public internet. Everything <em>worked</em>, just worse than it should have. The fix is the socket_vmnet setup above: give the VMs real LAN addresses and WireGuard forms direct paths across the shelf. The lesson stuck &mdash; &ldquo;it works&rdquo; and &ldquo;it works the way you think it does&rdquo; are different claims, and only the second one survives load.</p>
       </div>
@@ -482,14 +482,14 @@ canonicalPath: /homelab/
 </section>
 
 <!-- ===================== CLOSING CTA ===================== -->
-<section class="py-16 md:py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+<section class="py-16 md:py-20 bg-gradient-to-r from-brand-700 to-brand-900 text-white">
   <div class="container mx-auto px-6 text-center max-w-3xl">
     <h2 class="text-3xl md:text-4xl font-bold mb-5">This is just how I work.</h2>
-    <p class="text-xl text-blue-100 mb-10">
+    <p class="text-xl text-brand-100 mb-10">
       Nothing on this page was required. I run it this way because git-driven deploys, real monitoring, and encrypted secrets are habits &mdash; and habits come with the hire.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/projects/" data-cta="homelab-view-projects" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-md text-blue-800 bg-white hover:bg-blue-50 transition-colors shadow-lg">
+      <a href="/projects/" data-cta="homelab-view-projects" class="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold rounded-md text-brand-800 bg-white hover:bg-brand-50 transition-colors shadow-lg">
         <i class="fas fa-diagram-project mr-2"></i>
         See What Else I Build
       </a>

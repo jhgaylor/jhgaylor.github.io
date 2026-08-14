@@ -14,6 +14,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync, rmSync } from "nod
 import { execSync } from "node:child_process";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
+import { ogGradient, ogTints } from "../styles/brand.mjs";
 
 const REPO = process.cwd();
 const OUT = join(REPO, "_assets/images/og");
@@ -108,9 +109,7 @@ const html = (p) => `<!DOCTYPE html>
   body {
     font-family: -apple-system, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    background:
-      radial-gradient(90% 120% at 100% 0%, rgba(96, 165, 250, 0.28) 0%, rgba(96, 165, 250, 0) 55%),
-      linear-gradient(120deg, #172a67 0%, #1e40af 55%, #2158d6 100%);
+    background: ${ogGradient};
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -118,14 +117,14 @@ const html = (p) => `<!DOCTYPE html>
     padding: 72px 80px 64px;
   }
   .kicker {
-    font-size: 22px; font-weight: 600; letter-spacing: 4px; color: #93b4f8;
+    font-size: 22px; font-weight: 600; letter-spacing: 4px; color: ${ogTints.kicker};
   }
   .title {
     font-size: ${titleSize(p.title)}px; font-weight: 700; line-height: 1.12;
     letter-spacing: -0.5px; text-wrap: balance; max-width: 1020px;
   }
   .desc {
-    font-size: 28px; line-height: 1.45; color: #c7d7fb; max-width: 900px;
+    font-size: 28px; line-height: 1.45; color: ${ogTints.desc}; max-width: 900px;
     margin-top: 28px;
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
@@ -135,7 +134,7 @@ const html = (p) => `<!DOCTYPE html>
     border: 2.5px solid rgba(255, 255, 255, 0.55);
   }
   .byline .name { font-size: 26px; font-weight: 600; }
-  .byline .site { font-size: 26px; color: #93b4f8; }
+  .byline .site { font-size: 26px; color: ${ogTints.site}; }
 </style></head>
 <body>
   <div class="kicker">${p.kicker || `BLOG&nbsp;&nbsp;·&nbsp;&nbsp;${kickerDate(p.date)}`}</div>

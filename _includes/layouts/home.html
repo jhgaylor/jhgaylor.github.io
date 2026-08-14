@@ -12,12 +12,12 @@
     {%- assign pageDescription = description | default: "Jake Gaylor is a staff-level platform, DevEx, and AI-infrastructure engineer who builds systems a stranger can run on day one, with one reviewable path to production and the conventions written down. Open to senior, staff, and engineering leadership roles." -%}
     {%- assign pageSocialDescription = socialDescription | default: "I build systems a stranger can run on day one, whether that stranger is your next hire or an agent. The receipts are on the page. Open to senior, staff, and engineering leadership roles." -%}
     {%- assign pageCanonical = canonicalPath | default: page.url -%}
-    {%- assign pageOgImage = og_image | default: "/images/og-card.jpg?v=4" -%}
+    {%- assign pageOgImage = og_image | default: "/images/og-card.jpg?v=5" -%}
     {%- assign pageOgImageAlt = og_image_alt | default: "Jake Gaylor" -%}
     <title>{{ pageTitle }}</title>
     <meta name="description" content="{{ pageDescription }}" />
     <link rel="canonical" href="https://jakegaylor.com{{ pageCanonical }}" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231d4ed8'/><text x='32' y='45' font-family='system-ui,sans-serif' font-size='32' font-weight='700' fill='%23ffffff' text-anchor='middle'>JG</text></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%2396491e'/><text x='32' y='45' font-family='system-ui,sans-serif' font-size='32' font-weight='700' fill='%23ffffff' text-anchor='middle'>JG</text></svg>" />
 
     <!-- Open Graph / social preview (shown when the link is pasted into email, LinkedIn, Slack, etc.) -->
     <meta property="og:type" content="website" />
@@ -79,19 +79,19 @@
                   © {{ "now" | date: "%Y" }} Jake Gaylor. All rights reserved.
               </div>
               <div class="flex space-x-6">
-                  <a href="mailto:jhgaylor@gmail.com" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  <a href="mailto:jhgaylor@gmail.com" class="text-gray-600 hover:text-brand-600 transition-colors">
                       <i class="fas fa-envelope"></i>
                   </a>
-                  <a href="https://github.com/jhgaylor" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  <a href="https://github.com/jhgaylor" target="_blank" class="text-gray-600 hover:text-brand-600 transition-colors">
                       <i class="fab fa-github"></i>
                   </a>
-                  <a href="https://linkedin.com/in/jhgaylor" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">
+                  <a href="https://linkedin.com/in/jhgaylor" target="_blank" class="text-gray-600 hover:text-brand-600 transition-colors">
                       <i class="fab fa-linkedin"></i>
                   </a>
-                  <a href="/blog/" class="text-gray-600 hover:text-blue-600 transition-colors" title="Blog">
+                  <a href="/blog/" class="text-gray-600 hover:text-brand-600 transition-colors" title="Blog">
                       <i class="fas fa-book"></i>
                   </a>
-                  <a href="/feed.xml" class="text-gray-600 hover:text-blue-600 transition-colors" title="RSS Feed">
+                  <a href="/feed.xml" class="text-gray-600 hover:text-brand-600 transition-colors" title="RSS Feed">
                       <i class="fas fa-rss"></i>
                   </a>
               </div>
