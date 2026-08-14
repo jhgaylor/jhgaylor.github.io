@@ -26,7 +26,7 @@ canonicalPath: /resume/
     #resume-hero .contact-chips a, #resume-hero .contact-chips span { display: inline !important; border: none !important; background: none !important; padding: 0 !important; margin-right: 12px; white-space: nowrap; }
     #resume-hero .contact-chips .print-hidden { display: none !important; }
     section.resume-section { background: #fff !important; border: none !important; padding: 0.25rem 0 !important; }
-    .resume-card { background: #fff !important; border: none !important; box-shadow: none !important; padding: 0.3rem 0 !important; break-inside: avoid; }
+    .resume-card { background: #fff !important; border: none !important; box-shadow: none !important; padding: 0.15rem 0 !important; break-inside: avoid; }
     #resume-content .space-y-6 > * + * { margin-top: 0.25rem !important; }
     #resume-content .space-y-1\.5 > * + *, #resume-content .space-y-1 > * + * { margin-top: 0.1rem !important; }
     .resume-section h2 { border-bottom: 1.5px solid #444; padding-bottom: 2px; font-size: 12pt !important; margin-bottom: 0.4rem !important; }
@@ -41,10 +41,14 @@ canonicalPath: /resume/
     #skills-grid .flex { display: block !important; }
     .skill-chip { display: inline !important; border: none !important; background: none !important; padding: 0 !important; }
     .skill-chip:not(:last-child):after { content: ","; }
+    /* Proof lines lead each skill group; keywords recede into the ATS fine print. */
+    #resume-content .skill-proof { font-size: 8.5pt !important; color: #222 !important; line-height: 1.2 !important; margin-bottom: 0.05rem !important; }
+    #resume-content .skill-chip { font-size: 7.5pt !important; color: #555 !important; }
+    #skills-grid h3 { font-size: 10pt !important; margin-bottom: 0.05rem !important; }
     #resume-content .mt-6 { margin-top: 0.3rem !important; }
     #resume-content .gap-5 { gap: 0.4rem !important; }
     #resume-content .gap-1\.5 { gap: 0.2rem !important; }
-    #skills-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0.15rem 1.2rem !important; }
+    #skills-grid { display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 0.05rem 0.9rem !important; }
     /* Older roles print as a one-line summary; full bullets stay on the web page. */
     .print-compact ul { display: none !important; }
     .print-compact { padding: 0.25rem 0 !important; }
@@ -180,7 +184,10 @@ canonicalPath: /resume/
       <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {%- for skill in resume.skills %}
         <div class="resume-card bg-gray-50 rounded-2xl border border-gray-100 p-5">
-          <h3 class="font-semibold mb-3">{{ skill.name }}</h3>
+          <h3 class="font-semibold mb-2">{{ skill.name }}</h3>
+          {%- if skill.proof %}
+          <p class="skill-proof text-sm text-gray-700 mb-3">{{ skill.proof }}</p>
+          {%- endif %}
           <div class="flex flex-wrap gap-1.5">
             {%- for keyword in skill.keywords %}
             <span class="skill-chip text-xs bg-white border border-gray-200 rounded px-2 py-0.5 text-gray-700">{{ keyword }}</span>

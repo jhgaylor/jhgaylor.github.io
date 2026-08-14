@@ -179,7 +179,7 @@
   "skills": [
     {
       "name": "AI & Agent Engineering",
-      "level": "Expert",
+      "proof": "Built Cloaked's autonomous LangChain agents and turned them into a fundraising narrative, then cofounded Ravi so agents can run their own accounts and secrets.",
       "keywords": [
         "MCP Servers & SDKs",
         "Agent Orchestration & Sandboxing",
@@ -191,7 +191,7 @@
     },
     {
       "name": "Cloud Infrastructure",
-      "level": "Expert",
+      "proof": "Led Cloaked's migration to AWS EKS under SOC 2 and ISO 27001; administered a $10M+/yr AWS environment at Protectwise, acquired by Verizon.",
       "keywords": [
         "AWS",
         "Kubernetes (EKS, GKE, k3s)",
@@ -203,7 +203,7 @@
     },
     {
       "name": "GitOps & CI/CD",
-      "level": "Expert",
+      "proof": "Built the GitOps pipeline that accelerated Cloaked's deploys 30x; Flux CD reconciles my homelab from git the same way.",
       "keywords": [
         "Flux CD",
         "ArgoCD",
@@ -215,7 +215,7 @@
     },
     {
       "name": "Programming Languages",
-      "level": "Advanced",
+      "proof": "Shipped Ravi's Flutter app to the App Store in Dart, wrote CyberGRX's blue/green operator in Go, and put Food Service Warehouse's Node.js services on the fastest release cycle in the company in 2015.",
       "keywords": [
         "TypeScript",
         "Javascript",
@@ -227,7 +227,7 @@
     },
     {
       "name": "Data & Storage",
-      "level": "Advanced",
+      "proof": "Ran thousands of Cassandra nodes and petabytes of S3 on Protectwise's ingestion platform.",
       "keywords": [
         "PostgreSQL",
         "Redis",
@@ -239,7 +239,7 @@
     },
     {
       "name": "Distributed Systems",
-      "level": "Expert",
+      "proof": "SRE for Protectwise's petabyte-scale event ingestion platform, the largest-scale system I've operated.",
       "keywords": [
         "Kafka",
         "RabbitMQ",
@@ -249,7 +249,7 @@
     },
     {
       "name": "Observability",
-      "level": "Expert",
+      "proof": "Built the product-analytics stack that taught Cloaked to make data-driven decisions; my homelab pages my phone through Prometheus and Grafana.",
       "keywords": [
         "Prometheus",
         "Grafana",
@@ -261,7 +261,7 @@
     },
     {
       "name": "Product Engineering",
-      "level": "Expert",
+      "proof": "Turned Cloaked's AI agents into an AI-powered onboarding experience that lifted adoption and retention; grew Ravi to hundreds of users.",
       "keywords": [
         "Data-driven Iteration",
         "Feature Development",
@@ -272,7 +272,7 @@
     },
     {
       "name": "Product & Business",
-      "level": "Advanced",
+      "proof": "Raised Ravi's $400K pre-seed from South Park Commons; ran a $500K/yr steakhouse with my name on the P&L.",
       "keywords": [
         "Roadmapping",
         "Customer Discovery",
