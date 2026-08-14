@@ -37,10 +37,25 @@ canonicalPath: /projects/
   <div class="container mx-auto px-6 max-w-5xl">
     <div class="mb-10">
       <h2 class="text-3xl md:text-4xl font-bold mb-3">Business Ventures</h2>
-      <p class="text-lg text-gray-600">Three businesses, three very different markets. Same operating system: ship small, measure, iterate.</p>
+      <p class="text-lg text-gray-600">Four ventures, four very different markets. Same operating system: ship small, measure, iterate.</p>
     </div>
 
     <div class="space-y-8">
+      <article class="bg-gray-50 rounded-2xl border border-gray-100 p-8 hover:border-brand-200 hover:shadow-md transition">
+        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
+          <h3 class="text-2xl font-semibold">
+            <a href="https://marginalia.inevitable.fyi" data-cta="projects-marginalia" class="hover:text-brand-700 transition-colors">Marginalia <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+          </h3>
+          <span class="text-sm text-gray-500 whitespace-nowrap">Building it with my wife · 2026 &ndash; present</span>
+        </div>
+        <p class="text-gray-700 mb-4">Pairs novelists with critique partners, then has them swap chapters a few thousand words at a time.</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-600 list-disc list-inside">
+          <li>Matches on mutual fit: you describe the book you wrote and the kind you&rsquo;d willingly read, and it ranks writers for whom the trade works in both directions</li>
+          <li>Pages burn after fourteen days, so drafts stay private; the notes you received are yours forever</li>
+          <li>Live now, and my wife is the product&rsquo;s first and toughest user</li>
+        </ul>
+      </article>
+
       <article class="bg-gray-50 rounded-2xl border border-gray-100 p-8 hover:border-brand-200 hover:shadow-md transition">
         <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
           <h3 class="text-2xl font-semibold">
@@ -108,6 +123,7 @@ canonicalPath: /projects/
           <li>Spin up sandboxed agent instances with preconfigured env vars, MCP servers, skills, repos, and packages</li>
           <li>Every feature on three surfaces: web UI for debugging, REST API for CI/CD, and a Homebrew-distributed CLI with manifest-driven <code class="text-xs bg-gray-100 rounded px-1">fountain apply</code></li>
           <li>Agents onboard themselves: every instance serves llms.txt and a drop-in skill, so any agentic IDE learns the whole API from one fetch</li>
+          <li>The fleet itself is code: <a href="https://github.com/jhgaylor/agent-specs" data-cta="projects-agent-specs" class="underline hover:text-brand-700">agent-specs</a> declares every agent, environment, and vault as typed resources, applied in one command</li>
           <li>Streams every conversation over SSE, so agent runs are observable and debuggable, not fire-and-forget</li>
         </ul>
         <p class="text-sm text-gray-500 border-t border-gray-100 pt-3">Built agent-first, in the open: <a href="https://github.com/BinaryBourbon" data-cta="projects-binarybourbon" class="underline hover:text-brand-700">BinaryBourbon</a> is the GitHub identity my agent fleet ships under. I set the roadmap, review the work, and operate the system — and Fountain is itself developed by the agents it orchestrates.</p>
@@ -127,6 +143,18 @@ canonicalPath: /projects/
 
       <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
         <h3 class="text-lg font-semibold mb-2">
+          <a href="https://github.com/jhgaylor/infisical-chant" data-cta="projects-infisical-chant" class="hover:text-brand-700 transition-colors">infisical-chant <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">A self-hosted Infisical deployment you drive from the repo, for any Kubernetes cluster kubectl can reach. The shippable artifact behind my secrets-management writing.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Five components, three tiers (light / production / production-ha), generated CI, and a naming scheme that lets many instances coexist across clusters</li>
+          <li>Agent-operable by design: clone it and your agent already knows how to run it by its verbs</li>
+          <li>Built with <a href="https://intentius.io/chant" data-cta="projects-chant" class="underline hover:text-brand-700">chant</a>, a friend&rsquo;s intent-aware infrastructure toolchain I use across my stack</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
           <a href="https://ai.jakegaylor.com/" data-cta="projects-ai-mcp" class="hover:text-brand-700 transition-colors">ai.jakegaylor.com <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
         </h3>
         <p class="text-sm text-gray-700 mb-3">A live, hosted MCP server that teaches AI assistants about me. Try it on this candidate.</p>
@@ -134,6 +162,18 @@ canonicalPath: /projects/
           <li>Connect any MCP client and it can read my resume, score my fit against your job description, and build the interview</li>
           <li>Your assistant can even email me directly from the conversation — you review it, the server sends it</li>
           <li>Streamable HTTP and SSE transports, an npm package for stdio-only clients, and llms.txt for everyone else</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
+          <a href="https://accessibleops.net" data-cta="projects-accessible-ops" class="hover:text-brand-700 transition-colors">Accessible Ops <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">A spec I co-authored: a short list of properties that make infrastructure safe to hand off, to a new engineer or to an AI agent.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Properties like one path to prod, documentation is law, and named secrets with least privilege, each written to be audited against</li>
+          <li>The judgment stays with a human; the rest becomes safe to delegate</li>
+          <li>It&rsquo;s the lens behind this site&rsquo;s headline, and the standard I hold my own systems to</li>
         </ul>
       </article>
 
@@ -171,6 +211,17 @@ canonicalPath: /projects/
           <li>Built an intuitive swipe-based interface for interacting with LLMs using Flutter</li>
           <li>Implemented AI-driven content generation and response system</li>
           <li>Shipped cross-platform for iOS and Android</li>
+        </ul>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
+        <h3 class="text-lg font-semibold mb-2">
+          <a href="https://github.com/jhgaylor/cleanjobdata-mcp" data-cta="projects-cleanjobdata" class="hover:text-brand-700 transition-colors">CleanJobData MCP Server <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
+        </h3>
+        <p class="text-sm text-gray-700 mb-3">An MCP server for the CleanJobData Job API, published on PyPI in August 2026.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside">
+          <li>Runs as stdio for local clients or as one hosted HTTP server where every user authenticates with their own API key per request</li>
+          <li>The newest entry in a line of MCP servers I&rsquo;ve shipped since the protocol&rsquo;s early days</li>
         </ul>
       </article>
 
