@@ -57,7 +57,7 @@ layout: layouts/home.html
 
 <!-- The numbers and the router, on the light body -->
 <section class="bg-brand-50 text-gray-900 flex-grow flex flex-col justify-center">
-  <div class="container mx-auto px-6 py-8">
+  <div class="container mx-auto px-6 py-6">
 
     <!-- The receipts wall: the crunchy bits as first-class content.
          Each card deep-links to the page that proves it. Same visual
@@ -68,43 +68,68 @@ layout: layouts/home.html
         <h2 class="text-xs font-semibold tracking-widest uppercase text-brand-700">The receipts</h2>
         <p class="text-xs text-gray-500">The headline comes from <a href="https://accessibleops.net" data-cta="crunch-accessible-ops" class="underline text-brand-700 hover:text-brand-900">Accessible Ops</a>, a spec I co-authored.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a href="/devops/" data-cta="crunch-30x" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <a href="/devops/" data-cta="crunch-30x" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-3xl xl:text-4xl font-bold text-brand-600 block">30x</span>
           <span class="text-xs font-semibold uppercase tracking-wide text-gray-900 block mt-1.5 mb-2.5">faster deploys at Cloaked</span>
           <span class="text-sm text-gray-600 leading-relaxed">A GitOps pipeline, built in my first 6 months.</span>
         </a>
-        <a href="/platform-engineer/" data-cta="crunch-3-days" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
+        <a href="/platform-engineer/" data-cta="crunch-3-days" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-3xl xl:text-4xl font-bold text-brand-600 block">3 days</span>
           <span class="text-xs font-semibold uppercase tracking-wide text-gray-900 block mt-1.5 mb-2.5">to retrain an org</span>
           <span class="text-sm text-gray-600 leading-relaxed">Every CyberGRX engineer shipping on a new deploy process.</span>
         </a>
-        <a href="/aws-specialist/" data-cta="crunch-aws" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
+        <a href="/aws-specialist/" data-cta="crunch-aws" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-3xl xl:text-4xl font-bold text-brand-600 block">$10M+/yr</span>
           <span class="text-xs font-semibold uppercase tracking-wide text-gray-900 block mt-1.5 mb-2.5">of production AWS</span>
           <span class="text-sm text-gray-600 leading-relaxed">Petabyte scale at Protectwise, acquired by Verizon.</span>
         </a>
-        <a href="/kubernetes-engineer/" data-cta="crunch-k8s-2015" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
+        <a href="/kubernetes-engineer/" data-cta="crunch-k8s-2015" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-3xl xl:text-4xl font-bold text-brand-600 block">Since 2015</span>
           <span class="text-xs font-semibold uppercase tracking-wide text-gray-900 block mt-1.5 mb-2.5">production Kubernetes</span>
           <span class="text-sm text-gray-600 leading-relaxed">CoreOS and fleet, before kubeadm existed.</span>
         </a>
-        <a href="/engineering-leader/" data-cta="crunch-steakhouse" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
+        <a href="/engineering-leader/" data-cta="crunch-steakhouse" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-2xl font-bold text-brand-600 block leading-snug mb-2.5">I owned a steakhouse</span>
           <span class="text-sm text-gray-600 leading-relaxed">Team of 7, $500K a year, my name on the P&amp;L.</span>
         </a>
-        <a href="/homelab/" data-cta="crunch-homelab" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
+        <a href="/homelab/" data-cta="crunch-homelab" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-2xl font-bold text-brand-600 block leading-snug mb-2.5">My house serves production</span>
           <span class="text-sm text-gray-600 leading-relaxed">A GitOps k3s cluster with alerts to my phone. Photo tour included.</span>
         </a>
-        <a href="/ai-engineer/" data-cta="crunch-agent-fleet" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
+        <a href="/ai-engineer/" data-cta="crunch-agent-fleet" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-2xl font-bold text-brand-600 block leading-snug mb-2.5">I built an agent orchestrator</span>
           <span class="text-sm text-gray-600 leading-relaxed">Fountain runs my coding-agent fleet, which largely built it and ships under its own GitHub account.</span>
         </a>
-        <a href="https://ai.jakegaylor.com/" data-cta="crunch-site-agent" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
+        <a href="https://ai.jakegaylor.com/" data-cta="crunch-site-agent" class="block bg-white rounded-2xl px-6 py-5 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-2xl font-bold text-brand-600 block leading-snug mb-2.5">This site is an agent</span>
           <span class="text-sm text-gray-600 leading-relaxed">Send your screening agent. ai.jakegaylor.com is expecting it.</span>
         </a>
+      </div>
+    </div>
+
+    <!-- Halo strip: marks are companies people recognize; captions keep the
+         relationship honest (acquirers and backers, not claimed employers). -->
+    <div class="mt-7 flex flex-wrap items-start justify-center gap-x-12 gap-y-4" data-section-track="logos">
+      <div class="flex flex-col items-center gap-1.5">
+        <img src="/images/logos/verizon.svg" alt="Verizon" class="h-5 w-auto grayscale opacity-60">
+        <span class="text-[11px] text-gray-500">acquired Protectwise</span>
+      </div>
+      <div class="flex flex-col items-center gap-1.5">
+        <img src="/images/logos/cloaked.svg" alt="Cloaked" class="h-5 w-auto grayscale opacity-60">
+        <span class="text-[11px] text-gray-500">staff engineer, 2022&ndash;2025</span>
+      </div>
+      <div class="flex flex-col items-center gap-1.5">
+        <img src="/images/logos/deleteme.png" alt="DeleteMe" class="h-5 w-auto grayscale opacity-60">
+        <span class="text-[11px] text-gray-500">acquired Block Party</span>
+      </div>
+      <div class="flex flex-col items-center gap-1.5">
+        <img src="/images/logos/processunity.svg" alt="ProcessUnity" class="h-5 w-auto grayscale opacity-60">
+        <span class="text-[11px] text-gray-500">when it was CyberGRX</span>
+      </div>
+      <div class="flex flex-col items-center gap-1.5">
+        <span class="text-sm font-bold tracking-widest text-gray-500 leading-5">SOUTH PARK COMMONS</span>
+        <span class="text-[11px] text-gray-500">backed Ravi</span>
       </div>
     </div>
 
