@@ -8,7 +8,7 @@ layout: layouts/home.html
      page INCLUDING the site footer fits a ~900px desktop viewport
      with no scroll. Mobile scrolls naturally. The long-form pitch
      this replaced lives on in the role pages (and in git history). -->
-<header class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 text-white">
+<header class="relative bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 text-white">
   <div class="container mx-auto px-6 pt-5 pb-8">
 
     <nav class="flex items-center justify-between text-sm mb-7">
@@ -16,7 +16,8 @@ layout: layouts/home.html
         <img src="/images/me_2025_2.png" alt="Jake Gaylor" class="w-10 h-10 rounded-full object-cover border-2 border-white/30">
         <span class="font-semibold">Jake Gaylor</span>
       </a>
-      <div class="flex gap-6">
+      <div class="flex items-center gap-6">
+        {% include "partials/role-menu.html" %}
         <a href="/projects/" data-cta="home-nav-projects" class="text-blue-100 hover:text-white transition-colors">Projects</a>
         <a href="/homelab/" data-cta="home-nav-homelab" class="text-blue-100 hover:text-white transition-colors">Homelab</a>
         <a href="/blog/" data-cta="home-nav-blog" class="text-blue-100 hover:text-white transition-colors">Blog</a>
@@ -93,20 +94,6 @@ layout: layouts/home.html
           <span class="text-sm text-gray-600">Send your screening agent. ai.jakegaylor.com is expecting it.</span>
         </a>
       </div>
-    </div>
-
-    <!-- Role pages, demoted to navigation: pills, no content burden.
-         data-cta names stay router-* so the PostHog trends continue. -->
-    <div class="mt-5 flex flex-wrap items-center gap-2" data-section-track="router">
-      <span class="text-sm text-gray-500 mr-1">Hiring for a role? Each gets its own page:</span>
-      <a href="/kubernetes-engineer/" data-cta="router-kubernetes-engineer" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">Kubernetes</a>
-      <a href="/aws-specialist/" data-cta="router-aws-specialist" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">AWS</a>
-      <a href="/platform-engineer/" data-cta="router-platform-engineer" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">Platform</a>
-      <a href="/devops/" data-cta="router-devops" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">DevOps</a>
-      <a href="/sre/" data-cta="router-sre" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">SRE</a>
-      <a href="/ai-engineer/" data-cta="router-ai-engineer" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">AI</a>
-      <a href="/engineering-leader/" data-cta="router-engineering-leader" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">Engineering Leadership</a>
-      <a href="/resume/" data-cta="router-resume" class="bg-white border border-gray-200 hover:border-blue-400 rounded-full px-3.5 py-1.5 text-sm font-medium text-blue-700 transition">Full Resume</a>
     </div>
 
     <p class="text-sm text-gray-500 mt-4">
