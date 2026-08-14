@@ -52,19 +52,15 @@
     </script>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
-    <nav class="bg-white border-b border-gray-200">
-        <div class="container mx-auto px-6 py-3 flex items-center justify-between text-sm">
-            <a href="/" data-cta="blog-nav-home" class="text-gray-600 hover:text-brand-700 transition-colors">
-                <i class="fas fa-arrow-left mr-2"></i>jakegaylor.com
-            </a>
-            <div class="flex items-center gap-5">
-                <a href="/projects/" data-cta="blog-nav-projects" class="text-gray-600 hover:text-brand-700 transition-colors hidden sm:inline">Projects</a>
-                <a href="/resume/" data-cta="blog-nav-hire" class="inline-flex items-center px-3 py-1.5 rounded-full bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors">
-                    Available to hire<i class="fas fa-arrow-right ml-2 text-xs"></i>
-                </a>
-            </div>
+    <div class="bg-white border-b border-gray-200">
+        <div class="container mx-auto px-6 py-3">
+            {% assign ctaPrefix = "blog" %}
+            {% assign navTheme = "light" %}
+            {% assign navCurrent = "blog" %}
+            {% assign navClass = "mb-0" %}
+            {% include "partials/site-nav.html" %}
         </div>
-    </nav>
+    </div>
 
     <main class="flex-grow">
         {{ content }}

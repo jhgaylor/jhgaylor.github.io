@@ -56,18 +56,10 @@ canonicalPath: /resume/
 <!-- ===================== HEADER: same brand as the homepage ===================== -->
 <header id="resume-hero" class="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 text-white">
   <div class="container mx-auto px-6 pt-8 pb-14 md:pb-16 max-w-5xl">
-    <nav class="print-hidden flex items-center justify-between text-sm mb-12">
-      <a href="/" data-cta="resume-home" class="text-brand-100 hover:text-white transition-colors">
-        <i class="fas fa-arrow-left mr-2"></i>jakegaylor.com
-      </a>
-      <div class="flex items-center gap-6">
-        <a href="/projects/" data-cta="resume-projects" class="text-brand-100 hover:text-white transition-colors">Projects</a>
-        <a href="/blog/" data-cta="resume-blog" class="text-brand-100 hover:text-white transition-colors hidden sm:inline">Blog</a>
-        <a href="/JakeGaylor_resume.pdf" data-cta="resume-download-pdf" class="inline-flex items-center px-4 py-2 rounded-md bg-white text-brand-800 font-semibold hover:bg-brand-50 transition-colors">
-          <i class="fas fa-download mr-2"></i>Download PDF
-        </a>
-      </div>
-    </nav>
+    {% assign ctaPrefix = "resume" %}
+    {% assign navCurrent = "resume" %}
+    {% assign navClass = "print-hidden mb-12" %}
+    {% include "partials/site-nav.html" %}
 
     <p class="text-brand-200 font-semibold tracking-widest uppercase text-sm mb-4">{{ resume.basics.label | split: " | " | first }}</p>
     <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">{{ resume.basics.name }}</h1>
@@ -75,6 +67,9 @@ canonicalPath: /resume/
     <p class="text-lg text-brand-100 max-w-3xl mb-8">{{ resume.basics.summary | remove_first: "I build systems a stranger can run on day one. " }}</p>
 
     <div class="contact-chips flex flex-wrap gap-3 text-sm">
+      <a href="/JakeGaylor_resume.pdf" data-cta="resume-download-pdf" class="print-hidden inline-flex items-center px-3 py-1.5 rounded-full bg-white text-brand-800 font-semibold hover:bg-brand-50 transition-colors">
+        <i class="fas fa-download mr-2"></i>Download PDF
+      </a>
       <a href="mailto:{{ resume.basics.email }}" data-cta="resume-hero-email" class="inline-flex items-center px-3 py-1.5 rounded-full border border-white/30 text-brand-50 hover:bg-white/10 transition-colors">
         <i class="fas fa-envelope mr-2"></i>{{ resume.basics.email }}
       </a>

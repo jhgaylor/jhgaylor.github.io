@@ -1,0 +1,35 @@
+{%- comment -%}
+  The one top nav, used by every page. Set before including:
+    ctaPrefix     required — data-cta prefix, e.g. "home", "projects", "k8s"
+    navTheme      "light" for white-background bars (blog); dark gradient default
+    navCurrent    "projects" | "homelab" | "blog" | "resume" — hides that link
+    navClass      extra classes on <nav>; defaults to mb-12 (home passes mb-7,
+                  resume adds print-hidden)
+    navHideResume true to drop the Resume pill (home, where the hero CTA is)
+  Left is always the avatar + name linking home; right is Roles dropdown,
+  Projects, Homelab, Blog, and the Resume pill.
+{%- endcomment -%}
+{%- if navTheme == "light" -%}
+  {%- assign navLinkClass = "text-gray-600 hover:text-brand-700 transition-colors" -%}
+  {%- assign navNameClass = "font-semibold text-gray-900" -%}
+  {%- assign navAvatarBorder = "border-brand-200" -%}
+  {%- assign navPillClass = "bg-brand-600 text-white hover:bg-brand-700" -%}
+{%- else -%}
+  {%- assign navLinkClass = "text-brand-100 hover:text-white transition-colors" -%}
+  {%- assign navNameClass = "font-semibold" -%}
+  {%- assign navAvatarBorder = "border-white/30" -%}
+  {%- assign navPillClass = "bg-white text-brand-800 hover:bg-brand-50" -%}
+{%- endif -%}
+<nav class="flex items-center justify-between text-sm {{ navClass | default: 'mb-12' }}">
+  <a href="/" data-cta="{{ ctaPrefix }}-nav-home" class="flex items-center gap-3 {{ navNameClass }}">
+    <img src="/images/me_2025_2.png" alt="Jake Gaylor" class="w-9 h-9 rounded-full object-cover border-2 {{ navAvatarBorder }}">
+    <span>Jake Gaylor</span>
+  </a>
+  <div class="flex items-center gap-5 sm:gap-6">
+    {% include "partials/role-menu.html" %}
+    {% unless navCurrent == "projects" %}<a href="/projects/" data-cta="{{ ctaPrefix }}-nav-projects" class="{{ navLinkClass }} hidden sm:inline">Projects</a>{% endunless %}
+    {% unless navCurrent == "homelab" %}<a href="/homelab/" data-cta="{{ ctaPrefix }}-nav-homelab" class="{{ navLinkClass }} hidden sm:inline">Homelab</a>{% endunless %}
+    {% unless navCurrent == "blog" %}<a href="/blog/" data-cta="{{ ctaPrefix }}-nav-blog" class="{{ navLinkClass }}">Blog</a>{% endunless %}
+    {% unless navHideResume or navCurrent == "resume" %}<a href="/resume/" data-cta="{{ ctaPrefix }}-nav-resume" class="inline-flex items-center px-3 py-1.5 rounded-full font-semibold transition-colors {{ navPillClass }}">Resume</a>{% endunless %}
+  </div>
+</nav>

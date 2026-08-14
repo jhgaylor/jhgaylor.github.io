@@ -4,7 +4,7 @@
      $current_url distinguishes which page the click came from). The parent
      header must NOT have overflow-hidden or the open panel gets clipped. -->
 <details class="relative role-menu">
-  <summary class="list-none cursor-pointer text-brand-100 hover:text-white transition-colors select-none [&::-webkit-details-marker]:hidden">
+  <summary class="list-none cursor-pointer select-none [&::-webkit-details-marker]:hidden {{ navLinkClass | default: "text-brand-100 hover:text-white transition-colors" }}">
     Roles <i class="fas fa-chevron-down text-[10px] ml-0.5"></i>
   </summary>
   <div class="absolute right-0 mt-2 w-60 bg-white rounded-xl border border-gray-200 shadow-lg py-1.5 z-20 text-left">

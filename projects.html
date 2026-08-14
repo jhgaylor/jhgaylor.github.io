@@ -9,16 +9,9 @@ canonicalPath: /projects/
 <!-- ===================== HEADER: same brand as the homepage ===================== -->
 <header class="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 text-white">
   <div class="container mx-auto px-6 pt-8 pb-16 md:pb-20">
-    <nav class="flex items-center justify-between text-sm mb-12">
-      <a href="/" data-cta="projects-nav-home" class="text-brand-100 hover:text-white transition-colors">
-        <i class="fas fa-arrow-left mr-2"></i>jakegaylor.com
-      </a>
-      <div class="flex gap-6">
-        <a href="/homelab/" data-cta="projects-nav-homelab" class="text-brand-100 hover:text-white transition-colors">Homelab</a>
-        <a href="/resume/" data-cta="projects-nav-resume" class="text-brand-100 hover:text-white transition-colors">Resume</a>
-        <a href="/blog/" data-cta="projects-nav-blog" class="text-brand-100 hover:text-white transition-colors">Blog</a>
-      </div>
-    </nav>
+    {% assign ctaPrefix = "projects" %}
+    {% assign navCurrent = "projects" %}
+    {% include "partials/site-nav.html" %}
     <div class="max-w-3xl">
       <p class="text-brand-200 font-semibold tracking-widest uppercase text-sm mb-5">Projects &amp; Ventures</p>
       <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">

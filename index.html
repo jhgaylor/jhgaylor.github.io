@@ -11,18 +11,10 @@ layout: layouts/home.html
 <header class="relative bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 text-white">
   <div class="container mx-auto px-6 pt-5 pb-8 [@media(min-height:1100px)]:pt-8 [@media(min-height:1100px)]:pb-14">
 
-    <nav class="flex items-center justify-between text-sm mb-7">
-      <a href="/" class="flex items-center gap-3">
-        <img src="/images/me_2025_2.png" alt="Jake Gaylor" class="w-10 h-10 rounded-full object-cover border-2 border-white/30">
-        <span class="font-semibold">Jake Gaylor</span>
-      </a>
-      <div class="flex items-center gap-6">
-        {% include "partials/role-menu.html" %}
-        <a href="/projects/" data-cta="home-nav-projects" class="text-brand-100 hover:text-white transition-colors">Projects</a>
-        <a href="/homelab/" data-cta="home-nav-homelab" class="text-brand-100 hover:text-white transition-colors">Homelab</a>
-        <a href="/blog/" data-cta="home-nav-blog" class="text-brand-100 hover:text-white transition-colors">Blog</a>
-      </div>
-    </nav>
+    {% assign ctaPrefix = "home" %}
+    {% assign navClass = "mb-7" %}
+    {% assign navHideResume = true %}
+    {% include "partials/site-nav.html" %}
 
     <!-- The claim -->
     <p class="text-brand-200 font-semibold tracking-widest uppercase text-xs mb-2">
