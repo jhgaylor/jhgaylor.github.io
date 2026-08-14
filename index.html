@@ -49,6 +49,9 @@ layout: layouts/home.html
         Text Me
       </a>
     </div>
+    <p class="text-sm text-brand-200 mt-4">
+      <i class="fas fa-location-dot mr-1.5"></i>Boston, MA &middot; open to relocation
+    </p>
   </div>
 </header>
 
@@ -61,7 +64,10 @@ layout: layouts/home.html
          pattern as the role-page receipt cards: big value, small-caps
          label, one supporting line. -->
     <div data-section-track="receipts">
-      <h2 class="text-xs font-semibold tracking-widest uppercase text-brand-700 mb-4">The receipts</h2>
+      <div class="flex flex-wrap items-baseline justify-between gap-2 mb-4">
+        <h2 class="text-xs font-semibold tracking-widest uppercase text-brand-700">The receipts</h2>
+        <p class="text-xs text-gray-500">The headline comes from <a href="https://accessibleops.net" data-cta="crunch-accessible-ops" class="underline text-brand-700 hover:text-brand-900">Accessible Ops</a>, a spec I co-authored.</p>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <a href="/devops/" data-cta="crunch-30x" class="block bg-white rounded-2xl px-6 py-6 border border-brand-100 shadow-sm hover:border-brand-400 hover:shadow-lg hover:-translate-y-0.5 transition">
           <span class="text-3xl xl:text-4xl font-bold text-brand-600 block">30x</span>
@@ -112,10 +118,6 @@ layout: layouts/home.html
       <p class="text-2xl text-gray-800 font-medium leading-relaxed mb-3">&ldquo;Everyone else told us how to work around problems. Jake built us better tools.&rdquo;</p>
       <cite class="text-sm text-gray-500 not-italic">Operator, Magic</cite>
     </blockquote>
-
-    <p class="text-sm text-gray-600 mt-5">
-      Boston, MA, open to relocation. The headline comes with a spec, <a href="https://accessibleops.net" data-cta="crunch-accessible-ops" class="underline text-brand-700 hover:text-brand-900">Accessible Ops</a>, which I co-authored.
-    </p>
   </div>
 </section>
 
