@@ -85,7 +85,7 @@ const rolePages = [
   {
     slug: "role-ai-engineer",
     kicker: "HIRING AN AI ENGINEER?",
-    title: "Agents users touch, agents that write code, and the platforms that run them.",
+    title: "I ship agents that hold real credentials and survive contact with production.",
     description: "Production agents at three companies, plus a coding-agent fleet I operate myself.",
   },
   {
