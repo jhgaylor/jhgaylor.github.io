@@ -85,7 +85,7 @@ const rolePages = [
   {
     slug: "role-ai-engineer",
     kicker: "HIRING AN AI ENGINEER?",
-    title: "I ship agents with real access to production and no credentials to leak.",
+    title: "I ship agents with real access and no credentials to leak.",
     description: "Production agents at three companies, plus a coding-agent fleet I operate myself.",
   },
   {
