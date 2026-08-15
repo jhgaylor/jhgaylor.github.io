@@ -76,25 +76,31 @@ og_image_alt: Hiring an SRE? Product teams on my systems never ask whether the b
         </p>
       </div>
     </div>
+
+    <p class="text-xs text-gray-500 text-center mt-8 max-w-3xl mx-auto">
+      For the keyword scanners: Prometheus, Grafana, Loki, PagerDuty, CloudWatch, Cassandra, Kafka, S3,
+      EKS, k3s, Flux CD, Terraform, Chef. Every one of them attached to a system above or on
+      <a href="/resume/" data-cta="sre-receipt-resume" class="text-brand-600 underline hover:text-brand-800">the resume</a>.
+    </p>
   </div>
 </section>
 
-<!-- ===================== FIRST 90 DAYS ===================== -->
-<section class="py-16 md:py-20 bg-white text-gray-900" data-section-track="first-90">
+<!-- ===================== DAY 2 ===================== -->
+<section class="py-16 md:py-20 bg-white text-gray-900" data-section-track="day-2">
   <div class="container mx-auto px-6 max-w-5xl">
-    <h2 class="text-3xl font-bold text-center mb-10">My first 90 days on your on-call</h2>
+    <h2 class="text-3xl font-bold text-center mb-10">The day-2 receipts</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">1 &middot; Join the rotation early</div>
-        <p class="text-gray-600">Nothing surfaces the real risks faster than carrying the pager. I take a shift in the first month.</p>
+        <div class="text-brand-600 font-bold mb-2">Deploy risk, engineered away</div>
+        <p class="text-gray-600">At CyberGRX I wrote a Go operator that ran blue/green rollouts as a custom resource, so a bad deploy meant flipping back instead of paging everyone. Deploys stopped being incidents waiting to happen.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">2 &middot; Make the noisy things visible</div>
-        <p class="text-gray-600">Alerts that fire without action get fixed or deleted. Dashboards get rebuilt around the questions people actually ask during incidents.</p>
+        <div class="text-brand-600 font-bold mb-2">Capacity ahead of the curve</div>
+        <p class="text-gray-600">The Cloaked platform carried the business from hundreds of users to hundreds of thousands without a rebuild. Growth that big only stays quiet when someone models where the system breaks next.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">3 &middot; Get capacity ahead of growth</div>
-        <p class="text-gray-600">I model where the system breaks next and fix it before the traffic arrives, the way Protectwise&rsquo;s teams never had to wonder.</p>
+        <div class="text-brand-600 font-bold mb-2">The quiet pager</div>
+        <p class="text-gray-600">On my homelab, certs renew themselves, backups run on schedule, and every change ships from git. The alerts that reach my phone are the ones that actually need a human.</p>
       </div>
     </div>
   </div>
@@ -104,10 +110,11 @@ og_image_alt: Hiring an SRE? Product teams on my systems never ask whether the b
 <section class="pt-16 md:pt-20 pb-6 md:pb-8 bg-gradient-to-b from-brand-900 to-brand-950 text-white" data-section-track="testimonial">
   <div class="container mx-auto px-6 max-w-3xl text-center">
     <p class="text-xl md:text-2xl font-medium leading-relaxed mb-6 text-brand-100">
-      &ldquo;Jake was instrumental in building our cloud-native security platform. His technical leadership
-      helped shape our architecture and team practices.&rdquo;
+      &ldquo;Jake and I ran the AWS behind a petabyte-scale security platform. Thousands of Cassandra nodes,
+      Kafka pipelines, a $10M-a-year bill, all of it managed with Chef and deliberately boring tech.
+      I&rsquo;d sign up to do it with him again tomorrow.&rdquo;
     </p>
-    <p class="text-brand-200 font-semibold">DevOps Engineer, Protectwise</p>
+    <p class="text-brand-200 font-semibold">Alex Artigues, DevOps Engineer, Protectwise</p>
   </div>
 </section>
 
