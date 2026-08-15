@@ -45,11 +45,10 @@ og_image_alt: Hiring an AI engineer? I ship agents with real access and no crede
         <div class="text-4xl font-bold text-brand-600 mb-1">Brokered</div>
         <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">short-lived tokens, nothing stable in the sandbox</div>
         <p class="text-gray-700 leading-relaxed">
-          My agents authenticate with a short-lived token their platform signed, and a broker checks the signature,
-          the identity&rsquo;s standing, and the policy before granting anything. Database access arrives as a
-          per-sandbox user that dies at expiry. Inference keys never arrive at all, since the real key lives at a
-          proxy that injects it after the request leaves the machine and charges every call to the verified identity.
-          The full design is in
+          The sandbox boots holding one short-lived token its platform signed. A broker verifies the signature,
+          the identity&rsquo;s standing, and the policy, then issues a per-sandbox database user that dies at expiry.
+          The inference key never enters the sandbox. A proxy injects it after the request leaves the machine and
+          bills the call to the verified identity. Full design in
           <a href="/blog/posts/first-credential-cant-be-a-secret/" data-cta="ai-receipt-first-credential" class="text-brand-600 underline hover:text-brand-800">The first credential can&rsquo;t be a secret</a>.
         </p>
       </div>
@@ -57,36 +56,34 @@ og_image_alt: Hiring an AI engineer? I ship agents with real access and no crede
         <div class="text-4xl font-bold text-brand-600 mb-1">Real logins</div>
         <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">agents on user accounts, at Cloaked</div>
         <p class="text-gray-700 leading-relaxed">
-          I built autonomous LangChain agents that change passwords, log in, and manage email on users&rsquo; behalf.
-          Acting on live user accounts is the hard part, and these did it in product. They became a core
-          fundraising narrative and powered an AI onboarding experience that measurably boosted adoption and retention.
+          At Cloaked I built LangChain agents that log in to users&rsquo; accounts, change their passwords, and
+          manage their email. They shipped in product, became a core fundraising narrative, and powered an AI
+          onboarding flow that lifted adoption and retention.
         </p>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
         <div class="text-4xl font-bold text-brand-600 mb-1">$400K</div>
         <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">pre-seed for agents with their own identity</div>
         <p class="text-gray-700 leading-relaxed">
-          I cofounded Ravi, where AI agents manage their own accounts, secrets, and 2FA. It raised a $400K pre-seed
-          from South Park Commons and grew to hundreds of users, with the instrumented v1&rsquo;s real usage data
-          carrying the pitch.
+          I cofounded Ravi, where AI agents hold their own accounts, secrets, and 2FA. The instrumented v1&rsquo;s
+          usage data carried the pitch to a $400K pre-seed from South Park Commons, and it grew to hundreds of users.
         </p>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
         <div class="text-4xl font-bold text-brand-600 mb-1">Sandboxed</div>
         <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">coding agents behind review gates</div>
         <p class="text-gray-700 leading-relaxed">
-          At Block Party I designed and built the framework behind the company&rsquo;s internal AI coding bots.
-          I also maintain Fountain, a developer platform for running fleets of sandboxed coding agents, itself
-          built by the agents it orchestrates. Fountain ships under BinaryBourbon, the GitHub identity my agent
-          fleet works under. I set the roadmap and review the work.
+          At Block Party I built the framework behind the company&rsquo;s internal coding bots. Fountain, my
+          platform for running fleets of sandboxed coding agents, is built by the agents it runs. I set the roadmap
+          and review the work, and it ships under BinaryBourbon, the GitHub identity the fleet works as.
         </p>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
         <div class="text-4xl font-bold text-brand-600 mb-1">Protocol</div>
         <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">MCP and A2A in the wild</div>
         <p class="text-gray-700 leading-relaxed">
-          I am a member of the MCP Hosting Working Group, publish MCP servers, and contributed to the Dart MCP SDK.
-          This site practices what I pitch. <a href="https://ai.jakegaylor.com/" data-cta="ai-receipt-agent-card" class="text-brand-600 underline hover:text-brand-800">ai.jakegaylor.com</a>
+          I sit on the MCP Hosting Working Group, publish MCP servers, and contributed to the Dart MCP SDK.
+          <a href="https://ai.jakegaylor.com/" data-cta="ai-receipt-agent-card" class="text-brand-600 underline hover:text-brand-800">ai.jakegaylor.com</a>
           serves an A2A agent card and an MCP server, so your screening agent can interview me directly.
         </p>
       </div>
@@ -106,16 +103,16 @@ og_image_alt: Hiring an AI engineer? I ship agents with real access and no crede
     <h2 class="text-3xl font-bold text-center mb-10">The day-2 receipts</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">Agents with real identities</div>
-        <p class="text-gray-600">My fleet works under its own GitHub account with its own scoped credentials, and the agents never touch them. A proxy holds the keys and brokers every call, so access dies in one move and no secret ever lands in a context window.</p>
+        <div class="text-brand-600 font-bold mb-2">Offboarding is one move</div>
+        <p class="text-gray-600">Each agent&rsquo;s identity is created at session start and deleted at teardown. Delete it and every token it ever held fails the broker&rsquo;s check, its database user expires on its own, and there is nothing to rotate because nothing stable was ever inside the sandbox.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">Sandboxes and review gates</div>
-        <p class="text-gray-600">Fountain runs its agents in sandboxes behind review gates. Scaling from one agent to a fleet is an operations problem, and I run those operations daily on my own work.</p>
+        <div class="text-brand-600 font-bold mb-2">Every call has an owner</div>
+        <p class="text-gray-600">The inference proxy bills each request to the verified identity and enforces a budget where the open-ended bill used to be. A leaked key can&rsquo;t spend invisibly, and I can see what each sandbox costs.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
         <div class="text-brand-600 font-bold mb-2">Measured like a product</div>
-        <p class="text-gray-600">Agent features earn trust with numbers. Ravi&rsquo;s instrumented v1 carried its fundraise, and Cloaked&rsquo;s agents lifted onboarding retention measurably.</p>
+        <p class="text-gray-600">Ravi&rsquo;s v1 was instrumented from day one and its usage data carried the fundraise. Cloaked&rsquo;s agents were judged on onboarding retention, and they lifted it.</p>
       </div>
     </div>
   </div>
