@@ -37,10 +37,22 @@ og_image_alt: Hiring an AI engineer? I ship agents with real access to productio
   <div class="container mx-auto px-6">
     <div class="max-w-3xl mx-auto text-center mb-14">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Agents with real access</h2>
-      <p class="text-lg text-gray-600">Four places I gave an agent real access and kept the keys out of its reach.</p>
+      <p class="text-lg text-gray-600">How the access works, and four places it has held up.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="md:col-span-2 bg-white rounded-2xl p-8 border border-brand-200 shadow-sm">
+        <div class="text-4xl font-bold text-brand-600 mb-1">Brokered</div>
+        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">short-lived tokens, nothing stable in the sandbox</div>
+        <p class="text-gray-700 leading-relaxed">
+          My agents authenticate with a short-lived token their platform signed, and a broker checks the signature,
+          the identity&rsquo;s standing, and the policy before granting anything. Database access arrives as a
+          per-sandbox user that dies at expiry. Inference keys never arrive at all, since the real key lives at a
+          proxy that injects it after the request leaves the machine and charges every call to the verified identity.
+          The full design is in
+          <a href="/blog/posts/first-credential-cant-be-a-secret/" data-cta="ai-receipt-first-credential" class="text-brand-600 underline hover:text-brand-800">The first credential can&rsquo;t be a secret</a>.
+        </p>
+      </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
         <div class="text-4xl font-bold text-brand-600 mb-1">Real logins</div>
         <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">agents on user accounts, at Cloaked</div>
