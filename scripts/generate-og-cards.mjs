@@ -91,7 +91,7 @@ const rolePages = [
   {
     slug: "role-engineering-leader",
     kicker: "HIRING AN ENGINEERING LEADER?",
-    title: "Nothing I build needs me in the room.",
+    title: "Teams I lead ship faster and can prove it.",
     description: "Led as a staff engineer, ran a $500K business with full P&L, raised a $400K pre-seed.",
   },
 ];
