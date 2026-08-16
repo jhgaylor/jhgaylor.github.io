@@ -92,7 +92,7 @@ const rolePages = [
     slug: "role-engineering-leader",
     kicker: "HIRING AN ENGINEERING LEADER?",
     title: "Teams I lead ship faster and can prove it.",
-    description: "Led as a staff engineer, ran a $500K business with full P&L, raised a $400K pre-seed.",
+    description: "Led as a staff engineer, ran a $500K restaurant with full P&L, founded three startups.",
   },
 ];
 
