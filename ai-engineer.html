@@ -106,15 +106,15 @@ og_image_alt: Hiring an AI engineer? I ship agents with real access and no crede
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
         <div class="text-brand-600 font-bold mb-2">Offboarding is one move</div>
-        <p class="text-gray-600">Made offboarding a sandbox one move, every token it ever held dead at teardown with nothing to rotate, by creating each sandbox&rsquo;s identity at boot and keeping real secrets out of the sandbox entirely.</p>
+        <p class="text-gray-600">Each sandbox&rsquo;s identity is created at boot and invalidated at teardown, which kills every token it held. Nothing needs rotating because no real secret ever entered the sandbox.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
         <div class="text-brand-600 font-bold mb-2">Every call has an owner</div>
-        <p class="text-gray-600">Put an owner and a budget on every inference call, so a leaked key cannot spend invisibly and each sandbox&rsquo;s cost is visible, by billing each request through a proxy to the verified identity where the open-ended bill used to be.</p>
+        <p class="text-gray-600">The inference proxy bills each request to the verified identity and enforces a budget where the open-ended bill used to be. A leaked key can&rsquo;t spend invisibly, and I can see what each sandbox costs.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
         <div class="text-brand-600 font-bold mb-2">Measured like a product</div>
-        <p class="text-gray-600">Shipped agents that were judged on product numbers, Ravi&rsquo;s usage data carrying the fundraise and Cloaked&rsquo;s onboarding retention going up, by instrumenting from day one and tying each agent to the metric it was meant to move.</p>
+        <p class="text-gray-600">Ravi&rsquo;s v1 was instrumented from day one and its usage data carried the fundraise. Cloaked&rsquo;s agents were judged on their impact on onboarding retention, and retention went up.</p>
       </div>
     </div>
   </div>
