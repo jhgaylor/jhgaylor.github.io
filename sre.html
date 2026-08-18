@@ -90,16 +90,16 @@ og_image_alt: Hiring an SRE? Systems I run grow 1,000x without a rebuild or a he
     <h2 class="text-3xl font-bold text-center mb-10">The day-2 receipts</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">Deploy risk, engineered away</div>
-        <p class="text-gray-600">At CyberGRX I wrote a Go operator that ran blue/green rollouts as a custom resource. A bad deploy meant flipping back, and deploys went from a quarterly event to whenever anyone wanted.</p>
+        <div class="text-brand-600 font-bold mb-2">Rollback is a selector flip</div>
+        <p class="text-gray-600">At CyberGRX I wrote a Go operator that ran blue/green rollouts as a custom resource. The old version stayed warm behind the new one, so a bad deploy was undone in under a minute by flipping the selector back, and deploys went from a quarterly event to whenever anyone wanted.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">Graphs the whole company reads</div>
-        <p class="text-gray-600">Prometheus, Grafana, Loki, PagerDuty, and CloudWatch for the infrastructure. At Cloaked I built the product-analytics stack the whole company used to make product and roadmap calls.</p>
+        <div class="text-brand-600 font-bold mb-2">The alert carries its own runbook</div>
+        <p class="text-gray-600">Prometheus, Grafana, and Loki on everything I run, PagerDuty in front. Every alert links to the graph that fired it and the runbook that closes it, so the newest person on rotation sees exactly what I would see and fixes it without calling me.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
         <div class="text-brand-600 font-bold mb-2">One image, every box</div>
-        <p class="text-gray-600">At Cardfree I built a hybrid AMI build and deploy platform on Packer, so Windows and Linux EC2 hosts for C# and Ruby services came up identical every time.</p>
+        <p class="text-gray-600">At Cardfree I built a hybrid AMI platform on Packer. Every Windows and Linux host behind the C# and Ruby services came from the same build, a drifted host got replaced from the image instead of repaired by hand, and the PCI auditors got a build log instead of a login.</p>
       </div>
     </div>
   </div>
