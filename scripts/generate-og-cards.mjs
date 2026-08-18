@@ -73,7 +73,7 @@ const rolePages = [
   {
     slug: "role-sre",
     kicker: "HIRING AN SRE?",
-    title: "Product teams on my systems never ask whether the backend will hold.",
+    title: "Systems I run grow 1,000x and page a human only when they need one.",
     description: "Petabyte scale kept boring, across thousands of Cassandra nodes.",
   },
   {
