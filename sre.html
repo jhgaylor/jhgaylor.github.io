@@ -1,7 +1,7 @@
 ---
 layout: layouts/home.html
 title: Jake Gaylor · Site Reliability Engineer
-description: Jake Gaylor ran SRE for Protectwise's petabyte-scale ingestion platform through dozens of production deploys a day. Observability with Prometheus, Grafana, and Loki, a PCI incident-response program at Cardfree, and production served from his own house.
+description: Jake Gaylor ran SRE for Protectwise's petabyte-scale ingestion platform through dozens of production deploys a day, and was the one-person ops team behind Cloaked's platform through 1,000x growth under SOC 2 and ISO 27001. PCI incident response at Cardfree, and production served from his own house.
 socialDescription: Petabyte scale kept boring. Thousands of Cassandra nodes, dozens of deploys a day, and incident response that does not need heroes.
 canonicalPath: /sre/
 og_image: /images/og/role-sre.jpg
@@ -43,41 +43,42 @@ og_image_alt: Hiring an SRE? Product teams on my systems never ask whether the b
         <div class="text-4xl font-bold text-brand-600 mb-1">Petabytes</div>
         <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">at Protectwise, acquired by Verizon</div>
         <p class="text-gray-700 leading-relaxed">
-          Thousands of Cassandra nodes, petabytes in S3, and a $10M+/yr AWS environment administered entirely as
-          infrastructure as code, through dozens of production deploys a day, underneath a product that could
-          not miss data.
+          Thousands of Cassandra nodes, petabytes in S3, and a $10M+/yr AWS environment run entirely as code, through
+          dozens of production deploys a day, under a product that could not miss data.
         </p>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
-        <div class="text-4xl font-bold text-brand-600 mb-1">Observability</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">the whole company reads</div>
+        <div class="text-4xl font-bold text-brand-600 mb-1">1,000x</div>
+        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">growth on one platform at Cloaked</div>
         <p class="text-gray-700 leading-relaxed">
-          Prometheus, Grafana, Loki, PagerDuty, and CloudWatch for the infrastructure. At Cloaked I built the
-          product-analytics stack the whole company used to make product and roadmap calls.
+          The EKS platform I built carried the product from hundreds of users to hundreds of thousands without a
+          rebuild. I was the one-person ops team behind it, handling capacity and cost under SOC 2, ISO 27001,
+          and ISO 27701.
         </p>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
-        <div class="text-4xl font-bold text-brand-600 mb-1">IR program</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">PCI-compliant, paperwork-light</div>
+        <div class="text-4xl font-bold text-brand-600 mb-1">PCI</div>
+        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">incident response the auditors signed off on</div>
         <p class="text-gray-700 leading-relaxed">
-          At Cardfree I replaced ad-hoc Slack alerts with a structured, PCI-compliant incident-response program.
-          It satisfied the auditors without burying the engineers in paperwork.
+          At Cardfree I ran a large-scale PCI-compliant C# installation in AWS and replaced ad-hoc Slack
+          firefighting with a structured incident-response program. It satisfied the auditors without burying
+          the engineers in paperwork.
         </p>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
-        <div class="text-4xl font-bold text-brand-600 mb-1">On call</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">for my own house</div>
+        <div class="text-4xl font-bold text-brand-600 mb-1">My phone</div>
+        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">is the pager for my own house</div>
         <p class="text-gray-700 leading-relaxed">
           My <a href="/homelab/" data-cta="sre-receipt-homelab" class="text-brand-600 underline hover:text-brand-800">homelab</a>
-          serves production traffic from a k3s cluster with Prometheus, Grafana, and Loki, and Prometheus pages
-          my phone when something breaks.
+          serves production traffic from a k3s cluster. Certs renew themselves, backups run on schedule, every
+          change ships from git, and Prometheus pages me only when something needs a human.
         </p>
       </div>
     </div>
 
     <p class="text-xs text-gray-500 text-center mt-8 max-w-3xl mx-auto">
       For the keyword scanners: Prometheus, Grafana, Loki, PagerDuty, CloudWatch, Cassandra, Kafka, S3,
-      EKS, k3s, Flux CD, Terraform, Chef. Every one of them attached to a system above or on
+      EKS, k3s, Flux CD, Terraform, Chef, Packer. Every one of them attached to a system above or on
       <a href="/resume/" data-cta="sre-receipt-resume" class="text-brand-600 underline hover:text-brand-800">the resume</a>.
     </p>
   </div>
@@ -93,12 +94,12 @@ og_image_alt: Hiring an SRE? Product teams on my systems never ask whether the b
         <p class="text-gray-600">At CyberGRX I wrote a Go operator that ran blue/green rollouts as a custom resource. A bad deploy meant flipping back, and deploys went from a quarterly event to whenever anyone wanted.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">Capacity ahead of the curve</div>
-        <p class="text-gray-600">The Cloaked platform carried the business from hundreds of users to hundreds of thousands without a rebuild. I was the one-person ops team behind it, handling capacity and cost under three compliance regimes.</p>
+        <div class="text-brand-600 font-bold mb-2">Graphs the whole company reads</div>
+        <p class="text-gray-600">Prometheus, Grafana, Loki, PagerDuty, and CloudWatch for the infrastructure. At Cloaked I built the product-analytics stack the whole company used to make product and roadmap calls.</p>
       </div>
       <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">The quiet pager</div>
-        <p class="text-gray-600">On my homelab, certs renew themselves, backups run on schedule, and every change ships from git, so the alerts that reach my phone are the ones that need a human.</p>
+        <div class="text-brand-600 font-bold mb-2">One image, every box</div>
+        <p class="text-gray-600">At Cardfree I built a hybrid AMI build and deploy platform on Packer, so Windows and Linux EC2 hosts for C# and Ruby services came up identical every time.</p>
       </div>
     </div>
   </div>
