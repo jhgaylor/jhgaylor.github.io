@@ -71,12 +71,6 @@ const rolePages = [
     description: "Org-wide adoption of a new deploy process in 3 days. A 30x faster GitOps pipeline.",
   },
   {
-    slug: "role-devops",
-    kicker: "HIRING A DEVOPS ENGINEER?",
-    title: "Quarterly deploy events become shipping on demand.",
-    description: "The same arc delivered at CyberGRX, Cloaked (30x faster), and Food Service Warehouse.",
-  },
-  {
     slug: "role-sre",
     kicker: "HIRING AN SRE?",
     title: "Product teams on my systems never ask whether the backend will hold.",

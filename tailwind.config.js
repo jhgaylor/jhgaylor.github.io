@@ -13,7 +13,6 @@ export default {
     "./kubernetes-engineer.html",
     "./aws-specialist.html",
     "./platform-engineer.html",
-    "./devops.html",
     "./sre.html",
     "./ai-engineer.html",
     "./engineering-leader.html",

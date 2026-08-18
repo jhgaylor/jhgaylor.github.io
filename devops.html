@@ -1,130 +1,18 @@
 ---
-layout: layouts/home.html
-title: Jake Gaylor · DevOps Engineer
-description: Jake Gaylor turns quarterly manual deploys into shipping on demand. He did it at CyberGRX, accelerated Cloaked's pipeline 30x with GitOps, and put Food Service Warehouse's Node.js teams on the fastest release cycle in the company.
-socialDescription: Quarterly manual deploys become shipping on demand. The same arc delivered at CyberGRX, Cloaked (30x faster), and Food Service Warehouse since 2015.
-canonicalPath: /devops/
-og_image: /images/og/role-devops.jpg
-og_image_alt: Hiring a DevOps engineer? Quarterly deploy events become shipping on demand.
+permalink: /devops/index.html
+eleventyExcludeFromCollections: true
 ---
-
-{% assign ctaPrefix = "devops" %}
-
-<!-- ===================== HERO ===================== -->
-<header class="relative bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 text-white">
-  <div class="container mx-auto px-6 pt-8 pb-16 md:pb-20">
-    {% include "partials/site-nav.html" %}
-    <div class="max-w-3xl mx-auto">
-      <p class="text-brand-200 font-semibold tracking-widest uppercase text-sm mb-5">
-        DevOps Engineer &middot; Senior / Staff
-      </p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Quarterly deploy events become shipping on demand.
-      </h1>
-      <p class="text-xl text-brand-100 mb-10">
-        The mechanics barely change from company to company. Shorten the path from merge to production,
-        automate the scary parts, and show everyone the metrics.
-      </p>
-      {% include "partials/hero-ctas.html" %}
-    </div>
-  </div>
-</header>
-
-<!-- ===================== RECEIPTS ===================== -->
-<section class="py-16 md:py-24 bg-brand-50 text-gray-900" data-section-track="receipts">
-  <div class="container mx-auto px-6">
-    <div class="max-w-3xl mx-auto text-center mb-14">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">The same arc, four companies</h2>
-      <p class="text-lg text-gray-600">Each one measured before and after.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-      <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
-        <div class="text-4xl font-bold text-brand-600 mb-1">On demand</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">from quarterly, at CyberGRX</div>
-        <p class="text-gray-700 leading-relaxed">
-          I redesigned the build and deploy process around a blue/green operator I wrote with the CoreOS operator
-          SDK, presented it, and had every engineer shipping with it inside 3 days.
-        </p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
-        <div class="text-4xl font-bold text-brand-600 mb-1">30x</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">faster deploys at Cloaked</div>
-        <p class="text-gray-700 leading-relaxed">
-          A GitOps CI/CD pipeline built in my first 6 months, alongside the migration from a legacy PaaS to
-          AWS EKS. Deploys got 30x faster and the infrastructure got cheaper in the same quarter.
-        </p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
-        <div class="text-4xl font-bold text-brand-600 mb-1">Fastest</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">release cycle in the company</div>
-        <p class="text-gray-700 leading-relaxed">
-          At Food Service Warehouse in 2015 I brought Docker and Kubernetes to a C#-on-vSphere shop. The Node.js
-          teams on my infrastructure out-shipped everyone else in the building.
-        </p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 border border-brand-100 shadow-sm">
-        <div class="text-4xl font-bold text-brand-600 mb-1">Mobile too</div>
-        <div class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-4">self-serve TestFlight and App Store</div>
-        <p class="text-gray-700 leading-relaxed">
-          At Inception Health I automated TestFlight and App Store releases through git, so mobile teams shipped
-          their own builds without waiting on anyone.
-        </p>
-      </div>
-    </div>
-
-    <p class="text-xs text-gray-500 text-center mt-8 max-w-3xl mx-auto">
-      For the keyword scanners: Docker, GitHub Actions, Flux CD, ArgoCD, Argo Workflows, Terraform, CDK,
-      Chef, Packer, EKS, Prometheus, Grafana. Every one of them attached to a pipeline above or on
-      <a href="/resume/" data-cta="devops-receipt-resume" class="text-brand-600 underline hover:text-brand-800">the resume</a>.
-    </p>
-  </div>
-</section>
-
-<!-- ===================== DAY 2 ===================== -->
-<section class="py-16 md:py-20 bg-white text-gray-900" data-section-track="day-2">
-  <div class="container mx-auto px-6 max-w-5xl">
-    <h2 class="text-3xl font-bold text-center mb-10">The day-2 receipts</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">Measured, so it counts</div>
-        <p class="text-gray-600">At Cloaked I built the product analytics stack that made data-driven decisions normal across the company. Measurement is why I can say 30x instead of &ldquo;a lot faster.&rdquo;</p>
-      </div>
-      <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">A playbook for the bad deploy</div>
-        <p class="text-gray-600">At Cardfree I replaced ad-hoc Slack firefighting with a PCI-compliant incident response program, so a bad deploy had a known playbook and the auditors had their paperwork.</p>
-      </div>
-      <div class="bg-brand-50 rounded-2xl p-7 border border-brand-100">
-        <div class="text-brand-600 font-bold mb-2">I still ship this way daily</div>
-        <p class="text-gray-600">Every deploy to my homelab is a git commit. Flux CD reconciles it, Prometheus watches it, and rollback is a git revert. The newest pipeline I run went live in my house.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== TESTIMONIALS ===================== -->
-<section class="pt-16 md:pt-20 pb-6 md:pb-8 bg-gradient-to-b from-brand-900 to-brand-950 text-white" data-section-track="testimonial">
-  <div class="container mx-auto px-6 max-w-5xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div>
-        <p class="text-xl font-medium leading-relaxed mb-5">
-          &ldquo;I watched Jake redo a build and deploy process over the span of 3 days, whip up a presentation, and get
-          every engineer in the org up to speed using it, a moment I&rsquo;ll never forget because our productivity
-          EXPLODED afterwards.&rdquo;
-        </p>
-        <p class="text-brand-200 font-semibold">Stephen Bapple, Software Engineer, CyberGRX</p>
-      </div>
-      <div>
-        <p class="text-xl font-medium leading-relaxed mb-5">
-          &ldquo;We were deploying C# on vSphere when Jake joined our first Node.js backend team. He had been
-          using Docker, we identified Kubernetes as our next step, and Jake hit the ground running. Our Node
-          services had the fastest release cycle in the company.&rdquo;
-        </p>
-        <p class="text-brand-200 font-semibold">Architect, Food Service Warehouse, 2015</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{% include "partials/role-cta.html" %}
-{% include "partials/signal.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Gaylor · Platform Engineer</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://jakegaylor.com/platform-engineer/">
+  <meta http-equiv="refresh" content="0; url=/platform-engineer/">
+</head>
+<body style="font-family: system-ui, sans-serif; text-align: center; padding: 4rem 1rem; color: #374151;">
+  <p>The DevOps page moved to <a href="/platform-engineer/" style="color: #96491e;">/platform-engineer/</a>.</p>
+</body>
+</html>
