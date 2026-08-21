@@ -18,7 +18,7 @@
     "email": "jhgaylor@gmail.com",
     "phone": "720.453.3994",
     "url": "https://jakegaylor.com",
-    "summary": "I build systems a stranger can run on day one. 15+ years across SaaS, AI, infrastructure, and IoT, with a core of delivery: finding what slows a team down, rebuilding it into tools the whole team uses, and putting real metrics in place so decisions stop being guesses. Lately deep in AI, riding the whole arc: from smart line changes in Cursor, to agentic coding with Claude Code, to building frameworks that operate fleets of coding agents. Along the way: internal coding bots at Block Party, autonomous agents at Cloaked, and Ravi, a funded agent-native SaaS.",
+    "summary": "I build systems a stranger can run on day one. 15+ years across SaaS, AI, infrastructure, and IoT. At Cloaked I led the move off a legacy PaaS onto AWS EKS, made deploys 30x faster in six months, and ran that platform as its one-person ops team while the product grew from hundreds of users to hundreds of thousands under SOC 2 and ISO 27001. At CyberGRX I rebuilt a quarterly, manual deploy process and had every engineer shipping on it within 3 days. Agents have been in my production systems since LangChain was new, and today a fleet of coding agents builds Fountain, my agent platform, under my review.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -46,11 +46,11 @@
       "url": "https://ravi.id",
       "startDate": "2026-01",
       "endDate": "2026-05",
-      "summary": "Cofounded an agent-native SaaS that lets AI agents manage their own accounts and secrets.",
+      "summary": "Cofounded an agent-native SaaS where AI agents manage their own accounts, secrets, and 2FA.",
       "highlights": [
-        "Raised a $400K pre-seed from South Park Commons",
+        "Raised a $400K pre-seed from South Park Commons on the usage data from a v1 instrumented from day one",
         "Grew to hundreds of users",
-        "Shipped the product end to end: a web SaaS and a cross-platform Flutter mobile app on the Apple App Store, built on prototypes started in 2024",
+        "Shipped it end to end, a web SaaS and a Flutter app on the App Store, from prototypes started in 2024",
         "Designed agent-native account, secret, and 2FA management so AI agents can operate their own identities"
       ]
     },
@@ -60,9 +60,9 @@
       "url": "https://www.blockpartyapp.com/",
       "startDate": "2025-05",
       "endDate": "2026-01",
-      "summary": "Built internal AI and developer tooling for the engineering org, including the framework behind the company's internal coding bots, until Block Party was acquired by DeleteMe in January 2026.",
+      "summary": "Built internal AI and developer tooling for the engineering org until Block Party was acquired by DeleteMe in January 2026.",
       "highlights": [
-        "Designed and built the framework behind the company's internal AI coding bots"
+        "Designed and built the framework behind the company's internal AI coding bots, treating the agent as another consumer of the developer platform"
       ]
     },
     {
@@ -71,14 +71,14 @@
       "url": "https://cloaked.app",
       "startDate": "2022-09",
       "endDate": "2025-05",
-      "summary": "Started in platform engineering (AWS EKS migration, GitOps CI/CD, compliance), then moved into product, building autonomous AI agents and a cross-functional ideation portal that drove a sticky, AI-powered onboarding experience.",
+      "summary": "Started in platform engineering with the AWS EKS migration, GitOps CI/CD, and compliance, then moved into product to build autonomous AI agents and the ideation portal behind a sticky, AI-powered onboarding experience.",
       "highlights": [
-        "Built a GitOps-based CI/CD pipeline that accelerated deployments by 30x",
-        "Led the migration from legacy PaaS to AWS EKS, with a multi-account model meeting SOC2, ISO 27001, and 27701 compliance",
+        "Led the migration from a legacy PaaS to AWS EKS with a multi-account model meeting SOC 2, ISO 27001, and ISO 27701 requirements, and it came out cheaper with more headroom than what it replaced",
+        "Built a GitOps-based CI/CD pipeline that accelerated deployments 30x in my first 6 months",
+        "Carried that platform from hundreds of users to hundreds of thousands without a rebuild, as its solo ops team",
         "Built an end-to-end product-analytics stack that enabled data-driven decisions across the company",
-        "Built autonomous AI agents with LangChain to automate user account management (auto change password, login, and email)",
-        "Turned those AI agents into a core fundraising narrative and a sticky, AI-powered onboarding experience that boosted adoption and retention",
-        "Launched a cross-functional ideation portal connecting design, product, engineering, and executives with transparent status tracking"
+        "Built autonomous AI agents with LangChain that log in to user accounts to change passwords and swap the email on file, then made them a core fundraising narrative and an onboarding experience that lifted retention",
+        "Launched a cross-functional ideation portal nearly the whole org used, one board from idea to usage report for design, product, engineering, and executives"
       ]
     },
     {
@@ -86,13 +86,13 @@
       "position": "Owner / Co-GM",
       "startDate": "2021-10",
       "endDate": "2024-01",
-      "summary": "Owned and managed a full-service steakhouse with 7 staff, generating $500K in annual revenue and overseeing P&L, operations, and vendor relations.",
+      "summary": "Owned and ran a full-service steakhouse with my wife, 7 staff and $500K a year in business revenue, P&L on me.",
       "highlights": [
-        "Led a team of 7 employees, handling recruitment, training, scheduling, and performance management.",
-        "Directed all facets of business operations, achieving $500K in annual revenue through strategic inventory management and cost control.",
-        "Designed and implemented operational processes for facility maintenance, vendor partnerships, and quality assurance, driving consistent customer satisfaction.",
-        "Managed P&L, budgets, and financial reporting, optimizing expenses and improving profit margins.",
-        "Executed marketing and community engagement initiatives to increase local brand awareness and repeat patronage."
+        "Ran the full business lifecycle, from spotting the opportunity through acquisition to a $500K/yr operation",
+        "Hired, trained, and scheduled a team of 7, learning what each person needed instead of running one playbook over all of them",
+        "Owned the P&L, budgets, and financial reporting, holding margin through inventory management and cost control",
+        "Built the operating procedures behind maintenance, vendors, and quality assurance that kept service consistent shift to shift",
+        "Ran marketing and community engagement that grew local awareness and repeat patronage"
       ]
     },
     {
@@ -100,13 +100,13 @@
       "position": "Staff SWE in Developer Experience",
       "startDate": "2020-06",
       "endDate": "2022-06",
-      "summary": "Architected AWS CDK infrastructure and tooling for HIPAA-compliant patient care microservices",
+      "summary": "Designed the AWS CDK patterns that product and mobile teams used to ship HIPAA-compliant patient-care microservices themselves, and left both teams running their own deploys.",
       "highlights": [
-        "Led delivery of AWS CDK infrastructure for patient care microservices platform, ensuring HIPAA compliance and deep AWS integration",
+        "Led delivery of the AWS CDK infrastructure behind a HIPAA-compliant patient care microservices platform",
+        "Designed IaC patterns application teams consumed directly, so a team could ship a compliant service without a platform engineer in the loop",
+        "Built mobile CI/CD that turned TestFlight and App Store releases into self-serve deploys from git",
         "Collaborated with AWS and partner teams to integrate managed services and accelerate platform development",
-        "Championed CDK usage across application tiers, designing IaC patterns for teams to consume and interact with the platform",
-        "Implemented CI/CD pipelines for mobile apps, automating TestFlight and App Store releases through Git, enabling self-serve deployments",
-        "Trained and mentored product and mobile development teams on CDK, serverless architectures, and CI/CD workflows, fostering autonomy"
+        "Trained and mentored the product and mobile teams on CDK, serverless, and CI/CD until they ran the platform without me"
       ]
     },
     {
@@ -115,13 +115,13 @@
       "url": "https://processunity.com/",
       "startDate": "2018-12",
       "endDate": "2020-06",
-      "summary": "Led cloud-native CI/CD vision and implementation for AWS and Kubernetes",
+      "summary": "Rebuilt build and deploy at a company where shipping was a quarterly manual event, and had roughly 50 engineers across several teams deploying on demand within 3 days.",
       "highlights": [
-        "Led vision on cloud-native CI/CD pipelines for AWS and Kubernetes",
-        "Developed custom resource using CoreOS operator SDK for orchestrating blue/green deployments",
-        "Redesigned build and deploy process that dramatically improved team productivity",
+        "Wrote a Go operator on the CoreOS operator SDK that ran blue/green rollouts as a custom resource, keeping the previous version a selector flip away so a bad deploy was undone in under a minute",
+        "Redesigned the build and deploy process, presented it to the org, and had every engineer shipping with it inside 3 days",
+        "Led the vision for cloud-native CI/CD pipelines on AWS and Kubernetes",
         "Mentored software engineers in best practices for building and deploying software",
-        "Grew into Staff Engineer role by owning large-scope initiatives, collaborating with the Tech Lead to drive interactions across the organization and unblock progress"
+        "Grew into a Staff Engineer role by owning large-scope initiatives, collaborating with the Tech Lead to drive interactions across the organization and unblock progress"
       ]
     },
     {
@@ -129,12 +129,11 @@
       "position": "Senior Cloud Platform Engineer",
       "startDate": "2018-01",
       "endDate": "2018-12",
-      "summary": "Managed large-scale PCI-compliant C# installation in AWS",
+      "summary": "Ran a large-scale PCI-compliant C# installation in AWS and took the hand-built hosts out of it, with every Windows and Linux server coming from one Packer build.",
       "highlights": [
-        "Managed a large-scale PCI-compliant C# installation in AWS",
-        "Architected hybrid AMI build and deploy platform using Packer and Vagrant, enabling consistent Windows and Linux EC2 deployments for C# and Ruby services",
-        "Standardized infrastructure-as-code practices to pave the way for open-source .NET migration",
-        "Developed and launched a structured PCI-compliant incident response program, replacing ad-hoc Slack alerts with a streamlined IR workflow without excessive paperwork"
+        "Architected a hybrid AMI build and deploy platform with Packer and Vagrant, so a drifted host behind the C# and Ruby services got replaced from the image rather than repaired",
+        "Standardized infrastructure-as-code practices to pave the way for the open-source .NET migration",
+        "Replaced ad-hoc Slack firefighting with a structured PCI-compliant incident response program, structured enough for the auditors and light enough that engineers actually followed it"
       ]
     },
     {
@@ -142,10 +141,11 @@
       "position": "Senior DevOps Engineer",
       "startDate": "2016-08",
       "endDate": "2018-01",
-      "summary": "Operated SRE for petabyte-scale data ingestion platform",
+      "summary": "SRE for a petabyte-scale ingestion platform, thousands of Cassandra nodes and Kafka pipelines on a $10M+/yr AWS environment run entirely as code.",
       "highlights": [
-        "Managed SRE for massive scale data ingestion platform with thousands of Cassandra nodes and petabytes in S3",
-        "Administered $10M+/yr production AWS environment using Infrastructure as Code"
+        "Managed SRE for a massive-scale data ingestion platform with thousands of Cassandra nodes and petabytes in S3",
+        "Administered a $10M+/yr production AWS environment with Chef and infrastructure as code",
+        "Held the platform steady under a product that shipped dozens of times a day and could not miss data"
       ]
     },
     {
@@ -153,10 +153,10 @@
       "position": "DevOps Engineer",
       "startDate": "2015-06",
       "endDate": "2016-03",
-      "summary": "Built Kubernetes clusters on vSphere using CoreOS technologies",
+      "summary": "Ran production Kubernetes on vSphere in 2015, the year it hit 1.0, and put the Node.js services on the fastest release cycle in the company.",
       "highlights": [
         "Implemented Kubernetes clusters on vSphere using CoreOS, fleet, etcd, and flannel",
-        "Accelerated release cycles for Node.js services with container orchestration"
+        "Brought Docker and Kubernetes to a C# and vSphere shop and made containers the release path for the first Node.js backend teams"
       ]
     },
     {
@@ -321,8 +321,21 @@
   ],
   "projects": [
     {
+      "name": "Fountain",
+      "description": "A multi-tenant developer platform for running fleets of sandboxed coding agents, built by the agents it orchestrates",
+      "highlights": [
+        "400+ PRs merged in its first three months, all agent-written; I set the roadmap and review the work",
+        "Ships under BinaryBourbon, the GitHub identity my agent fleet works as",
+        "Sandboxes boot holding one short-lived signed identity, so no long-lived secret ever enters the box and teardown invalidates everything it held",
+        "An inference proxy injects the model key after the request leaves the sandbox and bills every call to the verified identity, with a budget where the open-ended bill used to be",
+        "Every feature on three surfaces, a web UI for debugging, a REST API for CI/CD, and a Homebrew CLI with manifest-driven fountain apply",
+        "Speaks ACP, so any ACP client can drive the fleet"
+      ],
+      "url": "https://github.com/BinaryBourbon/fountain"
+    },
+    {
       "name": "Production-Grade Homelab",
-      "description": "A three-node k3s cluster on M4 Mac minis serving production traffic from home — GitOps-managed, fully observable, photo tour included",
+      "description": "A three-node k3s cluster on M4 Mac minis serving production traffic from home, GitOps-managed, fully observable, photo tour included",
       "highlights": [
         "Flux CD reconciles every manifest from git; secrets live encrypted in-repo with SOPS + age",
         "Tailscale WireGuard mesh between Lima VMs with direct LAN paths; Traefik, cert-manager, and oauth2-proxy at the edge",
@@ -331,15 +344,26 @@
       "url": "https://jakegaylor.com/homelab/"
     },
     {
-      "name": "MCP Working Group Contributions",
-      "description": "Active participant in Model Context Protocol (MCP) community development",
+      "name": "ai.jakegaylor.com",
+      "description": "A live MCP server and A2A agent card that let a screening assistant interview me directly",
       "highlights": [
-        "Member of the MCP Hosting Working Group",
+        "Any MCP client can read my resume, score my fit against a job description, and build the interview",
+        "The assistant can draft an email to me from the conversation, the human reviews it, and the server sends it",
+        "Streamable HTTP and SSE transports, an npm package for stdio-only clients, and llms.txt for everyone else",
+        "Runs on the homelab k3s cluster, deployed by Flux from git like everything else there"
+      ],
+      "url": "https://ai.jakegaylor.com/"
+    },
+    {
+      "name": "MCP Working Group Contributions",
+      "description": "Early participant in Model Context Protocol (MCP) community development",
+      "highlights": [
+        "Was a member of the MCP Hosting Working Group",
         "Developed strategies for deploying and running MCP servers at scale",
-        "Contributed to Dart SDK, Express tool for binding to MCP servers",
-        "Developed various MCP servers (Hirebase, Candidate Job Search, Text Extraction)",
-        "Created GitOps tool for MCP deployments",
-        "Operate publicly available MCP servers for community testing"
+        "Contributed to the Dart SDK and an Express tool for binding to MCP servers",
+        "Built MCP servers for Hirebase, candidate job search, and text extraction",
+        "Created a GitOps tool for MCP deployments",
+        "Still operate a public Echo MCP server for community testing"
       ],
       "url": "https://github.com/jhgaylor"
     },
