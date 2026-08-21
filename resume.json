@@ -295,20 +295,28 @@
       "reference": "Jake is a force for good unlike any other. He migrated our infra to a cheaper and more scalable system, crafted a CI pipeline that accelerated deploys by 30x, and taught the whole company how to make data-driven decisions by building and showcasing an entire product analytics stack. And that was just his first 6 months."
     },
     {
+      "name": "Alex Artigues, DevOps Engineer, Protectwise",
+      "reference": "Jake and I ran the AWS behind a petabyte-scale security platform. Thousands of Cassandra nodes, Kafka pipelines, a $10M-a-year bill, all of it managed with Chef and deliberately boring tech. I'd sign up to do it with him again tomorrow."
+    },
+    {
       "name": "Stephen Bapple, Software Engineer, CyberGRX",
       "reference": "I watched Jake redo a build and deploy process over the span of 3 days, whip up a presentation, and get every engineer in the org up to speed using it to deploy new services, a moment I'll never forget because our productivity EXPLODED afterwards."
     },
     {
-      "name": "Senior Platform Engineer, Inception Health",
-      "reference": "I also wanted to second (third? Fourth?) Jake's skills here. I don't have anything unique to add as everyone else has already covered it, but this man will help you achieve what you need."
+      "name": "Architect, Food Service Warehouse, 2015",
+      "reference": "We were deploying C# on vSphere when Jake joined our first Node.js backend team. He had been using Docker, we identified Kubernetes as our next step, and Jake hit the ground running. Our Node services had the fastest release cycle in the company."
+    },
+    {
+      "name": "Akeem Jenkins, Director of Product Engineering, Piedmont Global",
+      "reference": "Fountain is dope. Jake built one of the most GOATed models for everyone wanting self sovereignty over agent compute while getting the GrokBot like experience using Buzz."
     },
     {
       "name": "Magician, Magic",
       "reference": "Jake worked in the pit with [the operations team] and everyday came in with killer energy. Everyone else told us how to work around problems. Jake built us better tools."
     },
     {
-      "name": "DevOps Engineer, Protectwise",
-      "reference": "Jake was instrumental in building our cloud-native security platform. His technical leadership helped shape our architecture and team practices."
+      "name": "Senior Platform Engineer, Inception Health",
+      "reference": "I also wanted to second (third? Fourth?) Jake's skills here. I don't have anything unique to add as everyone else has already covered it, but this man will help you achieve what you need."
     }
   ],
   "projects": [
