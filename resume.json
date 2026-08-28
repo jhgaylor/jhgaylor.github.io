@@ -18,7 +18,7 @@
     "email": "jhgaylor@gmail.com",
     "phone": "720.453.3994",
     "url": "https://jakegaylor.com",
-    "summary": "I build systems a stranger can run on day one. 15+ years across SaaS, AI, infrastructure, and IoT. At Cloaked I led the move off a legacy PaaS onto AWS EKS, made deploys 30x faster in six months, and ran that platform as its one-person ops team while the product grew from hundreds of users to hundreds of thousands under SOC 2 and ISO 27001. At CyberGRX I rebuilt a quarterly, manual deploy process and had every engineer shipping on it within 3 days. Agents have been in my production systems since LangChain was new, and today a fleet of coding agents builds Fountain, my agent platform, under my review.",
+    "summary": "I build systems a stranger can run on day one. 15+ years across SaaS, AI, infrastructure, and IoT. At Cloaked I led the move off a legacy PaaS onto AWS EKS, made deploys 30x faster in six months, and ran that platform as its one-person ops team while the product grew from hundreds of users to hundreds of thousands under SOC 2 and ISO 27001. At CyberGRX I rebuilt a quarterly, manual deploy process and had every engineer shipping on it within 3 days. Agents have been in my production systems since LangChain was new, and today a fleet of coding agents builds Managoat, the hosted agent platform I run, under my review.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -321,17 +321,18 @@
   ],
   "projects": [
     {
-      "name": "Fountain",
-      "description": "A multi-tenant developer platform for running fleets of sandboxed coding agents, built by the agents it orchestrates",
+      "name": "Managoat",
+      "description": "A hosted platform for running fleets of sandboxed coding agents, sold by the agent hour and built by the agents it orchestrates; the server under it, Fountain, is open source",
       "highlights": [
         "400+ PRs merged in its first three months, all agent-written; I set the roadmap and review the work",
         "Ships under BinaryBourbon, the GitHub identity my agent fleet works as",
+        "Metered billing at $0.25 an agent hour, a published concurrency ceiling that refuses rather than queues, and a year of audit events",
         "Sandboxes boot holding one short-lived signed identity, so no long-lived secret ever enters the box and teardown invalidates everything it held",
         "An inference proxy injects the model key after the request leaves the sandbox and bills every call to the verified identity, with a budget where the open-ended bill used to be",
         "Every feature on three surfaces, a web UI for debugging, a REST API for CI/CD, and a Homebrew CLI with manifest-driven fountain apply",
-        "Speaks ACP, so any ACP client can drive the fleet"
+        "Answers ACP, AG-UI, and MCP in both directions, so any client already in use can drive the fleet"
       ],
-      "url": "https://github.com/BinaryBourbon/fountain"
+      "url": "https://managoat.com"
     },
     {
       "name": "Production-Grade Homelab",
