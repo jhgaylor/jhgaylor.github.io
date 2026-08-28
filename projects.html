@@ -37,6 +37,23 @@ canonicalPath: /projects/
       <article class="bg-gray-50 rounded-2xl border border-gray-100 p-8 hover:border-brand-200 hover:shadow-md transition">
         <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
           <h3 class="text-2xl font-semibold">
+            <a href="https://managoat.com" data-cta="projects-managoat" class="hover:text-brand-700 transition-colors">Managoat <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
+          </h3>
+          <span class="text-sm text-gray-500 whitespace-nowrap">Operator · 2026 &ndash; present</span>
+        </div>
+        <p class="text-gray-700 mb-4">Hosted infrastructure for running fleets of sandboxed coding agents, sold by the agent hour. Send a prompt over HTTP and a machine wakes up with the repos cloned, the packages installed, and credentials the model never sees.</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-600 list-disc list-inside">
+          <li>Metered at $0.25 an agent hour with no seats and no subscription, and customers bring their own model key, so nobody pays a markup on inference</li>
+          <li>Four coding-agent runtimes behind one API, so changing the runtime under a customer&rsquo;s agent leaves their code where it is</li>
+          <li>Secrets encrypted per account and handed to the sandbox instead of the model, then redacted from every log line before it is stored</li>
+          <li>Published concurrency ceilings that refuse in plain words, a year of audit events, and a page naming what the platform does not have yet</li>
+          <li>Runs on <a href="https://github.com/BinaryBourbon/fountain" data-cta="projects-managoat-fountain" class="underline hover:text-brand-700">Fountain</a>, the open-source server below, so a customer who cannot send code to a hosted platform runs the same build on their own hardware</li>
+        </ul>
+      </article>
+
+      <article class="bg-gray-50 rounded-2xl border border-gray-100 p-8 hover:border-brand-200 hover:shadow-md transition">
+        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-3">
+          <h3 class="text-2xl font-semibold">
             <a href="https://ravi.id" data-cta="projects-ravi" class="hover:text-brand-700 transition-colors">Ravi <i class="fas fa-arrow-up-right-from-square text-sm text-gray-400 ml-1"></i></a>
           </h3>
           <span class="text-sm text-gray-500 whitespace-nowrap">Co-Founder · Jan 2026 – May 2026</span>
@@ -96,15 +113,16 @@ canonicalPath: /projects/
         <h3 class="text-lg font-semibold mb-2">
           <a href="https://github.com/BinaryBourbon/fountain" data-cta="projects-fountain" class="hover:text-brand-700 transition-colors">Fountain <i class="fab fa-github text-sm text-gray-400 ml-1"></i></a>
         </h3>
-        <p class="text-sm text-gray-700 mb-3">A multi-tenant developer platform for running fleets of sandboxed coding agents. Running Claude instances with worktrees and hand-shuffled MCP configs was slow and error-prone, so I built the tool.</p>
+        <p class="text-sm text-gray-700 mb-3">The open-source server for running fleets of sandboxed coding agents, and the engine under <a href="https://managoat.com" data-cta="projects-fountain-managoat" class="underline hover:text-brand-700">Managoat</a>, its hosted edition. Running Claude instances with worktrees and hand-shuffled MCP configs was slow and error-prone, so I built the tool.</p>
         <ul class="space-y-1.5 text-sm text-gray-600 list-disc list-inside mb-4">
           <li>Spin up sandboxed agent instances with preconfigured env vars, MCP servers, skills, repos, and packages</li>
-          <li>Every feature on three surfaces: web UI for debugging, REST API for CI/CD, and a Homebrew-distributed CLI with manifest-driven <code class="text-xs bg-gray-100 rounded px-1">fountain apply</code></li>
-          <li>Agents onboard themselves: every instance serves llms.txt and a drop-in skill, so any agentic IDE learns the whole API from one fetch</li>
-          <li>The fleet itself is code: <a href="https://github.com/jhgaylor/agent-specs" data-cta="projects-agent-specs" class="underline hover:text-brand-700">agent-specs</a> declares every agent, environment, and vault as typed resources, applied in one command</li>
-          <li>Streams every conversation over SSE, so agent runs are observable and debuggable, not fire-and-forget</li>
+          <li>Every feature on three surfaces, a web UI for debugging, a REST API for CI/CD, and a Homebrew-distributed CLI with manifest-driven <code class="text-xs bg-gray-100 rounded px-1">fountain apply</code></li>
+          <li>Agents onboard themselves, since every instance serves llms.txt and a drop-in skill, so any agentic IDE learns the whole API from one fetch</li>
+          <li>The fleet itself is code, and <a href="https://github.com/jhgaylor/agent-specs" data-cta="projects-agent-specs" class="underline hover:text-brand-700">agent-specs</a> declares every agent, environment, and vault as typed resources, applied in one command</li>
+          <li>Answers ACP, AG-UI, MCP in both directions, and an OpenAI-compatible endpoint, so clients people already use can drive the fleet</li>
+          <li>Streams every conversation over SSE, so agent runs are observable and debuggable rather than fire-and-forget</li>
         </ul>
-        <p class="text-sm text-gray-500 border-t border-gray-100 pt-3">Built agent-first, in the open: <a href="https://github.com/BinaryBourbon" data-cta="projects-binarybourbon" class="underline hover:text-brand-700">BinaryBourbon</a> is the GitHub identity my agent fleet ships under. I set the roadmap, review the work, and operate the system. Fountain is itself developed by the agents it orchestrates.</p>
+        <p class="text-sm text-gray-500 border-t border-gray-100 pt-3">Built agent-first, in the open. <a href="https://github.com/BinaryBourbon" data-cta="projects-binarybourbon" class="underline hover:text-brand-700">BinaryBourbon</a> is the GitHub identity my agent fleet ships under, and 400+ PRs landed in the first three months, all agent-written. I set the roadmap, review the work, and operate the system, and Fountain is itself developed by the agents it orchestrates.</p>
       </article>
 
       <article class="bg-white rounded-2xl border border-gray-100 p-7 hover:border-brand-200 hover:shadow-md transition">
