@@ -1,10 +1,11 @@
 ---
 layout: layouts/blog.html
 tags: ["posts"]
+eleventyExcludeFromCollections: true
 title: "The self-healing estate, end to end"
 og_image: /images/og/self-healing-estate.jpg
 description: "One commit takes down a workload, one agent authors a PR, one human merges, and the cluster heals"
-permalink: /blog/posts/self-healing-estate/
+permalink: false
 date: 2026-09-02
 ---
 
