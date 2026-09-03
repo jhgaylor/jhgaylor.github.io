@@ -11,7 +11,12 @@ fi
 files=()
 while IFS= read -r -d '' file; do
   case "$file" in
-    *.md) files+=("$file") ;;
+    *.md)
+      if [[ "$file" == blog/posts/* ]] && grep -Eq '^permalink:[[:space:]]*false[[:space:]]*$' "$file"; then
+        continue
+      fi
+      files+=("$file")
+      ;;
   esac
 done < <(git diff --diff-filter=ACMR --name-only -z "$base_sha" "$head_sha" -- blog/posts writing)
 

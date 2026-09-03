@@ -1,10 +1,11 @@
 ---
 layout: layouts/blog.html
 tags: ["posts"]
+eleventyExcludeFromCollections: true
 title: "My agent schedules meetings now"
 og_image: /images/og/my-agent-takes-meetings-now.jpg
 description: "The A2A agent at ai.jakegaylor.com went from answering questions to booking real calendar time — self-hosted Cal.com, explicit booking protocol, and every booking pending my approval"
-permalink: /blog/posts/my-agent-takes-meetings-now/
+permalink: false
 date: 2026-07-30
 ---
 
