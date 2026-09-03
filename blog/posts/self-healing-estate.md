@@ -3,12 +3,12 @@ layout: layouts/blog.html
 tags: ["posts"]
 title: "The self-healing estate, end to end"
 og_image: /images/og/self-healing-estate.jpg
-description: "One broken commit, one agent-authored PR, one human merge, and one healed cluster"
+description: "One commit takes down a workload, one agent authors a PR, one human merges, and the cluster heals"
 permalink: /blog/posts/self-healing-estate/
 date: 2026-09-02
 ---
 
-A wrong commit lands on `main`. Flux applies it in about 15 seconds. The workload starts crashlooping while every drift check stays green.
+A commit lands on `main`. Flux applies it in about 15 seconds, and the workload starts crashlooping while every drift check stays green.
 
 About two minutes later, an agent opens a fix PR. It has found the root cause and written the smallest repair it can. It has no cluster credentials and cannot merge its own work. That last step belongs to me.
 
@@ -16,14 +16,14 @@ I call the agent `estate-medic`. This is the incident loop running in my [home c
 
 <figure class="wide-figure">
   <div class="wide-figure-scroll">
-    <img src="/images/estate-medic-loop.svg" alt="A bad commit travels through Flux to a failed workload and Prometheus. Alertmanager sends the incident to a phone and a dispatcher. The dispatcher starts an agent, which reads the estate through Behold and opens a fix PR. Human approval closes the loop back to main.">
+    <img src="/images/estate-medic-loop.svg" alt="A commit travels through Flux and causes a workload to fail. Prometheus detects the failure, and Alertmanager sends the incident to a phone and a dispatcher. The dispatcher starts an agent, which reads the estate through Behold and opens a fix PR. Human approval closes the loop back to main.">
   </div>
   <figcaption>Detection to an open PR takes about two minutes. The break travels across the top, the response returns along the bottom, and the amber approval edge belongs to a human.</figcaption>
 </figure>
 
 ## The failure GitOps cannot see
 
-Flux keeps the cluster matched to Git. That handles drift, while a bad commit remains authoritative and gets applied faithfully.
+Flux keeps the cluster matched to Git. That handles drift and applies defects in the source just as faithfully.
 
 The failure that proved this removed a database password reference from a deployment. Kubernetes accepted the manifest, CI stayed green, and Flux applied it. The database went down with the cluster still matching Git exactly. Another reconciliation would have reproduced the failure.
 

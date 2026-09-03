@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" role="img" aria-labelledby="title desc">
   <title id="title">The estate-medic incident loop</title>
-  <desc id="desc">A bad commit on main is applied by Flux, the workload crashloops, Prometheus fires, and Alertmanager forks to a phone notification and the estate dispatcher. The dispatcher opens an agent conversation. The agent reads the estate through Behold and opens a fix pull request. Human approval is the only path back to main.</desc>
+  <desc id="desc">A commit on main is applied by Flux and causes a workload to crashloop. Prometheus fires, and Alertmanager forks to a phone notification and the estate dispatcher. The dispatcher opens an agent conversation. The agent reads the estate through Behold and opens a fix pull request. Human approval is the only path back to main.</desc>
   <style>
     :root {
       --panel: #ffffff;
@@ -36,7 +36,7 @@
 
   <rect x="15" y="40" width="160" height="56" rx="3" class="box"/>
   <text x="95" y="65" text-anchor="middle" class="name">main</text>
-  <text x="95" y="81" text-anchor="middle" class="sub">a wrong commit</text>
+  <text x="95" y="81" text-anchor="middle" class="sub">a breaking change</text>
 
   <rect x="245" y="40" width="160" height="56" rx="3" class="box"/>
   <text x="325" y="65" text-anchor="middle" class="name">Flux</text>
