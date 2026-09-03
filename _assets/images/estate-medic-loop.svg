@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" role="img" aria-labelledby="title desc">
+  <title id="title">The estate-medic incident loop</title>
+  <desc id="desc">A bad commit on main is applied by Flux, the workload crashloops, Prometheus fires, and Alertmanager forks to a phone notification and the estate dispatcher. The dispatcher opens an agent conversation. The agent reads the estate through Behold and opens a fix pull request. Human approval is the only path back to main.</desc>
+  <style>
+    :root {
+      --panel: #ffffff;
+      --ink: #14191d;
+      --ink-2: #4c565e;
+      --ink-3: #78838c;
+      --rule: #c3cbd0;
+      --accent: #0d6d72;
+      --amber: #8d6206;
+      --amber-soft: #f6ebd5;
+    }
+    .box { fill: var(--panel); stroke: var(--rule); }
+    .flow { stroke: var(--ink); stroke-width: 1.4; fill: none; }
+    .flow-accent { stroke: var(--accent); stroke-width: 1.4; fill: none; }
+    .flow-gate { stroke: var(--amber); stroke-width: 2; fill: none; }
+    .name { font: 600 13px ui-sans-serif, system-ui, sans-serif; fill: var(--ink); }
+    .sub { font: 9.5px ui-monospace, SFMono-Regular, Menlo, monospace; fill: var(--ink-3); }
+    .edge { font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; fill: var(--ink-2); }
+    .accent { fill: var(--accent); }
+    .amber { fill: var(--amber); font-weight: 600; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <polygon points="0,1 10,5 0,9" fill="#14191d"/>
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <polygon points="0,1 10,5 0,9" fill="#0d6d72"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <polygon points="0,1 10,5 0,9" fill="#8d6206"/>
+    </marker>
+  </defs>
+
+  <rect x="15" y="40" width="160" height="56" rx="3" class="box"/>
+  <text x="95" y="65" text-anchor="middle" class="name">main</text>
+  <text x="95" y="81" text-anchor="middle" class="sub">a wrong commit</text>
+
+  <rect x="245" y="40" width="160" height="56" rx="3" class="box"/>
+  <text x="325" y="65" text-anchor="middle" class="name">Flux</text>
+  <text x="325" y="81" text-anchor="middle" class="sub">drift green</text>
+
+  <rect x="475" y="40" width="160" height="56" rx="3" class="box"/>
+  <text x="555" y="65" text-anchor="middle" class="name">workload down</text>
+  <text x="555" y="81" text-anchor="middle" class="sub">health red</text>
+
+  <rect x="705" y="40" width="160" height="56" rx="3" class="box"/>
+  <text x="785" y="65" text-anchor="middle" class="name">Prometheus</text>
+  <text x="785" y="81" text-anchor="middle" class="sub">for: 30s</text>
+
+  <line x1="175" y1="68" x2="239" y2="68" class="flow" marker-end="url(#arrow)"/>
+  <text x="207" y="60" text-anchor="middle" class="edge">~15s</text>
+  <line x1="405" y1="68" x2="469" y2="68" class="flow" marker-end="url(#arrow)"/>
+  <text x="437" y="60" text-anchor="middle" class="edge">applies</text>
+  <line x1="635" y1="68" x2="699" y2="68" class="flow" marker-end="url(#arrow)"/>
+  <text x="667" y="60" text-anchor="middle" class="edge">crashloop</text>
+
+  <line x1="785" y1="96" x2="785" y2="184" class="flow" marker-end="url(#arrow)"/>
+  <text x="775" y="145" text-anchor="end" class="edge">fires</text>
+
+  <rect x="705" y="190" width="160" height="56" rx="3" class="box"/>
+  <text x="785" y="215" text-anchor="middle" class="name">Alertmanager</text>
+  <text x="785" y="231" text-anchor="middle" class="sub">continue: true</text>
+
+  <rect x="475" y="190" width="160" height="56" rx="3" class="box"/>
+  <text x="555" y="215" text-anchor="middle" class="name">dispatcher</text>
+  <text x="555" y="231" text-anchor="middle" class="sub">no cluster creds</text>
+
+  <rect x="245" y="190" width="160" height="56" rx="3" class="box"/>
+  <text x="325" y="215" text-anchor="middle" class="name">estate-medic</text>
+  <text x="325" y="231" text-anchor="middle" class="sub">off-cluster sandbox</text>
+
+  <rect x="15" y="190" width="160" height="56" rx="3" class="box"/>
+  <text x="95" y="215" text-anchor="middle" class="name">fix PR</text>
+  <text x="95" y="231" text-anchor="middle" class="sub">as the bot</text>
+
+  <line x1="705" y1="218" x2="641" y2="218" class="flow" marker-end="url(#arrow)"/>
+  <text x="673" y="210" text-anchor="middle" class="edge">webhook</text>
+  <line x1="475" y1="218" x2="411" y2="218" class="flow" marker-end="url(#arrow)"/>
+  <text x="443" y="210" text-anchor="middle" class="edge">opens</text>
+  <line x1="245" y1="218" x2="181" y2="218" class="flow" marker-end="url(#arrow)"/>
+  <text x="213" y="210" text-anchor="middle" class="edge">one diff</text>
+
+  <rect x="705" y="320" width="160" height="46" rx="3" class="box"/>
+  <text x="785" y="342" text-anchor="middle" class="name">ntfy</text>
+  <text x="785" y="357" text-anchor="middle" class="sub">your phone</text>
+  <line x1="785" y1="246" x2="785" y2="314" class="flow" marker-end="url(#arrow)"/>
+  <text x="775" y="284" text-anchor="end" class="edge">in parallel</text>
+
+  <rect x="245" y="320" width="160" height="46" rx="3" fill="#fff" stroke="#0d6d72" stroke-width="1.4"/>
+  <text x="325" y="342" text-anchor="middle" class="name">behold</text>
+  <text x="325" y="357" text-anchor="middle" class="sub">read-only SA</text>
+  <line x1="325" y1="252" x2="325" y2="314" class="flow-accent" marker-start="url(#arrow-accent)" marker-end="url(#arrow-accent)"/>
+  <text x="337" y="279" class="edge accent">GET only,</text>
+  <text x="337" y="292" class="edge accent">bearer token</text>
+
+  <line x1="95" y1="184" x2="95" y2="102" class="flow-gate" marker-end="url(#arrow-amber)"/>
+  <rect x="86" y="136" width="18" height="14" rx="2" fill="#f6ebd5" stroke="#8d6206" stroke-width="1.2"/>
+  <text x="112" y="137" class="edge amber">you approve</text>
+  <text x="112" y="150" class="edge amber">and merge</text>
+  <text x="112" y="167" class="edge">the only gate</text>
+</svg>

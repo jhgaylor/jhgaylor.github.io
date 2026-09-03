@@ -1,0 +1,20 @@
+minSeverity: suggestion
+
+# This site uses contractions, long sentences, and domain vocabulary on purpose.
+# Vale's opt-in Slop rules are the gate. The base STE rules remain available
+# for technical documentation, but they do not define the voice of the blog.
+rules:
+  STE.SentenceLength:
+    disabled: true
+  STE.Contractions:
+    disabled: true
+  STE.PassiveVoice:
+    disabled: true
+  STE.IngForms:
+    disabled: true
+  STE.PhrasalVerbs:
+    disabled: true
+  STE.OneInstruction:
+    disabled: true
+  STE.Vocabulary:
+    disabled: true

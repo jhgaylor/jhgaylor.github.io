@@ -1,0 +1,52 @@
+name: Prose
+
+on:
+  pull_request:
+    paths:
+      - 'blog/posts/**'
+      - 'writing/**'
+      - '.vale-ste.yml'
+      - '.github/workflows/prose.yml'
+      - 'scripts/lint-new-prose.sh'
+  push:
+    branches:
+      - main
+    paths:
+      - 'blog/posts/**'
+      - 'writing/**'
+      - '.vale-ste.yml'
+      - '.github/workflows/prose.yml'
+      - 'scripts/lint-new-prose.sh'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  vale:
+    name: Vale slop gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install Vale
+        env:
+          VALE_VERSION: 0.15.0
+          VALE_SHA256: c6b85fd4da8ca2b0f631b17556c3f38bc3f30e9ce636517c00ad507c522c2a5c
+        run: |
+          archive="$RUNNER_TEMP/vale.tar.gz"
+          bin_dir="$RUNNER_TEMP/vale-bin"
+          curl --fail --silent --show-error --location \
+            "https://github.com/stuffbucket/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_linux_amd64.tar.gz" \
+            --output "$archive"
+          echo "$VALE_SHA256  $archive" | sha256sum --check
+          mkdir -p "$bin_dir"
+          tar -xzf "$archive" -C "$bin_dir"
+          echo "$bin_dir" >> "$GITHUB_PATH"
+
+      - name: Reject slop in changed prose
+        env:
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: bash scripts/lint-new-prose.sh "$BASE_SHA" "$GITHUB_SHA"

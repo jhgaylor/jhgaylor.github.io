@@ -79,6 +79,16 @@ export default function(eleventyConfig) {
         return new Date(`${ym}-15T00:00:00Z`).toLocaleString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
     });
 
+    // Eleventy parses date-only front matter at UTC midnight. Format post dates
+    // in UTC so a local timezone west of Greenwich does not show the prior day.
+    eleventyConfig.addFilter("postDateISO", (value) => new Date(value).toISOString().slice(0, 10));
+    eleventyConfig.addFilter("postDate", (value) => new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        day: "2-digit",
+        year: "numeric",
+        timeZone: "UTC",
+    }).format(new Date(value)));
+
     // ("2020-06", "2022-06") → "2 yrs"; open-ended ranges run to today
     eleventyConfig.addFilter("duration", (start, end) => {
         if (!start) return "";
