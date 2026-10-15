@@ -12,7 +12,7 @@ Last year I wrote that [a lot more people were about to learn about micro VMs](/
 
 So I went looking for someone who had put E2B on Kubernetes. I couldn't find anyone. E2B's own [infra repo](https://github.com/e2b-dev/infra) is open source and good, and it deploys with Terraform onto Nomad and Consul in GCP, with AWS in beta. The Kubernetes projects that speak E2B, like [scitix/agent-sandbox](https://github.com/scitix/agent-sandbox) and [E2BGateway](https://github.com/e2bgateway/e2bgateway), run each sandbox as a pod. I wanted a VM boundary around code nobody reviewed, and I wanted it on the cluster I already run.
 
-So I built it. It's called loam, it's open source under Apache-2.0 as of today at [github.com/arugula-salad/loam](https://github.com/arugula-salad/loam), and the project page is [loam.inevitable.fyi](https://loam.inevitable.fyi).
+So I built it. It's called loam, it's open source under Apache-2.0 as of today at [github.com/arugula-salad/loam](https://github.com/arugula-salad/loam), and the project site with the docs is [loam.agentsh.it](https://loam.agentsh.it).
 
 ## A sandbox is a row in Postgres
 
